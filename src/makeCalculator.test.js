@@ -52,7 +52,7 @@ describe('sum', () => {
                calculator
                 .operate(calculator.add, 27)
                 .operate(calculator.devide, 3);
-        expected output: calculator.result === 64`, () => {
+        expected output: calculator.result === 9`, () => {
     const calculator = makeCalculator();
 
     calculator
@@ -67,7 +67,7 @@ describe('sum', () => {
                 .operate(calculator.add, 3)
                 .operate(calculator.add, 20)
                 .operate(calculator.subtract, 9);
-        expected output: calculator.result === 64`, () => {
+        expected output: calculator.result === 14`, () => {
     const calculator = makeCalculator();
 
     calculator
@@ -84,7 +84,7 @@ describe('sum', () => {
                 .operate(calculator.add, 20)
                 .reset()
                 .operate(calculator.subtract, 9);
-        expected output: calculator.result === 64`, () => {
+        expected output: calculator.result === -9`, () => {
     const calculator = makeCalculator();
 
     calculator
@@ -103,7 +103,7 @@ describe('sum', () => {
                 .reset()
                 .operate(calculator.subtract, 5)
                 .operate(calculator.multiply, 4)
-        expected output: calculator.result === 64`, () => {
+        expected output: calculator.result === -20`, () => {
     const calculator = makeCalculator();
 
     calculator
@@ -122,7 +122,7 @@ describe('sum', () => {
                 .operate(calculator.multiply, 4)
                 .operate(calculator.subtract, 5)
                 .operate(calculator.multiply, 4)
-        expected output: calculator.result === 64`, () => {
+        expected output: calculator.result === 12`, () => {
     const calculator = makeCalculator();
 
     calculator
@@ -140,7 +140,7 @@ describe('sum', () => {
                 .operate(calculator.multiply, 4)
                 .operate(calculator.add, 2)
                 .operate(calculator.devide, 2)
-        expected output: calculator.result === 64`, () => {
+        expected output: calculator.result === 201`, () => {
     const calculator = makeCalculator();
 
     calculator
@@ -159,7 +159,7 @@ describe('sum', () => {
                 .reset()
                 .operate(calculator.add, 2)
                 .operate(calculator.devide, 2)
-        expected output: calculator.result === 64`, () => {
+        expected output: calculator.result === 1`, () => {
     const calculator = makeCalculator();
 
     calculator
