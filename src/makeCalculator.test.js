@@ -51,13 +51,13 @@ describe('sum', () => {
   test(`input: const calculator = makeCalculator();
                calculator
                 .operate(calculator.add, 27)
-                .operate(calculator.devide, 3);
+                .operate(calculator.divide, 3);
         expected output: calculator.result === 9`, () => {
     const calculator = makeCalculator();
 
     calculator
       .operate(calculator.add, 27)
-      .operate(calculator.devide, 3);
+      .operate(calculator.divide, 3);
 
     expect(calculator.result).toBe(9);
   });
@@ -139,7 +139,7 @@ describe('sum', () => {
                 .operate(calculator.subtract, -100)
                 .operate(calculator.multiply, 4)
                 .operate(calculator.add, 2)
-                .operate(calculator.devide, 2)
+                .operate(calculator.divide, 2)
         expected output: calculator.result === 201`, () => {
     const calculator = makeCalculator();
 
@@ -147,7 +147,7 @@ describe('sum', () => {
       .operate(calculator.subtract, -100)
       .operate(calculator.multiply, 4)
       .operate(calculator.add, 2)
-      .operate(calculator.devide, 2);
+      .operate(calculator.divide, 2);
 
     expect(calculator.result).toBe(201);
   });
@@ -158,7 +158,7 @@ describe('sum', () => {
                 .operate(calculator.multiply, 4)
                 .reset()
                 .operate(calculator.add, 2)
-                .operate(calculator.devide, 2)
+                .operate(calculator.divide, 2)
         expected output: calculator.result === 1`, () => {
     const calculator = makeCalculator();
 
@@ -167,7 +167,7 @@ describe('sum', () => {
       .operate(calculator.multiply, 4)
       .reset()
       .operate(calculator.add, 2)
-      .operate(calculator.devide, 2);
+      .operate(calculator.divide, 2);
 
     expect(calculator.result).toBe(1);
   });
