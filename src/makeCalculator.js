@@ -1,22 +1,21 @@
 'use strict';
 
 /**
- * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
- * has the following fields:
- *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
- *  - The `result` property is initially 0.
+ * Создайте функцию `makeCalculator`, которая возвращает объект, который
+ * имеет следующие поля:
+ * - Методы: `сложение`,` вычитание`, `умножение`,` деление`, `сброс`,` работа`.
+ * - Свойство `result` изначально равно 0.
  *
- * How the calculator will work:
- * - Each `operate` call takes a number and a callback and making the
- *   appropriate action with `result`.
- * - The `reset `method will reset the `result` value to 0.
- * - The `operate` and `reset` methods can be used in chained calls.
+ * Как будет работать калькулятор:
+ * - Каждый `операционный` вызов принимает номер, обратный вызов и
+ * соответствующее действие с `результатом`.
+ * - Метод `reset` сбрасывает значение` result` в 0.
+ * - Методы `opera` и` reset` могут использоваться в цепочечных вызовах.
  *
- * Example:
- * const calculator = makeCalculator();
+ * Пример:
+ * const calculator = makeCalculator ();
  *
- * calculator.operate(calculator.add, 21)
+ * calculator.operate (calculator.add, 21)
  * calculator.result === 21
 
  * calculator.reset()
@@ -34,8 +33,35 @@
  *
  * @return {object}
  */
+
 function makeCalculator() {
-  // write code here
+  const calculatorObject = {
+    add(value) {
+      this.result += value;
+    },
+    subtract(value) {
+      this.result -= value;
+    },
+    multiply(value) {
+      this.result *= value;
+    },
+    devide(value) {
+      this.result /= value;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+    operate(operation, value) {
+      operation.call(this, value);
+
+      return this;
+    },
+    result: 0,
+  };
+
+  return calculatorObject;
 }
 
 module.exports = makeCalculator;
