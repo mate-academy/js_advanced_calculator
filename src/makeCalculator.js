@@ -51,15 +51,14 @@ function makeCalculator() {
     },
     reset() {
       this.result = 0;
-
       return this;
     },
     operate(operation, num) {
       switch (operation) {
-        case this.add: this.add(num); break;
+        case this.add:      this.add(num);      break;
         case this.subtract: this.subtract(num); break;
         case this.multiply: this.multiply(num); break;
-        case this.divide: this.divide(num); break;
+        case this.divide:   this.divide(num);   break;
       }
 
       return this;
