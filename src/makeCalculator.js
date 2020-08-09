@@ -69,8 +69,8 @@ function makeCalculator() {
       return calculator;
     },
 
-    operate(operation, num) {
-      calculator.result = operation(num);
+    operate(callback, num) {
+      calculator.result = callback(num);
 
       return calculator;
     },
