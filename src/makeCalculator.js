@@ -45,7 +45,7 @@ function makeCalculator() {
     },
 
     operate(operation, value) {
-      this.result = operation(value);
+      operation(value);
 
       return this;
     },
