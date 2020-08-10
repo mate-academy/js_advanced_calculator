@@ -35,6 +35,7 @@
  * @return {object}
  */
 function makeCalculator() {
+  // write code here
   return {
     result: 0,
     add(num) {
@@ -54,12 +55,8 @@ function makeCalculator() {
       return this;
     },
     operate(operation, num) {
-      switch (operation) {
-        case this.add:      this.add(num);      break;
-        case this.subtract: this.subtract(num); break;
-        case this.multiply: this.multiply(num); break;
-        case this.divide:   this.divide(num);   break;
-      }
+      this.operation = operation;
+      this.operation(num)
 
       return this;
     },
