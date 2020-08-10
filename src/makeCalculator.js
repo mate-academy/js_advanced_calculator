@@ -45,35 +45,19 @@ function makeCalculator() {
     },
 
     add(res, value) {
-      let operationResult = res;
-
-      operationResult += value;
-
-      return operationResult;
+      return res + value;
     },
 
     subtract(res, value) {
-      let operationResult = res;
-
-      operationResult -= value;
-
-      return operationResult;
+      return res - value;
     },
 
     multiply(res, value) {
-      let operationResult = res;
-
-      operationResult *= value;
-
-      return operationResult;
+      return res * value;
     },
 
     divide(res, value) {
-      let operationResult = res;
-
-      operationResult /= value;
-
-      return operationResult;
+      return res / value;
     },
 
     reset() {
