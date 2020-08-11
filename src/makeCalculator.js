@@ -67,6 +67,8 @@ function makeCalculator() {
         case '/':
           this.result /= value;
           break;
+        default:
+          return 'Unknown operation';
       }
 
       return this;
