@@ -32,5 +32,8 @@
       "pre-commit": "lint-staged",
       "pre-push": "npm run test"
     }
+  },
+  "dependencies": {
+    "lodash": "^4.17.19"
   }
 }
