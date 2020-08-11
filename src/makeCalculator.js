@@ -42,7 +42,7 @@ function makeCalculator() {
       calculator.result += num;
     },
 
-    substract(num) {
+    subtract(num) {
       calculator.result -= num;
     },
 
