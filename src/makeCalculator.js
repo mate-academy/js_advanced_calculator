@@ -41,7 +41,7 @@ function makeCalculator() {
     operate(callback, num) {
       callback(num);
 
-      return this;
+      return calculator;
     },
 
     add(num) {
@@ -71,7 +71,7 @@ function makeCalculator() {
     reset() {
       calculator.result = 0;
 
-      return this;
+      return calculator;
     },
   };
 
