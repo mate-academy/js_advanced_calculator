@@ -73,6 +73,8 @@ function makeCalculator() {
         case this.divide:
           this.divide(number);
           break;
+        default:
+          return this;
       }
 
       return this;
