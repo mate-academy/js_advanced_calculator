@@ -41,13 +41,13 @@ function makeCalculator() {
     operate(callback, number) {
       callback(number);
 
-      return this;
+      return calculator;
     },
 
     reset() {
-      this.result = 0;
+      calculator.result = 0;
 
-      return this;
+      return calculator;
     },
 
     add(number) {
