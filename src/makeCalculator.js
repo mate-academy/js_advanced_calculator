@@ -14,18 +14,18 @@
  * - The `operate` and `reset` methods can be used in chained calls.
  *
  * Example:
- * const calculator = makeCalculator(number);
+ * const calculator = makeCalculator();
  *
  * calculator.operate(calculator.add, 21)
  * calculator.result === 21
 
- * calculator.reset(number)
+ * calculator.reset()
  * calculator.result === 0
 
  * calculator
  *  .operate(calculator.add, 2)
  *  .operate(calculator.multiply, 4)
- *  .reset(number)
+ *  .reset()
  *  .operate(calculator.subtract, 5)
  *  .operate(calculator.multiply, 4)
  *
