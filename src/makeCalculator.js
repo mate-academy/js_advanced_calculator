@@ -39,23 +39,17 @@ function makeCalculator() {
     result: 0,
     add: (number) => {
       obj.result += number;
-
-      return obj.result;
     },
     subtract(number) {
       obj.result -= number;
-
-      return obj.result;
     },
     multiply(number) {
       obj.result *= number;
-
-      return obj.result;
     },
     divide(number) {
-      obj.result /= number;
-
-      return obj.result;
+      if (number !== 0) {
+        obj.result /= number;
+      }
     },
     operate(operation, number) {
       operation(number);
