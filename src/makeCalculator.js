@@ -37,33 +37,25 @@
 function makeCalculator() {
   const calculator = {
     operate(callback, number) {
-      calculator.result = callback(number);
+      callback(number);
 
       return calculator;
     },
 
     add(number) {
       calculator.result += number;
-
-      return calculator.result;
     },
 
     subtract(number) {
       calculator.result -= number;
-
-      return calculator.result;
     },
 
     multiply(number) {
       calculator.result *= number;
-
-      return calculator.result;
     },
 
     divide(number) {
       calculator.result /= number;
-
-      return calculator.result;
     },
 
     reset() {
