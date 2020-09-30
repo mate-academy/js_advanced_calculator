@@ -35,33 +35,33 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calc = {
+  const calculator = {
     result: 0,
     add(num) {
-      calc.result += num;
+      calculator.result += num;
     },
     subtract(num) {
-      calc.result -= num;
+      calculator.result -= num;
     },
     multiply(num) {
-      calc.result *= num;
+      calculator.result *= num;
     },
     divide(num) {
-      calc.result = Math.round(calc.result / num);
+      calculator.result = Math.round(calculator.result / num);
     },
     reset() {
-      calc.result = 0;
+      calculator.result = 0;
 
-      return calc;
+      return calculator;
     },
     operate(operation, num) {
       operation(num);
 
-      return calc;
+      return calculator;
     },
   };
 
-  return calc;
+  return calculator;
 }
 
 module.exports = makeCalculator;
