@@ -36,6 +36,8 @@
  */
 function makeCalculator() {
   const calculator = {
+    result: 0,
+
     operate(callback, number) {
       callback(number);
 
@@ -63,8 +65,6 @@ function makeCalculator() {
 
       return calculator;
     },
-
-    result: 0,
   };
 
   return calculator;
