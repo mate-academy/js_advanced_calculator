@@ -42,20 +42,25 @@ function makeCalculator() {
 
       return this;
     },
+
     add(target, value) {
-      target.result += value;
+      return target + value;
     },
+
     subtract(target, value) {
-      target.result -= value;
+      return target - value;
     },
+
     multiply(target, value) {
-      target.result *= value;
+      return target * value;
     },
+
     divide(target, value) {
-      target.result /= value;
+      return target / value;
     },
+
     operate(callback, value) {
-      callback(this, value);
+      this.result = callback(this.result, value);
 
       return this;
     },
