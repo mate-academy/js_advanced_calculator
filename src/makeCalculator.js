@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Another calculator. Now the task is more difficult.
+ * Another calculator. Now the tas.k is more difficult.
  * Create a `makeCalculator` function that returns an object that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
@@ -37,7 +37,36 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
-}
+  return {
+    result: 0,
 
+    operate(operation, number) {
+      this.result = operation(number, this.result);
+
+      return this;
+    },
+
+    add(number, result) {
+      return result + number;
+    },
+
+    subtract(number, result) {
+      return result - number;
+    },
+
+    multiply(number, result) {
+      return result * number;
+    },
+
+    divide(number, result) {
+      return result / number;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
+}
 module.exports = makeCalculator;
