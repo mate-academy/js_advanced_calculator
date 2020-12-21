@@ -52,32 +52,24 @@ function makeCalculator() {
     },
 
     add(number) {
-      let result = calculator.result;
+      calculator.result += number;
 
-      result += number;
-
-      return result;
+      return calculator.result;
     },
     subtract(number) {
-      let result = calculator.result;
+      calculator.result -= number;
 
-      result -= number;
-
-      return result;
+      return calculator.result;
     },
     multiply(number) {
-      let result = calculator.result;
+      calculator.result *= number;
 
-      result *= number;
-
-      return result;
+      return calculator.result;
     },
     divide(number) {
-      let result = calculator.result;
+      calculator.result /= number;
 
-      result /= number;
-
-      return result;
+      return calculator.result;
     },
   };
 
