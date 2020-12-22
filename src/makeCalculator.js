@@ -40,20 +40,20 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add(a, ac) {
-      return a + ac;
+    add(firstNum, secondNum) {
+      return firstNum + secondNum;
     },
 
-    subtract(a, ac) {
-      return a - ac;
+    subtract(firstNum, secondNum) {
+      return firstNum - secondNum;
     },
 
-    multiply(a, ac) {
-      return a * ac;
+    multiply(firstNum, secondNum) {
+      return firstNum * secondNum;
     },
 
-    divide(a, ac) {
-      return a / ac;
+    divide(firstNum, secondNum) {
+      return firstNum / secondNum;
     },
 
     reset() {
