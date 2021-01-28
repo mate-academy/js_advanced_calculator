@@ -41,28 +41,28 @@ function makeCalculator() {
   const calculator = {
     'result': 0,
 
-    add(num, that) {
-      that.result += num;
+    add(num) {
+      calculator.result += num;
 
-      return that;
+      return calculator;
     },
 
-    subtract(num, that) {
-      that.result -= num;
+    subtract(num) {
+      calculator.result -= num;
 
-      return that;
+      return calculator;
     },
 
-    divide(num, that) {
-      that.result /= num;
+    divide(num) {
+      calculator.result /= num;
 
-      return that;
+      return calculator;
     },
 
-    multiply(num, that) {
-      that.result *= num;
+    multiply(num) {
+      calculator.result *= num;
 
-      return that;
+      return calculator;
     },
 
     reset() {
@@ -72,9 +72,7 @@ function makeCalculator() {
     },
 
     operate(callback, num) {
-      const that = this;
-
-      return callback(num, that);
+      return callback(num);
     },
   };
 
