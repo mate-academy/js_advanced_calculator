@@ -42,7 +42,7 @@ function makeCalculator() {
     result: 0,
 
     operate: function(callback, number) {
-      this.result = callback(this.result, number);
+      callback(number);
 
       return this;
     },
@@ -52,52 +52,23 @@ function makeCalculator() {
 
       return this;
     },
-
-    add: function(result, number) {
-      return result + number;
-    },
-
-    subtract: function(result, number) {
-      return result - number;
-    },
-
-    multiply: function(result, number) {
-      return result * number;
-    },
-
-    divide: function(result, number) {
-      return result / number;
-    },
-
   };
 
-  // calculator.operate = function(callback, number) {
-  //   this.result = callback(this.result, number);
+  calculator.add = function(number) {
+    this.result += number;
+  }.bind(calculator);
 
-  //   return this;
-  // };
+  calculator.subtract = function(number) {
+    this.result -= number;
+  }.bind(calculator);
 
-  // calculator.reset = function() {
-  //   this.result = 0;
+  calculator.multiply = function(number) {
+    this.result *= number;
+  }.bind(calculator);
 
-  //   return this;
-  // };
-
-  // calculator.add = function(result, number) {
-  //   return result + number;
-  // };
-
-  // calculator.subtract = function(result, number) {
-  //   return result - number;
-  // };
-
-  // calculator.multiply = function(result, number) {
-  //   return result * number;
-  // };
-
-  // calculator.divide = function(result, number) {
-  //   return result / number;
-  // };
+  calculator.divide = function(number) {
+    this.result /= number;
+  }.bind(calculator);
 
   return calculator;
 }
