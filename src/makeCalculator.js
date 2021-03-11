@@ -37,7 +37,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  const object = {
+  const calculator = {
     result: 0,
 
     add(a, b) {
@@ -71,7 +71,7 @@ function makeCalculator() {
     },
   };
 
-  return object;
+  return calculator;
 }
 
 module.exports = makeCalculator;
