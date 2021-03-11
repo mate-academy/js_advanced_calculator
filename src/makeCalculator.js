@@ -44,20 +44,25 @@ function makeCalculator() {
     add(num) {
       calculate.result += num;
     },
+
     subtract(num) {
       calculate.result -= num;
     },
+
     divide(num) {
       calculate.result /= num;
     },
+
     multiply(num) {
       calculate.result *= num;
     },
+
     reset() {
       calculate.result = 0;
 
       return this;
     },
+
     operate(callback, num) {
       callback(num);
 
