@@ -53,19 +53,19 @@ function makeCalculator() {
     },
 
     add(value) {
-      return (calculator.result += value);
+      calculator.result += value;
     },
 
     subtract(value) {
-      return (calculator.result -= value);
+      calculator.result -= value;
     },
 
     multiply(value) {
-      return (calculator.result *= value);
+      calculator.result *= value;
     },
 
     divide(value) {
-      return (calculator.result /= value);
+      calculator.result /= value;
     },
   };
 
