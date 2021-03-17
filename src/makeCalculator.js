@@ -41,7 +41,7 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, x) {
-      callback(x);
+      callback.call(this, x);
 
       return this;
     },
@@ -68,12 +68,6 @@ function makeCalculator() {
       return this;
     },
   };
-
-  for (const key in calc) {
-    if (typeof calc[key] === 'function') {
-      calc[key] = calc[key].bind(calc);
-    }
-  }
 
   return calc;
 }
