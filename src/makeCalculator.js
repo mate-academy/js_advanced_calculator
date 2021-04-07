@@ -39,25 +39,31 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
+
     add: (number) => {
       calculator.result = calculator.result + number;
     },
+
     subtract: (number) => {
       calculator.result = calculator.result - number;
     },
+
     multiply: (number) => {
       calculator.result = calculator.result * number;
     },
+
     divide: (number) => {
       calculator.result = calculator.result / number;
     },
+
     reset: () => {
       calculator.result = 0;
 
       return calculator;
     },
-    operate: (methods, number) => {
-      methods(number);
+
+    operate: (method, number) => {
+      method(number);
 
       return calculator;
     },
