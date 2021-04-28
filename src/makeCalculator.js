@@ -41,7 +41,7 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, number) {
-      this.result = callback(number);
+      callback(number);
 
       return this;
     },
@@ -53,23 +53,15 @@ function makeCalculator() {
 
     add(number) {
       calculator.result += number;
-
-      return calculator.result;
     },
     subtract(number) {
       calculator.result -= number;
-
-      return calculator.result;
     },
     multiply(number) {
       calculator.result *= number;
-
-      return calculator.result;
     },
     divide(number) {
       calculator.result /= number;
-
-      return calculator.result;
     },
   };
 
