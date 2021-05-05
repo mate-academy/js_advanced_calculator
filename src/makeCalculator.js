@@ -62,8 +62,8 @@ function makeCalculator() {
       return calculator;
     },
 
-    operate(f, value) {
-      f(value);
+    operate(method, value) {
+      method(value);
 
       return calculator;
     },
