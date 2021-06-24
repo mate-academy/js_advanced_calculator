@@ -38,25 +38,25 @@
  */
 
 const makeCalculator = () => {
-  const calculate = {
+  const calculator = {
     result: 0,
-    add: number => (calculate.result += number),
-    subtract: number => (calculate.result -= number),
-    multiply: number => (calculate.result *= number),
-    divide: number => (calculate.result /= number),
+    add: number => (calculator.result += number),
+    subtract: number => (calculator.result -= number),
+    multiply: number => (calculator.result *= number),
+    divide: number => (calculator.result /= number),
     reset: () => {
-      calculate.result = 0;
+      calculator.result = 0;
 
-      return calculate;
+      return calculator;
     },
     operate: (callback, number) => {
       callback(number);
 
-      return calculate;
+      return calculator;
     },
   };
 
-  return calculate;
+  return calculator;
 };
 
 module.exports = makeCalculator;
