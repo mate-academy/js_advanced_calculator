@@ -36,12 +36,6 @@
  *
  * @return {object}
  */
-const returnObj = (param, object) => {
-  // eslint-disable-next-line no-unused-expressions
-  param;
-
-  return object;
-};
 
 const makeCalculator = () => {
   const calculate = {
@@ -50,8 +44,16 @@ const makeCalculator = () => {
     subtract: number => (calculate.result -= number),
     multiply: number => (calculate.result *= number),
     divide: number => (calculate.result /= number),
-    reset: () => (returnObj((calculate.result = 0), calculate)),
-    operate: (callback, number) => (returnObj(callback(number), calculate)),
+    reset: () => {
+      calculate.result = 0;
+
+      return calculate;
+    },
+    operate: (callback, number) => {
+      callback(number);
+
+      return calculate;
+    },
   };
 
   return calculate;
