@@ -36,8 +36,25 @@
  *
  * @return {object}
  */
-function makeCalculator() {
-  // write code here
-}
+const returnObj = (param, obj) => {
+  // eslint-disable-next-line no-unused-expressions
+  param;
+
+  return obj;
+};
+
+const makeCalculator = () => {
+  const calc = {
+    result: 0,
+    add: num => (calc.result += num),
+    subtract: num => (calc.result -= num),
+    multiply: num => (calc.result *= num),
+    divide: num => (calc.result /= num),
+    reset: () => (returnObj((calc.result = 0), calc)),
+    operate: (callback, num) => (returnObj(callback(num), calc)),
+  };
+
+  return calc;
+};
 
 module.exports = makeCalculator;
