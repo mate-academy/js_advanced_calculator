@@ -51,23 +51,15 @@ function makeCalculator() {
     },
     add(value) {
       calculator.result += value;
-
-      return this;
     },
     subtract(value) {
       calculator.result -= value;
-
-      return this;
     },
     multiply(value) {
       calculator.result *= value;
-
-      return this;
     },
     divide(value) {
       calculator.result /= value;
-
-      return this;
     },
   };
 
