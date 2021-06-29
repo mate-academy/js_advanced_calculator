@@ -42,23 +42,15 @@ function makeCalculator() {
 
     add(operand) {
       calculator.result += operand;
-
-      return calculator;
     },
     subtract(operand) {
       calculator.result -= operand;
-
-      return calculator;
     },
     multiply(operand) {
       calculator.result *= operand;
-
-      return calculator;
     },
     divide(operand) {
       calculator.result /= operand;
-
-      return calculator;
     },
 
     reset() {
