@@ -39,31 +39,37 @@
 function makeCalculator() {
   const calcObj = {
     result: 0,
+
     reset: function() {
       calcObj.result = 0;
 
       return calcObj;
     },
+
     add: function(num) {
       calcObj.result += num;
 
       return calcObj;
     },
+
     subtract: function(num) {
       calcObj.result -= num;
 
       return calcObj;
     },
+
     divide: function(num) {
       calcObj.result /= num;
 
       return calcObj;
     },
+
     multiply: function(num) {
       calcObj.result *= num;
 
       return calcObj;
     },
+
     operate: function(callback, value) {
       return callback(value);
     },
