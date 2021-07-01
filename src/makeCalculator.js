@@ -40,22 +40,43 @@ function makeCalculator() {
   // write code here
   const calc = {
     result: 0,
-    add(number) { return calc.result += number },
-    subtract(number) { return calc.result -= number },
-    divide(number) { return calc.result /= number },
-    multiply(number) { return calc.result *= number },
+
+    add(number) {
+      calc.result += number;
+
+      return calc.result;
+    },
+
+    subtract(number) {
+      calc.result -= number;
+
+      return calc.result;
+    },
+
+    divide(number) {
+      calc.result /= number;
+
+      return calc.result;
+    },
+
+    multiply(number) {
+      calc.result *= number;
+
+      return calc.result;
+    },
+
     reset() {
       calc.result = 0;
 
       return this;
     },
+
     operate(operation, number) {
-      let a = operation(number);
-      this.result = a;
+      this.result = operation(number);
 
       return this;
-    }
-  }
+    },
+  };
 
   return calc;
 }
