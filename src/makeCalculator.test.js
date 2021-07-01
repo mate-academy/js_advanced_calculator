@@ -38,7 +38,7 @@ describe('sum', () => {
   test(`'operate' should correctly add a single value`, () => {
     const calculator = makeCalculator();
 
-    calculator.operate(calculator.add, 10);
+    makeCalculator().operate(calculator.add, 10);
 
     expect(calculator.result).toBe(10);
   });
