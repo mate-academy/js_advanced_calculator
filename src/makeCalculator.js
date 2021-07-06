@@ -44,39 +44,26 @@ function makeCalculator() {
 
       return this;
     },
-    add: function() {
-      return 'add';
+    add: function(count) {
+      calcObj.result += count;
     },
-    subtract: function() {
-      return 'subtract';
+    subtract: function(count) {
+      calcObj.result -= count;
     },
-    divide: function() {
-      return 'divide';
+    divide: function(count) {
+      calcObj.result /= count;
     },
-    multiply: function() {
-      return 'multiply';
+    multiply: function(count) {
+      calcObj.result *= count;
     },
     operate: function(operation, count) {
-      switch (operation()) {
-        case 'add':
-          this.result += count;
-          break;
-        case 'subtract':
-          this.result -= count;
-          break;
-        case 'divide':
-          this.result /= count;
-          break;
-        case 'multiply':
-          this.result *= count;
-          break;
-      };
+      operation(count);
 
       return this;
     },
   };
 
   return calcObj;
-}
+};
 
 module.exports = makeCalculator;
