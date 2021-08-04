@@ -45,13 +45,13 @@ function makeCalculator() {
     multiply: (a, b) => a * b,
     divide: (a, b) => a / b,
 
-    operate: function(callback, value) {
+    operate(callback, value) {
       this.result = callback(this.result, value);
 
       return this;
     },
 
-    reset: function() {
+    reset() {
       this.result = 0;
 
       return this;
