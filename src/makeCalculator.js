@@ -40,13 +40,13 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    reset: function() {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function(callback, operand) {
+    operate(callback, operand) {
       this.result = callback(this.result, operand);
 
       return this;
