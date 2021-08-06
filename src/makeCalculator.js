@@ -45,7 +45,7 @@ function makeCalculator() {
     multiply: (a, b) => a * b,
     divide: (a, b) => a / b,
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
