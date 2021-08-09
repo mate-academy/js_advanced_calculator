@@ -55,7 +55,7 @@ function makeCalculator() {
 
     divide(a, b) {
       if (b === 0) {
-        throw new Error(`${b} = 0`);
+        throw new Error(`Invalid value`);
       }
 
       return a / b;
