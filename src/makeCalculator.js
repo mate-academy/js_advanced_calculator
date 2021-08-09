@@ -38,7 +38,7 @@
  */
 function makeCalculator() {
   // write code here
-  const calculatedResult = {
+  return {
     result: 0,
 
     add(a, b) {
@@ -73,8 +73,6 @@ function makeCalculator() {
       return this;
     },
   };
-
-  return calculatedResult;
 }
 
 module.exports = makeCalculator;
