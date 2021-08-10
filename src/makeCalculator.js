@@ -39,17 +39,21 @@
 function makeCalculator() {
   return {
     result: 0,
-    add(number1, number2) {
-      return (number1 + number2);
+    add(a, b) {
+      return a + b;
     },
-    subtract(number1, number2) {
-      return (number1 - number2);
+    subtract(a, b) {
+      return a - b;
     },
-    multiply(number1, number2) {
-      return (number1 * number2);
+    multiply(a, b) {
+      return a * b;
     },
-    divide(number1, number2) {
-      return (number1 / number2);
+    divide(a, b) {
+      if (b === 0) {
+        return 'You can not divide on zero';
+      } else {
+        return (a / b);
+      }
     },
     reset() {
       this.result = 0;
