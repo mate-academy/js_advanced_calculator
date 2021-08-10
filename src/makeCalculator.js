@@ -49,8 +49,8 @@ function makeCalculator() {
     },
 
     divide(firstNumber, secondNumber) {
-      if (secondNumber === 0) {
-        throw new Error('value is not correct');
+      if (firstNumber === 0) {
+        throw new Error('value is not correct - division by 0');
       }
 
       return secondNumber / firstNumber;
