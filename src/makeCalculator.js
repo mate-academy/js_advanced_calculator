@@ -40,24 +40,24 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add(number, result) {
-      return result + number;
+    add(firstNumber, secondNumber) {
+      return secondNumber + firstNumber;
     },
 
-    subtract(number, result) {
-      return result - number;
+    subtract(firstNumber, secondNumber) {
+      return secondNumber - firstNumber;
     },
 
-    divide(number, result) {
-      if (result === 0) {
+    divide(firstNumber, secondNumber) {
+      if (secondNumber === 0) {
         throw new Error('value is not correct');
       }
 
-      return result / number;
+      return secondNumber / firstNumber;
     },
 
-    multiply(number, result) {
-      return result * number;
+    multiply(firstNumber, secondNumber) {
+      return secondNumber * firstNumber;
     },
 
     reset() {
