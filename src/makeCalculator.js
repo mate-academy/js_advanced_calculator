@@ -44,7 +44,7 @@ function makeCalculator() {
       return a + b;
     },
 
-    subtraction(a, b) {
+    subtract(a, b) {
       return a - b;
     },
 
