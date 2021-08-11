@@ -41,31 +41,22 @@ function makeCalculator() {
     result: 0,
     add(value) {
       getCalculateResult.result += value;
-
-      return this;
     },
 
     subtract(value) {
       getCalculateResult.result -= value;
-
-      return this;
     },
 
     multiply(value) {
       getCalculateResult.result *= value;
-
-      return this;
     },
 
     divide(value) {
       getCalculateResult.result /= value;
-
-      return this;
     },
 
     reset() {
       getCalculateResult.result = 0;
-      getCalculateResult.methods = '';
 
       return this;
     },
