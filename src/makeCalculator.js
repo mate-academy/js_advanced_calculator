@@ -51,7 +51,7 @@ function makeCalculator() {
 
     divide(a, b) {
       if (b === 0) {
-        throw new Error('Error');
+        throw new Error('Divison by 0');
       }
 
       return a / b;
