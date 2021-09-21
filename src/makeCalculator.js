@@ -42,7 +42,7 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, number) {
-      this.result = callback(this.result, number);
+      callback(number);
 
       return this;
     },
