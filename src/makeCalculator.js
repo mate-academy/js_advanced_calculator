@@ -63,7 +63,7 @@ function makeCalculator() {
     },
 
     operate(operation, value) {
-      calculator.result = operation(value);
+      this.result = operation(value);
 
       return this;
     },
