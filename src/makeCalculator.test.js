@@ -138,6 +138,8 @@ describe('sum', () => {
     expect(calculator.result).toBe(0);
   });
 
+  ;
+
   test(`'reset' method should correctly work in a chain`, () => {
     const calculator = makeCalculator();
 
