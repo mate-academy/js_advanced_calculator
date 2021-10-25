@@ -39,9 +39,11 @@
 function makeCalculator() {
   const obj = {
     result: 0,
+    
     add(number) {
       obj.result += number;
     },
+    
     subtract(number) {
       obj.result -= number;
     },
