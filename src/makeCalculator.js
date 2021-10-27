@@ -37,7 +37,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  const obj = {
+  const calculator = {
     result: 0,
     
     add(number) {
