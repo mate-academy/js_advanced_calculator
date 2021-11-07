@@ -20,40 +20,40 @@
  * @return {object}
  */
 function makeCalculator() {
-  const obj = {
+  const calculator = {
 
     add(value) {
-      return obj.result + value;
+      return calculator.result + value;
     },
 
     subtract(value) {
-      return obj.result - value;
+      return calculator.result - value;
     },
 
     multiply(value) {
-      return obj.result * value;
+      return calculator.result * value;
     },
 
     divide(value) {
-      return obj.result / value;
+      return calculator.result / value;
     },
 
     reset() {
-      obj.result = 0;
+      calculator.result = 0;
 
-      return obj;
+      return calculator;
     },
 
     operate(func, value) {
-      obj.result = func(value);
+      calculator.result = func(value);
 
-      return obj;
+      return calculator;
     },
 
     result: 0,
   };
 
-  return obj;
+  return calculator;
 };
 
 module.exports = makeCalculator;
