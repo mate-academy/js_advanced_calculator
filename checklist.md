@@ -1,4 +1,4 @@
-1.  [NAMING]: Use proper names for varaibles. If function was called `makeFruit`, it should return `fruit`
+1.  [NAMING] - Use proper names for variables. If function was called `makeFruit`, it should return `fruit`
 2.  [NAMING] - use proper names for variables - if you want to name variable result, pick a better one :)
 3.  [CODE STYLE] - use arithmetic operators with assignment operator `=` if you want to add something to existing value
 
