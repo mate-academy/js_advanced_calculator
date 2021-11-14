@@ -59,6 +59,10 @@ function makeCalculator() {
     },
 
     divide(a, b) {
+      if (b === 0) {
+        return 'Can not divide by 0, try another number';
+      }
+
       return a / b;
     },
 
