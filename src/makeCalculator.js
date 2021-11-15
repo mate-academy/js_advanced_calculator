@@ -41,33 +41,27 @@ function makeCalculator() {
     result: 0,
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(callback, value) {
-      calculator.result = callback(value);
+      callback(value);
 
-      return calculator;
+      return this;
     },
 
     add(value) {
       calculator.result += value;
-
-      return calculator.result;
     },
 
     subtract(value) {
       calculator.result -= value;
-
-      return calculator.result;
     },
 
     multiply(value) {
       calculator.result *= value;
-
-      return calculator.result;
     },
 
     divide(value) {
@@ -76,8 +70,6 @@ function makeCalculator() {
       } else {
         calculator.result /= value;
       }
-
-      return calculator.result;
     },
   };
 
