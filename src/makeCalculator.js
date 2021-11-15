@@ -74,7 +74,7 @@ function makeCalculator() {
     operate(callback, number) {
       calculator.result = callback(number);
 
-      return calculator;
+      return this;
     },
   };
 
