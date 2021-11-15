@@ -38,7 +38,6 @@
  */
 function makeCalculator() {
   const calculator = {
-    Methods: [`add`, `subtract`, `multiply`, `divide`, `reset`, `operate`],
     result: 0,
 
     add(num) {
