@@ -71,7 +71,11 @@ function makeCalculator() {
     },
 
     divide(value) {
-      calculator.result /= value;
+      if (value === 0) {
+        return 'cannot be divided by zero';
+      } else {
+        calculator.result /= value;
+      }
 
       return calculator.result;
     },
