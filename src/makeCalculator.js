@@ -41,14 +41,14 @@ const makeCalculator = () => {
     result: 0,
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
     operate(callback, number) {
       callback(number);
 
-      return calculator;
+      return this;
     },
 
     add(number) {
