@@ -37,7 +37,39 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+
+    operate(callback, num) {
+      callback(num);
+
+      return this;
+    },
+
+    reset() {
+      calculator.result = 0;
+
+      return this;
+    },
+
+    add(num) {
+      calculator.result += num;
+    },
+
+    subtract(num) {
+      calculator.result -= num;
+    },
+
+    multiply(num) {
+      calculator.result *= num;
+    },
+
+    divide(num) {
+      calculator.result /= num;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
