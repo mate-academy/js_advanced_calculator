@@ -52,21 +52,13 @@ function makeCalculator() {
       return this;
     },
 
-    add(result, num) {
-      return result + num;
-    },
+    add: (result, num) => result + num,
 
-    subtract(result, num) {
-      return result - num;
-    },
+    subtract: (result, num) => result - num,
 
-    multiply(result, num) {
-      return result * num;
-    },
+    multiply: (result, num) => result * num,
 
-    divide(result, num) {
-      return result / num;
-    },
+    divide: (result, num) => result / num,
   };
 }
 
