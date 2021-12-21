@@ -38,6 +38,8 @@
  */
 function makeCalculator() {
   const calculator = {
+    result: 0,
+
     add(elem) {
       calculator.result += elem;
     },
@@ -59,7 +61,6 @@ function makeCalculator() {
 
       return this;
     },
-    result: 0,
 
     reset() {
       calculator.result = 0;
