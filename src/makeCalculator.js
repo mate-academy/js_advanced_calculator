@@ -51,7 +51,7 @@ function makeCalculator() {
     divide(item) {
       calculator.result /= item;
     },
-    reset(item) {
+    reset() {
       calculator.result = 0;
 
       return this;
