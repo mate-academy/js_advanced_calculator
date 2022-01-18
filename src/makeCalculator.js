@@ -52,14 +52,14 @@ function makeCalculator() {
       calculator.result /= number;
     },
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
     operate(method, number) {
       method(number);
 
-      return calculator;
+      return this;
     },
   };
 
