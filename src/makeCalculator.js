@@ -38,29 +38,21 @@
  */
 function makeCalculator(...operations) {
   const calculator = {
-    operate: function operate(f, a) {
+    operate: function(f, a) {
       this.result = f(a);
 
       return this;
     },
 
-    add: function add(a) {
-      return calculator.result + a;
-    },
+    add: (a) => calculator.result + a,
 
-    subtract: function subtract(a) {
-      return calculator.result - a;
-    },
+    subtract: (a) => calculator.result - a,
 
-    divide: function divide(a) {
-      return calculator.result / a;
-    },
+    divide: (a) => calculator.result / a,
 
-    multiply: function multiply(a) {
-      return calculator.result * a;
-    },
+    multiply: (a) => calculator.result * a,
 
-    reset: function reset(a = 0) {
+    reset: function(a = 0) {
       calculator.result = 0;
 
       return this;
