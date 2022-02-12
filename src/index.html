@@ -8,36 +8,5 @@
     <title>Document</title>
 </head>
 <body>
-  <br>Another calculator. Now the task is more difficult.
-  <br>Create a `makeCalculator` function that returns an object that
-  <br>has the following fields:
-  <br> - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
-  <br> - The `result` property is initially 0.
-    *
-  <br>How the calculator will work:
-  <br>- Each `operate` call takes a callback and a number and sets the
-  <br>  appropriate value to the `result` property.
-  <br>- The `reset` method resets `result` value to 0.
-  <br>- `add`, `subtract`, `multiply`, `divide` are passed as callbacks to
-  <br>  `operate` method
-  <br>- The `operate` and `reset` methods can be called in a chain.
-    *
-  <br>Example:
-  <br>const calculator = makeCalculator();
-    *
-  <br>calculator.operate(calculator.add, 21)
-  <br>calculator.result === 21
-   
-  <br>calculator.reset()
-  <br>calculator.result === 0
-   
-  <br>calculator
-  <br> .operate(calculator.add, 10)
-  <br> .reset()
-  <br> .operate(calculator.subtract, 20)
-  <br> .operate(calculator.divide, 5)
-  <br> .operate(calculator.multiply, 7)
-    *
-  <br>calculator.result === -28
 </body>
 </html>
