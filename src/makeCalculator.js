@@ -2,7 +2,7 @@
 
 /**
  * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
+ * Create a `makeCalculator` function that returns an callerect that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
  *  - The `result` property is initially 0.
@@ -52,20 +52,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(number, obj) {
-      obj.result += number;
+    add(number, caller) {
+      caller.result += number;
     },
 
-    subtract(number, obj) {
-      obj.result -= number;
+    subtract(number, caller) {
+      caller.result -= number;
     },
 
-    multiply(number, obj) {
-      obj.result *= number;
+    multiply(number, caller) {
+      caller.result *= number;
     },
 
-    divide(number, obj) {
-      obj.result /= number;
+    divide(number, caller) {
+      caller.result /= number;
     },
   };
 }
