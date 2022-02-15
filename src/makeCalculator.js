@@ -39,17 +39,17 @@
 function makeCalculator() {
   return {
     result: 0,
-    add(result, number) {
-      return result + number;
+    add(number) {
+      return this.result + number;
     },
-    subtract(result, number) {
-      return result - number;
+    subtract(number) {
+      return this.result - number;
     },
-    divide(result, number) {
-      return result / number;
+    divide(number) {
+      return this.result / number;
     },
-    multiply(result, number) {
-      return result * number;
+    multiply(number) {
+      return this.result * number;
     },
     reset() {
       this.result = 0;
@@ -57,7 +57,7 @@ function makeCalculator() {
       return this;
     },
     operate(operation, value) {
-      this.result = operation(this.result, value);
+      this.result = operation.call(this, value);
 
       return this;
     },
