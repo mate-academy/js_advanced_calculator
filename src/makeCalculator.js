@@ -51,7 +51,7 @@ function makeCalculator() {
     multiply(result, number) {
       return result * number;
     },
-    reset(result, number) {
+    reset() {
       this.result = 0;
 
       return this;
