@@ -41,15 +41,15 @@ function makeCalculator() {
     result: 0,
 
     reset() {
-      this.result = 0;
+      calculator.result = 0;
 
-      return this;
+      return calculator;
     },
 
     operate(callback, number) {
       callback(number);
 
-      return this;
+      return calculator;
     },
 
     add(number) {
