@@ -1,7 +1,6 @@
 'use strict';
 
 /**
- * Another calculator. Now the task is more difficult.
  * Create a `makeCalculator` function that returns an object that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
@@ -37,7 +36,37 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(callback, num) {
+      callback.bind(this)(num);
+
+      return this;
+    },
+
+    add(num) {
+      this.result += num;
+    },
+
+    subtract(num) {
+      this.result -= num;
+    },
+
+    multiply(num) {
+      this.result *= num;
+    },
+
+    divide(num) {
+      this.result /= num;
+    },
+  };
 }
 
 module.exports = makeCalculator;
