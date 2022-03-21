@@ -61,6 +61,7 @@ function makeCalculator() {
 
       return this;
     },
+    
     operate(callback, number) {
       calculator.result = callback(number);
 
