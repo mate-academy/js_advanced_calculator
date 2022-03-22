@@ -62,10 +62,10 @@ function makeCalculator() {
       return this;
     },
 
-    add: add,
-    subtract: subtract,
-    multiply: multiply,
-    divide: divide,
+    add,
+    subtract,
+    multiply,
+    divide,
 
     reset() {
       this.result = 0;
