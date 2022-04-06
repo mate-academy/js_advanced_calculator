@@ -37,7 +37,45 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    add(number) {
+      return this.result + number;
+    },
+    subtract(number) {
+      return this.result - number;
+    },
+    multiply(number) {
+      return this.result * number;
+    },
+    divide(number) {
+      return this.result / number;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+    operate(callback, number) {
+      switch (callback) {
+        case this.add:
+          this.result = this.add(number);
+          break;
+        case this.subtract:
+          this.result = this.subtract(number);
+          break;
+        case this.multiply:
+          this.result = this.multiply(number);
+          break;
+        case this.divide:
+          this.result = this.divide(number);
+          break;
+        default: throw new Error('Unknown operation!');
+      }
+
+      return this;
+    },
+    result: 0,
+  };
 }
 
 module.exports = makeCalculator;
