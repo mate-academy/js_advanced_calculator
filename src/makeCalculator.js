@@ -38,17 +38,17 @@
  */
 function makeCalculator() {
   return {
-    add(number) {
-      return this.result + number;
+    add(prevResult, number) {
+      return prevResult + number;
     },
-    subtract(number) {
-      return this.result - number;
+    subtract(prevResult, number) {
+      return prevResult - number;
     },
-    multiply(number) {
-      return this.result * number;
+    multiply(prevResult, number) {
+      return prevResult * number;
     },
-    divide(number) {
-      return this.result / number;
+    divide(prevResult, number) {
+      return prevResult / number;
     },
     reset() {
       this.result = 0;
@@ -56,21 +56,7 @@ function makeCalculator() {
       return this;
     },
     operate(callback, number) {
-      switch (callback) {
-        case this.add:
-          this.result = this.add(number);
-          break;
-        case this.subtract:
-          this.result = this.subtract(number);
-          break;
-        case this.multiply:
-          this.result = this.multiply(number);
-          break;
-        case this.divide:
-          this.result = this.divide(number);
-          break;
-        default: throw new Error('Unknown operation!');
-      }
+      this.result = callback(this.result, number);
 
       return this;
     },
