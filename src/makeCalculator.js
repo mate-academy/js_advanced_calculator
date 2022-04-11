@@ -20,10 +20,8 @@
  *
  * calculator.operate(calculator.add, 21)
  * calculator.result === 21
-
  * calculator.reset()
  * calculator.result === 0
-
  * calculator
  *  .operate(calculator.add, 10)
  *  .reset()
@@ -37,7 +35,37 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    operate(callback, value) {
+      this.result = callback(this.result, value);
+
+      return this;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    add(res, value) {
+      return res + value;
+    },
+
+    subtract(res, value) {
+      return res - value;
+    },
+
+    multiply(res, value) {
+      return res * value;
+    },
+
+    divide(res, value) {
+      return res / value;
+    },
+  };
 }
 
 module.exports = makeCalculator;
