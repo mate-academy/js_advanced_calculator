@@ -2,7 +2,7 @@
 
 /**
  * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
+ * Create a `makeCalculator` function that returns an calcect that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
  *  - The `result` property is initially 0.
@@ -34,10 +34,36 @@
  * calculator.result === -28
  *
  *
- * @return {object}
+ * @return {calcect}
  */
 function makeCalculator() {
-  // write code here
+  const calc = {
+    result: 0,
+    reset: function() {
+      calc.result = 0;
+
+      return calc;
+    },
+    add: function(number) {
+      calc.result += number;
+    },
+    subtract: function(number) {
+      calc.result -= number;
+    },
+    multiply: function(number) {
+      calc.result *= number;
+    },
+    divide: function(number) {
+      calc.result /= number;
+    },
+    operate: function(callback, number) {
+      callback(number);
+
+      return calc;
+    },
+  };
+
+  return calc;
 }
 
 module.exports = makeCalculator;
