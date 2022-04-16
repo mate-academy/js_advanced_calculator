@@ -45,16 +45,16 @@ function makeCalculator() {
       return calc;
     },
     add: function(number) {
-      calc.result = calc.result + number;
+      calc.result += number;
     },
     subtract: function(number) {
-      calc.result = calc.result - number;
+      calc.result -= number;
     },
     multiply: function(number) {
-      calc.result = calc.result * number;
+      calc.result *= number;
     },
     divide: function(number) {
-      calc.result = calc.result / number;
+      calc.result /= number;
     },
     operate: function(callback, number) {
       callback(number);
