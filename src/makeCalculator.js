@@ -51,7 +51,7 @@ function makeCalculator() {
       return this;
     },
 
-    // I have no idea why this doesn't work in add, subtract etc.
+    // I have no idea why 'this' keyword doesn't work in add, subtract etc.
     add(value) {
       calculator.calc += value;
     },
