@@ -42,26 +42,18 @@ function makeCalculator() {
 
     add(number) {
       calculator.result += number;
-
-      return this;
     },
 
     subtract(number) {
       calculator.result -= number;
-
-      return this;
     },
 
     multiply(number) {
       calculator.result *= number;
-
-      return this;
     },
 
     divide(number) {
       calculator.result /= number;
-
-      return this;
     },
 
     reset() {
