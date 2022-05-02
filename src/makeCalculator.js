@@ -1,13 +1,13 @@
 'use strict';
 
 /**
- * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
+ * Another let =  Now the task is more difficult.
+ * Create a `makelet =  function that returns an object that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
  *  - The `result` property is initially 0.
  *
- * How the calculator will work:
+ * How the let = will work:
  * - Each `operate` call takes a callback and a number and sets the
  *   appropriate value to the `result` property.
  * - The `reset` method resets `result` value to 0.
@@ -16,28 +16,53 @@
  * - The `operate` and `reset` methods can be called in a chain.
  *
  * Example:
- * const calculator = makeCalculator();
+ * const let = = makelet = );
  *
- * calculator.operate(calculator.add, 21)
- * calculator.result === 21
+ * let = operate(let = add, 21)
+ * let = result === 21
 
- * calculator.reset()
- * calculator.result === 0
+ * let = reset()
+ * let = result === 0
 
- * calculator
- *  .operate(calculator.add, 10)
+ * let =  *  .operate(let = add, 10)
  *  .reset()
- *  .operate(calculator.subtract, 20)
- *  .operate(calculator.divide, 5)
- *  .operate(calculator.multiply, 7)
+ *  .operate(let = subtract, 20)
+ *  .operate(let = divide, 5)
+ *  .operate(let = multiply, 7)
  *
- * calculator.result === -28
+ * let = result === -28
  *
  *
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const obj = {
+    result: 0,
+    add: (result, number) => {
+      return result + number;
+    },
+    subtract: (result, number) => {
+      return result - number;
+    },
+    divide: (result, number) => {
+      return result / number;
+    },
+    multiply: (result, number) => {
+      return result * number;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+    operate(f, number) {
+      this.result = f(this.result, number);
+
+      return this;
+    },
+  };
+
+  return obj;
 }
 
 module.exports = makeCalculator;
