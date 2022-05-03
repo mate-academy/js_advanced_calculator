@@ -40,32 +40,32 @@ function makeCalculator() {
   const obj = {
     result: 0,
 
-    add(x) {
-      obj.result += x;
+    add(x, y) {
+      return x + y;
     },
 
-    subtract(x) {
-      obj.result -= x;
+    subtract(x, y) {
+      return x - y;
     },
 
-    multiply(x) {
-      obj.result *= x;
+    multiply(x, y) {
+      return x * y;
     },
 
-    divide(x) {
-      obj.result /= x;
+    divide(x, y) {
+      return x / y;
     },
 
     reset() {
-      obj.result = 0;
+      this.result = 0;
 
-      return obj;
+      return this;
     },
 
-    operate(x, y) {
-      x(y);
+    operate(operator, number) {
+      this.result = operator(this.result, number);
 
-      return obj;
+      return this;
     },
 
   };
