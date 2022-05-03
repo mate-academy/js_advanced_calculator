@@ -32,12 +32,53 @@
  *  .operate(calculator.multiply, 7)
  *
  * calculator.result === -28
+ * @typedef {object} calculator
+ * @property {number} result
  *
+ * @return {calculator}
  *
- * @return {object}
  */
+
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    add(value) {
+      this.result += value;
+
+      return this;
+    },
+
+    subtract(value) {
+      this.result -= value;
+
+      return this;
+    },
+
+    multiply(value) {
+      this.result *= value;
+
+      return this;
+    },
+
+    divide(value) {
+      this.result /= value;
+
+      return this;
+    },
+
+    operate(callback, value) {
+      callback.call(this, value);
+
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
