@@ -49,27 +49,7 @@ function makeCalculator() {
     subtract: (result, b) => result - b,
 
     operate: function(operation, b = 0) {
-      switch (operation) {
-        case this.add: {
-          this.result = operation(this.result, b);
-          break;
-        }
-
-        case this.multiply: {
-          this.result = operation(this.result, b);
-          break;
-        }
-
-        case this.divide: {
-          this.result = operation(this.result, b);
-          break;
-        }
-
-        case this.subtract: {
-          this.result = operation(this.result, b);
-          break;
-        }
-      }
+      this.result = operation(this.result, b);
 
       return this;
     },
