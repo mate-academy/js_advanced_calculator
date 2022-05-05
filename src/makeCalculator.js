@@ -25,9 +25,7 @@
  * calculator.result === 0
 
  * calculator
- *  .operate(calculator.add, 10)
- *  .reset()
- *  .operate(calculator.subtract, 20)
+ *  .operate(calculator.add, 10).reset().operate(calculator.subtract, 20)
  *  .operate(calculator.divide, 5)
  *  .operate(calculator.multiply, 7)
  *
@@ -38,6 +36,56 @@
  */
 function makeCalculator() {
   // write code here
+
+  const calculator = {
+    result: 0,
+
+    operate(callback, n) {
+      this.result = callback(this.result, n);
+
+      return this;
+    },
+
+    add: function(a, b) {
+      return a + b;
+    },
+    multiply: function(a, b) {
+      return a * b;
+    },
+    divide: function(a, b) {
+      return a / b;
+    },
+    subtract: function(a, b) {
+      return a - b;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
+
+// why it does not work in such way ?
+
+// add: function(n) {
+//   this.result += n;
+// },
+// multiply: function(n) {
+//   this.result *= n;
+// },
+// divide(n) {
+//   this.result /= n;
+// },
+// subtract(n) {
+//   this.result -= n;
+// },
+// reset() {
+//   this.result = 0;
+
+//   return this;
+// },
