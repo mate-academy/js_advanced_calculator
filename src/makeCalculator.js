@@ -36,7 +36,7 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    operate: function(action, num) {
+    operate(action, num) {
       this.result = action(num);
 
       return this;
