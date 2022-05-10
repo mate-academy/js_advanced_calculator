@@ -32,12 +32,36 @@
  *  .operate(calculator.multiply, 7)
  *
  * calculator.result === -28
- *
- *
- * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+    operate(action, num) {
+      this.result = action(num);
+
+      return this;
+    },
+    add: function(x) {
+      return calculator.result + x;
+    },
+    subtract: function(x) {
+      return calculator.result - x;
+    },
+    multiply: function(x) {
+      return calculator.result * x;
+    },
+    divide: function(x) {
+      return calculator.result / x;
+    },
+
+    reset: function(x) {
+      this.result = 0;
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
