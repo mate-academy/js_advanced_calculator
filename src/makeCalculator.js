@@ -37,35 +37,33 @@
  * @return {object}
  */
 function makeCalculator() {
-  Methods.reset();
+  const calculator = {
+    result: 0,
+    operate: function(callback, number) {
+      callback(number);
 
-  return Methods;
+      return calculator;
+    },
+    add: function(number) {
+      calculator.result += number;
+    },
+    subtract: function(number) {
+      calculator.result -= number;
+    },
+    multiply: function(number) {
+      calculator.result *= number;
+    },
+    divide: function(number) {
+      calculator.result /= number;
+    },
+    reset: function() {
+      calculator.result = 0;
+
+      return calculator;
+    },
+  };
+
+  return calculator;
 }
-
-const Methods = {
-  result: 0,
-  operate: function(a, b) {
-    a(b);
-
-    return Methods;
-  },
-  add: function(b) {
-    Methods.result += b;
-  },
-  subtract: function(b) {
-    Methods.result -= b;
-  },
-  multiply: function(b) {
-    Methods.result *= b;
-  },
-  divide: function(b) {
-    Methods.result /= b;
-  },
-  reset: function() {
-    Methods.result = 0;
-
-    return Methods;
-  },
-};
 
 module.exports = makeCalculator;
