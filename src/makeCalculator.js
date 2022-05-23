@@ -15,6 +15,21 @@
  *   `operate` method
  * - The `operate` and `reset` methods can be called in a chain.
  *
+ * * Ще один калькулятор. Тепер завдання складніше.
+ * Створіть функцію `makeCalculator`, яка повертає об'єкт, який
+ * має такі поля:
+* - Методи: `додати`, `відняти`, `множити`, `розділити`, `скинути`, `оперувати`.
+              `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`
+ * - Властивість `result` спочатку дорівнює 0.
+ *
+ * Як працюватиме калькулятор:
+ - Кожен виклик `operate` `callback` і номер і встановлює значення
+ * відповідне значення властивості "result".
+ * - Метод `reset` скидає значення `результату` до 0.
+- `додати`, `відняти`, `множити`, `розділяти` передаються як зворотні виклики до
+ * метод «оперувати».
+ * - Методи `operate` та `reset` можна викликати у ланцюжку.
+ *
  * Example:
  * const calculator = makeCalculator();
  *
@@ -37,7 +52,39 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const object = {
+    result: 0,
+
+    add(key) {
+      return object.result + key;
+    },
+
+    subtract(key) {
+      return object.result - key;
+    },
+
+    multiply(key) {
+      return object.result * key;
+    },
+
+    divide(key) {
+      return object.result / key;
+    },
+
+    reset() {
+      object.result = 0;
+
+      return object;
+    },
+
+    operate(callback, number) {
+      object.result = callback(number);
+
+      return object;
+    },
+  };
+
+  return object;
 }
 
 module.exports = makeCalculator;
