@@ -40,8 +40,8 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    operate(oparation, number) {
-      oparation(number);
+    operate(operation, number) {
+      this.result = operation(this.result, number);
 
       return this;
     },
@@ -52,20 +52,24 @@ function makeCalculator() {
       return this;
     },
 
-    add(number) {
-      calculator.result += number;
+    add(a, b) {
+      return a + b;
     },
 
-    subtract(number) {
-      calculator.result -= number;
+    subtract(a, b) {
+      return a - b;
     },
 
-    multiply(number) {
-      calculator.result *= number;
+    multiply(a, b) {
+      return a * b;
     },
 
-    divide(number) {
-      calculator.result /= number;
+    divide(a, b) {
+      if (b === 0) {
+        throw new Error('Invalid dividend ' + b);
+      }
+
+      return a / b;
     },
   };
 
