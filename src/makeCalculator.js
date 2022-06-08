@@ -47,7 +47,7 @@ function makeCalculator() {
     },
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
