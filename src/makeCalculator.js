@@ -40,25 +40,25 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(obj = this, value = 0) {
+    add(value = 0, obj = this) {
       obj.result += value;
 
       return obj;
     },
 
-    subtract(obj = this, value = 0) {
+    subtract(value = 0, obj = this) {
       obj.result -= value;
 
       return obj;
     },
 
-    multiply(obj = this, value = 1) {
+    multiply(value = 1, obj = this) {
       obj.result *= value;
 
       return obj;
     },
 
-    divide(obj = this, value = 1) {
+    divide(value = 1, obj = this) {
       obj.result /= value;
 
       return obj;
@@ -71,7 +71,7 @@ function makeCalculator() {
     },
 
     operate(operation, value) {
-      return operation(this, value);
+      return operation(value, this);
     },
   };
 
