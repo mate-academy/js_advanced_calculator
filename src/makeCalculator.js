@@ -52,21 +52,10 @@ function makeCalculator() {
       return this;
     },
 
-    add(prevNumb, postNumb) {
-      return prevNumb + postNumb;
-    },
-
-    subtract(prevNumb, postNumb) {
-      return prevNumb - postNumb;
-    },
-
-    multiply(prevNumb, postNumb) {
-      return prevNumb * postNumb;
-    },
-
-    divide(prevNumb, postNumb) {
-      return prevNumb / postNumb;
-    },
+    add: (prevNumb, postNumb) => prevNumb + postNumb,
+    subtract: (prevNumb, postNumb) => prevNumb - postNumb,
+    multiply: (prevNumb, postNumb) => prevNumb * postNumb,
+    divide: (prevNumb, postNumb) => prevNumb / postNumb,
   };
 
   return calculator;
