@@ -41,9 +41,8 @@ function makeCalculator() {
     result: 0,
     operate(callback, b) {
       const { result: a } = calculator;
-      const objectWithValue = { a, b };
 
-      this.result = callback(objectWithValue);
+      this.result = callback(a)(b);
 
       return this;
     },
@@ -52,10 +51,10 @@ function makeCalculator() {
 
       return this;
     },
-    add: (obj) => obj.a + obj.b,
-    subtract: (obj) => obj.a - obj.b,
-    multiply: (obj) => obj.a * obj.b,
-    divide: (obj) => obj.a / obj.b,
+    add: a => b => a + b,
+    subtract: a => b => a - b,
+    multiply: a => b => a * b,
+    divide: a => b => a / b,
   };
 
   return calculator;
