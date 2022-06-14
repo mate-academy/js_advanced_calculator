@@ -52,13 +52,13 @@ function makeCalculator() {
       return this;
     },
 
-    add: (linkToThis, number) => linkToThis + number,
+    add: (current, number) => current + number,
 
-    subtract: (linkToThis, number) => linkToThis - number,
+    subtract: (current, number) => current - number,
 
-    multiply: (linkToThis, number) => linkToThis * number,
+    multiply: (current, number) => current * number,
 
-    divide: (linkToThis, number) => linkToThis / number,
+    divide: (current, number) => current / number,
   };
 
   return calculator;
