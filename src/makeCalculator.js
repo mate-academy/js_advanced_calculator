@@ -60,7 +60,7 @@ function makeCalculator() {
 
     divide(a, b) {
       if (b === 0) {
-        return `Incorrect value #{b}`;
+        throw new Error('You are trying to divide by 0');
       }
 
       return a / b;
