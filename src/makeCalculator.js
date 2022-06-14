@@ -38,6 +38,39 @@
  */
 function makeCalculator() {
   // write code here
+  const calculator = {
+    result: 0,
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    add(x, y) {
+      return x + y;
+    },
+
+    subtract(x, y) {
+      return x - y;
+    },
+
+    multiply(x, y) {
+      return x * y;
+    },
+
+    divide(x, y) {
+      return x / y;
+    },
+
+    operate(procedure, value) {
+      this.result = procedure(this.result, value);
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
