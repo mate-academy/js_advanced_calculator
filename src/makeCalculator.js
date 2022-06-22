@@ -59,6 +59,10 @@ function makeCalculator() {
     },
 
     divide(result, value) {
+      if (value === 0) {
+        return 'Can\'t devide by zero';
+      }
+
       return result / value;
     },
 
