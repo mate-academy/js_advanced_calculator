@@ -53,27 +53,27 @@ function makeCalculator() {
     },
 
     add(val) {
-      const res = this.result = this.result + val;
+      this.result = this.result + val;
 
-      return res;
+      return this.result;
     },
 
     subtract(val) {
-      const res = this.result = this.result - val;
+      this.result = this.result - val;
 
-      return res;
+      return this.result;
     },
 
     divide(val) {
-      const res = this.result = this.result / val;
+      this.result = this.result / val;
 
-      return res;
+      return this.result;
     },
 
     multiply(val) {
-      const res = this.result = this.result * val;
+      this.result = this.result * val;
 
-      return res;
+      return this.result;
     },
   };
 
