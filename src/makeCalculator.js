@@ -43,13 +43,13 @@ function makeCalculator() {
     result: defaultResult,
 
     operate(callback, value) {
-      return callback.call(this, value);
+      callback.call(this, value);
+
+      return this;
     },
 
     add(value) {
       this.result += value;
-
-      return this;
     },
 
     reset() {
@@ -60,20 +60,14 @@ function makeCalculator() {
 
     subtract(value) {
       this.result -= value;
-
-      return this;
     },
 
     multiply(value) {
       this.result *= value;
-
-      return this;
     },
 
     divide(value) {
       this.result /= value;
-
-      return this;
     },
   };
 }
