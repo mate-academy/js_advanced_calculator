@@ -70,8 +70,8 @@ function makeCalculator() {
       return calculator;
     },
 
-    operate(f, number = 0) {
-      f(number);
+    operate(callback, number = 0) {
+      callback(number);
 
       return calculator;
     },
