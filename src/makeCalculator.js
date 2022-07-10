@@ -42,8 +42,6 @@ function makeCalculator() {
 
     add: function(value) {
       calculator.result += value;
-
-      // return this.result;
     },
 
     subtract: function(value) {
