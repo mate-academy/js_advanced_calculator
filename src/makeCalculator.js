@@ -45,21 +45,19 @@ function makeCalculator() {
 
       // return this.result;
     },
+
     subtract: function(value) {
       calculator.result -= value;
-
-      // return this.result;
     },
+
     divide: function(value) {
       calculator.result /= value;
-
-      // return this.result;
     },
+
     multiply: function(value) {
       calculator.result *= value;
-
-      // return this.result;
     },
+
     reset: function() {
       this.result = 0;
 
