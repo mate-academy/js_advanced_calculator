@@ -47,25 +47,25 @@ function makeCalculator() {
     },
 
     operate(operation, value) {
-      operation.call(this, value);
+      this.result = operation(this.result, value);
 
       return this;
     },
 
-    add(value) {
-      this.result += value;
+    add(a, b) {
+      return a + b;
     },
 
-    subtract(value) {
-      this.result -= value;
+    subtract(a, b) {
+      return a - b;
     },
 
-    divide(value) {
-      this.result /= value;
+    divide(a, b) {
+      return a / b;
     },
 
-    multiply(value) {
-      this.result *= value;
+    multiply(a, b) {
+      return a * b;
     },
   };
 
