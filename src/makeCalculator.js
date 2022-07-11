@@ -46,26 +46,26 @@ function makeCalculator() {
       return this;
     },
 
-    operate(callback, value) {
-      this.result = callback.call(this, value);
+    operate(operation, value) {
+      operation.call(this, value);
 
       return this;
     },
 
     add(value) {
-      return this.result + value;
+      this.result += value;
     },
 
     subtract(value) {
-      return this.result - value;
+      this.result -= value;
     },
 
     divide(value) {
-      return this.result / value;
+      this.result /= value;
     },
 
     multiply(value) {
-      return this.result * value;
+      this.result *= value;
     },
   };
 
