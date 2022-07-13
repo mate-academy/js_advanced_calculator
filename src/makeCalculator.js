@@ -53,19 +53,19 @@ function makeCalculator() {
     },
 
     add(number) {
-      this.result = this.result + number;
+      this.result += number;
     },
 
     subtract(number) {
-      this.result = this.result - number;
+      this.result -= number;
     },
 
     divide(number) {
-      this.result = this.result / number;
+      this.result /= number;
     },
 
     multiply(number) {
-      this.result = this.result * number;
+      this.result *= number;
     },
   };
 
