@@ -41,13 +41,25 @@ function makeCalculator() {
 
     result: 0,
 
-    add() {
+    add(x) {
+      calculator.result += x;
+
+      return this;
     },
-    subtract() {
+    subtract(x) {
+      calculator.result -= x;
+
+      return this;
     },
-    multiply() {
+    multiply(x) {
+      calculator.result *= x;
+
+      return this;
     },
-    divide() {
+    divide(x) {
+      calculator.result /= x;
+
+      return this;
     },
     reset() {
       this.result = 0;
@@ -56,27 +68,9 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      switch (callback) {
-        case calculator.add:
-          this.result += number;
+      callback(number);
 
-          return this;
-
-        case calculator.subtract:
-          this.result -= number;
-
-          return this;
-
-        case calculator.multiply:
-          this.result *= number;
-
-          return this;
-
-        case calculator.divide:
-          this.result /= number;
-
-          return this;
-      }
+      return this;
     },
   };
 
