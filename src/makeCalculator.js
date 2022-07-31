@@ -11,7 +11,8 @@
  * - Each `operate` call takes a callback and a number and sets the
  *   appropriate value to the `result` property.
  * - The `reset` method resets `result` value to 0.
- * - `add`, `subtract`, `multiply`, `divide` are passed as callbacks to
+ * - `add`, `subtract`, `multiply`,
+ *  `divide` are passed as callbacks to
  *   `operate` method
  * - The `operate` and `reset` methods can be called in a chain.
  *
@@ -37,7 +38,49 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
-}
+  const calculator = {
+
+    result: 0,
+
+    operate(callback, number) {
+      callback(number);
+
+      return this;
+    },
+
+    add(number) {
+      calculator.result += number;
+
+      return calculator;
+    },
+
+    subtract(number) {
+      calculator.result -= number;
+
+      return calculator;
+    },
+
+    multiply(number) {
+      calculator.result *= number;
+
+      return calculator;
+    },
+
+    divide(number) {
+      calculator.result /= number;
+
+      return calculator;
+    },
+
+    reset() {
+      calculator.result = 0;
+
+      return calculator;
+    },
+
+  };
+
+  return calculator;
+};
 
 module.exports = makeCalculator;
