@@ -41,19 +41,9 @@ function makeCalculator() {
   const calc = {
     result: 0,
     operate(callback, number) {
-      switch (callback) {
-        case this.add:
-          return this.add(number);
+      callback.call(this, number);
 
-        case this.subtract:
-          return this.subtract(number);
-
-        case this.divide:
-          return this.divide(number);
-
-        case this.multiply:
-          return this.multiply(number);
-      }
+      return this;
     },
     add(a) {
       this.result += a;
