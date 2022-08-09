@@ -41,19 +41,19 @@ function makeCalculator() {
     result: 0,
 
     add(number) {
-      return this.result + number;
+      this.result += number;
     },
 
     subtract(number) {
-      return this.result - number;
+      this.result -= number;
     },
 
     multiply(number) {
-      return this.result * number;
+      this.result *= number;
     },
 
     divide(number) {
-      return this.result / number;
+      this.result /= number;
     },
 
     reset() {
@@ -63,7 +63,7 @@ function makeCalculator() {
     },
 
     operate(operation, number) {
-      this.result = operation.call(this, number);
+      operation.call(this, number);
 
       return this;
     },
