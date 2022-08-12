@@ -41,7 +41,7 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, number) {
-      this.result = callback(number, this.result);
+      this.result = callback(this.result, number);
 
       return this;
     },
@@ -52,17 +52,17 @@ function makeCalculator() {
       return this;
     },
 
-    add(number, result) {
-      return result + number;
+    add(augend, addend) {
+      return augend + addend;
     },
-    subtract(number, result) {
-      return result - number;
+    subtract(minuend, subtrahend) {
+      return minuend - subtrahend;
     },
-    multiply(number, result) {
-      return result * number;
+    multiply(multiplicand, multiplier) {
+      return multiplicand * multiplier;
     },
-    divide(number, result) {
-      return result / number;
+    divide(dividend, divisor) {
+      return dividend / divisor;
     },
   };
 
