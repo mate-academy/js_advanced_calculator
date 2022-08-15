@@ -67,7 +67,6 @@ function makeCalculator() {
       if (operator() === 'multiply') {
         this.result *= number;
       }
-      // console.log(this.result);
 
       return this;
     },
@@ -80,15 +79,5 @@ function makeCalculator() {
 
   return calculator;
 }
-
-// let calculator = makeCalculator();
-
-//  calculator
-//   .operate(calculator.add, 10)
-//   .reset()
-//    calculator.operate(calculator.subtract, 20)
-//    calculator.operate(calculator.divide, 5)
-//    .operate(calculator.multiply, 7);
-// console.log(calculator);
 
 module.exports = makeCalculator;
