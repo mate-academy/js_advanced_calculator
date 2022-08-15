@@ -40,7 +40,7 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add: function(initValue, argValue) {
+    add(initValue, argValue) {
       return initValue + argValue;
     },
     subtract(initValue, argValue) {
