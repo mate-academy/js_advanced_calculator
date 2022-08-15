@@ -39,6 +39,7 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
+
     operate(operation, value) {
       operation.call(this, value);
 
