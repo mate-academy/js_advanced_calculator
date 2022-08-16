@@ -39,34 +39,20 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add() {
-      return 'add';
+    add(number) {
+      calculator.result += number;
     },
-    subtract() {
-      return 'subtract';
+    subtract(number) {
+      calculator.result -= number;
     },
-    divide() {
-      return 'divide';
+    divide(number) {
+      calculator.result /= number;
     },
-    multiply() {
-      return 'multiply';
+    multiply(number) {
+      calculator.result *= number;
     },
     operate(operator, number) {
-      if (operator() === 'add') {
-        this.result += number;
-      }
-
-      if (operator() === 'subtract') {
-        this.result -= number;
-      }
-
-      if (operator() === 'divide') {
-        this.result /= number;
-      }
-
-      if (operator() === 'multiply') {
-        this.result *= number;
-      }
+      operator(number);
 
       return this;
     },
