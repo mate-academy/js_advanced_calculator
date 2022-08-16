@@ -31,7 +31,7 @@
  *  .operate(calculator.divide, 5)
  *  .operate(calculator.multiply, 7)
  *
- * calculator.result === -28
+ * calculator.total === -28
  *
  *
  * @return {object}
@@ -40,31 +40,31 @@ function makeCalculator() {
   return {
     result: 0,
 
-    reset: function() {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function(callback, num) {
+    operate(callback, num) {
       callback.call(this, num);
 
       return this;
     },
 
-    add: function(num) {
+    add(num) {
       this.result += num;
     },
 
-    subtract: function(num) {
+    subtract(num) {
       this.result -= num;
     },
 
-    multiply: function(num) {
+    multiply(num) {
       this.result *= num;
     },
 
-    divide: function(num) {
+    divide(num) {
       this.result /= num;
     },
   };
