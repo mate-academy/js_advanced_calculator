@@ -40,25 +40,25 @@ function makeCalculator() {
   const calc = {
     result: 0,
 
-    add(inputObject, value) {
-      inputObject.result += value;
+    add(a, b) {
+      return a + b;
     },
-    subtract(inputObject, value) {
-      inputObject.result -= value;
+    subtract(a, b) {
+      return a - b;
     },
-    multiply(inputObject, value) {
-      inputObject.result *= value;
+    multiply(a, b) {
+      return a * b;
     },
-    divide(inputObject, value) {
-      inputObject.result /= value;
+    divide(a, b) {
+      return a / b;
     },
     reset() {
       this.result = 0;
 
       return this;
     },
-    operate(method, value) {
-      method(this, value);
+    operate(callback, number) {
+      this.result = callback(this.result, number);
 
       return this;
     },
