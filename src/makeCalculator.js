@@ -40,23 +40,23 @@ function makeCalculator() {
   // write code here
   const myCalc = {
     result: 0,
-    add: (a) => {
-      myCalc.result += a;
+    add(value) {
+      myCalc.result += value;
 
       return myCalc;
     },
-    subtract: (a) => {
-      myCalc.result -= a;
+    subtract(value) {
+      myCalc.result -= value;
 
       return myCalc;
     },
-    divide: (a) => {
-      myCalc.result /= a;
+    divide(value) {
+      myCalc.result /= value;
 
       return myCalc;
     },
-    multiply: (a) => {
-      myCalc.result *= a;
+    multiply(value) {
+      myCalc.result *= value;
 
       return myCalc;
     },
@@ -65,8 +65,8 @@ function makeCalculator() {
 
       return myCalc;
     },
-    operate: (f, a) => {
-      return f(a);
+    operate: (method, value) => {
+      return method(value);
     },
 
   };
