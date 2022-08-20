@@ -38,6 +38,39 @@
  */
 function makeCalculator() {
   // write code here
+  const object = {
+    result: 0,
+
+    add(x) {
+      this.result += x;
+    },
+
+    subtract(x) {
+      this.result -= x;
+    },
+
+    multiply(x) {
+      this.result *= x;
+    },
+
+    divide(x) {
+      this.result /= x;
+    },
+
+    reset(x) {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(y, num) {
+      y.call(this, num);
+
+      return this;
+    },
+  };
+
+  return object;
 }
 
 module.exports = makeCalculator;
