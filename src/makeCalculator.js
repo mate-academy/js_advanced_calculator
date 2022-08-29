@@ -55,13 +55,14 @@ function makeCalculator() {
     },
     reset() {
       operations.result = 0;
+
+      return this;
     },
     operate(a, b) {
       operations.result = a(b);
 
       return this;
     },
-
   };
 
   return operations;
