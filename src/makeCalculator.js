@@ -36,8 +36,35 @@
  *
  * @return {object}
  */
+// eslint-disable-next-line padded-blocks
 function makeCalculator() {
-  // write code here
+
+  const operations = {
+    result: 0,
+    add(b) {
+      return operations.result + b;
+    },
+    subtract(b) {
+      return operations.result - b;
+    },
+    divide(b) {
+      return operations.result / b;
+    },
+    multiply(b) {
+      return operations.result * b;
+    },
+    reset() {
+      operations.result = 0;
+    },
+    operate(a, b) {
+      operations.result = a(b);
+
+      return this;
+    },
+
+  };
+
+  return operations;
 }
 
 module.exports = makeCalculator;
