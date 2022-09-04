@@ -52,23 +52,15 @@ function makeCalculator() {
     },
     add(value) {
       resultObject.result += value;
-
-      return this;
     },
     subtract(value) {
       resultObject.result -= value;
-
-      return this;
     },
     multiply(value) {
       resultObject.result *= value;
-
-      return this;
     },
     divide(value) {
       resultObject.result /= value;
-
-      return this;
     },
   };
 
