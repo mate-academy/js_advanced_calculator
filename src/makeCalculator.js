@@ -1,5 +1,7 @@
 'use strict';
 
+// const { run } = require('jest');
+
 /**
  * Another calculator. Now the task is more difficult.
  * Create a `makeCalculator` function that returns an object that
@@ -40,30 +42,30 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    operate(callback, number) {
-      callback(number);
-
-      return this;
+    add(a, b) {
+      return a + b;
     },
 
-    add(number) {
-      calculator.result += number;
+    subtract(a, b) {
+      return a - b;
     },
 
-    subtract(number) {
-      calculator.result -= number;
+    divide(a, b) {
+      return a / b;
     },
 
-    divide(number) {
-      calculator.result /= number;
-    },
-
-    multiply(number) {
-      calculator.result *= number;
+    multiply(a, b) {
+      return a * b;
     },
 
     reset() {
       calculator.result = 0;
+
+      return this;
+    },
+
+    operate(callback, number) {
+      this.result = callback(this.result, number);
 
       return this;
     },
