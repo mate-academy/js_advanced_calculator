@@ -46,19 +46,19 @@ function makeCalculator() {
       return this;
     },
 
-    add(x) {
+    add(x = 0) {
       this.result += x;
     },
 
-    subtract(x) {
+    subtract(x = 0) {
       this.result -= x;
     },
 
-    divide(x) {
+    divide(x = 1) {
       this.result /= x;
     },
 
-    multiply(x) {
+    multiply(x = 0) {
       this.result *= x;
     },
 
