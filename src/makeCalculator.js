@@ -50,10 +50,10 @@ function makeCalculator() {
     subtract(num = 0) {
       calculator.result -= num;
     },
-    multiply(num = 0) {
+    multiply(num = 1) {
       calculator.result *= num;
     },
-    divide(num = 0) {
+    divide(num = 1) {
       calculator.result /= num;
     },
     operate(callback, number) {
