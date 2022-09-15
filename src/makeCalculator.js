@@ -58,7 +58,7 @@ function makeCalculator() {
       this.result /= x;
     },
 
-    multiply(x = 0) {
+    multiply(x = 1) {
       this.result *= x;
     },
 
