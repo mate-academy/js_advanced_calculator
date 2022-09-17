@@ -64,8 +64,8 @@ function makeCalculator() {
 
       return reference;
     },
-    operate(callbackFunc, number = 0) {
-      return callbackFunc(this, number);
+    operate(operation, number = 0) {
+      return operation(this, number);
     },
   };
 
