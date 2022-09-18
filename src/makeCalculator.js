@@ -46,20 +46,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(a, b) {
-      return a + b;
+    add(firstVariable, secondVariable) {
+      return firstVariable + secondVariable;
     },
 
-    subtract(a, b) {
-      return a - b;
+    subtract(firstVariable, secondVariable) {
+      return firstVariable - secondVariable;
     },
 
-    multiply(a, b) {
-      return a * b;
+    multiply(firstVariable, secondVariable) {
+      return firstVariable * secondVariable;
     },
 
-    divide(a, b) {
-      return a / b;
+    divide(firstVariable, secondVariable) {
+      return firstVariable / secondVariable;
     },
 
     reset() {
