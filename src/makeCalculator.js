@@ -50,6 +50,10 @@ function makeCalculator() {
       return calculatedValue;
     },
     divide(startValue, valueFromUser) {
+      if (valueFromUser === 0) {
+        throw new Error('Dividing by zero!');
+      }
+
       const calculatedValue = startValue / valueFromUser;
 
       return calculatedValue;
