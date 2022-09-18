@@ -53,6 +53,10 @@ function makeCalculator() {
     },
 
     divide(value) {
+      if (value === 0) {
+        throw new Error('Dividing by zero!');
+      }
+
       this.result /= value;
     },
 
