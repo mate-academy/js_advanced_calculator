@@ -37,13 +37,6 @@
  * @return {object}
  */
 function makeCalculator() {
-  // add
-  // substract
-  // divide
-  // multiply
-  // reset
-  // operate
-  // result
   const calculator = {
     result: 0,
     add(a, b) {
