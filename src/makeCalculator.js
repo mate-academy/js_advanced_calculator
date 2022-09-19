@@ -46,20 +46,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(value, number) {
-      return value + number;
+    add(prevValue, number) {
+      return prevValue + number;
     },
 
-    subtract(value, number) {
-      return value - number;
+    subtract(prevValue, number) {
+      return prevValue - number;
     },
 
-    multiply(value, number) {
-      return value * number;
+    multiply(prevValue, number) {
+      return prevValue * number;
     },
 
-    divide(value, number) {
-      return value / number;
+    divide(prevValue, number) {
+      return prevValue / number;
     },
 
     reset() {
