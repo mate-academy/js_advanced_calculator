@@ -40,24 +40,24 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add(value) {
-      this.result += value;
+    add(value1, value2) {
+      return value1 + value2;
     },
 
-    subtract(value) {
-      this.result -= value;
+    subtract(value1, value2) {
+      return value1 - value2;
     },
 
-    multiply(value) {
-      this.result *= value;
+    multiply(value1, value2) {
+      return value1 * value2;
     },
 
-    divide(value) {
-      if (value === 0) {
+    divide(value1, value2) {
+      if (value2 === 0) {
         throw new Error('Dividing by zero!');
       }
 
-      this.result /= value;
+      return value1 / value2;
     },
 
     reset() {
@@ -67,7 +67,7 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
-      callback.call(this, value);
+      this.result = callback(this.result, value);
 
       return this;
     },
