@@ -44,22 +44,22 @@ function makeCalculator() {
 
       return this;
     },
-    operate(callback, a) {
-      callback(a);
+    operate(callback, number) {
+      this.result = callback(this.result, number);
 
       return this;
     },
-    add(a) {
-      calculator.result += a;
+    add(currentResult, number) {
+      return currentResult + number;
     },
-    subtract(a) {
-      calculator.result -= a;
+    subtract(currentResult, number) {
+      return currentResult - number;
     },
-    multiply(a) {
-      calculator.result *= a;
+    multiply(currentResult, number) {
+      return currentResult * number;
     },
-    divide(a) {
-      calculator.result /= a;
+    divide(currentResult, number) {
+      return currentResult / number;
     },
   };
 
