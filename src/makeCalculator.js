@@ -42,7 +42,7 @@ function makeCalculator() {
     result: 0,
 
     // created callback operator methods
-    add: function(prevValue, number) {
+    add(prevValue, number) {
       return prevValue + number;
     },
 
