@@ -51,19 +51,19 @@ function makeCalculator() {
     },
 
     add(value, root) {
-      root.res = root.res + value;
+      root.res += value;
     },
 
     subtract(value, root) {
-      root.res = root.res - value;
+      root.res -= value;
     },
 
     multiply(value, root) {
-      root.res = root.res * value;
+      root.res *= value;
     },
 
     divide(value, root) {
-      root.res = root.res / value;
+      root.res /= value;
     },
 
     operate(callback, val) {
