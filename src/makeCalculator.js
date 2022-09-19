@@ -40,24 +40,24 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add(value1, value2) {
-      return value1 + value2;
+    add(prevValue, value) {
+      return prevValue + value;
     },
 
-    subtract(value1, value2) {
-      return value1 - value2;
+    subtract(prevValue, value) {
+      return prevValue - value;
     },
 
-    multiply(value1, value2) {
-      return value1 * value2;
+    multiply(prevValue, value) {
+      return prevValue * value;
     },
 
-    divide(value1, value2) {
-      if (value2 === 0) {
+    divide(prevValue, value) {
+      if (value === 0) {
         throw new Error('Dividing by zero!');
       }
 
-      return value1 / value2;
+      return prevValue / value;
     },
 
     reset() {
