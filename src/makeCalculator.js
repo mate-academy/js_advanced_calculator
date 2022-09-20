@@ -42,41 +42,33 @@ function makeCalculator() {
     result: 0,
 
     add(value) {
-      calculator.result += value;
-
-      return calculator;
+      return calculator.result + value;
     },
 
     subtract(value) {
-      calculator.result -= value;
-
-      return calculator;
+      return calculator.result - value;
     },
 
     multiply(value) {
-      calculator.result *= value;
-
-      return calculator;
+      return calculator.result * value;
     },
 
     divide(value) {
-      calculator.result /= value;
-
-      return calculator;
+      return calculator.result / value;
     },
 
-    reset() {
+    reset(value) {
       calculator.result = 0;
 
       return calculator;
     },
 
     operate(callback, value) {
-      callback(value);
+      calculator.result = callback(value);
 
       return calculator;
-    }
-  }
+    },
+  };
 
   return calculator;
 }
