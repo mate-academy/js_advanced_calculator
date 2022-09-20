@@ -63,11 +63,11 @@ function makeCalculator() {
       return value * number;
     },
 
-    operate(callback, number) {
-      this.result = callback(this.result, number);
+    // operate(callback, number) {
+    //   this.result = callback(this.result, number);
 
-      return this;
-    },
+    //   return this;
+    // },
   };
 
   return calculator;
