@@ -58,15 +58,15 @@ function makeCalculator() {
     },
 
     reset(value) {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(callback, value) {
-      calculator.result = callback(value);
+      this.result = callback(value);
 
-      return calculator;
+      return this;
     },
   };
 
