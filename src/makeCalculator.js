@@ -8,7 +8,7 @@
  *  - The `result` property is initially 0.
  *
  * How the calculator will work:
- * - Each `operate` call takes a callback and a number and sets the
+ * - Each `operate` call takes a callback and a value and sets the
  *   appropriate value to the `result` property.
  * - The `reset` method resets `result` value to 0.
  * - `add`, `subtract`, `multiply`, `divide` are passed as callbacks to
@@ -40,20 +40,20 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(res, number) {
-      return res + number;
+    add(calcResult, value) {
+      return calcResult + value;
     },
 
-    subtract(res, number) {
-      return res - number;
+    subtract(calcResult, value) {
+      return calcResult - value;
     },
 
-    multiply(res, number) {
-      return res * number;
+    multiply(calcResult, value) {
+      return calcResult * value;
     },
 
-    divide(res, number) {
-      return res / number;
+    divide(calcResult, value) {
+      return calcResult / value;
     },
 
     reset() {
@@ -62,8 +62,8 @@ function makeCalculator() {
       return this;
     },
 
-    operate(operation, number) {
-      this.result = operation(this.result, number);
+    operate(callback, number) {
+      this.result = callback(this.result, number);
 
       return this;
     },
