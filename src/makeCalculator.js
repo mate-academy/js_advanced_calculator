@@ -41,22 +41,22 @@ function makeCalculator() {
   const calculator = {
     result: 0,
     add(a) {
-      calculator.result = calculator.result + a;
+      calculator.result += a;
 
       return this;
     },
     subtract(a) {
-      calculator.result = calculator.result - a;
+      calculator.result -= a;
 
       return this;
     },
     multiply(a) {
-      calculator.result = calculator.result * a;
+      calculator.result *= a;
 
       return this;
     },
     divide(a) {
-      calculator.result = calculator.result / a;
+      calculator.result /= a;
 
       return this;
     },
