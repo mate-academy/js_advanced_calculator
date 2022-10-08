@@ -36,7 +36,7 @@
  *
  * @return {object}
  */
-function makeCalculator(callback) {
+function makeCalculator() {
   const calculator = {
     result: 0,
 
