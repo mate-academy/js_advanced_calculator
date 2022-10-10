@@ -40,6 +40,12 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
+    reset() {
+      calculator.result = 0;
+
+      return calculator;
+    },
+
     add(num) {
       calculator.result += num;
 
@@ -62,12 +68,6 @@ function makeCalculator() {
       calculator.result *= num;
 
       return calculator.result;
-    },
-
-    reset() {
-      calculator.result = 0;
-
-      return calculator;
     },
 
     operate(callback, num) {
