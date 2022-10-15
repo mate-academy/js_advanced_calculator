@@ -7,6 +7,7 @@
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
  *  - The `result` property is initially 0.
  *
+ *
  * How the calculator will work:
  * - Each `operate` call takes a callback and a number and sets the
  *   appropriate value to the `result` property.
@@ -37,7 +38,33 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    operate: function(operand, number) {
+      calculator.result = operand(number);
+
+      return this;
+    },
+    result: 0,
+    add: function(number) {
+      return calculator.result + number;
+    },
+    subtract: function(number) {
+      return calculator.result - number;
+    },
+    multiply: function(number) {
+      return calculator.result * number;
+    },
+    divide: function(number) {
+      return calculator.result / number;
+    },
+    reset: function() {
+      calculator.result = 0;
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
