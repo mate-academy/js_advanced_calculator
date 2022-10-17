@@ -38,24 +38,24 @@
  */
 function makeCalculator() {
   const calculator = {
-    add(value) {
-      return calculator.result + value;
+    add(result, value) {
+      return result + value;
     },
 
-    subtract(value) {
-      return calculator.result - value;
+    subtract(result, value) {
+      return result - value;
     },
 
-    multiply(value) {
-      return calculator.result * value;
+    multiply(result, value) {
+      return result * value;
     },
 
-    divide(value) {
-      return calculator.result / value;
+    divide(result, value) {
+      return result / value;
     },
 
     operate(operation, value) {
-      this.result = operation(value);
+      this.result = operation(this.result, value);
 
       return this;
     },
