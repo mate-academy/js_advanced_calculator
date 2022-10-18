@@ -39,8 +39,8 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    operate(callback, num) {
-      calculator.result = callback(num);
+    operate(callback, a) {
+      calculator.result = callback(a);
 
       return calculator;
     },
@@ -77,30 +77,6 @@ function makeCalculator() {
   calculator.operate.add = function(a) {
     calculator.result += a;
   };
-  /*
-    add (a) {
-      calculator.result += a;
-    },
-    subtract (a) {
-      calculator.result -= a;
-    },
-    divide (a) {
-      calculator.result /= a;
-    },
-    multiplay (a) {
-      calculator.result *= a;
-    },
-*/
-
-  /*
-    operate(callback, num) {
-      calculator.result = callback(num);
-
-      return calculator;
-    },
-
-*/
-
   return calculator;
 }
 
