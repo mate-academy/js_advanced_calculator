@@ -43,7 +43,7 @@ function makeCalculator() {
   };
 
   function reset() {
-    this.result *= 0;
+    this.result = 0;
 
     return calculator;
   };
