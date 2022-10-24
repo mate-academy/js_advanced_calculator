@@ -67,10 +67,8 @@ function makeCalculator() {
 
       return result;
     },
-    operate(callback, ...number) {
-      for (let i = 0; i < number.length; i++) {
-        this.result = callback(this.result, +number[i]);
-      }
+    operate(callback, number) {
+      this.result = callback(this.result, number);
 
       return this;
     },
