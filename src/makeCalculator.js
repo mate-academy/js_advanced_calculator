@@ -33,11 +33,53 @@
  *
  * calculator.result === -28
  *
- *
+ *#
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+    add(value, number) {
+      let result = value;
+
+      result += number;
+
+      return result;
+    },
+    subtract(value, number) {
+      let result = value;
+
+      result -= number;
+
+      return result;
+    },
+    divide(value, number) {
+      let result = value;
+
+      result /= number;
+
+      return result;
+    },
+    multiply(value, number) {
+      let result = value;
+
+      result *= number;
+
+      return result;
+    },
+    operate(callback, ...number) {
+      for (let i = 0; i < number.length; i++) {
+        this.result = callback(this.result, +number[i]);
+      }
+
+      return this;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
