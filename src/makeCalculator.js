@@ -38,6 +38,43 @@
  */
 function makeCalculator() {
   // write code here
+  const calculator = {
+    result: 0,
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(callback, number) {
+      this.result = callback(number, this.result);
+
+      return this;
+    },
+
+    add(number1, number2) {
+      return number2 + number1;
+    },
+
+    subtract(number1, number2) {
+      return number2 - number1;
+    },
+
+    multiply(number1, number2) {
+      return number2 * number1;
+    },
+
+    divide(number1, number2) {
+      if (number1 !== 0) {
+        return number2 / number1;
+      } else {
+        throw new Error(`U can't devide by 0, mate`);
+      }
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
