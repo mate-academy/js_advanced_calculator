@@ -42,29 +42,35 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, num) {
-      callback(num);
+      this.result = callback(num, this.result);
 
       return this;
     },
 
-    add(num) {
-      calculator.result += num;
+    add(num1, num2) {
+      return num1 + num2;
     },
 
-    subtract(num) {
-      calculator.result -= num;
+    subtract(num1, num2) {
+      return num2 - num1;
     },
 
-    multiply(num) {
-      calculator.result *= num;
+    multiply(num1, num2) {
+      return num1 * num2;
     },
 
-    divide(num) {
-      calculator.result /= num;
+    divide(num1, num2) {
+      switch (num1) {
+        case 0:
+          throw new Error('cannot be divided by zero');
+
+        default:
+          return num2 / num1;
+      }
     },
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
