@@ -40,35 +40,19 @@ function makeCalculator() {
   return {
     result: 0,
     add(value, number) {
-      let result = value;
-
-      result += number;
-
-      return result;
+      return value + number;
     },
 
     subtract(value, number) {
-      let result = value;
-
-      result -= number;
-
-      return result;
+      return value - number;
     },
 
     divide(value, number) {
-      let result = value;
-
-      result /= number;
-
-      return result;
+      return value / number;
     },
 
     multiply(value, number) {
-      let result = value;
-
-      result *= number;
-
-      return result;
+      return value * number;
     },
 
     operate(callback, number) {
