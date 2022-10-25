@@ -46,6 +46,7 @@ function makeCalculator() {
 
       return result;
     },
+
     subtract(value, number) {
       let result = value;
 
@@ -53,6 +54,7 @@ function makeCalculator() {
 
       return result;
     },
+
     divide(value, number) {
       let result = value;
 
@@ -60,6 +62,7 @@ function makeCalculator() {
 
       return result;
     },
+
     multiply(value, number) {
       let result = value;
 
@@ -67,11 +70,13 @@ function makeCalculator() {
 
       return result;
     },
+
     operate(callback, number) {
       this.result = callback(this.result, number);
 
       return this;
     },
+
     reset() {
       this.result = 0;
 
