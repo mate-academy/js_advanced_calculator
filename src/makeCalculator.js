@@ -66,8 +66,10 @@ function makeCalculator() {
     },
 
     divide(number1, number2) {
-      if (number2 !== 0) {
+      if (number1 !== 0) {
         return number2 / number1;
+      } else {
+        throw new Error(`U can't devide by 0, mate`);
       }
     },
   };
