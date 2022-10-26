@@ -37,27 +37,27 @@
  * @return {object}
  */
 function makeCalculator() {
-  return {
+  const calculator = {
     result: 0,
 
-    add(num1, num2) {
-      return num1 + num2;
+    add(currentValue, number) {
+      return currentValue + number;
     },
 
-    subtract(num1, num2) {
-      return num1 - num2;
+    subtract(currentValue, number) {
+      return currentValue - number;
     },
 
-    multiply(num1, num2) {
-      return num1 * num2;
+    multiply(currentValue, number) {
+      return currentValue * number;
     },
 
-    divide(num1, num2) {
-      if (num2 === 0) {
+    divide(currentValue, number) {
+      if (number === 0) {
         throw new Error('can\'t divide by zero');
       }
 
-      return num1 / num2;
+      return currentValue / number;
     },
 
     reset() {
@@ -72,6 +72,8 @@ function makeCalculator() {
       return this;
     },
   };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
