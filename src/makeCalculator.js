@@ -38,17 +38,21 @@
  */
 function makeCalculator() {
   const inCalculator = {
-    add(callback, number) {
-      callback.result += number;
+    add(inResult, number) {
+      return inResult + number;
     },
-    subtract(callback, number) {
-      callback.result -= number;
+    subtract(inResult, number) {
+      return inResult - number;
     },
-    multiply(callback, number) {
-      callback.result *= number;
+    multiply(inResult, number) {
+      return inResult * number;
     },
-    divide(callback, number) {
-      callback.result /= number;
+    divide(inResult, number) {
+      if (!number) {
+        throw new Error('Error: DIV by 0');
+      }
+
+      return inResult / number;
     },
     reset() {
       this.result = 0;
@@ -56,7 +60,7 @@ function makeCalculator() {
       return this;
     },
     operate(callback, number) {
-      callback(this, number);
+      this.result = callback(this.result, number);
 
       return this;
     },
