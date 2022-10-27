@@ -76,8 +76,4 @@ function makeCalculator() {
   return calculator;
 }
 
-// const calculatorre = makeCalculator();
-
-// console.log(calculatorre.operate(calculatorre.add, 10).reset());
-
 module.exports = makeCalculator;
