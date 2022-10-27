@@ -36,8 +36,45 @@
  *
  * @return {object}
  */
+
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+
+    operate(callback, digit) {
+      this.result = callback(this.result, digit);
+
+      return this;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    add(param1, param2) {
+      return param1 + param2;
+    },
+
+    subtract(param1, param2) {
+      return param1 - param2;
+    },
+
+    multiply(param1, param2) {
+      return param1 * param2;
+    },
+
+    divide(param1, param2) {
+      if (param2 === 0) {
+        throw new Error('Not allowed divide by zero');
+      } else {
+        return param1 / param2;
+      }
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
