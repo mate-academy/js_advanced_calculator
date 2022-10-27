@@ -38,6 +38,7 @@
  */
 function makeCalculator() {
   const inCalculator = {
+    result: 0,
     add(inResult, number) {
       return inResult + number;
     },
@@ -64,7 +65,6 @@ function makeCalculator() {
 
       return this;
     },
-    result: 0,
   };
 
   return inCalculator;
