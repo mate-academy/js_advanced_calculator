@@ -41,47 +41,43 @@ function makeCalculator() {
     result: 0,
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
 
     operate(callback, number) {
-      callback(number);
+      this.result = callback(this.result, number);
 
       return this;
     },
 
-    add(num) {
-      calculator.result += num;
-
-      return this;
+    add(num1, num2) {
+      return num1 + num2;
     },
 
-    subtract(num) {
-      calculator.result -= num;
-
-      return this;
+    subtract(num1, num2) {
+      return num1 - num2;
     },
 
-    divide(num) {
-      if (num === 0) {
+    multiply(num1, num2) {
+      return num1 * num2;
+    },
+
+    divide(num1, num2) {
+      if (num1 === 0) {
         throw Error(`We can't divide by zero`);
       }
 
-      calculator.result /= num;
-
-      return this;
-    },
-
-    multiply(num) {
-      calculator.result *= num;
-
-      return this;
+      return num1 / num2;
     },
   };
 
   return calculator;
 }
+
+// const calculatorre = makeCalculator();
+
+// console.log(calculatorre.operate(calculatorre.add, 10).reset());
 
 module.exports = makeCalculator;
