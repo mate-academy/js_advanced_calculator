@@ -53,6 +53,10 @@ function makeCalculator() {
     },
 
     divide(value, number) {
+      if (number === 0) {
+        throw new Error();
+      };
+
       return value / number;
     },
 
