@@ -65,7 +65,7 @@ function makeCalculator() {
     },
 
     divide(num1, num2) {
-      if (num1 !== 0 && num2 !== 0) {
+      if (num2 !== 0) {
         return num1 / num2;
       } else {
         throw new Error('Insert a non-0 value');
