@@ -65,7 +65,7 @@ function makeCalculator() {
     },
 
     divide(num1, num2) {
-      if (num1 === 0) {
+      if (num2 === 0) {
         throw Error(`We can't divide by zero`);
       }
 
@@ -75,5 +75,9 @@ function makeCalculator() {
 
   return calculator;
 }
+
+const calculatorre = makeCalculator();
+
+console.log(calculatorre.operate(calculatorre.add, 10).operate(calculatorre.divide, 0));
 
 module.exports = makeCalculator;
