@@ -41,32 +41,33 @@ function makeCalculator() {
     result: 0,
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
 
-    add(operand) {
-      calculator.result += operand;
+    add(operand1, operand2) {
+      return operand1 + operand2;
     },
 
-    subtract(operand) {
-      calculator.result -= operand;
+    subtract(operand1, operand2) {
+      return operand1 - operand2;
     },
 
-    divide(operand) {
-      if (operand === 0) {
+    divide(operand1, operand2) {
+      if (operand1 === 0) {
         return;
       }
-      calculator.result /= operand;
+
+      return operand1 / operand2;
     },
 
-    multiply(operand) {
-      calculator.result *= operand;
+    multiply(operand1, operand2) {
+      return operand1 * operand2;
     },
 
-    operate(operator, operand) {
-      operator(operand);
+    operate(operator, operand2) {
+      this.result = operator(this.result, operand2);
 
       return this;
     },
