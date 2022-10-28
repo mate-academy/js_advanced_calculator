@@ -55,7 +55,7 @@ function makeCalculator() {
 
     divide(currentResult, number) {
       if (number === 0) {
-        throw new Error();
+        throw new Error('You cannot divide by zero');
       }
 
       return currentResult / number;
