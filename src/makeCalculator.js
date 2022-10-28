@@ -46,40 +46,29 @@ function makeCalculator() {
       return this;
     },
 
-    operate(action, num) {
-      if (action() === 'add') {
-        this.result += num;
-      }
-
-      if (action() === 'subtract') {
-        this.result -= num;
-      }
-
-      if (action() === 'multiply') {
-        this.result *= num;
-      }
-
-      if (action() === 'divide') {
-        if (num === 0) {
-          return 'Error, cannot be divided by 0';
-        }
-
-        this.result /= num;
-      }
+    operate(callback, num) {
+      this.result = callback(this.result, num);
 
       return this;
     },
-    add() {
-      return 'add';
+    add(currentResult, num) {
+      return currentResult + num;
     },
-    subtract() {
-      return 'subtract';
+
+    subtract(currentResult, num) {
+      return currentResult - num;
     },
-    multiply() {
-      return 'multiply';
+
+    multiply(currentResult, num) {
+      return currentResult * num;
     },
-    divide() {
-      return 'divide';
+
+    divide(currentResult, num) {
+      if (num === 0) {
+        return 'Error';
+      }
+
+      return currentResult / num;
     },
   };
 
