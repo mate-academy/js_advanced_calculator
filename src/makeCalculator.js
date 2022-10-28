@@ -55,6 +55,9 @@ function makeCalculator() {
     },
 
     divide(operand) {
+      if (operand === 0) {
+        return;
+      }
       calculator.result /= operand;
     },
 
