@@ -66,7 +66,7 @@ function makeCalculator() {
 
     divide(num1, num2) {
       if (num2 === 0) {
-        throw Error(`We can't divide by zero`);
+        throw Error(`You can't divide by zero`);
       }
 
       return num1 / num2;
