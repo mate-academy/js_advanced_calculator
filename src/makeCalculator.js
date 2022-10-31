@@ -40,24 +40,24 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(currentresult, number) {
-      return currentresult + number;
+    add(currentResult, number) {
+      return currentResult + number;
     },
 
-    subtract(currentresult, number) {
-      return currentresult - number;
+    subtract(currentResult, number) {
+      return currentResult - number;
     },
 
-    divide(currentresult, number) {
+    divide(currentResult, number) {
       if (number === 0) {
         throw new Error('invalid number');
-      } else {
-        return currentresult / number;
       }
+
+      return currentResult / number;
     },
 
-    multiply(currentresult, number) {
-      return currentresult * number;
+    multiply(currentResult, number) {
+      return currentResult * number;
     },
 
     reset() {
