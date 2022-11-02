@@ -37,7 +37,6 @@
  * @return {object}
  */
 function makeCalculator() {
-  // const calculator = {};
   const calculator = {
     result: 0,
 
