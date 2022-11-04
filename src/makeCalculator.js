@@ -37,7 +37,46 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+
+    add(number1, number2) {
+      return number1 + number2;
+    },
+
+    subtract(number1, number2) {
+      return number1 - number2;
+    },
+
+    multiply(number1, number2) {
+      return number1 * number2;
+    },
+
+    divide(number1, number2) {
+      let resultDivide = 0;
+
+      // eslint-disable-next-line no-unused-expressions
+      (number2 !== 0)
+        ? resultDivide += number1 / number2
+        : Error('Division by 0 is impossible');
+
+      return resultDivide;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(callback, numeric) {
+      this.result = callback(this.result, numeric);
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
