@@ -39,27 +39,33 @@
 function makeCalculator() {
   const calc = {
     result: 0,
+
     reset() {
       this.result = 0;
 
       return this;
     },
-    add(numb) {
-      return (calc.result += numb);
-    },
-    subtract(numb) {
-      return (calc.result -= numb);
-    },
-    multiply(numb) {
-      return (calc.result *= numb);
-    },
-    divide(numb) {
-      return (calc.result /= numb);
-    },
-    operate(callB, number) {
-      const callNumb = callB(number);
 
-      this.result = callNumb;
+    add(number) {
+      return (calc.result += number);
+    },
+
+    subtract(number) {
+      return (calc.result -= number);
+    },
+
+    multiply(number) {
+      return (calc.result *= number);
+    },
+
+    divide(number) {
+      return (calc.result /= number);
+    },
+
+    operate(callBack, number) {
+      const callNumber = callBack(number);
+
+      this.result = callNumber;
 
       return this;
     },
