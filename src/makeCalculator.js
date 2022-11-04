@@ -53,14 +53,11 @@ function makeCalculator() {
     },
 
     divide(number1, number2) {
-      let resultDivide = 0;
+      if (number2 === 0) {
+        throw new Error('Division by 0 is impossible');
+      }
 
-      // eslint-disable-next-line no-unused-expressions
-      (number2 !== 0)
-        ? resultDivide += number1 / number2
-        : Error('Division by 0 is impossible');
-
-      return resultDivide;
+      return number1 / number2;
     },
 
     reset() {
