@@ -23,7 +23,6 @@
 
  * calculator.reset()
  * calculator.result === 0
-
  * calculator
  *  .operate(calculator.add, 10)
  *  .reset()
@@ -38,6 +37,39 @@
  */
 function makeCalculator() {
   // write code here
+  const calculator = {
+    result: 0,
+    operate: function(callback, value) {
+      callback(value);
+
+      return this;
+    },
+    add: function(number) {
+      calculator.result += number;
+
+      return this;
+    },
+    subtract: function(number) {
+      calculator.result = calculator.result - Math.abs(number);
+
+      return this;
+    },
+    multiply: function(number) {
+      calculator.result = calculator.result * number;
+    },
+    divide: function(number) {
+      calculator.result = calculator.result / number;
+
+      return this;
+    },
+    reset: function() {
+      calculator.result = 0;
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
