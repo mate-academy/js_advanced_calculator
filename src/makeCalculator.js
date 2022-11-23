@@ -37,7 +37,6 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
   class Calculator {
     constructor() {
       this.result = 0;
