@@ -38,9 +38,7 @@
  */
 function makeCalculator() {
   class Calculator {
-    constructor() {
-      this.result = 0;
-    }
+    result = 0;
 
     add = (num) => {
       this.result += num;
