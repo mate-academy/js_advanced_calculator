@@ -39,10 +39,21 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add() {},
-    subtract() {},
-    multiply() {},
-    divide() {},
+    add(a, b) {
+      return a + b;
+    },
+
+    subtract(a, b) {
+      return a - b;
+    },
+
+    multiply(a, b) {
+      return a * b;
+    },
+
+    divide(a, b) {
+      return a / b;
+    },
 
     reset() {
       this.result = 0;
@@ -50,23 +61,8 @@ function makeCalculator() {
       return this;
     },
 
-    operate(f, n) {
-      switch (f) {
-        case this.add:
-          this.result += n;
-          break;
-        case this.subtract:
-          this.result -= n;
-          break;
-        case this.multiply:
-          this.result *= n;
-          break;
-        case this.divide:
-          this.result /= n;
-          break;
-        default:
-          break;
-      }
+    operate(func, num) {
+      this.result = func(this.result, num);
 
       return this;
     },
