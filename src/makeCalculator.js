@@ -37,40 +37,40 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calculator = {
+  const obj = {
     result: 0,
 
-    add: (value) => {
-      calculator.result = calculator.result + value;
+    add(value) {
+      return this.result + value;
     },
 
-    subtract: (value) => {
-      calculator.result = calculator.result - value;
+    subtract(value) {
+      return this.result - value;
     },
 
-    multiply: (value) => {
-      calculator.result = calculator.result * value;
+    multiply(value) {
+      return this.result * value;
     },
 
-    divide: (value) => {
-      calculator.result = calculator.result / value;
+    divide(value) {
+      return this.result / value;
     },
 
-    operate: (callback, value) => {
-      callback(value);
+    operate(callback, value) {
+      this.result = callback.call(this, value);
 
-      return calculator;
+      return this;
     },
 
-    reset: () => {
-      calculator.result = 0;
+    reset() {
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
   };
 
-  return calculator;
+  return obj;
 }
 
 module.exports = makeCalculator;
