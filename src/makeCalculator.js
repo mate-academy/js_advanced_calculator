@@ -38,28 +38,34 @@
  */
 function makeCalculator() {
   return {
-    result: 0,
+    calculation: 0,
+
     reset() {
-      this.result = 0;
+      this.calculation = 0;
 
       return this;
     },
+
     operate(func, num) {
-      this.result = func(num, this.result);
+      this.calculation = func(num, this.calculation);
 
       return this;
     },
-    add(num, result) {
-      return result + num;
+
+    add(num, prevResult) {
+      return prevResult + num;
     },
-    subtract(num, result) {
-      return result - num;
+
+    subtract(num, prevResult) {
+      return prevResult - num;
     },
-    divide(num, result) {
-      return result / num;
+
+    divide(num, prevResult) {
+      return prevResult / num;
     },
-    multiply(num, result) {
-      return result * num;
+
+    multiply(num, prevResult) {
+      return prevResult * num;
     },
   };
 }
