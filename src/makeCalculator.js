@@ -39,25 +39,25 @@
 function makeCalculator() {
   const calculations = {
     result: 0,
-    add(n) {
-      return calculations.result + n;
+    add(previousResult, n) {
+      return previousResult + n;
     },
-    subtract(n) {
-      return calculations.result - n;
+    subtract(previousResult, n) {
+      return previousResult - n;
     },
-    multiply(n) {
-      return calculations.result * n;
+    multiply(previousResult, n) {
+      return previousResult * n;
     },
-    divide(n) {
-      return calculations.result / n;
+    divide(previousResult, n) {
+      return previousResult / n;
     },
     reset() {
-      calculations.result = 0;
+      this.result = 0;
 
       return this;
     },
     operate(operation, number) {
-      calculations.result = operation(number);
+      this.result = operation(this.result, number);
 
       return this;
     },
