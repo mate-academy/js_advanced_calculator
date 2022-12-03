@@ -62,8 +62,8 @@ function makeCalculator() {
       return this;
     },
 
-    operate(calback) {
-      this.result = calback(this.result);
+    operate(calback, number = 0) {
+      this.result = calback(this.result, number);
 
       return this;
     },
