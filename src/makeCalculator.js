@@ -45,27 +45,27 @@ function makeCalculator() {
       return this;
     },
 
+    add: (a, b) => {
+      return a + b;
+    },
+
+    subtract: (a, b) => {
+      return a - b;
+    },
+
+    multiply: (a, b) => {
+      return a * b;
+    },
+
+    divide: (a, b) => {
+      return a / b;
+    },
+
     reset() {
       this.result = 0;
 
       return this;
     },
-  };
-
-  calculator.add = function addFun(a, b) {
-    return a + b;
-  };
-
-  calculator.subtract = function subtractFun(a, b) {
-    return a - b;
-  };
-
-  calculator.multiply = function multiplyFun(a, b) {
-    return a * b;
-  };
-
-  calculator.divide = function divideFun(a, b) {
-    return a / b;
   };
 
   return calculator;
