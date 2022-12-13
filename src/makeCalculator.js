@@ -36,8 +36,32 @@
  *
  * @return {object}
  */
-function makeCalculator() {
-  // write code here
-}
+  function makeCalculator() {
+    let obj = {
+      result: 0,
+      add: function(number) {
+        obj.result = (obj.result + number);
+      },
+      subtract: function(number) {
+        obj.result = (obj.result - number);
+      },
+      multiply: function(number) {
+        obj.result = (obj.result * number);
+      },
+      divide: function(number) {
+        obj.result = (obj.result / number);
+      },
+      reset: function() {
+        obj.result = 0;
+        return this;
+      },
+      operate: function(callback, number) {
+        callback(number);
+        return this;
+      },
+    };
+
+    return obj;
+  }
 
 module.exports = makeCalculator;
