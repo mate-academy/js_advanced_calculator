@@ -3,6 +3,18 @@
 
 const makeCalculator = require('./makeCalculator');
 
+test(`'operate' should correctly work in a long chain`, () => {
+  const calculator = makeCalculator();
+
+  calculator
+    .operate(calculator.subtract, 20)
+    .operate(calculator.divide, 4)
+    .operate(calculator.add, 3)
+    .operate(calculator.multiply, 7);
+
+  expect(calculator.result).toBe(-14);
+});
+
 describe('sum', () => {
   test(`'makeCalculator' function should be declared`, () => {
     expect(makeCalculator).toBeInstanceOf(Function);
@@ -60,7 +72,7 @@ describe('sum', () => {
     expect(calculator.subtract).toBeInstanceOf(Function);
   });
 
-  test(`'operate' should correctly subtract a single value`, () => {
+  test(`v'operate' should correctly subtract a single value`, () => {
     const calculator = makeCalculator();
 
     calculator.operate(calculator.subtract, 100);
