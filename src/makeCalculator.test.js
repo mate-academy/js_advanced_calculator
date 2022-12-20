@@ -72,7 +72,7 @@ describe('sum', () => {
     expect(calculator.subtract).toBeInstanceOf(Function);
   });
 
-  test(`'operate' should correctly subtract a single value`, () => {
+  test(`v'operate' should correctly subtract a single value`, () => {
     const calculator = makeCalculator();
 
     calculator.operate(calculator.subtract, 100);
