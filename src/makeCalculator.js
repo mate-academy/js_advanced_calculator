@@ -41,7 +41,7 @@ function makeCalculator() {
     result: 0,
 
     operate(action, number) {
-      action.bind(calculator)(number);
+      action.bind(this)(number);
 
       return this;
     },
