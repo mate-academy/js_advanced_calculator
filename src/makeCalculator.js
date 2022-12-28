@@ -39,16 +39,16 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add: function(arg) {
+    add(arg) {
       return calculator.result + arg;
     },
-    subtract: function(arg) {
+    subtract(arg) {
       return calculator.result - arg;
     },
-    multiply: function(arg) {
+    multiply(arg) {
       return calculator.result * arg;
     },
-    divide: function(arg) {
+    divide(arg) {
       return calculator.result / arg;
     },
     reset() {
@@ -56,7 +56,7 @@ function makeCalculator() {
 
       return calculator;
     },
-    operate: function(operation, number) {
+    operate(operation, number) {
       calculator.result = operation(number);
 
       return calculator;
