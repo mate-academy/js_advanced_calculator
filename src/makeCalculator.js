@@ -42,8 +42,6 @@ function makeCalculator() {
 
     add(number) {
       this.result += number;
-
-      return this;
     },
 
     subtract(number) {
