@@ -52,20 +52,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(initialValue, value) {
-      return initialValue + value;
+    add(a, b) {
+      return a + b;
     },
 
-    subtract(initialValue, value) {
-      return initialValue - value;
+    subtract(a, b) {
+      return a - b;
     },
 
-    multiply(initialValue, value) {
-      return initialValue * value;
+    multiply(a, b) {
+      return a * b;
     },
 
-    divide(initialValue, value) {
-      return initialValue / value;
+    divide(a, b) {
+      return a / b;
     },
   };
 
