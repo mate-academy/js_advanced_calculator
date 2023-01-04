@@ -39,7 +39,6 @@
 function makeCalculator() {
   return {
     result: 0,
-
     operate(Callback, value) {
       this.result = Callback(this.result, value);
 
