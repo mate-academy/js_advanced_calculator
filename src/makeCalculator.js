@@ -41,26 +41,18 @@ function makeCalculator(result = 0) {
     result,
     add(num) {
       calculator.result += num;
-
-      return calculator;
     },
 
     subtract(num) {
       calculator.result -= num;
-
-      return calculator;
     },
 
     multiply(num) {
       calculator.result *= num;
-
-      return calculator;
     },
 
     divide(num) {
       calculator.result /= num;
-
-      return calculator;
     },
 
     reset() {
@@ -70,7 +62,9 @@ function makeCalculator(result = 0) {
     },
 
     operate(operator, number) {
-      return operator(number);
+      operator(number);
+
+      return this;
     },
   };
 
