@@ -41,29 +41,29 @@ function makeCalculator() {
     result: 0,
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
 
-    add(number) {
-      calculator.result += number;
+    add(firstNumber, secondNumber) {
+      return firstNumber + secondNumber;
     },
 
-    subtract(number) {
-      calculator.result -= number;
+    subtract(firstNumber, secondNumber) {
+      return firstNumber - secondNumber;
     },
 
-    divide(number) {
-      calculator.result /= number;
+    divide(firstNumber, secondNumber) {
+      return firstNumber / secondNumber;
     },
 
-    multiply(number) {
-      calculator.result *= number;
+    multiply(firstNumber, secondNumber) {
+      return firstNumber * secondNumber;
     },
 
     operate(callback, number) {
-      callback(number);
+      this.result = callback(this.result, number);
 
       return this;
     },
