@@ -39,20 +39,20 @@
 function makeCalculator(result = 0) {
   const calculator = {
     result,
-    add(num) {
-      calculator.result += num;
+    add(prev, num) {
+      return prev + num;
     },
 
-    subtract(num) {
-      calculator.result -= num;
+    subtract(prev, num) {
+      return prev - num;
     },
 
-    multiply(num) {
-      calculator.result *= num;
+    multiply(prev, num) {
+      return prev * num;
     },
 
-    divide(num) {
-      calculator.result /= num;
+    divide(prev, num) {
+      return prev / num;
     },
 
     reset() {
@@ -62,7 +62,7 @@ function makeCalculator(result = 0) {
     },
 
     operate(operator, number) {
-      operator(number);
+      this.result = operator(this.result, number);
 
       return this;
     },
