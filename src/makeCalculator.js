@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Another calculator. Now the task is more difficult.
@@ -38,46 +38,33 @@
  */
 function makeCalculator() {
   // write code here
-  const calculator = {};
-
-  calculator.result = 0;
-
-  calculator.add = (num) => {
-    calculator.result += num;
-
-    return calculator.result;
+  const calculator = {
+    result: 0,
+    add(num) {
+      this.result += num;
+      return this.result;
+    },
+    subtract(num) {
+      this.result -= num;
+      return this.result;
+    },
+    multiply(num) {
+      this.result *= num;
+      return this.result;
+    },
+    divide(num) {
+      this.result /= num;
+      return this.result;
+    },
+    reset() {
+      this.result = 0;
+      return this;
+    },
+    operate(func, num) {
+      func.call(this, num);
+      return this;
+    },
   };
-
-  calculator.subtract = (num) => {
-    calculator.result -= num;
-
-    return calculator.result;
-  };
-
-  calculator.multiply = (num) => {
-    calculator.result *= num;
-
-    return calculator.result;
-  };
-
-  calculator.divide = (num) => {
-    calculator.result /= num;
-
-    return calculator.result;
-  };
-
-  calculator.reset = () => {
-    calculator.result = 0;
-
-    return calculator;
-  };
-
-  calculator.operate = (func, num) => {
-    calculator.result = func(num);
-
-    return calculator;
-  };
-
   return calculator;
 }
 
