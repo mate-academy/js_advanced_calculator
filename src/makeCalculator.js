@@ -36,8 +36,48 @@
  *
  * @return {object}
  */
+
 function makeCalculator() {
-  // write code here
+  const ops = {
+    'result': 0,
+    'add': makeAdd,
+    'subtract': makeSubst,
+    'multiply': makeMult,
+    'divide': makeDiv,
+    'reset': makeReset,
+    'operate': makeOperate,
+
+  };
+
+  function makeOperate(operation, value) {
+    ops.result = operation(ops.result, value);
+
+    return ops;
+  }
+
+  function makeAdd(a, b) {
+    return a + b;
+  }
+
+  function makeReset() {
+    ops.result = 0;
+
+    return ops;
+  }
+
+  function makeSubst(a, b) {
+    return a - b;
+  }
+
+  function makeMult(a, b) {
+    return a * b;
+  }
+
+  function makeDiv(a, b) {
+    return a / b;
+  }
+
+  return ops;
 }
 
 module.exports = makeCalculator;
