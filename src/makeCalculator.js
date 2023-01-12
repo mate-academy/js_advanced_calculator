@@ -71,9 +71,7 @@ function makeCalculator() {
     },
 
     operate(func, num) {
-      const result = this.result;
-
-      this.result = func(result, num);
+      this.result = func(this.result, num);
 
       return this;
     },
