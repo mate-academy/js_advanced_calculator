@@ -2,13 +2,13 @@
 
 /**
  * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
+ * Create a `makeCalculator` function that s an object that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
  *  - The `result` property is initially 0.
  *
  * How the calculator will work:
- * - Each `operate` call takes a callback and a number and sets the
+ * - Each `operate` call takes a callback and a inputNumber and sets the
  *   appropriate value to the `result` property.
  * - The `reset` method resets `result` value to 0.
  * - `add`, `subtract`, `multiply`, `divide` are passed as callbacks to
@@ -34,10 +34,36 @@
  * calculator.result === -28
  *
  *
- * @return {object}
+ * @ {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+    add(inputNumber) {
+      return this.result + inputNumber;
+    },
+    subtract(inputNumber) {
+      return this.result - inputNumber;
+    },
+    divide(inputNumber) {
+      return this.result / inputNumber;
+    },
+    multiply(inputNumber) {
+      return this.result * inputNumber;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+    operate(callback, inputNumber) {
+      this.result = callback.call(this, inputNumber);
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
