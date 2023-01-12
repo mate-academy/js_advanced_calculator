@@ -44,27 +44,33 @@ function makeCalculator() {
       this.result += num;
       return this.result;
     },
+
     subtract(num) {
       this.result -= num;
       return this.result;
     },
+
     multiply(num) {
       this.result *= num;
       return this.result;
     },
+
     divide(num) {
       this.result /= num;
       return this.result;
     },
+
     reset() {
       this.result = 0;
       return this;
     },
+
     operate(func, num) {
       func.call(this, num);
       return this;
     },
   };
+
   return calculator;
 }
 
