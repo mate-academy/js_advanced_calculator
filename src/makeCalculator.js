@@ -37,48 +37,39 @@
  * @return {object}
  */
 
-const ops = {
+const calc = {
   result: 0,
-  // 'add': makeAdd,
-  // 'subtract': makeSubst,
-  // 'multiply': makeMult,
-  // 'divide': makeDiv,
-  // 'reset': makeReset,
-  // 'operate': makeOperate,
 
-};
+  operate: function makeOperate(operation, value) {
+    this.result = operation.call(this, value);
+    return this;
+  },
 
-ops.operate = function makeOperate(operation, value) {
-  // console.log(this)
-  this.result = operation.call(this, value);
+  reset: function makeReset() {
+    this.result = 0;
+    return this;
+  },
 
-  return this;
-};
+  add: function makeAdd(b) {
+    return this.result + b;
+  },
 
-ops.reset = function makeReset() {
-  this.result = 0;
+  subtract: function makeSubst(b) {
+    return this.result - b;
+  },
 
-  return this;
-};
+  multiply: function makeMult(b) {
+    return this.result * b;
+  },
 
-ops.add = function makeAdd(b) {
-  return this.result + b;
-};
+  divide: function makeDiv(b) {
+    return this.result / b;
+  },
 
-ops.subtract = function makeSubst(b) {
-  return this.result - b;
-};
-
-ops.multiply = function makeMult(b) {
-  return this.result * b;
-};
-
-ops.divide = function makeDiv(b) {
-  return this.result / b;
 };
 
 function makeCalculator() {
-  return Object.assign({}, ops);
+  return Object.assign({}, calc);
 }
 
 module.exports = makeCalculator;
