@@ -36,8 +36,40 @@
  *
  * @return {object}
  */
+
+const calc = {
+  result: 0,
+
+  operate: function makeOperate(operation, value) {
+    this.result = operation.call(this, value);
+    return this;
+  },
+
+  reset: function makeReset() {
+    this.result = 0;
+    return this;
+  },
+
+  add: function makeAdd(b) {
+    return this.result + b;
+  },
+
+  subtract: function makeSubst(b) {
+    return this.result - b;
+  },
+
+  multiply: function makeMult(b) {
+    return this.result * b;
+  },
+
+  divide: function makeDiv(b) {
+    return this.result / b;
+  },
+
+};
+
 function makeCalculator() {
-  // write code here
+  return Object.assign({}, calc);
 }
 
 module.exports = makeCalculator;
