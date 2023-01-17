@@ -40,21 +40,22 @@ function makeCalculator() {
   const calculator = {
     result: 0,
     operate(callback, number) {
-      callback(number);
+      callback.bind(this)(number);
+      // callback.call(this, number);
 
       return this;
     },
     add(number) {
-      calculator.result += number;
+      this.result += number;
     },
     subtract(number) {
-      calculator.result -= number;
+      this.result -= number;
     },
     multiply(number) {
-      calculator.result *= number;
+      this.result *= number;
     },
     divide(number) {
-      calculator.result /= number;
+      this.result /= number;
     },
     reset() {
       this.result = 0;
