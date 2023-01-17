@@ -40,8 +40,7 @@ function makeCalculator() {
   const calculator = {
     result: 0,
     operate(callback, number) {
-      callback.bind(this)(number);
-      // callback.call(this, number);
+      callback.bind(this, number)();
 
       return this;
     },
