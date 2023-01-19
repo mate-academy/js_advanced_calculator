@@ -42,7 +42,9 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, value) {
-      return callback.call(this, value);
+      callback.call(this, value);
+
+      return this;
     },
 
     reset() {
@@ -53,26 +55,18 @@ function makeCalculator() {
 
     add(value) {
       this.result += value;
-
-      return this;
     },
 
     divide(value) {
       this.result /= value;
-
-      return this;
     },
 
     subtract(value) {
       this.result -= value;
-
-      return this;
     },
 
     multiply(value) {
       this.result *= value;
-
-      return this;
     },
   };
 
