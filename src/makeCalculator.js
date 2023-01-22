@@ -57,15 +57,15 @@ function makeCalculator() {
     },
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(cb, number) {
-      calculator.result = cb(calculator.result, number);
+      this.result = cb(this.result, number);
 
-      return calculator;
+      return this;
     },
   };
 
