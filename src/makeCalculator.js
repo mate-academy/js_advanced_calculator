@@ -39,27 +39,33 @@
 function makeCalculator() {
   return {
     result: 0,
+
     operate: function(callback, number) {
-      this.result = callback(this.result, number);
+      callback.call(this, number);
 
       return this;
     },
+
     reset: function() {
       this.result = 0;
 
       return this;
     },
-    add: function(result, number) {
-      return result + number;
+
+    add: function(number) {
+      this.result += number;
     },
-    subtract: function(result, number) {
-      return result - number;
+
+    subtract: function(number) {
+      this.result -= number;
     },
-    divide: function(result, number) {
-      return result / number;
+
+    divide: function(number) {
+      this.result /= number;
     },
-    multiply: function(result, number) {
-      return result * number;
+
+    multiply: function(number) {
+      this.result *= number;
     },
   };
 }
