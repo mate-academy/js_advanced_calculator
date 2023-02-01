@@ -41,31 +41,31 @@ function makeCalculator() {
     result: 0,
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(action, number) {
-      action(number);
+      action.call(this, number);
 
-      return calculator;
+      return this;
     },
 
     add(number) {
-      calculator.result += number;
+      this.result += number;
     },
 
     subtract(number) {
-      calculator.result -= number;
+      this.result -= number;
     },
 
     divide(number) {
-      calculator.result /= number;
+      this.result /= number;
     },
 
     multiply(number) {
-      calculator.result *= number;
+      this.result *= number;
     },
 
   };
@@ -73,4 +73,5 @@ function makeCalculator() {
   return calculator;
 }
 
+makeCalculator();
 module.exports = makeCalculator;
