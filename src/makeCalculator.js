@@ -41,27 +41,19 @@ function makeCalculator() {
     result: 0,
 
     add(num) {
-      calculator.result += num;
-
-      return calculator.result;
+      return calculator.result + num;
     },
 
     subtract(num) {
-      calculator.result -= num;
-
-      return calculator.result;
+      return calculator.result - num;
     },
 
     multiply(num) {
-      calculator.result *= num;
-
-      return calculator.result;
+      return calculator.result * num;
     },
 
     divide(num) {
-      calculator.result /= num;
-
-      return calculator.result;
+      return calculator.result / num;
     },
 
     reset() {
