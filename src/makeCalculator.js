@@ -1,13 +1,16 @@
 'use strict';
 
 /**
- * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
+ * Create a `makeCalculator` function
+ * that returns an object that
  * has the following fields:
- *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
+ *  (Если в свойстве объекта хранится ФУНКЦИЯ, 
+ * то это свойство называется МЕТОД!)
+ * - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`
+ *
  *  - The `result` property is initially 0.
  *
- * How the calculator will work:
+ *   How the calculator will work:
  * - Each `operate` call takes a callback and a number and sets the
  *   appropriate value to the `result` property.
  * - The `reset` method resets `result` value to 0.
@@ -37,7 +40,40 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const obj = {
+    result: 0,
+
+    add: (a, b) => {
+      return a + b;
+    },
+
+    subtract: (a, b) => {
+      return a - b;
+    },
+
+    multiply: (a, b) => {
+      return a * b;
+    },
+
+    divide: (a, b) => {
+      return a / b;
+    },
+
+    reset: function() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate: function(operation, a) {
+      this.result = operation(this.result, a);
+
+      return this;
+    },
+
+  };
+
+  return obj;
 }
 
 module.exports = makeCalculator;
