@@ -42,11 +42,13 @@ function makeCalculator() {
   const subtract = (a, b) => a - b;
   const multiply = (a, b) => a * b;
   const divide = (a, b) => a / b;
+  
   const operate = function(callback, value) {
     this.result = callback(this.result, value);
 
     return this;
   };
+  
   const reset = function() {
     this.result = 0;
 
