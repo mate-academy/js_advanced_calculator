@@ -36,8 +36,51 @@
  *
  * @return {object}
  */
+
+// function sum(x, y) {
+//   return x + y;
+// }
+
 function makeCalculator() {
-  // write code here
-}
+  const calculator = {
+    add: function(n) {
+      calculator.result += n;
+    },
+
+    subtract: function(n) {
+      calculator.result -= n;
+    },
+
+    divide: function(n) {
+      calculator.result /= n;
+    },
+
+    multiply: function(n) {
+      calculator.result *= n;
+    },
+
+    reset: function() {
+      calculator.result = 0;
+
+      return this;
+    },
+
+    result: 0,
+  };
+
+  calculator.operate = function(operation, number) {
+    operation(number);
+
+    return this;
+  };
+
+  calculator.reset = function() {
+    calculator.result = 0;
+
+    return this;
+  };
+
+  return calculator;
+};
 
 module.exports = makeCalculator;
