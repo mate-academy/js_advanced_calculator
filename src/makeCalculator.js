@@ -39,6 +39,7 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
+
     reset() {
       this.result = 0;
 
