@@ -37,12 +37,14 @@
  * @return {object}
  */
 
-// function sum(x, y) {
-//   return x + y;
-// }
-
 function makeCalculator() {
   const calculator = {
+    reset: function() {
+      calculator.result = 0;
+
+      return this;
+    },
+
     add: function(n) {
       calculator.result += n;
     },
@@ -59,25 +61,13 @@ function makeCalculator() {
       calculator.result *= n;
     },
 
-    reset: function() {
-      calculator.result = 0;
+    operate: function(operation, number) {
+      operation(number);
 
       return this;
     },
 
     result: 0,
-  };
-
-  calculator.operate = function(operation, number) {
-    operation(number);
-
-    return this;
-  };
-
-  calculator.reset = function() {
-    calculator.result = 0;
-
-    return this;
   };
 
   return calculator;
