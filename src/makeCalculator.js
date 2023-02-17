@@ -44,27 +44,28 @@ function makeCalculator() {
 
       return this;
     },
+
     operate(callback, num) {
       this.result = callback(this.result, num);
 
       return this;
     },
-  };
 
-  calculator.add = (num1, num2) => {
-    return num1 + num2;
-  };
+    add(num1, num2) {
+      return num1 + num2;
+    },
 
-  calculator.subtract = (num1, num2) => {
-    return num1 - num2;
-  };
+    subtract(num1, num2) {
+      return num1 - num2;
+    },
 
-  calculator.multiply = (num1, num2) => {
-    return num1 * num2;
-  };
+    multiply(num1, num2) {
+      return num1 * num2;
+    },
 
-  calculator.divide = (num1, num2) => {
-    return num1 / num2;
+    divide(num1, num2) {
+      return num1 / num2;
+    },
   };
 
   return calculator;
