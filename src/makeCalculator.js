@@ -39,7 +39,7 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    reset: function() {
+    reset() {
       this.result = 0;
 
       return this;
@@ -56,8 +56,8 @@ function makeCalculator() {
     divide: (a, b) => {
       return a / b;
     },
-    operate: function(operation, a) {
-      this.result = operation(this.result, a);
+    operate(operation, operand) {
+      this.result = operation(this.result, operand);
 
       return this;
     },
