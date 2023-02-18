@@ -41,7 +41,7 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    reset: function() {
+    reset() {
       calculator.result = 0;
 
       return this;
