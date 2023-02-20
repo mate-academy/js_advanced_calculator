@@ -40,10 +40,21 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add: (result, number) => result + number,
-    subtract: (result, number) => result - number,
-    multiply: (result, number) => result * number,
-    divide: (result, number) => result / number,
+    add(result, number) {
+      return result + number;
+    },
+
+    subtract(result, number) {
+      return result - number;
+    },
+
+    multiply(result, number) {
+      return result * number;
+    },
+
+    divide(result, number) {
+      return result / number;
+    },
 
     operate(callback, number) {
       this.result = callback(this.result, number);
