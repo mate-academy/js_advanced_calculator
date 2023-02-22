@@ -14,7 +14,6 @@ function makeCalculator() {
 
       return this;
     },
-
     add(number) {
       calculator.result += number;
 
