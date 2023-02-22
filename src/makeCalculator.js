@@ -62,7 +62,7 @@ function makeCalculator() {
       return this;
     },
 
-    operate(callback, num = 0) {
+    operate(callback, num) {
       this.result = callback(this.result, num);
 
       return this;
