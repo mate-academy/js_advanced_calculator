@@ -36,8 +36,26 @@
  *
  * @return {object}
  */
-function makeCalculator() {
-  // write code here
+function makeCalculator(firstOperand, secondOperand) {
+  const inputValue = parseFloat(firstOperand);
+
+  if (firstOperand === null && !isNaN(inputValue)) {
+    calculator.firstOperand = inputValue;
+  }
+
+  let result = 0;
+
+  if (callback === '+') {
+    result += firstOperand + secondOperand;
+  } else if (callback === '-') {
+    result += firstOperand - secondOperand;
+  } else if (callback === '*') {
+    result += firstOperand * secondOperand;
+  } else if (callback === '/') {
+    result += firstOperand / secondOperand;
+  }
+
+  return result;
 }
 
 module.exports = makeCalculator;
