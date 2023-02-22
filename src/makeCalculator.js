@@ -36,26 +36,42 @@
  *
  * @return {object}
  */
-function makeCalculator(firstOperand, secondOperand) {
-  const inputValue = parseFloat(firstOperand);
+function makeCalculator() {
+  const calculator = {
+    result: 0,
 
-  if (firstOperand === null && !isNaN(inputValue)) {
-    calculator.firstOperand = inputValue;
-  }
+    add(value) {
+      this.result += value;
+      return this;
+    },
 
-  let result = 0;
+    subtract(value) {
+      this.result -= value;
+      return this;
+    },
 
-  if (callback === '+') {
-    result += firstOperand + secondOperand;
-  } else if (callback === '-') {
-    result += firstOperand - secondOperand;
-  } else if (callback === '*') {
-    result += firstOperand * secondOperand;
-  } else if (callback === '/') {
-    result += firstOperand / secondOperand;
-  }
+    multiply(value) {
+      this.result *= value;
+      return this;
+    },
 
-  return result;
+    divide(value) {
+      this.result /= value;
+      return this;
+    },
+
+    reset() {
+      this.result = 0;
+      return this;
+    },
+
+    operate: function(operation, value) {
+      operation.call(this, value);
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
