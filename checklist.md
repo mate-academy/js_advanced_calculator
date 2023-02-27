@@ -29,5 +29,5 @@ GOOD EXAMPLE:
 ```
  methodName() {
  // your code
-},
+}
 ```
