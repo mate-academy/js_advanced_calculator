@@ -1,5 +1,5 @@
 {
-  "name": "js-task-boilerplate",
+  "name": "q",
   "version": "1.0.0",
   "description": "js task boilerplate",
   "main": "src/sum.js",
@@ -16,7 +16,7 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "@mate-academy/eslint-config": "*",
-    "@mate-academy/scripts": "^0.7.12",
+    "@mate-academy/scripts": "^1.2.8",
     "eslint": "^5.16.0",
     "eslint-plugin-jest": "^22.4.1",
     "eslint-plugin-node": "^8.0.1",
@@ -25,5 +25,13 @@
   "mateAcademy": {
     "projectType": "javascript"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmytroHorshunov/js_advanced_calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DmytroHorshunov/js_advanced_calculator/issues"
+  },
+  "homepage": "https://github.com/DmytroHorshunov/js_advanced_calculator#readme"
 }
