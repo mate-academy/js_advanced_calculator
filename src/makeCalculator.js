@@ -38,7 +38,7 @@
  */
 function makeCalculator() {
   const calculator = {
-    'result': 0,
+    result: 0,
     multiply(x) {
       this.result *= x;
     },
