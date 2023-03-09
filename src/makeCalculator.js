@@ -43,22 +43,22 @@ function makeCalculator() {
     add(number) {
       obj.result += number;
 
-      return obj.result;
+      return this;
     },
     subtract(number) {
       obj.result -= number;
 
-      return obj.result;
+      return this;
     },
     multiply(number) {
       obj.result *= number;
 
-      return obj.result;
+      return this;
     },
     divide(number) {
       obj.result /= number;
 
-      return obj.result;
+      return this;
     },
     reset() {
       obj.result = 0;
