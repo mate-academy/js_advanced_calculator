@@ -41,15 +41,23 @@ function makeCalculator() {
     result: 0,
     add(x) {
       calculator.result += x;
+
+      return this;
     },
     subtract(x) {
       calculator.result -= x;
+
+      return this;
     },
     multiply(x) {
       calculator.result *= x;
+
+      return this;
     },
     divide(x) {
       calculator.result /= x;
+
+      return this;
     },
     reset() {
       calculator.result = 0;
@@ -65,5 +73,7 @@ function makeCalculator() {
 
   return calculator;
 }
+
+makeCalculator();
 
 module.exports = makeCalculator;
