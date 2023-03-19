@@ -15,7 +15,7 @@
  *   `operate` method
  * - The `operate` and `reset` methods can be called in a chain.
  *
- * Example:
+ * Evalueample:
  * const calculator = makeCalculator();
  *
  * calculator.operate(calculator.add, 21)
@@ -39,23 +39,23 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add(x) {
-      calculator.result += x;
+    add(value) {
+      calculator.result += value;
 
       return this;
     },
-    subtract(x) {
-      calculator.result -= x;
+    subtract(value) {
+      calculator.result -= value;
 
       return this;
     },
-    multiply(x) {
-      calculator.result *= x;
+    multiply(value) {
+      calculator.result *= value;
 
       return this;
     },
-    divide(x) {
-      calculator.result /= x;
+    divide(value) {
+      calculator.result /= value;
 
       return this;
     },
@@ -73,7 +73,5 @@ function makeCalculator() {
 
   return calculator;
 }
-
-makeCalculator();
 
 module.exports = makeCalculator;
