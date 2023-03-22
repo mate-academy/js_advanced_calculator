@@ -47,11 +47,11 @@ function makeCalculator() {
     },
 
     multiply(value) {
-      this.result = this.result * value;
+      this.result *= value;
     },
 
     divide(value) {
-      this.result = this.result / value;
+      this.result /= value;
     },
 
     reset() {
