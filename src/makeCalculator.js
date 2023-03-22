@@ -38,6 +38,8 @@
  */
 function makeCalculator() {
   const calculator = {
+    result: 0,
+
     add(number) {
       this.result += number;
     },
@@ -65,8 +67,6 @@ function makeCalculator() {
 
       return this;
     },
-
-    result: 0,
   };
 
   return calculator;
