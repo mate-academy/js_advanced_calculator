@@ -46,21 +46,13 @@ function makeCalculator() {
       return this;
     },
 
-    add(value, num) {
-      return value + num;
-    },
+    add: (result, num) => result + num,
 
-    subtract(value, num = 0) {
-      return value - num;
-    },
+    subtract: (result, num = 0) => result - num,
 
-    multiply(value, num = 0) {
-      return value * num;
-    },
+    multiply: (result, num = 0) => result * num,
 
-    divide(value, num = 0) {
-      return value / num;
-    },
+    divide: (result, num = 0) => result / num,
 
     reset() {
       this.result = 0;
