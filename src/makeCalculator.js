@@ -43,15 +43,19 @@ function makeCalculator() {
     add(x) {
       result += x;
     },
+
     subtract(x) {
       result -= x;
     },
+
     multiply(x) {
       result *= x;
     },
+
     divide(x) {
       result /= x;
     },
+
     reset() {
       result = 0;
 
@@ -59,7 +63,7 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
-      callback(value);
+      callback.call(this, value);
 
       return calculator;
     },
