@@ -37,39 +37,39 @@
  * @return {object}
  */
 function makeCalculator() {
-  let result = 0;
-
   const calculator = {
+    result: 0,
+
     add(x) {
-      result += x;
+      this.result += x;
     },
 
     subtract(x) {
-      result -= x;
+      this.result -= x;
     },
 
     multiply(x) {
-      result *= x;
+      this.result *= x;
     },
 
     divide(x) {
-      result /= x;
+      this.result /= x;
     },
 
     reset() {
-      result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(callback, value) {
       callback.call(this, value);
 
-      return calculator;
+      return this;
     },
 
-    get result() {
-      return result;
+    get finalResult() {
+      return this.result;
     },
 
   };
