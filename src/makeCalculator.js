@@ -37,6 +37,33 @@
  * @return {object}
  */
 function makeCalculator() {
+  return {
+    current: 0,
+    add(param) {
+      this.current += param;
+
+      return this;
+    },
+    subtract(param) {
+      this.current -= param;
+
+      return this;
+    },
+    divide(param) {
+      this.current /= param;
+
+      return this;
+    },
+    multiply(param) {
+      this.current *= param;
+
+      return this;
+    },
+    get result() {
+      return this.current;
+    },
+  };
+
   // write code here
 }
 
