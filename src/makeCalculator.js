@@ -43,31 +43,31 @@ function makeCalculator() {
     result: 0,
 
     add(number) {
-      calculator.result += number;
+      this.result += number;
 
       return calculator;
     },
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return calculator;
     },
 
     subtract(number) {
-      calculator.result -= number;
+      this.result -= number;
 
       return calculator;
     },
 
     multiply(number) {
-      calculator.result *= number;
+      this.result *= number;
 
       return calculator;
     },
 
     divide(number) {
-      calculator.result /= number;
+      this.result /= number;
 
       return calculator;
     },
