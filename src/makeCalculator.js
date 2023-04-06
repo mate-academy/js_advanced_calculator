@@ -17,7 +17,8 @@ function makeCalculator() {
       this.result /= a;
     },
     operate(callback, num) {
-      callback.call(this, num);
+      callback.call(calc, num);
+
       return this;
     },
     reset() {
