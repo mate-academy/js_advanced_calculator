@@ -45,21 +45,21 @@ function makeCalculator() {
 
       return this;
     },
-    add(resultSoFar, number) {
-      return resultSoFar + number;
+    add(number) {
+      this.result += number;
     },
-    subtract(resultSoFar, number) {
-      return resultSoFar - number;
+    subtract(number) {
+      this.result -= number;
     },
-    divide(resultSoFar, number) {
-      return resultSoFar / number;
+    divide(number) {
+      this.result /= number;
     },
-    multiply(resultSoFar, number) {
-      return resultSoFar * number;
+    multiply(number) {
+      this.result *= number;
     },
 
     operate(operation, number) {
-      this.result = operation(this.result, number);
+      operation.bind(this, number)();
 
       return this;
     },
