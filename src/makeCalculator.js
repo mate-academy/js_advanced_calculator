@@ -5,25 +5,26 @@ function makeCalculator() {
   const calc = {
     result: 0,
     add(a) {
-      return calc.result += a;
+      this.result += a;
     },
     subtract(a) {
-      return calc.result -= a;
+      this.result -= a;
     },
     multiply(a) {
-      return calc.result *= a;
+      this.result *= a;
     },
     divide(a) {
-      return calc.result /= a;
+      this.result /= a;
     },
     operate(callback, num) {
-      calc.result = callback(num);
+      callback.call(this, num);
       return this;
     },
     reset() {
-      calc.result = 0;
+      this.result = 0;
+
       return this;
-    }
+    },
   };
 
   return calc;
