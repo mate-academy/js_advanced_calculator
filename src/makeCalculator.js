@@ -43,7 +43,7 @@ function makeCalculator() {
     reset() {
       calculator.result = 0;
 
-      return calculator;
+      return this;
     },
     add(number) {
       calculator.result += number;
@@ -61,7 +61,7 @@ function makeCalculator() {
     operate(operation, number) {
       operation(number);
 
-      return calculator;
+      return this;
     },
   };
 
