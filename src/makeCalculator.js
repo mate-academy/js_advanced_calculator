@@ -63,7 +63,7 @@ function makeCalculator() {
       return this;
     },
 
-    reset(value) {
+    reset() {
       this.result = 0;
 
       return this;
