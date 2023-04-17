@@ -46,12 +46,4 @@ function makeCalculator() {
   return innerCalculator;
 }
 
-const calculator = makeCalculator();
-
-calculator.operate(calculator.add, 3);
-
-calculator
-  .reset()
-  .operate(calculator.subtract, 9);
-
 module.exports = makeCalculator;
