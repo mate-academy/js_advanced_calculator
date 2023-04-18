@@ -41,19 +41,19 @@ function makeCalculator() {
     result: 0,
 
     add: function(a) {
-      calculator.result += a;
+      this.result += a;
     },
 
     subtract: function(a) {
-      calculator.result -= a;
+      this.result -= a;
     },
 
     multiply: function(a) {
-      calculator.result *= a;
+      this.result *= a;
     },
 
     divide: function(a) {
-      calculator.result /= a;
+      this.result /= a;
     },
 
     reset() {
@@ -63,7 +63,7 @@ function makeCalculator() {
     },
 
     operate(operation, secondValue) {
-      operation(secondValue);
+      operation.call(this, secondValue);
 
       return this;
     },
