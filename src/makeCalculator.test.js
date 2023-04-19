@@ -1,5 +1,4 @@
 'use strict';
-/* global require, describe, test, expect */
 
 const makeCalculator = require('./makeCalculator');
 
