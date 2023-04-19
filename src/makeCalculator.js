@@ -1,45 +1,48 @@
 'use strict';
 
 function makeCalculator() {
-  let result = 0;
-
-  const add = num => {
-    result += num;
-  };
-
-  const subtract = num => {
-    result -= num;
-  };
-
-  const multiply = num => {
-    result *= num;
-  };
-
-  const divide = num => {
-    result /= num;
-  };
-
-  const reset = () => {
-    result = 0;
-
-    return innerCalculator;
-  };
-
-  const operate = (callback, num) => {
-    callback(num);
-
-    return innerCalculator;
-  };
+  let calc = 0;
 
   const innerCalculator = {
-    add,
-    subtract,
-    multiply,
-    divide,
-    reset,
-    operate,
+    calc: 0,
+
+    add: function(num) {
+      calc += num;
+
+      return this;
+    },
+
+    subtract: function(num) {
+      calc -= num;
+
+      return this;
+    },
+
+    multiply: function(num) {
+      calc *= num;
+
+      return this;
+    },
+    divide: function(num) {
+      calc /= num;
+
+      return this;
+    },
+
+    operate: function(callback, num) {
+      callback(num);
+
+      return this;
+    },
+
+    reset: function() {
+      calc = 0;
+
+      return this;
+    },
+
     get result() {
-      return result;
+      return calc;
     },
   };
 
