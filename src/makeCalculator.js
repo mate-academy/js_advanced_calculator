@@ -40,30 +40,28 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(number, thisLink) {
-      thisLink.result += number;
+    add(number) {
+      this.result += number;
     },
 
-    subtract(number, thisLink) {
-      thisLink.result -= number;
+    subtract(number) {
+      this.result -= number;
     },
 
-    multiply(number, thisLink) {
-      thisLink.result *= number;
+    multiply(number) {
+      this.result *= number;
     },
 
-    divide(number, thisLink) {
+    divide(number) {
       if (number === 0) {
         throw new Error('Division by zero!');
       }
 
-      thisLink.result /= number;
+      this.result /= number;
     },
 
     operate(operation, number) {
-      const thisLink = this;
-
-      operation(number, thisLink);
+      operation.call(this, number);
 
       return this;
     },
