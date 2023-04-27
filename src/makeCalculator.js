@@ -41,7 +41,7 @@ function makeCalculator() {
     result: 0,
 
     operate(calculate, number) {
-      calculate.operation(this, number);
+      calculate.call(this, number);
 
       return this;
     },
