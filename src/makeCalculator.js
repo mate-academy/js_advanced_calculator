@@ -39,36 +39,36 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add(par) {
-      calculator.result += par;
 
-      return calculator.result;
+    add(par) {
+      this.result += par;
+
+      return this.result;
     },
     subtract(par) {
-      calculator.result -= par;
+      this.result -= par;
 
-      return calculator.result;
+      return this.result;
     },
     multiply(par) {
-      calculator.result *= par;
+      this.result *= par;
 
-      return calculator.result;
+      return this.result;
     },
     divide(par) {
-      calculator.result /= par;
+      this.result /= par;
 
-      return calculator.result;
+      return this.result;
     },
-    reset: () => {
-      calculator.result = 0;
+    reset() {
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
+    operate(callback, number) {
+      callback.call(this, number);
 
-    operate: (callback, number) => {
-      callback(number);
-
-      return calculator;
+      return this;
     },
   };
 
