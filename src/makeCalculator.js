@@ -62,7 +62,6 @@ function makeCalculator() {
       return this;
     },
   };
-
   return calculator;
 }
 
