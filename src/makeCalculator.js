@@ -9,8 +9,8 @@
  *
  * How the calculator will work:
  * - Each `operate` call takes a callback and a number and sets the
- *   appropriate value to the `result` property.
- * - The `reset` method resets `result` value to 0.
+ *   appropriate number to the `result` property.
+ * - The `reset` method resets `result` number to 0.
  * - `add`, `subtract`, `multiply`, `divide` are passed as callbacks to
  *   `operate` method
  * - The `operate` and `reset` methods can be called in a chain.
@@ -37,7 +37,47 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+
+    add(number) {
+      this.result += number;
+
+      return this;
+    },
+
+    subtract(number) {
+      this.result -= number;
+
+      return this;
+    },
+
+    multiply(number) {
+      this.result *= number;
+
+      return this;
+    },
+
+    divide(number) {
+      this.result /= number;
+
+      return this;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(callback, number) {
+      callback.call(this, number);
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
