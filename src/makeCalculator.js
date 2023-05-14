@@ -40,8 +40,8 @@ function makeCalculator() {
   return {
     result: 0,
 
-    operate(opetation, number) {
-      opetation(number, this);
+    operate(operation, number) {
+      operation.call(this, number);
 
       return this;
     },
@@ -52,20 +52,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(number, that) {
-      that.result += number;
+    add(number) {
+      this.result += number;
     },
 
-    subtract(number, that) {
-      that.result -= number;
+    subtract(number) {
+      this.result -= number;
     },
 
-    multiply(number, that) {
-      that.result *= number;
+    multiply(number) {
+      this.result *= number;
     },
 
-    divide(number, that) {
-      that.result /= number;
+    divide(number) {
+      this.result /= number;
     },
   };
 }
