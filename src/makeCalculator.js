@@ -44,7 +44,7 @@ function makeCalculator() {
     result: initialState,
 
     operate(callback, value) {
-      callback.bind(this, value)();
+      callback.call(this, value);
 
       return this;
     },
