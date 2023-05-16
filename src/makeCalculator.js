@@ -47,13 +47,13 @@ function makeCalculator() {
     reset() {
       this._result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(operation, value) {
       operation.call(this, value);
 
-      return calculator;
+      return this;
     },
 
     add(number) {
