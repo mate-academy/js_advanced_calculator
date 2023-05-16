@@ -1,6 +1,4 @@
-'use strict';
-
-/**
+'use strict';/**
  * Another calculator. Now the task is more difficult.
  * Create a `makeCalculator` function that returns an object that
  * has the following fields:
@@ -19,12 +17,8 @@
  * const calculator = makeCalculator();
  *
  * calculator.operate(calculator.add, 21)
- * calculator.result === 21
-
- * calculator.reset()
- * calculator.result === 0
-
- * calculator
+ * calculator.result === 21 * calculator.reset()
+ * calculator.result === 0 * calculator
  *  .operate(calculator.add, 10)
  *  .reset()
  *  .operate(calculator.subtract, 20)
@@ -36,8 +30,39 @@
  *
  * @return {object}
  */
+
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    operate(callback, number) {
+      callback.call(this, number);
+
+      return this;
+    },
+
+    add(number) {
+      this.result += number;
+    },
+
+    subtract(number) {
+      this.result -= number;
+    },
+
+    multiply(number) {
+      this.result *= number;
+    },
+
+    divide(number) {
+      this.result /= number;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
