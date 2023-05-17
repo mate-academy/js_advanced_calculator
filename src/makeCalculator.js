@@ -43,25 +43,18 @@ function makeCalculator() {
     add(val) {
       this.result += val;
 
-      return this;
     },
 
     subtract(val) {
       this.result -= val;
-
-      return this;
     },
 
     multiply(val) {
       this.result *= val;
-
-      return this;
     },
 
     divide(val) {
       this.result /= val;
-
-      return this;
     },
 
     operate(method, val) {
