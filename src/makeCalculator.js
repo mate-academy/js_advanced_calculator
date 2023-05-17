@@ -37,53 +37,35 @@
  * @return {object}
  */
 function makeCalculator() {
-  let result = 0;
-
-  function add(num) {
-    result += num;
-
-    return this;
-  }
-
-  function subtract(num) {
-    result -= num;
-
-    return this;
-  }
-
-  function multiply(num) {
-    result *= num;
-
-    return this;
-  }
-
-  function divide(num) {
-    result /= num;
-
-    return this;
-  }
-
-  function reset() {
-    result = 0;
-
-    return this;
-  }
-
-  function operate(callback, num) {
-    callback(num);
-
-    return this;
-  }
-
   return {
-    add,
-    subtract,
-    multiply,
-    divide,
-    reset,
-    operate,
-    get result() {
-      return result;
+    result: 0,
+
+    add(number) {
+      this.result += number;
+    },
+
+    subtract(number) {
+      this.result -= number;
+    },
+
+    multiply(number) {
+      this.result *= number;
+    },
+
+    divide(number) {
+      this.result /= number;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(callback, number) {
+      callback.call(this, number);
+
+      return this;
     },
   };
 }
