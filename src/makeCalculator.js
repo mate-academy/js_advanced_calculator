@@ -37,7 +37,43 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+
+    get add() {
+      // eslint-disable-next-line no-return-assign
+      return (a) => this.result += a;
+    },
+
+    get subtract() {
+      // eslint-disable-next-line no-return-assign
+      return (a) => this.result -= a;
+    },
+
+    get multiply() {
+      // eslint-disable-next-line no-return-assign
+      return (a) => this.result *= a;
+    },
+
+    get divide() {
+      // eslint-disable-next-line no-return-assign
+      return (a) => this.result /= a;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(operation, num) {
+      operation(num);
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
