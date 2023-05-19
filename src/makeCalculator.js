@@ -63,27 +63,27 @@ function makeCalculator() {
     add(a) {
       this.result += a;
 
-      return this.result;
+      return this;
     },
     subtract(a) {
       this.result -= a;
 
-      return this.result;
+      return this;
     },
     multiply(a) {
       this.result *= a;
 
-      return this.result;
+      return this;
     },
     divide(a) {
       this.result /= a;
 
-      return this.result;
+      return this;
     },
     reset() {
       this.result = 0;
 
-      return this.result;
+      return this;
     },
   };
 
