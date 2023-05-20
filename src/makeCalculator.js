@@ -5,39 +5,31 @@ function makeCalculator() {
     result: 0,
 
     add: function(number) {
-      calculator.result += number;
-
-      return calculator;
+      this.result += number;
     },
 
     subtract: function(number) {
-      calculator.result -= number;
-
-      return calculator;
+      this.result -= number;
     },
 
     multiply: function(number) {
-      calculator.result *= number;
-
-      return calculator;
+      this.result *= number;
     },
 
     divide: function(number) {
-      calculator.result /= number;
-
-      return calculator;
+      this.result /= number;
     },
 
     reset: function() {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate: function(callback, number) {
-      callback(number);
+      callback.call(this, number);
 
-      return calculator;
+      return this;
     },
   };
 
