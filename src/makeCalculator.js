@@ -40,24 +40,20 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    get add() {
-      // eslint-disable-next-line no-return-assign
-      return (a) => this.result += a;
+    add(a) {
+      this.result += a;
     },
 
-    get subtract() {
-      // eslint-disable-next-line no-return-assign
-      return (a) => this.result -= a;
+    subtract(a) {
+      this.result -= a;
     },
 
-    get multiply() {
-      // eslint-disable-next-line no-return-assign
-      return (a) => this.result *= a;
+    multiply(a) {
+      this.result *= a;
     },
 
-    get divide() {
-      // eslint-disable-next-line no-return-assign
-      return (a) => this.result /= a;
+    divide(a) {
+      this.result /= a;
     },
 
     reset() {
@@ -67,7 +63,7 @@ function makeCalculator() {
     },
 
     operate(operation, num) {
-      operation(num);
+      operation.call(this, num);
 
       return this;
     },
