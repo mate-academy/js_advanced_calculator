@@ -36,33 +36,24 @@
  *
  * @return {object}
  */
-
 function makeCalculator() {
   const calculator = {
     result: 0,
 
     add(number) {
-      const operation = calculator.result + number;
-
-      return operation;
+      return calculator.result + number;
     },
 
     subtract(number) {
-      const operation = calculator.result - number;
-
-      return operation;
+      return calculator.result - number;
     },
 
     multiply(number) {
-      const operation = calculator.result * number;
-
-      return operation;
+      return calculator.result * number;
     },
 
     divide(number) {
-      const operation = calculator.result / number;
-
-      return operation;
+      return calculator.result / number;
     },
 
     reset() {
