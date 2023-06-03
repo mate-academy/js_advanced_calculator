@@ -19,10 +19,10 @@
  * const calculator = makeCalculator();
  *
  * calculator.operate(calculator.add, 21)
- * calculator.result === 21
+ * this.result === 21
 
  * calculator.reset()
- * calculator.result === 0
+ * this.result === 0
 
  * calculator
  *  .operate(calculator.add, 10)
@@ -31,13 +31,55 @@
  *  .operate(calculator.divide, 5)
  *  .operate(calculator.multiply, 7)
  *
- * calculator.result === -28
+ * this.result === -28
  *
  *
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+    add,
+    subtract,
+    multiply,
+    divide,
+    reset,
+    operate,
+  };
+
+  function add(number) {
+    this.result += number;
+  }
+
+  function subtract(number) {
+    this.result -= number;
+  }
+
+  function multiply(number) {
+    this.result *= number;
+  }
+
+  function divide(number) {
+    if (number === 0) {
+      return 'error';
+    }
+
+    this.result /= number;
+  }
+
+  function reset() {
+    this.result = 0;
+
+    return this;
+  }
+
+  function operate(callback, number) {
+    callback.call(calculator, number);
+
+    return calculator;
+  }
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
