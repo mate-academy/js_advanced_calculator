@@ -19,10 +19,10 @@
  * const calculator = makeCalculator();
  *
  * calculator.operate(calculator.add, 21)
- * calculator.result === 21
+ * this.result === 21
 
  * calculator.reset()
- * calculator.result === 0
+ * this.result === 0
 
  * calculator
  *  .operate(calculator.add, 10)
@@ -31,7 +31,7 @@
  *  .operate(calculator.divide, 5)
  *  .operate(calculator.multiply, 7)
  *
- * calculator.result === -28
+ * this.result === -28
  *
  *
  * @return {object}
@@ -48,29 +48,33 @@ function makeCalculator() {
   };
 
   function add(number) {
-    calculator.result += number;
+    this.result += number;
   }
 
   function subtract(number) {
-    calculator.result -= number;
+    this.result -= number;
   }
 
   function multiply(number) {
-    calculator.result *= number;
+    this.result *= number;
   }
 
   function divide(number) {
-    calculator.result /= number;
+    if (number === 0) {
+      return 'error';
+    }
+
+    this.result /= number;
   }
 
   function reset() {
-    calculator.result = 0;
+    this.result = 0;
 
-    return calculator;
+    return this;
   }
 
   function operate(callback, number) {
-    callback(number);
+    callback.call(calculator, number);
 
     return calculator;
   }
