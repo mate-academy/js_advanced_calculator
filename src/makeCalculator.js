@@ -41,6 +41,12 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
+    operate(callback, number) {
+      this[callback.name](number);
+
+      return this;
+    },
+
     add(number) {
       this.result += number;
     },
@@ -54,17 +60,14 @@ function makeCalculator() {
     },
 
     divide(number) {
+      if (number === 0) {
+        return 'error';
+      }
       this.result /= number;
     },
 
     reset() {
       this.result = 0;
-
-      return this;
-    },
-
-    operate(callback, number) {
-      this[callback.name](number);
 
       return this;
     },
