@@ -41,9 +41,9 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, number) {
-      this.method = callback;
+      callback.bind(this);
 
-      this.method(number);
+      callback.call(this, number);
 
       return this;
     },
@@ -61,6 +61,9 @@ function makeCalculator() {
     },
 
     divide(number) {
+      if (number === 0) {
+        return 'can\'t divide by zero';
+      }
       this.result /= number;
     },
 
