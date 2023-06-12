@@ -40,19 +40,19 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add: function(number) {
+    add(number) {
       this.result += number;
     },
 
-    subtract: function(number) {
+    subtract(number) {
       this.result -= number;
     },
 
-    multiply: function(number) {
+    multiply(number) {
       this.result *= number;
     },
 
-    divide: function(number) {
+    divide(number) {
       if (number !== 0) {
         this.result /= number;
       } else {
@@ -60,13 +60,13 @@ function makeCalculator() {
       }
     },
 
-    reset: function() {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function(callback, number) {
+    operate(callback, number) {
       callback.call(this, number);
 
       return this;
