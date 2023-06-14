@@ -40,20 +40,20 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add(result, num) {
-      return result + num;
+    add(num) {
+      this.result += num;
     },
 
-    subtract(result, num) {
-      return result - num;
+    subtract(num) {
+      this.result -= num;
     },
 
-    multiply(result, num) {
-      return result * num;
+    multiply(num) {
+      this.result *= num;
     },
 
-    divide(result, num) {
-      return result / num;
+    divide(num) {
+      this.result /= num;
     },
 
     reset() {
@@ -62,8 +62,8 @@ function makeCalculator() {
       return this;
     },
 
-    operate(operation, num) {
-      this.result = operation(this.result, num);
+    operate(method, num) {
+      method.bind(this, num)();
 
       return this;
     },
