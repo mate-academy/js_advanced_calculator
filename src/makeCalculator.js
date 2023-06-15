@@ -47,19 +47,19 @@ function makeCalculator() {
     },
 
     add(...operands) {
-      return (operands[0] += operands[1]);
+      return operands[0] + operands[1];
     },
 
     subtract(...operands) {
-      return (operands[0] -= operands[1]);
+      return operands[0] - operands[1];
     },
 
     multiply(...operands) {
-      return (operands[0] *= operands[1]);
+      return operands[0] * operands[1];
     },
 
     divide(...operands) {
-      return (operands[0] /= operands[1]);
+      return operands[0] / operands[1];
     },
 
     reset() {
