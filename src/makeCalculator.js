@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Another calculator. Now the task is more difficult.
