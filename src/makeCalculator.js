@@ -59,8 +59,8 @@ function makeCalculator() {
       return result * number;
     },
     divide(number, result) {
-      if (number === 0) {
-        throw new Error('Cannot execute division by zero');
+      if (number === 0 || result === 0) {
+        throw new Error('Cannot execute division with zero');
       }
 
       return result / number;
