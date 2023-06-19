@@ -45,16 +45,19 @@ function makeCalculator() {
 
       return calculator;
     },
+
     subtract(num) {
       calculator.result -= num;
 
       return calculator;
     },
+
     multiply(num) {
       calculator.result *= num;
 
       return calculator;
     },
+
     divide(num) {
       calculator.result /= num;
 
@@ -66,6 +69,7 @@ function makeCalculator() {
 
       return calculator;
     },
+
     operate(callback, num = 0) {
       return callback(num);
     },
