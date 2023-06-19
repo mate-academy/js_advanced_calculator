@@ -41,27 +41,19 @@ function makeCalculator() {
     result: 0,
 
     add(firstOperand, secondOperand) {
-      const operationResult = firstOperand + secondOperand;
-
-      return operationResult;
+      return firstOperand + secondOperand;
     },
 
     subtract(firstOperand, secondOperand) {
-      const operationResult = firstOperand - secondOperand;
-
-      return operationResult;
+      return firstOperand - secondOperand;
     },
 
     multiply(firstOperand, secondOperand) {
-      const operationResult = firstOperand * secondOperand;
-
-      return operationResult;
+      return firstOperand * secondOperand;
     },
 
     divide(firstOperand, secondOperand) {
-      const operationResult = firstOperand / secondOperand;
-
-      return operationResult;
+      return firstOperand / secondOperand;
     },
 
     reset() {
