@@ -40,35 +40,35 @@ function makeCalculator() {
   let result = 0;
 
   const calculator = {
-    add: function(num) {
+    add(num) {
       result += num;
 
-      return calculator;
+      return this;
     },
-    subtract: function(num) {
+    subtract(num) {
       result -= num;
 
-      return calculator;
+      return this;
     },
-    multiply: function(num) {
+    multiply(num) {
       result *= num;
 
-      return calculator;
+      return this;
     },
-    divide: function(num) {
+    divide(num) {
       result /= num;
 
-      return calculator;
+      return this;
     },
-    reset: function() {
+    reset() {
       result = 0;
 
-      return calculator;
+      return this;
     },
-    operate: function(callback, num) {
+    operate(callback, num) {
       callback(num);
 
-      return calculator;
+      return this;
     },
     get result() {
       return result;
