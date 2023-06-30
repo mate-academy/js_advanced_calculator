@@ -41,37 +41,41 @@ function makeCalculator() {
     add(num) {
       calculator.result += num;
 
-      return calculator;
+      return this;
     },
 
     subtract(num) {
       calculator.result -= num;
 
-      return calculator;
+      return this;
     },
 
     multiply(num) {
       calculator.result *= num;
 
-      return calculator;
+      return this;
     },
 
     divide(num) {
-      calculator.result /= num;
+      if (num !== 0) {
+        calculator.result /= num;
 
-      return calculator;
+        return this;
+      } else {
+        return new Error('can not be divided by 0');
+      }
     },
 
     reset() {
       calculator.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(callback, num) {
       callback(num);
 
-      return calculator;
+      return this;
     },
 
     result: 0,
