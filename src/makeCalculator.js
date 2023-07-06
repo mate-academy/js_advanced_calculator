@@ -54,7 +54,7 @@ function makeCalculator() {
       return a * b;
     },
     divide(a, b) {
-      return b === 0 ? 'ERROR! You can`t divide by zero!' : a / b;
+      return b === 0 ? throw new Error('ERROR! You can`t divide by zero!') : a / b;
     },
     reset() {
       this.result = 0;
