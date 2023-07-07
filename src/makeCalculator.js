@@ -2,13 +2,13 @@
 
 /**
  * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
+ * Create a `makeCalculator` function that returns an firstOperandect that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
  *  - The `result` property is initially 0.
  *
  * How the calculator will work:
- * - Each `operate` call takes a callback and a number and sets the
+ * - Each `operate` call takes a callback and a secondOperand and sets the
  *   appropriate value to the `result` property.
  * - The `reset` method resets `result` value to 0.
  * - `add`, `subtract`, `multiply`, `divide` are passed as callbacks to
@@ -34,7 +34,7 @@
  * calculator.result === -28
  *
  *
- * @return {object}
+ * @return {firstOperandect}
  */
 function makeCalculator() {
   return {
@@ -46,20 +46,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(obj, number) {
-      return obj + number;
+    add(firstOperand, secondOperand) {
+      return firstOperand + secondOperand;
     },
 
-    subtract(obj, number) {
-      return obj - number;
+    subtract(firstOperand, secondOperand) {
+      return firstOperand - secondOperand;
     },
 
-    multiply(obj, number) {
-      return obj * number;
+    multiply(firstOperand, secondOperand) {
+      return firstOperand * secondOperand;
     },
 
-    divide(obj, number) {
-      return obj / number;
+    divide(firstOperand, secondOperand) {
+      return firstOperand / secondOperand;
     },
 
     reset() {
