@@ -41,31 +41,28 @@ function makeCalculator() {
     result: 0,
 
     operate(callBack, number) {
-      return callBack(number);
+      calculator.result = callBack(number);
+
+      return calculator;
     },
 
     add(number) {
-      calculator.result += number;
-
-      return calculator;
+      return calculator.result + number;
     },
 
     subtract(number) {
-      calculator.result -= number;
-
-      return calculator;
+      return calculator.result - number;
     },
 
     divide(number) {
-      calculator.result /= number;
-
-      return calculator;
+      if (number === 0) {
+        throw new Error('This value is not valid');
+      }
+      return calculator.result / number;
     },
 
     multiply(number) {
-      calculator.result *= number;
-
-      return calculator;
+      return calculator.result * number;
     },
 
     reset() {
