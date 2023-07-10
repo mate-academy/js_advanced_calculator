@@ -42,27 +42,27 @@ function makeCalculator() {
     result: 0,
 
     add(a) {
-      calculator.result += a;
+      this.result += a;
 
-      return calculator.result;
+      return this;
     },
 
     subtract(a) {
-      calculator.result -= a;
+      this.result -= a;
 
-      return calculator.result;
+      return this;
     },
 
     divide(a) {
-      calculator.result /= a;
+      this.result /= a;
 
-      return calculator.result;
+      return this;
     },
 
     multiply(a) {
-      calculator.result *= a;
+      this.result *= a;
 
-      return calculator.result;
+      return this;
     },
 
     reset() {
@@ -72,8 +72,7 @@ function makeCalculator() {
     },
 
     operate(operation, x) {
-      // operation.bind(calculator, x);
-      operation(x);
+      operation.call(this, x);
 
       return this;
     },
