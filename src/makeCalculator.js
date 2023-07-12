@@ -38,11 +38,10 @@
  */
 function makeCalculator() {
   const calculator = {
-    method: '',
     result: 0,
+
     operate(method, number) {
-      calculator.method = method;
-      calculator.result = method(number);
+      this.result = method(this.result, number);
 
       return this;
     },
@@ -53,28 +52,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(number) {
-      const variable = calculator.result + number;
-
-      return variable;
+    add(result, number) {
+      return result + number;
     },
 
-    subtract(number) {
-      const variable = calculator.result - number;
-
-      return variable;
+    subtract(result, number) {
+      return result - number;
     },
 
-    multiply(number) {
-      const variable = calculator.result * number;
-
-      return variable;
+    multiply(result, number) {
+      return result * number;
     },
 
-    divide(number) {
-      const variable = calculator.result / number;
-
-      return variable;
+    divide(result, number) {
+      return result / number;
     },
   };
 
