@@ -47,31 +47,33 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
-      return callback(value);
+      this[callback.name](value);
+
+      return this;
     },
 
     add(value) {
-      calculator.result += value;
+      this.result += value;
 
-      return calculator;
+      return this;
     },
 
     subtract(value) {
-      calculator.result -= value;
+      this.result -= value;
 
-      return calculator;
+      return this;
     },
 
     multiply(value) {
-      calculator.result *= value;
+      this.result *= value;
 
-      return calculator;
+      return this;
     },
 
     divide(value) {
-      calculator.result /= value;
+      this.result /= value;
 
-      return calculator;
+      return this;
     },
   };
 
