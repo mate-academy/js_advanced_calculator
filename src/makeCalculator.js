@@ -47,6 +47,9 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
+      if (typeof callback !== 'function') {
+        throw new Error('Callback must be a function');
+      };
       callback.call(this, value);
 
       return this;
