@@ -47,7 +47,7 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
-      this[callback.name](value);
+      callback.call(this, value);
 
       return this;
     },
@@ -71,6 +71,9 @@ function makeCalculator() {
     },
 
     divide(value) {
+      if (value === 0) {
+        return 'Something go wrong. Put another number';
+      };
       this.result /= value;
 
       return this;
