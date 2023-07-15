@@ -37,7 +37,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  let calculator = {
+  return {
     result: 0,
     add(a, b) {
       return a + b;
@@ -53,14 +53,15 @@ function makeCalculator() {
     },
     reset() {
       this.result = 0;
+
       return this;
     },
     operate(callback, value) {
       this.result = callback(this.result, value);
+
       return this;
     },
   };
-  return calculator;
 }
 
 module.exports = makeCalculator;
