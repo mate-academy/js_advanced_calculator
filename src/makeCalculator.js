@@ -61,7 +61,9 @@ function makeCalculator() {
       return calculator;
     },
     divide(value) {
-      result /= value;
+      if (value !== 0) {
+        result /= value;
+      }
 
       return calculator;
     },
