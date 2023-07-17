@@ -41,7 +41,7 @@ function makeCalculator() {
     total: 0,
 
     operate(callback, value) {
-      this.total = callback(value);
+      callback.call(this, value);
 
       return calculator;
     },
