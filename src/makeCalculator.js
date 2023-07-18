@@ -40,29 +40,29 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add: function(input) {
+    add(input) {
       this.result += input;
     },
 
-    subtract: function(input) {
+    subtract(input) {
       this.result -= input;
     },
 
-    multiply: function(input) {
+    multiply(input) {
       this.result *= input;
     },
 
-    divide: function(input) {
+    divide(input) {
       this.result /= input;
     },
 
-    reset: function() {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function(operation, input) {
+    operate(operation, input) {
       operation.call(this, input);
 
       return this;
