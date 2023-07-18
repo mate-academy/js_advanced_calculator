@@ -73,6 +73,8 @@ function makeCalculator() {
     divide(value) {
       if (value !== 0) {
         this.result /= value;
+      } else {
+        throw new Error('You are trying to divide by 0. This is a mistake');
       }
 
       return this;
