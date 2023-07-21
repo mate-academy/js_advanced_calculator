@@ -40,7 +40,7 @@
 function makeCalculator() {
   return {
     result: 0,
-    add(num, a) {
+    add(num) {
       this.result += num;
 
       return this;
