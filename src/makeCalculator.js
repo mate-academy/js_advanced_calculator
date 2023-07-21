@@ -34,7 +34,7 @@
  * calculator.result === -28
  *
  *
- * @return {object}
+ *  * @return {object}
  */
 function makeCalculator() {
   return {
@@ -43,22 +43,32 @@ function makeCalculator() {
     add(num) {
       this.result += num;
     },
+
     subtract(num) {
       this.result -= num;
     },
+
     multiply(num) {
       this.result *= num;
     },
+
     divide(num) {
       this.result /= num;
+
+      if (num === 0) {
+        return 'Error - division by 0';
+      }
+      this.total /= num;
     },
+
     reset() {
       this.result = 0;
 
       return this;
     },
-    operate(operation, num) {
-      operation.call(this, num);
+
+    operate(callback, num) {
+      callback.call(this, num);
 
       return this;
     },
