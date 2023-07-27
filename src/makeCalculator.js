@@ -55,11 +55,13 @@ function makeCalculator() {
       return this;
     },
     divide(value) {
-      if (value > 0) {
-        this.result /= value;
-
-        return this;
+      if (value === 0) {
+        throw new Error('Dividing by 0 is not permitted!');
       }
+
+      this.result /= value;
+
+      return this;
     },
     validateValue(value) {
       return typeof value === 'number' && !isNaN(value);
@@ -68,16 +70,24 @@ function makeCalculator() {
       return typeof operation === 'function';
     },
     reset() {
-      if (this.validateOperation(this.reset)) {
-        this.result = 0;
-
-        return this;
+      if (!this.validateOperation(this.reset)) {
+        throw new Error('Invalid operation!');
       }
+
+      this.result = 0;
+
+      return this;
     },
     operate(operation, value) {
-      if (this.validateOperation(operation) && this.validateValue(value)) {
-        return operation.call(this, value);
+      if (!this.validateOperation(operation)) {
+        throw new Error('Invalid operation!');
       }
+
+      if (!this.validateValue(value)) {
+        throw new Error('Invalid value!');
+      }
+
+      return operation.call(this, value);
     },
   };
 
