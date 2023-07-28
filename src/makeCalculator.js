@@ -39,27 +39,32 @@
 function makeCalculator() {
   return {
     result: 0,
+    operate: function(action, a) {
+      return action.call(this, a);
+    },
 
-    operate(action, a, b) {
-      this.result = action(this.result, a, b);
+    add(a) {
+      this.result += a;
 
       return this;
     },
 
-    add(a, b) {
-      return a + b;
+    subtract(a) {
+      this.result -= a;
+
+      return this;
     },
 
-    subtract(a, b) {
-      return a - b;
+    multiply(a) {
+      this.result *= a;
+
+      return this;
     },
 
-    multiply(a, b) {
-      return a * b;
-    },
+    divide(a) {
+      this.result /= a;
 
-    divide(a, b) {
-      return a / b;
+      return this;
     },
 
     reset() {
@@ -69,8 +74,6 @@ function makeCalculator() {
     },
 
   };
-
-  // write code here
 }
 
 module.exports = makeCalculator;
