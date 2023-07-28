@@ -10,20 +10,19 @@
     "test:only": "mate-scripts test",
     "update": "mate-scripts update",
     "postinstall": "npm run update",
-    "test": "npm run lint && npm run test:only"
+    "test": "jest"
   },
   "author": "Mate academy",
   "license": "GPL-3.0",
   "devDependencies": {
     "@mate-academy/eslint-config": "*",
-    "@mate-academy/scripts": "^0.7.12",
+    "@mate-academy/scripts": "^1.2.8",
     "eslint": "^5.16.0",
     "eslint-plugin-jest": "^22.4.1",
     "eslint-plugin-node": "^8.0.1",
-    "jest": "^24.7.0"
+    "jest": "^24.9.0"
   },
   "mateAcademy": {
     "projectType": "javascript"
-  },
-  "dependencies": {}
+  }
 }
