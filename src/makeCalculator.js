@@ -62,6 +62,9 @@ function makeCalculator() {
     },
 
     divide(a) {
+      if (!a) {
+        throw new Error('cannot be divided by zero');
+      }
       this.result /= a;
 
       return this;
