@@ -40,8 +40,8 @@ function makeCalculator() {
   return {
     result: 0,
 
-    operate(callback, num) {
-      this.result = callback(this.result, num);
+    operate(callback, a, b) {
+      this.result = callback(this.result, a, b);
 
       return this;
     },
@@ -59,7 +59,9 @@ function makeCalculator() {
     },
 
     divide(a, b) {
-      return a / b;
+      if (b !== 0) {
+        return a / b;
+      }
     },
 
     reset() {
