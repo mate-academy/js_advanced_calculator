@@ -44,8 +44,8 @@ function makeCalculator() {
     multiply: (a, b) => a * b,
     result: 0,
 
-    operate(operation, digit) {
-      this.result = operation(this.result, digit);
+    operate(operation, value) {
+      this.result = operation(this.result, value);
 
       return this;
     },
