@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Another calculator. Now the task is more difficult.
@@ -36,8 +36,52 @@
  *
  * @return {object}
  */
-function makeCalculator() {
-  // write code here
-}
 
+function makeCalculator() {
+  let result = 0;
+
+  return {
+    add(number) {
+      result += number;
+
+      return this;
+    },
+
+    subtract(number) {
+      result -= number;
+
+      return this;
+    },
+
+    multiply(number) {
+      result *= number;
+
+      return this;
+    },
+
+    divide(number) {
+      if (number !== 0) {
+        result /= number;
+      }
+
+      return this;
+    },
+
+    reset() {
+      result = 0;
+
+      return this;
+    },
+
+    operate(callback, number) {
+      callback(number);
+
+      return this;
+    },
+
+    get result() {
+      return result;
+    },
+  };
+}
 module.exports = makeCalculator;
