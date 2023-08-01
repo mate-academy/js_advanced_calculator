@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Another calculator. Now the task is more difficult.
@@ -38,50 +38,43 @@
  */
 
 function makeCalculator() {
-  let result = 0;
-
   return {
-    add(number) {
-      result += number;
+    result: 0,
 
-      return this;
+    add(number) {
+      this.result += number;
     },
 
     subtract(number) {
-      result -= number;
-
-      return this;
+      this.result -= number;
     },
 
     multiply(number) {
-      result *= number;
-
-      return this;
+      this.result *= number;
     },
 
     divide(number) {
       if (number !== 0) {
-        result /= number;
+        this.result /= number;
       }
-
-      return this;
     },
 
     reset() {
-      result = 0;
+      this.result = 0;
 
       return this;
     },
 
     operate(callback, number) {
-      callback(number);
+      callback.call(this, number);
 
       return this;
     },
 
-    get result() {
-      return result;
+    get getResult() {
+      return this.result;
     },
   };
 }
+
 module.exports = makeCalculator;
