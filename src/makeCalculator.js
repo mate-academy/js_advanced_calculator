@@ -65,6 +65,10 @@ function makeCalculator() {
     },
 
     divide(num) {
+      if (num === 0) {
+        return this;
+      }
+
       this.result /= num;
     },
   };
