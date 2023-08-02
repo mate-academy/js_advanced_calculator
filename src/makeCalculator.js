@@ -37,36 +37,41 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calculator = {};
+  const calculator = {
 
-  calculator.result = 0;
+    result: 0,
 
-  calculator.operate = function(callback, param) {
-    this.result = callback(this.result, param);
+    operate(callback, param) {
+      this.result = callback(this.result, param);
 
-    return this;
-  };
+      return this;
+    },
 
-  calculator.add = function(a, b) {
-    return a + b;
-  };
+    add(a, b) {
+      return a + b;
+    },
 
-  calculator.subtract = function(a, b) {
-    return a - b;
-  };
+    subtract(a, b) {
+      return a - b;
+    },
 
-  calculator.multiply = function(a, b) {
-    return a * b;
-  };
+    multiply(a, b) {
+      return a * b;
+    },
 
-  calculator.divide = function(a, b) {
-    return a / b;
-  };
+    divide(a, b) {
+      if (b !== 0) {
+        return a / b;
+      } else {
+        return 'Error: Cannot divide by zero';
+      }
+    },
 
-  calculator.reset = function() {
-    this.result = 0;
+    reset() {
+      this.result = 0;
 
-    return this;
+      return this;
+    },
   };
 
   return calculator;
