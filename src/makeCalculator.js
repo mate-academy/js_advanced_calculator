@@ -36,8 +36,39 @@
  *
  * @return {object}
  */
+const INITIAL_VALUE = 0;
+
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: INITIAL_VALUE,
+
+    add: function(value) {
+      return this.result + value;
+    },
+    subtract: function(value) {
+      return this.result - value;
+    },
+    multiply: function(value) {
+      return this.result * value;
+    },
+    divide: function(value) {
+      return this.result / value;
+    },
+
+    operate: function(operation, value) {
+      this.result = operation.call(this, value);
+
+      return this;
+    },
+
+    reset: function() {
+      this.result = INITIAL_VALUE;
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
