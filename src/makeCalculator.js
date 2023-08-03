@@ -42,21 +42,29 @@ function makeCalculator() {
   const calculator = {
     result: INITIAL_VALUE,
 
-    add: (value) => calculator.result + value,
-    subtract: (value) => calculator.result - value,
-    multiply: (value) => calculator.result * value,
-    divide: (value) => calculator.result / value,
-
-    operate: (operation, value) => {
-      calculator.result = operation(value);
-
-      return calculator;
+    add: function(value) {
+      return this.result + value;
+    },
+    subtract: function(value) {
+      return this.result - value;
+    },
+    multiply: function(value) {
+      return this.result * value;
+    },
+    divide: function(value) {
+      return this.result / value;
     },
 
-    reset: () => {
-      calculator.result = INITIAL_VALUE;
+    operate: function(operation, value) {
+      this.result = operation.call(this, value);
 
-      return calculator;
+      return this;
+    },
+
+    reset: function() {
+      this.result = INITIAL_VALUE;
+
+      return this;
     },
   };
 
