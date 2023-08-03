@@ -49,11 +49,11 @@ function makeCalculator() {
     },
 
     divide(firstNum, secondNum) {
-      if (secondNum !== 0) {
-        return firstNum / secondNum;
+      if (secondNum === 0) {
+        throw new Error('You can\'t divide by zero');
       }
 
-      return this;
+      return firstNum / secondNum;
     },
 
     multiply(firstNum, secondNum) {
