@@ -39,7 +39,7 @@
 function makeCalculator() {
   const calculator = {
     operate(callback, value) {
-      if (!isNaN(value)) {
+      if (Number.isInteger(value)) {
         this.result = callback(value, this.result);
 
         return this;
