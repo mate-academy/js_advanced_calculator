@@ -56,7 +56,7 @@ function makeCalculator() {
         return result / value;
       }
 
-      return 'error: division by zero is not possible';
+      throw new Error('error: division by zero is not possible');
     },
     multiply(value, result) {
       return result * value;
