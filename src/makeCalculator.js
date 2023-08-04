@@ -39,7 +39,7 @@
 function makeCalculator() {
   const calculator = {
     operate(callback, value) {
-      if (Number.isInteger(value)) {
+      if (typeof value === 'number') {
         this.result = callback(value, this.result);
 
         return this;
@@ -55,6 +55,8 @@ function makeCalculator() {
       if (value !== 0) {
         return result / value;
       }
+
+      return 'error';
     },
     multiply(value, result) {
       return result * value;
