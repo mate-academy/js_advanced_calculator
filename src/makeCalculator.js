@@ -39,9 +39,11 @@
 function makeCalculator() {
   const calculator = {
     operate(callback, value) {
-      this.result = callback(value, this.result);
+      if (!isNaN(value)) {
+        this.result = callback(value, this.result);
 
-      return this;
+        return this;
+      }
     },
     add(value, result) {
       return result + value;
@@ -50,7 +52,9 @@ function makeCalculator() {
       return result - value;
     },
     divide(value, result) {
-      return result / value;
+      if (value !== 0) {
+        return result / value;
+      }
     },
     multiply(value, result) {
       return result * value;
