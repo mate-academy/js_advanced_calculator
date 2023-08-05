@@ -38,13 +38,15 @@
  */
 function makeCalculator() {
   const calculator = {
+    DEFAULT_VALUE: 0,
     result: 0,
 
     operate(
-      callBack = N => N ?? 0,
-      n = 0,
+      modifyResult = N => N ?? this.result,
+      n = this.DEFAULT_VALUE,
     ) {
-      callBack.bind(this)(n);
+      // add context to the callback function and call it
+      modifyResult.bind(this)(n);
 
       return this;
     },
@@ -66,7 +68,7 @@ function makeCalculator() {
     },
 
     reset() {
-      this.result = 0;
+      this.result = this.DEFAULT_VALUE;
 
       return this;
     },
