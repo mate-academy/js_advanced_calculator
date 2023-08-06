@@ -58,6 +58,8 @@ function makeCalculator() {
 
     reset() {
       this.result = 0;
+
+      return this;
     },
 
     operate(callback, value) {
