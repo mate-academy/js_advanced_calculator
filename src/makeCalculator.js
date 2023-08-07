@@ -62,9 +62,9 @@ function makeCalculator() {
     divide(a, b) {
       if (b !== 0) {
         return a / b;
-      } else {
-        return 'Error: Cannot divide by zero';
       }
+      
+      return 'Error: Cannot divide by zero';
     },
 
     reset() {
