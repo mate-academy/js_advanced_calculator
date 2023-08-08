@@ -37,7 +37,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  return {
+  const calculator = {
     result: 0,
 
     add(prevNum, curNum) {
@@ -68,6 +68,8 @@ function makeCalculator() {
       return this;
     },
   };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
