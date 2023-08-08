@@ -37,33 +37,35 @@
  * @return {object}
  */
 function makeCalculator() {
+  const INITIAL_VALUE = 0;
+
   return {
-    result: 0,
+    result: INITIAL_VALUE,
 
-    add(result, number) {
-      return result + number;
+    add(number) {
+      return this.result + number;
     },
 
-    subtract(result, number) {
-      return result - number;
+    subtract(number) {
+      return this.result - number;
     },
 
-    multiply(result, number) {
-      return result * number;
+    multiply(number) {
+      return this.result * number;
     },
 
-    divide(result, number) {
-      return result / number;
+    divide(number) {
+      return this.result / number;
     },
 
     operate(callback, number) {
-      this.result = callback(this.result, number);
+      this.result = callback.call(this, number);
 
       return this;
     },
 
     reset() {
-      this.result = 0;
+      this.result = INITIAL_VALUE;
 
       return this;
     },
