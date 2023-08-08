@@ -8,9 +8,7 @@ function makeCalculator() {
     result: 0,
 
     operate(operation, number) {
-      operation.call(this, number);
-
-      return this;
+      return operation.call(this, number);
     },
 
     reset() {
@@ -21,18 +19,26 @@ function makeCalculator() {
 
     add(number) {
       this.result += number;
+
+      return this;
     },
 
     subtract(number) {
       this.result -= number;
+
+      return this;
     },
 
     multiply(number) {
       this.result *= number;
+
+      return this;
     },
 
     divide(number) {
       this.result /= number;
+
+      return this;
     },
   };
 }
