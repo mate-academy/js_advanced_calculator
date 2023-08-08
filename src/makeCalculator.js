@@ -37,7 +37,37 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    add(prevNum, curNum) {
+      return prevNum + curNum;
+    },
+
+    subtract(prevNum, curNum) {
+      return prevNum - curNum;
+    },
+
+    multiply(prevNum, curNum) {
+      return prevNum * curNum;
+    },
+
+    divide(prevNum, curNum) {
+      return prevNum / curNum;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(operation, num) {
+      this.result = operation(this.result, num);
+
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
