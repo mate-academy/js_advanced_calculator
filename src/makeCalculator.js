@@ -40,21 +40,10 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(prevNum, curNum) {
-      return prevNum + curNum;
-    },
-
-    subtract(prevNum, curNum) {
-      return prevNum - curNum;
-    },
-
-    multiply(prevNum, curNum) {
-      return prevNum * curNum;
-    },
-
-    divide(prevNum, curNum) {
-      return prevNum / curNum;
-    },
+    add: (firstOperand, secondOperand) => firstOperand + secondOperand,
+    subtract: (firstOperand, secondOperand) => firstOperand - secondOperand,
+    multiply: (firstOperand, secondOperand) => firstOperand * secondOperand,
+    divide: (firstOperand, secondOperand) => firstOperand / secondOperand,
 
     reset() {
       this.result = 0;
