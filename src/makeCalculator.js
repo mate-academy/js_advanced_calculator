@@ -45,8 +45,7 @@ function makeCalculator() {
       modifyResult = N => N ?? this.result,
       n = this.DEFAULT_VALUE,
     ) {
-      // add context to the callback function and call it
-      modifyResult.bind(this)(n);
+      modifyResult.call(this, n);
 
       return this;
     },
