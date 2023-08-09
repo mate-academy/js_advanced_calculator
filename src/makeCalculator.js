@@ -40,35 +40,35 @@ function makeCalculator() {
   const INITIAL_VALUE = 0;
 
   const calculator = {
+    result: INITIAL_VALUE,
+
     add(integer) {
-      calculator.result += integer;
+      return this.result + integer;
     },
 
     subtract(integer) {
-      calculator.result -= integer;
+      return this.result - integer;
     },
 
     multiply(integer) {
-      calculator.result *= integer;
+      return this.result * integer;
     },
 
     divide(integer) {
-      calculator.result /= integer;
+      return this.result / integer;
     },
 
     reset(integer) {
-      calculator.result = INITIAL_VALUE;
+      this.result = INITIAL_VALUE;
 
       return this;
     },
 
-    operate(action, integer) {
-      action(integer);
+    operate(action, value) {
+      this.result = action.call(this, value);
 
       return this;
     },
-
-    result: INITIAL_VALUE,
   };
 
   return calculator;
