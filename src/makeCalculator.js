@@ -41,20 +41,23 @@ function makeCalculator() {
   const obj = {
     result: 0,
 
-    add(x, y) {
-      return x + y;
+    add(a) {
+      this.result += a;
     },
 
-    subtract(x, y) {
-      return x - y;
+    subtract(a) {
+      this.result -= a;
     },
 
-    multiply(x, y) {
-      return x * y;
+    multiply(a) {
+      this.result *= a;
     },
 
-    divide(x, y) {
-      return x / y;
+    divide(a) {
+      if (a === 0) {
+        throw new Error('Division by zero is not allowed.');
+      }
+      this.result /= a;
     },
 
     reset() {
@@ -64,7 +67,10 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      this.result = callback(this.result, number);
+      if (typeof callback !== 'function') {
+        throw new Error('Invalid callback function.');
+      }
+      callback.call(this, number);
 
       return this;
     },
