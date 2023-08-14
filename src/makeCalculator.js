@@ -44,7 +44,11 @@ function makeCalculator() {
 
     subtract: number => calculator.result - number,
 
-    divide: number => calculator.result / number,
+    divide: number => {
+      if (number !== 0) {
+        return calculator.result / number;
+      }
+    },
 
     multiply: number => calculator.result * number,
 
