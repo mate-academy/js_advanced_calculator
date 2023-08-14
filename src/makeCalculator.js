@@ -1,11 +1,12 @@
 'use strict';
 
 /**
- * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
- * has the following fields:
- *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
- *  - The `result` property is initially 0.
+ \/ => * Another calculator. Now the task is more difficult.
+ \/ =>  * Create a `makeCalculator` function  \/ => that returns an object that
+ \/ => * has the following fields:
+ \/ =>  *  - Methods: `add`,
+`subtract`, `multiply`, `divide`, `reset`, `operate`.
+ \/ => *  - The `result` property is initially 0.
  *
  * How the calculator will work:
  * - Each `operate` call takes a callback and a number and sets the
@@ -37,7 +38,33 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const resultObj = {
+    result: 0,
+    add(currentResult, number) {
+      return currentResult + number;
+    },
+    subtract(currentResult, number) {
+      return currentResult - number;
+    },
+    multiply(currentResult, number) {
+      return currentResult * number;
+    },
+    divide(currentResult, number) {
+      return currentResult / number;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+    operate(operation, number) {
+      this.result = operation(this.result, number);
+
+      return this;
+    },
+  };
+
+  return resultObj;
 }
 
 module.exports = makeCalculator;
