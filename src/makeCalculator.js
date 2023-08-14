@@ -43,14 +43,20 @@ function makeCalculator() {
 
     add(a) {
       this.result += a;
+
+      return this;
     },
 
     subtract(a) {
       this.result -= a;
+
+      return this;
     },
 
     multiply(a) {
       this.result *= a;
+
+      return this;
     },
 
     divide(a) {
@@ -58,6 +64,8 @@ function makeCalculator() {
         throw new Error('Division by zero is not allowed.');
       }
       this.result /= a;
+
+      return this;
     },
 
     reset() {
