@@ -56,6 +56,8 @@ function makeCalculator() {
       if (b !== 0) {
         return a / b;
       }
+
+      return 'cannot be divided by zero';
     },
 
     reset() {
