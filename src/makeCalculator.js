@@ -73,9 +73,7 @@ function makeCalculator() {
     },
 
     operate: function(callback, number) {
-      if (typeof callback === 'function') {
-        callback.call(this, number);
-      }
+      callback.call(this, number);
 
       return this;
     },
