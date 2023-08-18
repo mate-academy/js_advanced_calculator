@@ -47,25 +47,29 @@ function makeCalculator() {
     },
 
     operate(operation, value) {
-      operation(value);
+      this.result = operation(this.result, value);
 
       return this;
     },
 
-    add(x) {
-      calculator.result += x;
+    add(x, y) {
+      return x + y;
     },
 
-    subtract(x) {
-      calculator.result -= x;
+    subtract(x, y) {
+      return x - y;
     },
 
-    multiply(x) {
-      calculator.result *= x;
+    multiply(x, y) {
+      return x * y;
     },
 
-    divide(x) {
-      calculator.result /= x;
+    divide(x, y) {
+      if (y === 0) {
+        throw new Error('You can\'t divide by zero');
+      }
+
+      return x / y;
     },
   };
 
