@@ -55,7 +55,9 @@ function makeCalculator() {
       return this;
     },
     divide: function(num) {
-      this.result /= num;
+      if (num > 0) {
+        this.result /= num;
+      }
 
       return this;
     },
