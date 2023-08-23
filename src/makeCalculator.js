@@ -2,7 +2,7 @@
 
 /**
  * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
+ * Create a `makeCalculator` function that return s an object that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
  *  - The `result` property is initially 0.
@@ -34,26 +34,46 @@
  * calculator.result === -28
  *
  *
- * @return {object}
+ * @return  {object}
  */
 function makeCalculator() {
   const calculator = {
     result: 0,
 
     add(value) {
-      this.result += value;
+      if (typeof value === 'number') {
+        this.result += value;
+      } else {
+        return 'Value must be a number.';
+      }
     },
 
     subtract(value) {
-      this.result -= value;
+      if (typeof value === 'number') {
+        this.result -= value;
+      } else {
+        return 'Value must be a number.';
+      }
     },
 
     multiply(value) {
-      this.result *= value;
+      if (typeof value === 'number') {
+        this.result *= value;
+      } else {
+        return 'Value must be a number.';
+      }
     },
 
     divide(value) {
-      this.result /= value;
+      if (typeof value === 'number') {
+        if (value !== 0) {
+          this.result /= value;
+        } else {
+          return 'you can\'t divide by zero!';
+        }
+      } else {
+        return 'Value must be a number.';
+      }
     },
 
     reset() {
@@ -63,7 +83,11 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
-      callback.call(this, value);
+      if (typeof value === 'number') {
+        callback.call(this, value);
+      } else {
+        return 'Value must be a number.';
+      }
 
       return this;
     },
