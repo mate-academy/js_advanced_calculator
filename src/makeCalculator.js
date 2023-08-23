@@ -53,7 +53,11 @@ function makeCalculator() {
     },
 
     divide(value) {
-      this.result /= value;
+      if (value !== 0) {
+        this.result /= value;
+      } else {
+        return 'you can\'t divide by zero!';
+      }
     },
 
     reset() {
@@ -65,8 +69,6 @@ function makeCalculator() {
     operate(callback, value) {
       if (typeof value === 'number' && typeof callback === 'function') {
         callback.call(this, value);
-      } else {
-        return 'Value must be a number.';
       }
 
       return this;
