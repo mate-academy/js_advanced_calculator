@@ -41,39 +41,19 @@ function makeCalculator() {
     result: 0,
 
     add(value) {
-      if (typeof value === 'number') {
-        this.result += value;
-      } else {
-        return 'Value must be a number.';
-      }
+      this.result += value;
     },
 
     subtract(value) {
-      if (typeof value === 'number') {
-        this.result -= value;
-      } else {
-        return 'Value must be a number.';
-      }
+      this.result -= value;
     },
 
     multiply(value) {
-      if (typeof value === 'number') {
-        this.result *= value;
-      } else {
-        return 'Value must be a number.';
-      }
+      this.result *= value;
     },
 
     divide(value) {
-      if (typeof value === 'number') {
-        if (value !== 0) {
-          this.result /= value;
-        } else {
-          return 'you can\'t divide by zero!';
-        }
-      } else {
-        return 'Value must be a number.';
-      }
+      this.result /= value;
     },
 
     reset() {
@@ -83,7 +63,7 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
-      if (typeof value === 'number') {
+      if (typeof value === 'number' && typeof callback === 'function') {
         callback.call(this, value);
       } else {
         return 'Value must be a number.';
