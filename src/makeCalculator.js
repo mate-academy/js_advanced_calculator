@@ -39,20 +39,20 @@
 function makeCalculator() {
   return {
     result: 0,
-    add(a, b) {
-      return a + b;
+    add(value) {
+      this.result += value;
     },
-    subtract(a, b) {
-      return a - b;
+    subtract(value) {
+      this.result -= value;
     },
-    multiply(a, b) {
-      return a * b;
+    multiply(value) {
+      this.result *= value;
     },
-    divide(a, b) {
-      return a / b;
+    divide(value) {
+      this.result /= (value || 1);
     },
     operate(callback, value) {
-      this.result = callback(this.result, value);
+      callback.call(this, value);
 
       return this;
     },
