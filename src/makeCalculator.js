@@ -40,20 +40,24 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(object, number) {
-      object.result += number;
+    add(a, b) {
+      return a + b;
     },
 
-    subtract(object, number) {
-      object.result -= number;
+    subtract(a, b) {
+      return a - b;
     },
 
-    multiply(object, number) {
-      object.result *= number;
+    multiply(a, b) {
+      return a * b;
     },
 
-    divide(object, number) {
-      object.result /= number;
+    divide(a, b) {
+      if (b === 0) {
+        throw new Error('Division by 0');
+      }
+
+      return a / b;
     },
 
     reset() {
@@ -63,7 +67,7 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      callback(this, number);
+      this.result = callback(this.result, number);
 
       return this;
     },
