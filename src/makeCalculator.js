@@ -37,44 +37,46 @@
  * @return {object}
  */
 function makeCalculator() {
-  let result = 0;
-
   const calculator = {
+    result: 0,
+
     add: (number) => {
-      result += number;
+      calculator.result += number;
 
       return calculator;
     },
+
     subtract: (number) => {
-      result -= number;
+      calculator.result -= number;
 
       return calculator;
     },
+
     multiply: (number) => {
-      result *= number;
+      calculator.result *= number;
 
       return calculator;
     },
+
     divide: (number) => {
       if (number === 0) {
         return 'You cannot divide by zero';
       }
-      result /= number;
+      calculator.result /= number;
 
       return calculator;
     },
+
     reset: () => {
-      result = 0;
+      calculator.result = 0;
 
       return calculator;
     },
+
     operate: (callback, number) => {
       callback(number);
 
       return calculator;
-    },
-    get result() {
-      return result;
     },
   };
 
