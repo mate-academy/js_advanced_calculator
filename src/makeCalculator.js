@@ -56,7 +56,7 @@ function makeCalculator() {
       return calculator;
     },
     divide: (number) => {
-      if (result === 0) {
+      if (number === 0) {
         return 'You cannot divide by zero';
       }
       result /= number;
