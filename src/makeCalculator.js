@@ -53,6 +53,9 @@ function makeCalculator() {
     },
 
     divide(num) {
+      if (num === 0) {
+        throw new Error('Learn Math! There is no dividing with zero');
+      }
       this.result /= num;
     },
 
