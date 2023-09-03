@@ -41,7 +41,11 @@ function makeCalculator() {
     result: 0,
 
     operate(command, number) {
-      this.result = command(this.result, number);
+      if (typeof command !== 'function' || typeof number !== 'number') {
+        return;
+      }
+
+      command.call(this, number);
 
       return this;
     },
@@ -52,24 +56,24 @@ function makeCalculator() {
       return this;
     },
 
-    add(result, number) {
-      return result + number;
+    add(number) {
+      this.result += number;
     },
 
-    subtract(result, number) {
-      return result - number;
+    subtract(number) {
+      this.result -= number;
     },
 
-    divide(result, number) {
+    divide(number) {
       if (number === 0) {
-        return result;
+        return;
       }
 
-      return result / number;
+      this.result /= number;
     },
 
-    multiply(result, number) {
-      return result * number;
+    multiply(number) {
+      this.result *= number;
     },
   };
 
