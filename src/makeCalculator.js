@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Another calculator. Now the task is more difficult.
@@ -37,7 +37,36 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    add(arg) {
+      this.result += arg;
+    },
+    operate(callback, arg) {
+      callback.call(this, arg);
+
+      return this;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+    subtract(arg) {
+      this.result -= arg;
+    },
+    multiply(arg) {
+      this.result *= arg;
+    },
+    divide(arg) {
+      if (arg !== 0) {
+        this.result /= arg;
+      } else {
+        throw new Error('Division by zero is not allowed');
+      }
+    },
+  };
 }
 
 module.exports = makeCalculator;
