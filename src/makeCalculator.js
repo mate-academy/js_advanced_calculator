@@ -50,7 +50,9 @@ function makeCalculator() {
     },
 
     divide(number) {
-      return calculator.result / number;
+      if (number !== 0) {
+        return calculator.result / number;
+      }
     },
 
     multiply(number) {
