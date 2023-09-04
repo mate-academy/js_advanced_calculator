@@ -53,6 +53,7 @@ function makeCalculator() {
       if (number !== 0) {
         return calculator.result / number;
       }
+      throw new Error('cannot divide by zero');
     },
 
     multiply(number) {
