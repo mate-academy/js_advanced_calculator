@@ -56,8 +56,8 @@ function makeCalculator() {
       return result * value;
     },
 
-    operate(callback, value) {
-      this.result = callback(this.result, value);
+    operate(operation, value) {
+      this.result = operation(this.result, value);
 
       return this;
     },
