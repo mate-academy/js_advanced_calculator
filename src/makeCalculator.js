@@ -41,6 +41,10 @@ function makeCalculator() {
     result: 0,
 
     operate(operation, a) {
+      if (isNaN(a)) {
+        return new Error(a + 'not a number');
+      }
+
       operation.call(this, a);
 
       return this;
@@ -59,6 +63,10 @@ function makeCalculator() {
     },
 
     divide(a) {
+      if (a === 0) {
+        return new Error('Сannot be divided by zero');
+      }
+
       this.result /= a;
     },
 
