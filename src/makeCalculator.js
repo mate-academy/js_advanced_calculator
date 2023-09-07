@@ -40,24 +40,23 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(result, value) {
-      return result + value;
+    add(value) {
+      this.result += value;
     },
 
-    subtract(result, value) {
-      return result - value;
+    subtract(value) {
+      this.result -= value;
     },
 
-    multiply(result, value) {
-      return result * value;
+    multiply(value) {
+      this.result *= value;
     },
 
-    divide(result, value) {
+    divide(value) {
       if (value === 0) {
         return new Error('Error! Dividing for zero.');
       }
-
-      return result / value;
+      this.result /= value;
     },
 
     reset() {
@@ -66,8 +65,8 @@ function makeCalculator() {
       return this;
     },
 
-    operate(operation, number) {
-      this.result = operation(this.result, number);
+    operate(callback, number) {
+      callback.call(this, number);
 
       return this;
     },
