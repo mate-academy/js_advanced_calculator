@@ -52,7 +52,7 @@ function makeCalculator() {
       calculator.result /= operand;
     },
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
