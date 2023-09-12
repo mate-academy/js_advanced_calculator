@@ -37,7 +37,31 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    operate(operation, number) {
+      if (operation === this.divide && number === 0) {
+        console.error("Division by zero is not allowed.");
+        return this;
+      }
+
+      this.result = operation(this.result, number);
+
+      return this;
+    },
+
+    add: (x, y) => x + y,
+    subtract: (x, y) => x - y,
+    multiply: (x, y) => x * y,
+    divide: (x, y) => x / y,
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
