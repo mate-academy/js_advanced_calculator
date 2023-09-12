@@ -2,17 +2,16 @@
 
 /**
  * Another calculator. Now the task is more difficult.
- * Create a `makeCalculator` function that returns an object that
- * has the following fields:
+ * Create a `makeCalculator` function that returns
+ * an object that has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
  *  - The `result` property is initially 0.
- *
  * How the calculator will work:
- * - Each `operate` call takes a callback and a number and sets the
- *   appropriate value to the `result` property.
+ * - Each `operate` call takes a callback and a number and
+ * sets the appropriate value to the `result` property.
  * - The `reset` method resets `result` value to 0.
- * - `add`, `subtract`, `multiply`, `divide` are passed as callbacks to
- *   `operate` method
+ * - `add`, `subtract`, `multiply`, `divide` are passed as
+ * callbacks to `operate` method
  * - The `operate` and `reset` methods can be called in a chain.
  *
  * Example:
@@ -33,11 +32,51 @@
  *
  * calculator.result === -28
  *
- *
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+    result: 0,
+
+    add(num) {
+      this.result += num;
+
+      return this;
+    },
+
+    subtract(num) {
+      this.result -= num;
+
+      return this;
+    },
+
+    multiply(num) {
+      this.result *= num;
+
+      return this;
+    },
+
+    divide(num) {
+      if (num === 0) {
+        throw new Error('Division by zero is not allowed');
+      }
+      this.result /= num;
+
+      return this;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(callback, num) {
+      return callback.call(this, num);
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
