@@ -41,6 +41,11 @@ function makeCalculator() {
     result: 0,
 
     operate(operation, number) {
+      if (operation === this.divide && number === 0) {
+        console.error("Division by zero is not allowed.");
+        return this;
+      }
+
       this.result = operation(this.result, number);
 
       return this;
