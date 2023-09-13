@@ -66,11 +66,15 @@ function makeCalculator() {
   }
 
   function divide(number) {
+    if (number === 0) {
+      return 'division by zero is undefined';
+    }
+
     this.result /= number;
   }
 
   function reset() {
-    calculator.result = 0;
+    this.result = 0;
 
     return this;
   }
