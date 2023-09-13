@@ -38,35 +38,35 @@
  */
 function makeCalculator() {
   const calculator = {
-    operate: operate,
-    add: add,
-    subtract: subtract,
-    multiply: multiply,
-    divide: divide,
-    reset: reset,
+    operate,
+    add,
+    subtract,
+    multiply,
+    divide,
+    reset,
     result: 0,
   };
 
   function operate(operation, number = 0) {
-    operation(number);
+    operation.call(this, number);
 
     return this;
   }
 
   function add(number) {
-    calculator.result += number;
+    this.result += number;
   }
 
   function subtract(number) {
-    calculator.result -= number;
+    this.result -= number;
   }
 
   function multiply(number) {
-    calculator.result *= number;
+    this.result *= number;
   }
 
   function divide(number) {
-    calculator.result /= number;
+    this.result /= number;
   }
 
   function reset() {
