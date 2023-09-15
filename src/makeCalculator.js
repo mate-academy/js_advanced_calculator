@@ -53,8 +53,8 @@ function makeCalculator() {
     },
 
     divide(a, b) {
-      if (a === 0) {
-        return this;
+      if (b === 0) {
+        throw new Error('Invalid value');
       } else {
         return a / b;
       };
