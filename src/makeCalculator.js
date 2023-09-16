@@ -37,7 +37,47 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    add: function(number) {
+      this.result += number;
+
+      return this;
+    },
+
+    subtract: function(number) {
+      this.result -= number;
+
+      return this;
+    },
+
+    multiply: function(number) {
+      this.result *= number;
+
+      return this;
+    },
+
+    divide: function(number) {
+      if (number !== 0) {
+        this.result /= number;
+      } else {
+        return 'Division by zero is not allowed.';
+      }
+
+      return this;
+    },
+
+    reset: function() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate: function(callback, number) {
+      return callback.call(this, number);
+    },
+  };
 }
 
 module.exports = makeCalculator;
