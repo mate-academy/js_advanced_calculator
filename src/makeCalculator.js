@@ -34,10 +34,46 @@
  * calculator.result === -28
  *
  *
- * @return {object}
+
  */
+
 function makeCalculator() {
-  // write code here
+  const obj = {
+    add(a) {
+      obj.result += a;
+
+      return obj.result;
+    },
+    subtract(a) {
+      obj.result -= a;
+
+      return obj.result;
+    },
+    multiply(a) {
+      obj.result *= a;
+
+      return obj.result;
+    },
+    divide(a) {
+      obj.result /= a;
+
+      return obj.result;
+    },
+    reset() {
+      obj.result = 0;
+
+      return obj;
+    },
+    operate(f, n) {
+      f(n);
+
+      return obj;
+    },
+
+    result: 0,
+  };
+
+  return obj;
 }
 
 module.exports = makeCalculator;
