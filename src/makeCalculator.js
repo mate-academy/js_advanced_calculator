@@ -5,6 +5,7 @@
  * Create a `makeCalculator` function that returns an object that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
+ * `додати`, `відняти`, `помножити`, `поділити`, `скинути`, `оперувати`
  *  - The `result` property is initially 0.
  *
  * How the calculator will work:
@@ -37,7 +38,47 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {};
+
+  calculator.result = 0;
+
+  calculator.operate = (operation, number) => {
+    operation(number);
+
+    return calculator;
+  };
+
+  calculator.add = (number) => {
+    calculator.result += number;
+
+    return calculator;
+  };
+
+  calculator.subtract = (number) => {
+    calculator.result -= number;
+
+    return calculator;
+  };
+
+  calculator.multiply = (number) => {
+    calculator.result *= number;
+
+    return calculator;
+  };
+
+  calculator.divide = (number) => {
+    calculator.result /= number;
+
+    return calculator;
+  };
+
+  calculator.reset = () => {
+    calculator.result = 0;
+
+    return calculator;
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
