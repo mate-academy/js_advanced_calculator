@@ -70,7 +70,7 @@ function makeCalculator() {
     },
 
     operate(action, number) {
-      action.bind(this)(number);
+      action.call(this, number);
 
       return this;
     },
