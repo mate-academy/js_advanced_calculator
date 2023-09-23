@@ -70,7 +70,7 @@ function makeCalculator() {
     },
 
     divide: (obj, num) => {
-      obj.result = obj.result / num;
+      obj.result /= num;
 
       return obj;
     },
