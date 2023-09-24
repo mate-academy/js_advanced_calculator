@@ -37,7 +37,50 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+    operate(operation, number) {
+      if (!operation || typeof number !== 'number') {
+        throw new Error('Provide correct arguments');
+      }
+      this.result = operation(this.result, number);
+
+      return this;
+    },
+    add(a, b) {
+      if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('Arguments sholud be numbers');
+      }
+
+      return a + b;
+    },
+    subtract(a, b) {
+      if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('Arguments sholud be numbers');
+      }
+
+      return a - b;
+    },
+    divide(a, b) {
+      if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('Arguments sholud be numbers');
+      }
+
+      return a / b;
+    },
+    multiply(a, b) {
+      if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('Arguments sholud be numbers');
+      }
+
+      return a * b;
+    },
+  };
 }
 
 module.exports = makeCalculator;
