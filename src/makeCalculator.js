@@ -45,7 +45,10 @@ function makeCalculator() {
       return this;
     },
     operate(operation, number) {
-      if (!operation || typeof number !== 'number') {
+      if (typeof operation !== 'function'
+      || typeof number !== 'number'
+      || isNaN(number)
+      ) {
         throw new Error('Provide correct arguments');
       }
       this.result = operation(this.result, number);
@@ -53,34 +56,17 @@ function makeCalculator() {
       return this;
     },
     add(a, b) {
-      if (typeof a !== 'number' || typeof b !== 'number') {
-        throw new Error('Arguments should be numbers');
-      }
-
       return a + b;
     },
     subtract(a, b) {
-      if (typeof a !== 'number' || typeof b !== 'number') {
-        throw new Error('Arguments should be numbers');
-      }
-
       return a - b;
     },
     divide(a, b) {
-      if (typeof a !== 'number' || typeof b !== 'number') {
-        throw new Error('Arguments should be numbers');
-      }
-
       return a / b;
     },
     multiply(a, b) {
-      if (typeof a !== 'number' || typeof b !== 'number') {
-        throw new Error('Arguments should be numbers');
-      }
-
       return a * b;
     },
   };
 }
-
 module.exports = makeCalculator;
