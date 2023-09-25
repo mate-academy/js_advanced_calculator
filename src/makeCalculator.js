@@ -41,7 +41,7 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, number) {
-      callback(this, number);
+      callback.call(this, number);
 
       return this;
     },
@@ -52,20 +52,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(object, number) {
-      object.result += number;
+    add(number) {
+      this.result += number;
     },
 
-    subtract(object, number) {
-      object.result -= number;
+    subtract(number) {
+      this.result -= number;
     },
 
-    multiply(object, number) {
-      object.result *= number;
+    multiply(number) {
+      this.result *= number;
     },
 
-    divide(object, number) {
-      object.result /= number;
+    divide(number) {
+      this.result /= number;
     },
   };
 
