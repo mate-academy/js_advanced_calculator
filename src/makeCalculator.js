@@ -37,47 +37,41 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calculator = {
+  return {
     result: 0,
 
-    add: (num) => {
-      calculator.result += num;
-
-      return calculator;
+    add(currentValue, num) {
+      return currentValue + num;
     },
 
-    multiply: (num) => {
-      calculator.result *= num;
-
-      return calculator;
+    subtract(currentValue, num) {
+      return currentValue - num;
     },
 
-    subtract: (num) => {
-      calculator.result -= num;
-
-      return calculator;
+    multiply(currentValue, num) {
+      return currentValue * num;
     },
 
-    divide: (num) => {
-      calculator.result /= num;
+    divide(currentValue, num) {
+      if (num === 0) {
+        return `Division by zero is not allowed`;
+      }
 
-      return calculator;
+      return currentValue / num;
     },
 
-    reset: () => {
-      calculator.result = 0;
+    reset() {
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
-    operate: (callback, num) => {
-      callback(num);
+    operate(callback, num) {
+      this.result = callback(this.result, num);
 
-      return calculator;
+      return this;
     },
   };
-
-  return calculator;
 }
 
 module.exports = makeCalculator;
