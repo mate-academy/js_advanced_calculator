@@ -41,25 +41,33 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, value) {
-      callback(value);
+      callback.call(this, value);
 
       return this;
     },
 
     add(value) {
-      calculator.result += value;
+      this.result += value;
+
+      return this;
     },
 
     subtract(value) {
-      calculator.result -= value;
+      this.result -= value;
+
+      return this;
     },
 
     multiply(value) {
-      calculator.result *= value;
+      this.result *= value;
+
+      return this;
     },
 
     divide(value) {
-      calculator.result /= value;
+      this.result /= value;
+
+      return this;
     },
 
     reset() {
