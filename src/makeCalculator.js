@@ -55,9 +55,11 @@ function makeCalculator() {
       return calculator.result;
     },
     divide(number) {
-      calculator.result /= number;
+      if (number !== 0) {
+        calculator.result /= number;
 
-      return calculator.result;
+        return calculator.result;
+      }
     },
     operate(callback, number) {
       callback(number);
