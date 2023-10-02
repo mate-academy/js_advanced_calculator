@@ -54,7 +54,7 @@ function makeCalculator() {
 
     divide: function(number) {
       if (number === 0) {
-        this.result = 'Error';
+        this.result = 'Error: We cannot divide null';
       } else {
         this.result /= number;
       }
