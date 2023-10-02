@@ -37,49 +37,42 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calcObject = {
-    operate(callback, number) {
-      return callback(number);
-    },
+  return {
+    result: 0,
 
     add(value) {
-      calcObject.result += (value);
-
-      return calcObject;
+      this.result += (value);
     },
 
     subtract(value) {
-      calcObject.result -= (value);
-
-      return calcObject;
+      this.result -= (value);
     },
 
     multiply(value) {
-      calcObject.result *= (value);
-
-      return calcObject;
+      this.result *= (value);
     },
 
     divide(value) {
       if (value !== 0) {
-        calcObject.result /= (value);
-
-        return calcObject;
+        this.result /= (value);
       } else {
         return 'Division by zero is not allowed.';
       }
     },
 
-    reset() {
-      calcObject.result = 0;
+    operate(operator, value) {
+      operator.call(this, value);
 
-      return calcObject;
+      return this;
     },
 
-    result: 0,
-  };
+    reset() {
+      this.result = 0;
 
-  return calcObject;
+      return this;
+    },
+
+  };
 }
 
 module.exports = makeCalculator;
