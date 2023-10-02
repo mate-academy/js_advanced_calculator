@@ -53,7 +53,11 @@ function makeCalculator() {
     },
 
     divide: function(number) {
-      this.result /= number;
+      if (number === 0) {
+        this.result = 'Error';
+      } else {
+        this.result /= number;
+      }
     },
 
     reset: function() {
