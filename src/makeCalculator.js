@@ -41,20 +41,20 @@ function makeCalculator() {
     result: 0,
 
     add(value) {
-      this.result += (value);
+      this.result += value;
     },
 
     subtract(value) {
-      this.result -= (value);
+      this.result -= value;
     },
 
     multiply(value) {
-      this.result *= (value);
+      this.result *= value;
     },
 
     divide(value) {
       if (value !== 0) {
-        this.result /= (value);
+        this.result /= value;
       } else {
         return 'Division by zero is not allowed.';
       }
