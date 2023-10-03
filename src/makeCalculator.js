@@ -56,13 +56,12 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      if (number !== 0) {
-        callback.call(this, number);
-
-        return this;
+      if (number === 0 && callback === this.divide) {
+        return 'Infinity';
       }
+      callback.call(this, number);
 
-      return 'Infinity';
+      return this;
     },
 
     reset() {
