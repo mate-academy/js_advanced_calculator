@@ -41,39 +41,31 @@ function makeCalculator() {
     result: 0,
 
     add(num) {
-      obj.result += num;
-
-      return obj.result;
+      this.result += num;
     },
 
     subtract(num) {
-      obj.result -= num;
-
-      return obj.result;
+      this.result -= num;
     },
 
     divide(num) {
-      obj.result /= num;
-
-      return obj.result;
+      this.result /= num;
     },
 
     multiply(num) {
-      obj.result *= num;
-
-      return obj.result;
+      this.result *= num;
     },
 
     reset() {
       obj.result = 0;
 
-      return obj;
+      return this;
     },
 
     operate(calculator, num) {
-      calculator(num);
+      calculator.call(this, num);
 
-      return obj;
+      return this;
     },
   };
 
