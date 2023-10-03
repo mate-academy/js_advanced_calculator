@@ -53,7 +53,7 @@ function makeCalculator() {
 
     divide(number) {
       if (number === 0) {
-        this.result = Infinity;
+        throw new Error('Division by 0 is forbidden');
       }
       this.result /= number;
     },
