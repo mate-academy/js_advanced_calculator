@@ -52,13 +52,13 @@ function makeCalculator() {
     },
 
     divide(number) {
+      if (number === 0) {
+        this.result = Infinity;
+      }
       this.result /= number;
     },
 
     operate(callback, number) {
-      if (number === 0 && callback === this.divide) {
-        return 'Infinity';
-      }
       callback.call(this, number);
 
       return this;
