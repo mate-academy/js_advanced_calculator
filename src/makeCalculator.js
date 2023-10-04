@@ -40,29 +40,29 @@ function makeCalculator() {
   const listOfOperations = {
     result: 0,
 
-    add: function(a, count) {
+    add(a, count) {
       return count + a;
     },
 
-    subtract: function(a, count) {
+    subtract(a, count) {
       return count - a;
     },
 
-    divide: function(a, count) {
+    divide(a, count) {
       return count / a;
     },
 
-    multiply: function(a, count) {
+    multiply(a, count) {
       return count * a;
     },
 
-    reset: function() {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function(callback, amount) {
+    operate(callback, amount) {
       this.result = callback(amount, this.result);
 
       return this;
