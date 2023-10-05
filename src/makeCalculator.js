@@ -46,28 +46,32 @@ function makeCalculator() {
       return this;
     },
 
-    add(a = 0) {
+    add(a) {
       this.result += a;
 
-      return this.result;
+      return this;
     },
 
-    subtract(a = 0) {
+    subtract(a) {
       this.result -= a;
 
-      return this.result;
+      return this;
     },
 
-    multiply(a = 0) {
+    multiply(a) {
       this.result *= a;
 
-      return this.result;
+      return this;
     },
 
-    divide(a = 0) {
+    divide(a) {
+      if (a === 0) {
+        return this;
+      }
+
       this.result /= a;
 
-      return this.result;
+      return this;
     },
 
     reset() {
