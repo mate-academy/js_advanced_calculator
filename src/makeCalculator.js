@@ -37,7 +37,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
-}
+  let result = 0;
 
+}
 module.exports = makeCalculator;
