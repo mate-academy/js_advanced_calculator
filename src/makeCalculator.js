@@ -38,6 +38,49 @@
  */
 function makeCalculator() {
   // write code here
+  const calculator = {
+    result: 0,
+
+    operate(method, number) {
+      return method(number);
+    },
+
+    reset() {
+      calculator.result = 0;
+
+      return calculator;
+    },
+
+    add(number) {
+      calculator.result += number;
+
+      return calculator;
+    },
+
+    subtract(number) {
+      calculator.result -= number;
+
+      return calculator;
+    },
+
+    multiply(number) {
+      calculator.result *= number;
+
+      return calculator;
+    },
+
+    divide(number) {
+      if (number !== 0) {
+        calculator.result /= number;
+      } else {
+        throw new Error('Division by zero is not allowed.');
+      }
+
+      return calculator;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
