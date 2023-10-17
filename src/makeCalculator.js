@@ -41,42 +41,36 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    operate(method, number) {
-      return method(number);
+    operate(callback, number) {
+      this.result = callback(this.result, number);
+
+      return this;
     },
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
 
-    add(number) {
-      calculator.result += number;
-
-      return calculator;
+    add(firstNumber, secondNumber) {
+      return firstNumber + secondNumber;
     },
 
-    subtract(number) {
-      calculator.result -= number;
-
-      return calculator;
+    subtract(firstNumber, secondNumber) {
+      return firstNumber - secondNumber;
     },
 
-    multiply(number) {
-      calculator.result *= number;
-
-      return calculator;
+    multiply(firstNumber, secondNumber) {
+      return firstNumber * secondNumber;
     },
 
-    divide(number) {
-      if (number !== 0) {
-        calculator.result /= number;
+    divide(firstNumber, secondNumber) {
+      if (secondNumber !== 0) {
+        return firstNumber / secondNumber;
       } else {
         throw new Error('Division by zero is not allowed.');
       }
-
-      return calculator;
     },
   };
 
