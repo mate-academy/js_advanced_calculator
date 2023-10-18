@@ -45,6 +45,10 @@ function makeCalculator() {
     },
 
     subtract(n) {
+      if (n === 0) {
+        return;
+      }
+
       return (this.result -= n);
     },
 
