@@ -40,20 +40,24 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add(number) {
-      this.result += number;
+    add(value) {
+      this.result += value;
     },
 
-    subtract(number) {
-      this.result -= number;
+    subtract(value) {
+      this.result -= value;
     },
 
-    multiply(number) {
-      this.result *= number;
+    multiply(value) {
+      this.result *= value;
     },
 
-    divide(number) {
-      this.result /= number;
+    divide(value) {
+      if (value === 0) {
+        return;
+      }
+
+      this.result /= value;
     },
 
     reset() {
@@ -62,10 +66,16 @@ function makeCalculator() {
       return this;
     },
 
-    operate(operation, number) {
-      operation.call(this, number);
+    operate(operation, value) {
+      if (this.isCorrectNumber(value)) {
+        operation.call(this, value);
+      }
 
       return this;
+    },
+
+    isCorrectNumber(value) {
+      return typeof value === 'number' && isFinite(value);
     },
   };
 }
