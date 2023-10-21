@@ -50,7 +50,7 @@ function makeCalculator() {
       return result * number;
     },
     divide(result, number) {
-      return result / number;
+      return (number === 0) ? result : result / number;
     },
 
     operate(callback, number) {
