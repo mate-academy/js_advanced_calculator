@@ -52,14 +52,18 @@ function makeCalculator() {
       if (num !== 0) {
         calculator.result /= num;
       } else {
-        console.log("нельзя делить на ноль");
+        calculator.result = 0;
       }
     },
     reset() {
       calculator.result = 0;
+
+      return this;
     },
     operate(callback, num) {
       callback(num);
+
+      return this;
     },
   };
 
