@@ -41,33 +41,25 @@ function makeCalculator() {
     result: 0,
     add(num) {
       calculator.result += num;
-
-      return calculator;
     },
     subtract(num) {
       calculator.result -= num;
-
-      return calculator;
     },
     multiply(num) {
       calculator.result *= num;
-
-      return calculator;
     },
     divide(num) {
-      calculator.result /= num;
-
-      return calculator;
+      if (num !== 0) {
+        calculator.result /= num;
+      } else {
+        console.log("нельзя делить на ноль");
+      }
     },
     reset() {
       calculator.result = 0;
-
-      return calculator;
     },
     operate(callback, num) {
       callback(num);
-
-      return calculator;
     },
   };
 
