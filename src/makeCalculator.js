@@ -38,35 +38,49 @@
  */
 function makeCalculator() {
   const calculator = {
-    add(num) {
-      calculator.result += num;
-    },
+    result: 0,
+    add(number) {
+      if (number === 0) {
+        return calculator;
+      }
+      calculator.result += number;
 
-    multiply(num) {
-      calculator.result *= num;
+      return calculator;
     },
+    subtract(number) {
+      if (number === 0) {
+        return calculator;
+      }
+      calculator.result -= number;
 
-    subtract(num) {
-      calculator.result -= num;
+      return calculator;
     },
+    multiply(number) {
+      if (number === 0) {
+        calculator.result = 0;
 
-    divide(num) {
-      calculator.result /= num;
+        return calculator;
+      }
+      calculator.result *= number;
+
+      return calculator;
     },
+    divide(number) {
+      if (number === 0) {
+        throw new Error('Cannot divide by zero.');
+      }
+      calculator.result /= number;
 
+      return calculator;
+    },
     reset() {
       calculator.result = 0;
 
-      return this;
+      return calculator;
     },
-
-    operate(operation, num) {
-      operation(num);
-
-      return this;
+    operate(method, number) {
+      return method(number);
     },
-
-    result: 0,
   };
 
   return calculator;
