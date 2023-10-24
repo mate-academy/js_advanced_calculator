@@ -37,44 +37,37 @@
  * @return {object}
  */
 function makeCalculator() {
-  let result = 0;
-
   const calculator = {
-    add: function(num) {
-      result += num;
+    add(num) {
+      calculator.result += num;
+    },
 
-      return calculator;
+    multiply(num) {
+      calculator.result *= num;
     },
-    subtract: function(num) {
-      result -= num;
 
-      return calculator;
+    subtract(num) {
+      calculator.result -= num;
     },
-    multiply: function(num) {
-      result *= num;
 
-      return calculator;
+    divide(num) {
+      calculator.result /= num;
     },
-    divide: function(num) {
-      result /= num;
 
-      return calculator;
-    },
-    reset: function() {
-      result = 0;
+    reset() {
+      calculator.result = 0;
 
-      return calculator;
+      return this;
     },
-    operate: function(callback, num) {
-      return callback(num);
+
+    operate(operation, num) {
+      operation(num);
+
+      return this;
     },
+
+    result: 0,
   };
-
-  Object.defineProperty(calculator, 'result', {
-    get: function() {
-      return result;
-    },
-  });
 
   return calculator;
 }
