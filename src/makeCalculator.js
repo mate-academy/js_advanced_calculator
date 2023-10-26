@@ -37,7 +37,33 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0, // The result of any operation
+    // A function that performs a change in the result
+    operate: function(operation, number) {
+      this.result = operation(this.result, number);
+
+      return this;
+    },
+    // Possible operations that can be called
+    add: (a, b) => {
+      return a + b; // Returns the 'result' added to a 'number'
+    },
+    subtract: (a, b) => {
+      return a - b; // Returns the 'result' subtracted from a 'number'
+    },
+    divide: (a, b) => {
+      return a / b; // Returns the 'result' divided by a 'number'
+    },
+    multiply: (a, b) => {
+      return a * b; // Returns the 'result' multiplied by a 'number'
+    },
+    reset: function() {
+      this.result = 0; // Returns the 'result' to the default value'0'
+
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
