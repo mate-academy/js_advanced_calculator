@@ -65,6 +65,10 @@ function makeCalculator(operate) {
     },
 
     divide: function(currentResult, number) {
+      if (number === 0) {
+        return 'cannot be divided by zero';
+      }
+
       return currentResult / number;
     },
   };
