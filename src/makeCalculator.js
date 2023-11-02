@@ -38,6 +38,7 @@
  */
 function makeCalculator() {
   // write code here
+
 }
 
 module.exports = makeCalculator;
