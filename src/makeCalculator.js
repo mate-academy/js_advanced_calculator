@@ -49,9 +49,10 @@ function makeCalculator() {
       this.result *= number;
     },
     divide(number) {
-      if (number !== 0) {
-        this.result /= number;
+      if (number === 0) {
+        throw new Error('Dividing by zero will cause the universe to implode!');
       }
+      this.result /= number;
     },
     reset() {
       this.result = 0;
