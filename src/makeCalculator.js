@@ -59,7 +59,11 @@ function makeCalculator() {
     },
 
     divide(value) {
-      this.result /= value;
+      if (value <= 0) {
+        return this;
+      } else {
+        this.result /= value;
+      }
 
       return this;
     },
