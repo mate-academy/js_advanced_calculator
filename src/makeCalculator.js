@@ -40,38 +40,42 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(num, ctx) {
-      ctx.result += num;
+    add(num) {
+      this.result += num;
 
-      return ctx;
+      return this;
     },
 
-    subtract(num, ctx) {
-      ctx.result -= num;
+    subtract(num) {
+      this.result -= num;
 
-      return ctx;
+      return this;
     },
 
-    divide(num, ctx) {
-      ctx.result /= num;
+    divide(num) {
+      if (num === 0) {
+        throw new Error('Error: division by zero');
+      };
 
-      return ctx;
+      this.result /= num;
+
+      return this;
     },
 
-    multiply(num, ctx) {
-      ctx.result *= num;
+    multiply(num) {
+      this.result *= num;
 
-      return ctx;
+      return this;
     },
 
-    reset(_, ctx = this) {
-      ctx.result = 0;
+    reset() {
+      this.result = 0;
 
-      return ctx;
+      return this;
     },
 
     operate(callback, number) {
-      return callback(number, this);
+      return callback.call(this, number);
     },
   };
 
