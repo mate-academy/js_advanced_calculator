@@ -43,7 +43,9 @@ function makeCalculator() {
     methods: ['add', 'subtract', 'multiply', 'divide', 'reset', 'operate'],
 
     operate(method, arg) {
-      return method.call(this, arg);
+      method.call(this, arg);
+
+      return this;
     },
 
     reset() {
