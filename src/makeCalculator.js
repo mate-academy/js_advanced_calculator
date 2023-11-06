@@ -43,9 +43,7 @@ function makeCalculator() {
     methods: ['add', 'subtract', 'multiply', 'divide', 'reset', 'operate'],
 
     operate(method, arg) {
-      method(arg);
-
-      return this;
+      return method.call(this, arg);
     },
 
     reset() {
@@ -55,27 +53,27 @@ function makeCalculator() {
     },
 
     add(arg) {
-      obj.result += arg;
+      this.result += arg;
 
-      return obj.result;
+      return this.result;
     },
 
     subtract(arg) {
-      obj.result -= arg;
+      this.result -= arg;
 
-      return obj.result;
+      return this.result;
     },
 
     multiply(arg) {
-      obj.result *= arg;
+      this.result *= arg;
 
-      return obj.result;
+      return this.result;
     },
 
     divide(arg) {
-      obj.result /= arg;
+      this.result /= arg;
 
-      return obj.result;
+      return this.result;
     },
   };
 
