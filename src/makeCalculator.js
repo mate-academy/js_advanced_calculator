@@ -41,8 +41,8 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    operate(callback, value) {
-      calculator.result = callback(calculator.result, value);
+    operate(call, value) {
+      this.result = call(this.result, value);
 
       return calculator;
     },
@@ -62,19 +62,19 @@ function makeCalculator() {
     divide(x, y) {
       if (y !== 0) {
         return x / y;
-      } else {
-        throw new Error('Cannot divide by 0');
       }
+
+      throw new Error('Cannot divide by 0');
     },
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return calculator;
     },
 
     getResult() {
-      return calculator.result;
+      return this.result;
     },
   };
 
