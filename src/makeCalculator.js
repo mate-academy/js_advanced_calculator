@@ -41,6 +41,7 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
+    // here we go. Just some methods.
     add(number) {
       this.result += number;
 
