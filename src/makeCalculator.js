@@ -40,8 +40,6 @@
 function makeCalculator() {
   const obj = {
     result: 0,
-    methods: ['add', 'subtract', 'multiply', 'divide', 'reset', 'operate'],
-
     operate(method, arg) {
       method.call(this, arg);
 
@@ -56,26 +54,18 @@ function makeCalculator() {
 
     add(arg) {
       this.result += arg;
-
-      return this.result;
     },
 
     subtract(arg) {
       this.result -= arg;
-
-      return this.result;
     },
 
     multiply(arg) {
       this.result *= arg;
-
-      return this.result;
     },
 
     divide(arg) {
       this.result /= arg;
-
-      return this.result;
     },
   };
 
