@@ -59,7 +59,11 @@ function makeCalculator() {
     },
 
     divide(operand) {
-      calculator.result /= operand;
+      if (operand !== 0) {
+        calculator.result /= operand;
+      } else {
+        return 'Division by zero is not allowed.';
+      }
 
       return calculator;
     },
