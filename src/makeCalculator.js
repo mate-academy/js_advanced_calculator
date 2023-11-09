@@ -53,7 +53,9 @@ function makeCalculator() {
     },
 
     divide(a, b) {
-      return a / b;
+      if (b !== 0) {
+        return a / b;
+      }
     },
 
     operate(operation, a) {
