@@ -49,7 +49,7 @@ function makeCalculator() {
       calculator.result *= x;
     },
     divide(x) {
-      if (calculator.result !== 0) {
+      if (calculator.result !== 0 && x !== 0) {
         calculator.result /= x;
       }
     },
