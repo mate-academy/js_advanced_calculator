@@ -39,21 +39,32 @@
 
 function makeCalculator() {
   return {
-    result: 0,
+    'result': 0,
 
-    add: (result, value) => result + value,
-    subtract: (result, value) => result - value,
-    multiply: (result, value) => result * value,
-    dvivide: (result, value) => result / value,
+    'add': function(value) {
+      this.result += value;
+    },
 
-    operate(callback, value) {
-      this.result = callback(this.result, value);
+    'subtract': function(value) {
+      this.result -= value;
+    },
+
+    'multiply': function(value) {
+      this.result *= value;
+    },
+
+    'divide': function(value) {
+      this.result = value === 0 ? Infinity : this.result / value;
+    },
+
+    'reset': function() {
+      this.result = 0;
 
       return this;
     },
 
-    reset() {
-      this.result = 0;
+    'operate': function(operation, operand) {
+      operation.call(this, operand);
 
       return this;
     },
