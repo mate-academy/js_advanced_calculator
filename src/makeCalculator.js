@@ -60,7 +60,9 @@ function makeCalculator() {
     },
 
     divide: function(number) {
-      calculator.result /= number;
+      if (number !== 0) {
+        calculator.result /= number;
+      }
 
       return calculator;
     },
