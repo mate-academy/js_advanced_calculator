@@ -18,6 +18,7 @@
  * Example:
  * const calculator = makeCalculator();
  *
+ 
  * calculator.operate(calculator.add, 21)
  * calculator.result === 21
 
