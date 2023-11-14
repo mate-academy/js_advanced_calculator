@@ -38,47 +38,26 @@
  */
 
 function makeCalculator() {
-  const calculator = {
+  return {
     result: 0,
 
-    add(value) {
-      calculator.result += value;
+    add: (result, value) => result + value,
+    subtract: (result, value) => result - value,
+    multiply: (result, value) => result * value,
+    dvivide: (result, value) => result / value,
 
-      return calculator.result;
-    },
+    operate(callback, value) {
+      this.result = callback(this.result, value);
 
-    subtract(value) {
-      calculator.result -= value;
-
-      return calculator.result;
-    },
-
-    multiply(value) {
-      calculator.result *= value;
-
-      return calculator.result;
-    },
-
-    divide(value) {
-      calculator.result /= value;
-
-      return calculator.result;
+      return this;
     },
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
-      return calculator;
-    },
-
-    operate(callback, value) {
-      calculator.result = callback(value);
-
-      return calculator;
+      return this;
     },
   };
-
-  return calculator;
 }
 
 module.exports = makeCalculator;
