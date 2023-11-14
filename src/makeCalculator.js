@@ -40,26 +40,41 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add(a, b) {
-      return a + b;
+
+    add: function(number) {
+      calculator.result += number;
+
+      return calculator;
     },
-    subtract(a, b) {
-      return a - b;
+
+    subtract: function(number) {
+      calculator.result -= number;
+
+      return calculator;
     },
-    multiply(a, b) {
-      return a * b;
+
+    multiply: function(number) {
+      calculator.result *= number;
+
+      return calculator;
     },
-    divide(a, b) {
-      return a / b;
+
+    divide: function(number) {
+      calculator.result /= number;
+
+      return calculator;
     },
-    reset() {
-      return 0;
+
+    reset: function() {
+      calculator.result = 0;
+
+      return calculator;
     },
-    operate(callback, number) {
+
+    operate: function(callback, number) {
       return callback(number);
     },
   };
-  // calculator.result = calculator.operate;
 
   return calculator;
 }
