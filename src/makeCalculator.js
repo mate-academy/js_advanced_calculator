@@ -9,24 +9,16 @@ function makeCalculator() {
       return this;
     },
     add(result, value) {
-      const newResult = result + value;
-
-      return newResult;
+      return result + value;
     },
     subtract(result, value) {
-      const newResult = result - value;
-
-      return newResult;
+      return result - value;
     },
     multiply(result, value) {
-      const newResult = result * value;
-
-      return newResult;
+      return result * value;
     },
     divide(result, value) {
-      const newResult = result / value;
-
-      return newResult;
+      return result / value;
     },
     operate(callback, number) {
       this.result = callback(this.result, number);
