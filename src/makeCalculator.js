@@ -62,7 +62,7 @@ function makeCalculator() {
       if (value !== 0) {
         this.result /= value;
       } else {
-        return Infinity;
+        return 'Cannot be divided by zero';
       }
 
       return this;
