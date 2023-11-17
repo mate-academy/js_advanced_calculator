@@ -39,25 +39,19 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add(x) {
-      this.result = this.result + x;
-
-      return this;
+    add(result, x) {
+      return result + x;
     },
-    subtract(x) {
-      this.result = this.result - x;
-
-      return this;
+    subtract(result, x) {
+      return result - x;
     },
-    multiply(x) {
-      this.result = this.result * x;
-
-      return this;
+    multiply(result, x) {
+      return result * x;
     },
-    divide(x) {
-      this.result = this.result / x;
-
-      return this;
+    divide(result, x) {
+      if (x > 0) {
+        return result / x;
+      }
     },
     operate(callback, x) {
       this.result = callback(this.result, x);
