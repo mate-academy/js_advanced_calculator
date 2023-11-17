@@ -18,7 +18,9 @@ function makeCalculator() {
       return result * value;
     },
     divide(result, value) {
-      return result / value;
+      if (value !== 0) {
+        return result / value;
+      }
     },
     operate(callback, number) {
       this.result = callback(this.result, number);
