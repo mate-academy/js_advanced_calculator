@@ -55,7 +55,11 @@ function makeCalculator() {
       return this;
     },
     divide: function(num) {
-      this.result /= num;
+      if (num !== 0) {
+        this.result /= num;
+      } else {
+        return 'Error: Division by zero is not allowed';
+      }
 
       return this;
     },
