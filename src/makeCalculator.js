@@ -72,6 +72,6 @@ function makeCalculator() {
       return callback.call(this, num);
     },
   };
-}
+};
 
 module.exports = makeCalculator;
