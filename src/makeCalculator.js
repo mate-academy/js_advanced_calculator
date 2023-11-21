@@ -56,6 +56,10 @@ function makeCalculator() {
       return operator - number;
     },
     divide(number, operator) {
+      if (number === 0) {
+        return Error(`You can't divide on 0`);
+      }
+
       return operator / number;
     },
     multiply(number, operator) {
