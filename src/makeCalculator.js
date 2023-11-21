@@ -38,28 +38,26 @@
  */
 function makeCalculator() {
   return {
-    result: 0, // The result of any operation
-    // A function that performs a change in the result
+    result: 0,
     operate: function(operation, number) {
       this.result = operation(this.result, number);
 
       return this;
     },
-    // Possible operations that can be called
     add: (a, b) => {
-      return a + b; // Returns the 'result' added to a 'number'
+      return a + b;
     },
     subtract: (a, b) => {
-      return a - b; // Returns the 'result' subtracted from a 'number'
+      return a - b;
     },
     divide: (a, b) => {
-      return a / b; // Returns the 'result' divided by a 'number'
+      return a / b;
     },
     multiply: (a, b) => {
-      return a * b; // Returns the 'result' multiplied by a 'number'
+      return a * b;
     },
     reset: function() {
-      this.result = 0; // Returns the 'result' to the default value'0'
+      this.result = 0;
 
       return this;
     },
