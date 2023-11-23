@@ -36,7 +36,7 @@
  *
  * @return {object}
  */
- function makeCalculator() {
+function makeCalculator() {
   return {
     result: 0,
     add(a, b) {
@@ -49,7 +49,9 @@
       return a * b;
     },
     divide(a, b) {
-      return a / b;
+      if (a !== 0 && b !== 0) {
+        return a / b;
+      }
     },
     reset() {
       this.result = 0;
