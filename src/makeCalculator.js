@@ -60,6 +60,10 @@ function makeCalculator() {
       calculator.result *= a;
     },
     divide(a) {
+      if (a === 0) {
+        calculator.result = 'You cannot divide by 0';
+      }
+
       calculator.result /= a;
     },
   };
