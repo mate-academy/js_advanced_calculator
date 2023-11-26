@@ -40,34 +40,34 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(numb) {
-      calculator.result += numb;
+    add(a, b) {
+      return a + b;
     },
 
-    subtract(numb) {
-      calculator.result -= numb;
+    subtract(a, b) {
+      return a - b;
     },
 
-    multiply(numb) {
-      calculator.result *= numb;
+    multiply(a, b) {
+      return a * b;
     },
 
-    divide(numb) {
-      if (numb === 0) {
-        calculator.result = Infinity;
+    divide(a, b) {
+      if (b === 0) {
+        return Infinity;
       }
 
-      calculator.result /= numb;
+      return a / b;
     },
 
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
 
     operate(callback, number) {
-      callback(number);
+      this.result = callback(this.result, number);
 
       return this;
     },
