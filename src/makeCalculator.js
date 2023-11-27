@@ -50,6 +50,9 @@ function makeCalculator() {
       this.result -= x;
     },
     divide(x) {
+      if (x === 0) {
+        throw new Error("Division by zero is not allowed");
+      }
       this.result /= x;
     },
     multiply(x) {
