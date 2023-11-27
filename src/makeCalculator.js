@@ -65,6 +65,9 @@ function makeCalculator() {
     },
 
     divide(num) {
+      if (num === 0) {
+        return 'error: division by zero is prohibited';
+      }
       this.result /= num;
 
       return this;
