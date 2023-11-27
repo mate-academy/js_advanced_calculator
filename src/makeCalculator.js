@@ -51,7 +51,7 @@ function makeCalculator() {
     },
     divide(x) {
       if (x === 0) {
-        throw new Error("Division by zero is not allowed");
+        throw new Error('Division by zero is not allowed ');
       }
       this.result /= x;
     },
