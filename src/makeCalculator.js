@@ -59,6 +59,10 @@ function makeCalculator() {
     },
 
     divide: function(num) {
+      if (num === 0) {
+        throw new Error('Cannot divide by zero.');
+      }
+
       this.result /= num;
 
       return this;
@@ -71,6 +75,10 @@ function makeCalculator() {
     },
 
     operate: function(operation, num) {
+      if (num === 0) {
+        throw new Error('Cannot perform operation with num being zero.');
+      }
+
       operation.call(this, num);
 
       return this;
