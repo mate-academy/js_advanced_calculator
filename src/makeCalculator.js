@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Another calculator. Now the task is more difficult.
@@ -59,12 +59,10 @@ function makeCalculator() {
     },
 
     divide: (num) => {
-      if (calculator.result === 0) {
-        calculator.result = 0;
-
+      if (num === 0) {
+        alert("Division by 0 is not possible");
         return calculator;
       }
-
       calculator.result /= num;
 
       return calculator;
