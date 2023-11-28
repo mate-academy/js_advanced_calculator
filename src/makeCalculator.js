@@ -59,6 +59,12 @@ function makeCalculator() {
     },
 
     divide: (num) => {
+      if (calculator.result === 0) {
+        calculator.result = 0;
+
+        return calculator;
+      }
+
       calculator.result /= num;
 
       return calculator;
