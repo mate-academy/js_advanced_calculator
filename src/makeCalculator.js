@@ -55,6 +55,8 @@ function makeCalculator() {
     divide(x, y) {
       if (y !== 0) {
         return x / y;
+      } else {
+        throw new Error('Cannot divide by zero!!!');
       }
     },
 
