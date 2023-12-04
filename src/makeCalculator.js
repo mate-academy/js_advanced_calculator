@@ -39,15 +39,7 @@
 function makeCalculator() {
   // write code here
   class Calculator {
-    #result;
-
-    constructor() {
-      this.#result = 0;
-    }
-
-    get result() {
-      return this.#result;
-    }
+    result = 0;
 
     reset() {
       this.#result = 0;
