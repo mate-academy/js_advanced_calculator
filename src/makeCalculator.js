@@ -49,22 +49,10 @@ function makeCalculator() {
 
       return this;
     },
-    add: function(result, value) {
-      return result + value;
-    },
-    subtract: function(result, value) {
-      return result - value;
-    },
-    multiply: function(result, value) {
-      return result * value;
-    },
-    divide: function(result, value) {
-      if (value === 0) {
-        return result;
-      }
-
-      return result / value;
-    },
+    add: (result, value) => result + value,
+    subtract: (result, value) => result - value,
+    multiply: (result, value) => result * value,
+    divide: (result, value) => value === 0 ? result : result / value,
   };
 }
 
