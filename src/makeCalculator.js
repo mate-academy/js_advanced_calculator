@@ -38,6 +38,47 @@
  */
 function makeCalculator() {
   // write code here
+  class Calculator {
+    #result;
+
+    constructor() {
+      this.#result = 0;
+    }
+
+    get result() {
+      return this.#result;
+    }
+
+    reset() {
+      this.#result = 0;
+
+      return this;
+    }
+
+    operate(operation, value) {
+      this.#result = operation(this.result, value);
+
+      return this;
+    }
+
+    add(num1, num2) {
+      return num1 + num2;
+    }
+
+    subtract(num1, num2) {
+      return num1 - num2;
+    }
+
+    multiply(num1, num2) {
+      return num1 * num2;
+    }
+
+    divide(num1, num2) {
+      return num1 / num2;
+    }
+  }
+
+  return new Calculator();
 }
 
 module.exports = makeCalculator;
