@@ -54,19 +54,23 @@ function makeCalculator() {
     },
 
     divide(param) {
-      calculatorObject.result /= param;
+      if (param === 0) {
+        calculatorObject.result = Infinity;
+      } else {
+        calculatorObject.result /= param;
+      }
     },
 
     reset() {
       calculatorObject.result = 0;
 
-      return calculatorObject;
+      return this;
     },
 
     operate(callback, num) {
       callback(num);
 
-      return calculatorObject;
+      return this;
     },
 
   };
