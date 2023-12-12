@@ -5,12 +5,12 @@
  * Create a `makeCalculator` function that returns an object that
  * has the following fields:
  *  - Methods: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`.
- *  - The `result` property is initially 0.
+ *  - The `sum` property is initially 0.
  *
  * How the calculator will work:
  * - Each `operate` call takes a callback and a number and sets the
- *   appropriate value to the `result` property.
- * - The `reset` method resets `result` value to 0.
+ *   appropriate value to the `sum` property.
+ * - The `reset` method resets `sum` value to 0.
  * - `add`, `subtract`, `multiply`, `divide` are passed as callbacks to
  *   `operate` method
  * - The `operate` and `reset` methods can be called in a chain.
@@ -19,10 +19,10 @@
  * const calculator = makeCalculator();
  *
  * calculator.operate(calculator.add, 21)
- * calculator.result === 21
+ * calculator.sum === 21
 
  * calculator.reset()
- * calculator.result === 0
+ * calculator.sum === 0
 
  * calculator
  *  .operate(calculator.add, 10)
@@ -31,13 +31,51 @@
  *  .operate(calculator.divide, 5)
  *  .operate(calculator.multiply, 7)
  *
- * calculator.result === -28
+ * calculator.sum === -28
  *
  *
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  let sum = 0;
+
+  const calcMethods = {
+    reset() {
+      sum = 0;
+
+      return this;
+    },
+    add(num) {
+      sum += num;
+
+      return this;
+    },
+    subtract(num) {
+      sum -= num;
+
+      return this;
+    },
+    divide(num) {
+      sum /= num;
+
+      return this;
+    },
+    multiply(num) {
+      sum *= num;
+
+      return this;
+    },
+    operate(callback, num) {
+      callback(num);
+
+      return this;
+    },
+    get result() {
+      return sum;
+    },
+  };
+
+  return calcMethods;
 }
 
 module.exports = makeCalculator;
