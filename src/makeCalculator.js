@@ -40,23 +40,23 @@ function makeCalculator() {
   return {
     result: 0,
     add() {
-      return (number, that) => {
-        that.result += number;
+      return (number, obj) => {
+        obj.result += number;
       };
     },
     subtract() {
-      return (number, that) => {
-        that.result -= number;
+      return (number, obj) => {
+        obj.result -= number;
       };
     },
     multiply() {
-      return (number, that) => {
-        that.result *= number;
+      return (number, obj) => {
+        obj.result *= number;
       };
     },
     divide() {
-      return (number, that) => {
-        that.result /= number;
+      return (number, obj) => {
+        obj.result /= number;
       };
     },
     reset() {
