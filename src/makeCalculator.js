@@ -39,25 +39,21 @@
 function makeCalculator() {
   return {
     result: 0,
-    add() {
-      return (number, obj) => {
-        obj.result += number;
-      };
+    add(number) {
+      this.result += number;
     },
-    subtract() {
-      return (number, obj) => {
-        obj.result -= number;
-      };
+    subtract(number) {
+      this.result -= number;
     },
-    multiply() {
-      return (number, obj) => {
-        obj.result *= number;
-      };
+    multiply(number) {
+      this.result *= number;
     },
-    divide() {
-      return (number, obj) => {
-        obj.result /= number;
-      };
+    divide(number) {
+      if (number !== 0) {
+        this.result /= number;
+      }
+
+      return this;
     },
     reset() {
       this.result = 0;
@@ -65,7 +61,7 @@ function makeCalculator() {
       return this;
     },
     operate(callback, number) {
-      callback()(number, this);
+      callback(number);
 
       return this;
     },
