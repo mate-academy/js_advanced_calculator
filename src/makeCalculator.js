@@ -59,6 +59,10 @@ function makeCalculator() {
       return result * number;
     },
     divide(result, number) {
+      if (number === 0) {
+        return 'Error';
+      }
+
       return result / number;
     },
   };
