@@ -43,9 +43,13 @@ function makeCalculator() {
     result: 0,
 
     operate(actionCallback, value) {
-      actionCallback(value, this);
+      if (typeof value === 'number') {
+        actionCallback(value, this);
 
-      return this;
+        return this;
+      }
+
+      throw Error;
     },
 
     add(value, obj = this) {
@@ -57,7 +61,13 @@ function makeCalculator() {
     },
 
     divide(value, obj = this) {
-      obj.result /= value;
+      if (value !== 0) {
+        obj.result /= value;
+
+        return;
+      }
+
+      throw Error;
     },
 
     multiply(value, obj = this) {
