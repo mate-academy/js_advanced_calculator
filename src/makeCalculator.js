@@ -41,52 +41,29 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, operand) {
-      switch (callback) {
-        case this.add:
-          this.add(operand);
-
-          break;
-
-        case this.subtract:
-          this.subtract(operand);
-
-          break;
-
-        case this.multiply:
-          this.multiply(operand);
-
-          break;
-
-        case this.divide:
-          this.divide(operand);
-
-          break;
-
-        default:
-          break;
-      }
+      this.result = callback(this.result, operand);
 
       return this;
     },
 
-    add(number) {
-      this.result += number;
+    add(result, number) {
+      return result + number;
     },
 
-    subtract(number) {
-      this.result -= number;
+    subtract(result, number) {
+      return result - number;
     },
 
-    multiply(number) {
-      this.result *= number;
+    multiply(result, number) {
+      return result * number;
     },
 
-    divide(number) {
+    divide(result, number) {
       if (number === 0) {
-        return `Error! Deviding by zero!`;
+        return `Error! Dividing by zero!`;
       }
 
-      this.result /= number;
+      return result / number;
     },
 
     reset() {
