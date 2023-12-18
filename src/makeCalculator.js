@@ -40,7 +40,7 @@ function makeCalculator() {
   const RESET_DEFAULT_VALUE = 0;
 
   return {
-    result: 0,
+    result: RESET_DEFAULT_VALUE,
 
     add(value, result) {
       return result + value;
