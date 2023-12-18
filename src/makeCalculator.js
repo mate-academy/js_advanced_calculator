@@ -37,8 +37,9 @@
  * @return {object}
  */
 function makeCalculator(callback, value) {
+  const START_VALUE = 0;
   const calculator = {
-    result: 0,
+    result: START_VALUE,
 
     add(prevValue, number) {
       return prevValue + number;
@@ -51,9 +52,9 @@ function makeCalculator(callback, value) {
     divide(prevValue, number) {
       if (number === 0) {
         throw new Error('Dividing by zero! We keeping previous result');
-      } else {
-        return prevValue / number;
       }
+
+      return prevValue / number;
     },
 
     multiply(prevValue, number) {
@@ -61,7 +62,7 @@ function makeCalculator(callback, value) {
     },
 
     reset() {
-      this.result = 0;
+      this.result = START_VALUE;
 
       return this;
     },
