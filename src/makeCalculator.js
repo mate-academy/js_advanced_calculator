@@ -38,29 +38,77 @@
  */
 function makeCalculator() {
   // write code here
-  let result = {
+  const calculator = {
     result: 0,
-    add: (value) => {
-      this.result += value;
+    add(value, result) {
+      return result + value;
     },
-    subtract: (value) => {
-      this.result -= value;
+
+    subtract(value, result) {
+      return result - value;
     },
-    multiply: (value) => {
-      this.result *= value;
+
+    multiply(value, result) {
+      return result * value;
     },
-    divide: (value) => {
-      this.result /= value;
+
+    divide(value, result) {
+      return result / value;
     },
-    reset: () => {
+
+    reset() {
       this.result = 0;
+
+      return this;
     },
-    operate: (fn, value) => {
-      this.fn(value);
-    }
+
+    operate(fn, value) {
+      this.result = fn(value, this.result);
+
+      return this;
+    },
   };
 
-  return result;
+  return calculator;
 }
+
+// function makeCalculator() {
+//   // write code here
+//   const res = {
+//     result: 0,
+//     add(value) {
+//       this.result += value;
+
+//       // return this;
+//     },
+//     subtract(value) {
+//       this.result -= value;
+
+//       // return this;
+//     },
+//     multiply(value) {
+//       this.result *= value;
+
+//       // return this;
+//     },
+//     divide(value) {
+//       this.result /= value;
+
+//       // return this;
+//     },
+//     reset() {
+//       this.result = 0;
+
+//       return this;
+//     },
+//     operate(fn, value) {
+//       this.result = this.fn(value);
+
+//       return this;
+//     },
+//   };
+
+//   return res;
+// }
 
 module.exports = makeCalculator;
