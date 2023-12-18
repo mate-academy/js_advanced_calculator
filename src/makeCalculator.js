@@ -37,6 +37,8 @@
  * @return {object}
  */
 function makeCalculator() {
+  const RESET_DEFAULT_VALUE = 0;
+
   return {
     result: 0,
 
@@ -53,21 +55,61 @@ function makeCalculator() {
     },
 
     divide(value, result) {
-      return result / value;
+      if (value !== 0) {
+        return result / value;
+      }
+
+      throw Error;
     },
 
     reset() {
-      this.result = 0;
+      this.result = RESET_DEFAULT_VALUE;
 
       return this;
     },
 
     operate(operation, value) {
-      this.result = operation(value, this.result);
+      if (typeof value === 'number') {
+        this.result = operation(value, this.result);
 
-      return this;
+        return this;
+      }
+
+      throw Error;
     },
   };
 };
 
 module.exports = makeCalculator;
+
+// Wrong old solution
+
+// function makeCalculator() {
+//   const RESET_DEFAULT_VALUE = 0;
+
+//   return {
+//     result: 0,
+//     add: (value) => {
+//       this.result += value;
+//     },
+//     subtract: (value) => {
+//       this.result -= value;
+//     },
+//     multiply: (value) => {
+//       this.result *= value;
+//     },
+//     divide: (value) => {
+//       this.result /= value;
+//     },
+//     reset: () => {
+//       this.result = RESET_DEFAULT_VALUE;
+
+//       return this;
+//     },
+//     operate: (operation, value) => {
+//       operation(value);
+
+//       return this;
+//     },
+//   };
+// };
