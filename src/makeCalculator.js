@@ -36,8 +36,45 @@
  *
  * @return {object}
  */
-function makeCalculator() {
-  // write code here
+function makeCalculator(callback, value) {
+  const START_VALUE = 0;
+  const calculator = {
+    result: START_VALUE,
+
+    add(prevValue, number) {
+      return prevValue + number;
+    },
+
+    subtract(prevValue, number) {
+      return prevValue - number;
+    },
+
+    divide(prevValue, number) {
+      if (number === 0) {
+        throw new Error('Dividing by zero! We keeping previous result');
+      }
+
+      return prevValue / number;
+    },
+
+    multiply(prevValue, number) {
+      return prevValue * number;
+    },
+
+    reset() {
+      this.result = START_VALUE;
+
+      return this;
+    },
+
+    operate(method, number) {
+      this.result = method(this.result, number);
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
