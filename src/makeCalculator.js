@@ -37,7 +37,64 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    operate(callback, operand) {
+      switch (callback) {
+        case this.add:
+          this.add(operand);
+
+          break;
+
+        case this.subtract:
+          this.subtract(operand);
+
+          break;
+
+        case this.multiply:
+          this.multiply(operand);
+
+          break;
+
+        case this.divide:
+          this.divide(operand);
+
+          break;
+
+        default:
+          break;
+      }
+
+      return this;
+    },
+
+    add(number) {
+      this.result += number;
+    },
+
+    subtract(number) {
+      this.result -= number;
+    },
+
+    multiply(number) {
+      this.result *= number;
+    },
+
+    divide(number) {
+      if (number === 0) {
+        return `Error! Deviding by zero!`;
+      }
+
+      this.result /= number;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
