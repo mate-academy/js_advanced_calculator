@@ -59,7 +59,7 @@ function makeCalculator() {
         return result / value;
       }
 
-      throw Error;
+      throw new Error('You cannot divide by zero!');
     },
 
     reset() {
@@ -75,41 +75,9 @@ function makeCalculator() {
         return this;
       }
 
-      throw Error;
+      throw new Error('Value is not a number');
     },
   };
 };
 
 module.exports = makeCalculator;
-
-// Wrong old solution
-
-// function makeCalculator() {
-//   const RESET_DEFAULT_VALUE = 0;
-
-//   return {
-//     result: 0,
-//     add: (value) => {
-//       this.result += value;
-//     },
-//     subtract: (value) => {
-//       this.result -= value;
-//     },
-//     multiply: (value) => {
-//       this.result *= value;
-//     },
-//     divide: (value) => {
-//       this.result /= value;
-//     },
-//     reset: () => {
-//       this.result = RESET_DEFAULT_VALUE;
-
-//       return this;
-//     },
-//     operate: (operation, value) => {
-//       operation(value);
-
-//       return this;
-//     },
-//   };
-// };
