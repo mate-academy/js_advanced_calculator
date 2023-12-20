@@ -37,45 +37,32 @@
  * @return {object}
  */
 function makeCalculator() {
-  let sum = 0;
+  return {
+    result: 0,
 
-  const calcMethods = {
+    add: (acc, arg) => {
+      return acc + arg;
+    },
+    subtract: (acc, arg) => {
+      return acc - arg;
+    },
+    multiply: (acc, arg) => {
+      return acc * arg;
+    },
+    divide: (acc, arg) => {
+      return acc / arg;
+    },
     reset() {
-      sum = 0;
+      this.result = 0;
 
       return this;
     },
-    add(num) {
-      sum += num;
+    operate(callback, arg) {
+      this.result = callback(this.result, arg);
 
       return this;
-    },
-    subtract(num) {
-      sum -= num;
-
-      return this;
-    },
-    divide(num) {
-      sum /= num;
-
-      return this;
-    },
-    multiply(num) {
-      sum *= num;
-
-      return this;
-    },
-    operate(callback, num) {
-      callback(num);
-
-      return this;
-    },
-    get result() {
-      return sum;
     },
   };
-
-  return calcMethods;
 }
 
 module.exports = makeCalculator;
