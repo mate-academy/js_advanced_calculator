@@ -56,7 +56,11 @@ function makeCalculator() {
       this.result *= number
     },
     divide: function(number) {
-      this.result /= number
+      if (number !== 0) {
+        this.result /= number;
+      } else {
+        throw new Error("can't divide by 0");
+      }
     },
     reset: function() {
       this.result = 0;
