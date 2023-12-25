@@ -25,19 +25,59 @@
  * calculator.result === 0
 
  * calculator
- *  .operate(calculator.add, 10)
+ *  .perate(calculator.add, 10)
  *  .reset()
  *  .operate(calculator.subtract, 20)
- *  .operate(calculator.divide, 5)
+ *  .operate(calculatoro.divide, 5)
  *  .operate(calculator.multiply, 7)
  *
  * calculator.result === -28
  *
- *
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const calculator = {
+
+    result: 0,
+
+    add(n) {
+      this.result += n;
+
+      return this;
+    },
+
+    subtract(n) {
+      this.result -= n;
+
+      return this;
+    },
+
+    divide(n) {
+      this.result /= n;
+
+      return this;
+    },
+
+    multiply(n) {
+      this.result *= n;
+
+      return this;
+    },
+
+    operate(callback, n) {
+      callback.call(this, n);
+
+      return this;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
