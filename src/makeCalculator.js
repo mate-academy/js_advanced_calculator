@@ -62,6 +62,7 @@ function makeCalculator() {
 
       return calculator;
     },
+    
     divide(e) {
       calculator.startValue /= e;
 
