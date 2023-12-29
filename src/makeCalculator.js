@@ -74,6 +74,7 @@ function makeCalculator() {
 
       return calculator;
     },
+    
     get result() {
       return calculator.startValue;
     },
