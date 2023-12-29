@@ -44,6 +44,7 @@ function makeCalculator() {
 
       return calculator;
     },
+    
     add(a) {
       calculator.startValue += a;
 
