@@ -50,6 +50,7 @@ function makeCalculator() {
 
       return calculator;
     },
+    
     subtract(a) {
       calculator.startValue -= a;
 
