@@ -68,6 +68,7 @@ function makeCalculator() {
 
       return calculator;
     },
+    
     reset() {
       calculator.startValue = 0;
 
