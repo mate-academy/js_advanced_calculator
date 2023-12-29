@@ -56,6 +56,7 @@ function makeCalculator() {
 
       return calculator;
     },
+    
     multiply(e) {
       calculator.startValue *= e;
 
