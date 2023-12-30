@@ -43,35 +43,37 @@ function makeCalculator() {
     add(x) {
       calculator.result += x;
 
-      return calculator;
+      return this;
     },
 
     subtract(x) {
       calculator.result -= x;
 
-      return calculator;
+      return this;
     },
 
     multiply(x) {
       calculator.result *= x;
 
-      return calculator;
+      return this;
     },
 
     divide(x) {
       calculator.result /= x;
 
-      return calculator;
+      return this;
     },
 
     reset() {
       calculator.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(callback, x) {
-      return callback(x);
+      callback(x);
+
+      return this;
     },
   };
 
