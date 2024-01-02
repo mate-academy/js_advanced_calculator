@@ -53,7 +53,9 @@ function makeCalculator() {
     },
 
     divide(value) {
-      this.result /= value;
+      if (value !== 0) {
+        this.result /= value;
+      }
     },
 
     reset() {
@@ -63,7 +65,9 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
-      callback.call(this, value);
+      if (typeof callback === 'function') {
+        callback.call(this, value);
+      }
 
       return this;
     },
