@@ -61,7 +61,11 @@ function makeCalculator() {
     },
 
     divide(result, number) {
-      return result / number;
+      if (number !== 0) {
+        return result / number;
+      } else {
+        return `Division by zero is not allowed.`;
+      }
     },
 
     multiply(result, number) {
