@@ -71,22 +71,7 @@ function makeCalculator() {
     },
 
     operate: function(callback, number) {
-      switch (callback(number)) {
-        case methods.add:
-          methods.add(number);
-          break;
-        case methods.subtract:
-          methods.subtract(number);
-          break;
-        case methods.multiply:
-          methods.multiply(number);
-          break;
-        case methods.divide:
-          methods.divide(number);
-          break;
-        default:
-          break;
-      }
+      callback(number);
 
       return methods;
     },
