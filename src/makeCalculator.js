@@ -59,10 +59,8 @@ function makeCalculator() {
     },
 
     divide: (number) => {
-      methods.result /= number;
-
       if (number !== 0) {
-        return methods;
+        methods.result /= number;
       }
     },
 
@@ -73,7 +71,7 @@ function makeCalculator() {
     },
 
     operate: function(callback, number) {
-      switch (callback) {
+      switch (callback(number)) {
         case methods.add:
           methods.add(number);
           break;
