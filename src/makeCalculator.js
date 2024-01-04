@@ -38,20 +38,32 @@
  */
 function makeCalculator() {
   return {
-    add(result, number) {
-      return result + number;
+    add(value) {
+      this.result += value;
+
+      return this;
     },
 
-    subtract(result, number) {
-      return result - number;
+    subtract(value) {
+      this.result -= value;
+
+      return this;
     },
 
-    multiply(result, number) {
-      return result * number;
+    multiply(value) {
+      this.result *= value;
+
+      return this;
     },
 
-    divide(result, number) {
-      return result / number;
+    divide(value) {
+      if (value === 0) {
+        return;
+      }
+
+      this.result /= value;
+
+      return this;
     },
 
     reset() {
@@ -60,8 +72,8 @@ function makeCalculator() {
       return this;
     },
 
-    operate(callback, number) {
-      this.result = callback(this.result, number);
+    operate(callback, value) {
+      callback.call(this, value);
 
       return this;
     },
