@@ -56,8 +56,8 @@ function makeCalculator() {
 
       return this;
     },
-    operate(callback, x) {
-      callback.call(this, x);
+    operate(calculatorMethod, x) {
+      calculatorMethod.call(this, x);
 
       return this;
     },
