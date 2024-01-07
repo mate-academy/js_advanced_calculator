@@ -54,7 +54,9 @@ function makeCalculator() {
     },
 
     divide(currentResult, number) {
-      return currentResult / number;
+      if (number !== 0) {
+        return currentResult / number;
+      }
     },
 
     reset() {
