@@ -36,60 +36,50 @@
  * @return {object}
  */
 function makeCalculator() {
-  let result = 0;
+  return {
+    result: 0,
 
-  const add = num => {
-    result += num;
+    add(num) {
+      this.result += num;
 
-    return this;
-  };
-
-  const subtract = num => {
-    result -= num;
-
-    return this;
-  };
-
-  const multiply = num => {
-    result *= num;
-
-    return this;
-  };
-
-  const divide = num => {
-    if (num === 0) {
       return this;
-    }
-    result /= num;
+    },
 
-    return this;
-  };
+    subtract(num) {
+      this.result -= num;
 
-  const reset = () => {
-    result = 0;
+      return this;
+    },
 
-    return calc;
-  };
+    multiply(num) {
+      this.result *= num;
 
-  const operate = (callback, num) => {
-    callback(num);
+      return this;
+    },
 
-    return calc;
-  };
+    divide(num) {
+      try {
+        this.result /= num;
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.error(e);
+      }
 
-  const calc = {
-    add,
-    subtract,
-    multiply,
-    divide,
-    reset,
-    operate,
-    get result() {
-      return result;
+      return this;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    operate(callback, num) {
+      callback.call(this, num);
+
+      return this;
     },
   };
-
-  return calc;
 }
 
 module.exports = makeCalculator;
