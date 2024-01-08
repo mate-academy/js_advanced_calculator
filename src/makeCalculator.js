@@ -20,10 +20,10 @@
  *
  * calculator.operate(calculator.add, 21)
  * calculator.result === 21
-
+ *
  * calculator.reset()
  * calculator.result === 0
-
+ *
  * calculator
  *  .operate(calculator.add, 10)
  *  .reset()
@@ -33,11 +33,56 @@
  *
  * calculator.result === -28
  *
- *
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  let result = 0;
+
+  const add = num => {
+    result += num;
+
+    return makeCalculator();
+  };
+
+  const subtract = num => {
+    result -= num;
+
+    return makeCalculator();
+  };
+
+  const multiply = num => {
+    result *= num;
+
+    return makeCalculator();
+  };
+
+  const divide = num => {
+    result /= num;
+
+    return makeCalculator();
+  };
+
+  const reset = () => {
+    result = 0;
+
+    return makeCalculator();
+  };
+
+  const operate = (callback, num) => {
+    return callback(num);
+  };
+
+  return {
+    add,
+    subtract,
+    multiply,
+    divide,
+    reset,
+    operate,
+    get result() {
+      return result;
+    },
+  };
 }
 
 module.exports = makeCalculator;
