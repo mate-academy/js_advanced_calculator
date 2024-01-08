@@ -41,38 +41,43 @@ function makeCalculator() {
   const add = num => {
     result += num;
 
-    return makeCalculator();
+    return this;
   };
 
   const subtract = num => {
     result -= num;
 
-    return makeCalculator();
+    return this;
   };
 
   const multiply = num => {
     result *= num;
 
-    return makeCalculator();
+    return this;
   };
 
   const divide = num => {
+    if (num === 0) {
+      return this;
+    }
     result /= num;
 
-    return makeCalculator();
+    return this;
   };
 
   const reset = () => {
     result = 0;
 
-    return makeCalculator();
+    return calc;
   };
 
   const operate = (callback, num) => {
-    return callback(num);
+    callback(num);
+
+    return calc;
   };
 
-  return {
+  const calc = {
     add,
     subtract,
     multiply,
@@ -83,6 +88,8 @@ function makeCalculator() {
       return result;
     },
   };
+
+  return calc;
 }
 
 module.exports = makeCalculator;
