@@ -41,25 +41,35 @@ function makeCalculator() {
     result: 0,
 
     operate(toDo, number) {
-      this.result = toDo(this.result, number);
+      return toDo.call(this, number);
+    },
+
+    add(number) {
+      this.result += number;
 
       return this;
     },
 
-    add(accum, number) {
-      return accum + number;
+    subtract(number) {
+      this.result -= number;
+
+      return this;
     },
 
-    subtract(accum, number) {
-      return accum - number;
+    multiply(number) {
+      this.result *= number;
+
+      return this;
     },
 
-    multiply(accum, number) {
-      return accum * number;
-    },
+    divide(number) {
+      if (number > 0) {
+        this.result /= number;
+      } else {
+        throw Error;
+      }
 
-    divide(accum, number) {
-      return number > 0 ? accum / number : Error;
+      return this;
     },
 
     reset() {
