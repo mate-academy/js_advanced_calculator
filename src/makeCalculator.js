@@ -50,7 +50,9 @@ function makeCalculator() {
       return result * a;
     },
     divide(result, a) {
-      return result / a;
+      if (a !== 0) {
+        return result / a;
+      }
     },
     reset() {
       this.result = 0;
@@ -60,7 +62,7 @@ function makeCalculator() {
     operate(callback, a) {
       this.result = callback(this.result, a);
 
-      return calculator;
+      return this;
     },
   };
 
