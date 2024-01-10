@@ -59,7 +59,7 @@ function makeCalculator() {
     },
 
     divide(accum, number) {
-      return accum / number;
+      return number > 0 ? accum / number : false;
     },
 
     reset() {
