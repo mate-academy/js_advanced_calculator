@@ -53,7 +53,9 @@ function makeCalculator() {
     },
 
     divide(value) {
-      this.result /= value;
+      if (value !== 0) {
+        this.result /= value;
+      }
     },
 
     operate(operation, value) {
@@ -69,5 +71,9 @@ function makeCalculator() {
     },
   };
 }
+
+const calculator = makeCalculator();
+
+calculator.operate(calculator.add, 21);
 
 module.exports = makeCalculator;
