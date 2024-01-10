@@ -37,7 +37,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calculator = {
+  return {
     result: 0,
 
     operate(toDo, number) {
@@ -59,7 +59,7 @@ function makeCalculator() {
     },
 
     divide(accum, number) {
-      return number > 0 ? accum / number : false;
+      return number > 0 ? accum / number : Error;
     },
 
     reset() {
@@ -68,8 +68,6 @@ function makeCalculator() {
       return this;
     },
   };
-
-  return calculator;
 }
 
 module.exports = makeCalculator;
