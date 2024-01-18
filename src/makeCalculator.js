@@ -37,7 +37,72 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const allOperates = {
+
+    // змінна в якій буде зберігатись результат
+    resultOperation: 0,
+
+    // геттер який повертає результат , тобто нашу змінну з результатом
+    get result() {
+      return this.resultOperation;
+    },
+
+    // геттер який повертає наш об'єкт,
+    // для того щоб можна було використовувати чейнінг
+    get thisObject() {
+      return this;
+    },
+
+    /**
+     * @param {number} number
+     * сеттер - який буде змінювати нашу результуючу змінну
+     */
+    set changeResult(number) {
+      this.resultOperation = number;
+    },
+
+    // дана функція приймає (callback) і число (number) - для маніпуляцій з ним
+    operate(callback, number) {
+      this.changeResult = callback(this.resultOperation, number);
+
+      return this.thisObject;
+    },
+
+    // Функція додавання, яка прииймає початкове значення (а саме результат) та
+    // число яке передається, та вертає результат 'додавання'
+    add(startNumber, number) {
+      const result = startNumber + number;
+
+      return result;
+    },
+
+    subtract(startNumber, number) {
+      const result = startNumber - number;
+
+      return result;
+    },
+
+    multiply(startNumber, number) {
+      const result = startNumber * number;
+
+      return result;
+    },
+
+    divide(startNumber, number) {
+      const result = startNumber / number;
+
+      return result;
+    },
+
+    // метод reset - встановлює нашій змінній значення 0
+    reset() {
+      this.changeResult = 0;
+
+      return this.thisObject;
+    },
+  };
+
+  return allOperates;
 }
 
 module.exports = makeCalculator;
