@@ -38,11 +38,11 @@ function makeCalculator() {
     },
 
     divide(prevValue, value) {
-      if (value === 0) {
-        return 0;
-      }
+      let result = prevValue / value;
 
-      const result = prevValue / value;
+      if (value === 0) {
+        result = 0;
+      }
 
       return result;
     },
