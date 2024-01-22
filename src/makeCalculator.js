@@ -40,37 +40,34 @@ function makeCalculator() {
   // write code here
   const calculator = {
     result: 0,
-    // operate : (calback, arg) => {
-    //   calback(arg);
-    // },
-  };
 
-  calculator['operate'] = (calback, arg) => {
-    calback(arg);
+    operate: (calback, arg) => {
+      calback(arg);
 
-    return calculator;
-  };
+      return calculator;
+    },
 
-  calculator['add'] = (arg) => {
-    calculator.result += arg;
-  };
+    reset: () => {
+      calculator.result = 0;
 
-  calculator['subtract'] = (arg) => {
-    calculator.result -= arg;
-  };
+      return calculator;
+    },
 
-  calculator['multiply'] = (arg) => {
-    calculator.result *= arg;
-  };
+    add: (arg) => {
+      calculator.result += arg;
+    },
 
-  calculator['divide'] = (arg) => {
-    calculator.result /= arg;
-  };
+    subtract: (arg) => {
+      calculator.result -= arg;
+    },
 
-  calculator['reset'] = () => {
-    calculator.result = 0;
+    multiply: (arg) => {
+      calculator.result *= arg;
+    },
 
-    return calculator;
+    divide: (arg) => {
+      calculator.result /= arg;
+    },
   };
 
   return calculator;
