@@ -38,6 +38,7 @@
  */
 function makeCalculator() {
   const calculator = {};
+  const errorMessage = 'Error: Division by zero.';
 
   calculator.result = 0;
 
@@ -65,7 +66,11 @@ function makeCalculator() {
 
   calculator.divide
     = function(n) {
-      calculator.result /= n;
+      if (n !== 0) {
+        calculator.result /= n;
+      } else {
+        return errorMessage;
+      }
     };
 
   calculator.reset
