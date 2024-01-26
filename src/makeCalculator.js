@@ -53,6 +53,10 @@ function makeCalculator() {
     },
 
     divide(value = 0, n = 1) {
+      if (n === 0) {
+        throw new Error('You cannot divide by 0!!!');
+      }
+
       return value / n;
     },
 
