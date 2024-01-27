@@ -59,9 +59,11 @@ function makeCalculator() {
     },
 
     divide: function(num) {
-      if (num !== 0) {
-        this.result /= num;
+      if (num === 0) {
+        throw new Error('Cannot divide by zero!');
       }
+
+      this.result /= num;
 
       return this;
     },
@@ -73,6 +75,9 @@ function makeCalculator() {
     },
 
     operate: function(callback, num) {
+      if (typeof callback !== 'function') {
+        throw new Error('Passed callback is not a function!');
+      }
       callback.call(this, num);
 
       return this;
