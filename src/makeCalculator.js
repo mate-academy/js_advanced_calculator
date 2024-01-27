@@ -37,48 +37,41 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calculator = {};
-  const errorMessage = 'Error: Division by zero.';
+  const calculator = {
+    result: 0,
 
-  calculator.result = 0;
+    operate(callback, n, pastN = this.result) {
+      this.result = callback(n, pastN);
 
-  calculator.operate
-    = function(callback, n) {
-      callback(n);
+      return this;
+    },
 
-      return calculator;
-    };
+    add(n, pastN) {
+      return pastN + n;
+    },
 
-  calculator.add
-    = function(n) {
-      calculator.result += n;
-    };
+    subtract(n, pastN) {
+      return pastN - n;
+    },
 
-  calculator.subtract
-    = function(n) {
-      calculator.result -= n;
-    };
+    multiply(n, pastN) {
+      return pastN * n;
+    },
 
-  calculator.multiply
-    = function(n) {
-      calculator.result *= n;
-    };
-
-  calculator.divide
-    = function(n) {
+    divide(n, pastN) {
       if (n !== 0) {
-        calculator.result /= n;
+        return pastN / n;
       } else {
-        return errorMessage;
+        return 0;
       }
-    };
+    },
 
-  calculator.reset
-    = function() {
-      calculator.result = 0;
+    reset() {
+      this.result = 0;
 
-      return calculator;
-    };
+      return this;
+    },
+  };
 
   return calculator;
 }
