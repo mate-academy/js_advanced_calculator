@@ -41,43 +41,43 @@ function makeCalculator() {
     result: 0,
 
     add(a) {
-      calc.result += a;
+      this.result += a;
 
-      return calc;
+      return this;
     },
 
     subtract(a) {
-      calc.result -= a;
+      this.result -= a;
 
-      return calc;
+      return this;
     },
 
     multiply(a) {
-      calc.result *= a;
+      this.result *= a;
 
-      return calc;
+      return this;
     },
 
     divide(a) {
       if (a !== 0) {
-        calc.result /= a;
+        this.result /= a;
       } else {
         return 'you can`t divide by zero';
       }
 
-      return calc;
+      return this;
     },
 
     reset() {
-      calc.result = 0;
+      this.result = 0;
 
-      return calc;
+      return this;
     },
 
     operate(callback, number) {
-      callback(number);
+      callback.bind(this)(number);
 
-      return calc;
+      return this;
     },
   };
 
