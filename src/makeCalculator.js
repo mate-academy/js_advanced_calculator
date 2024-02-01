@@ -46,20 +46,24 @@ function makeCalculator() {
       return this;
     },
 
-    add(num1, num2) {
-      return num1 + num2;
+    add(currentValue, number) {
+      return currentValue + number;
     },
 
-    subtract(num1, num2) {
-      return num1 - num2;
+    subtract(currentValue, number) {
+      return currentValue - number;
     },
 
-    divide(num1, num2) {
-      return num1 / num2;
+    divide(currentValue, number) {
+      if (number === 0) {
+        throw new Error('Cannot divide by zero');
+      }
+
+      return currentValue / number;
     },
 
-    multiply(num1, num2) {
-      return num1 * num2;
+    multiply(currentValue, number) {
+      return currentValue * number;
     },
 
     operate(callback, number) {
