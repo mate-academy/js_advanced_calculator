@@ -51,16 +51,16 @@ function makeCalculator() {
     },
 
     divide(number) {
+      if (number === 0) {
+        return;
+      }
+
       this.result /= number;
 
       return this.result;
     },
 
     multiply(number) {
-      if (number === 0) {
-        return;
-      }
-
       this.result *= number;
 
       return this.result;
