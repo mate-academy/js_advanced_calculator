@@ -40,57 +40,44 @@ function makeCalculator() {
   const methods = {
     result: 0,
 
-    add: (number) => {
-      methods.result += number;
+    add: function(number) {
+      this.result += number;
 
-      return methods;
+      return this;
     },
 
-    subtract: (number) => {
-      methods.result -= number;
+    subtract: function(number) {
+      this.result -= number;
 
-      return methods;
+      return this;
     },
 
-    multiply: (number) => {
-      methods.result *= number;
+    multiply: function(number) {
+      this.result *= number;
 
-      return methods;
+      return this;
     },
 
-    divide: (number) => {
+    divide: function(number) {
       if (number !== 0) {
-        methods.result /= number;
+        this.result /= number;
 
-        return methods;
+        return this;
+      } else {
+        throw new Error('Cannot divide by 0.');
       }
     },
 
-    reset: () => {
-      methods.result = 0;
+    reset: function() {
+      this.result = 0;
 
-      return methods;
+      return this;
     },
 
     operate: function(callback, number) {
-      switch (callback) {
-        case methods.add:
-          methods.add(number);
-          break;
-        case methods.subtract:
-          methods.subtract(number);
-          break;
-        case methods.multiply:
-          methods.multiply(number);
-          break;
-        case methods.divide:
-          methods.divide(number);
-          break;
-        default:
-          break;
-      }
+      callback.call(this, number);
 
-      return methods;
+      return this;
     },
   };
 
