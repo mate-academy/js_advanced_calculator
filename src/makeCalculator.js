@@ -57,6 +57,10 @@ function makeCalculator() {
     },
 
     multiply(number) {
+      if (number === 0) {
+        return;
+      }
+
       this.result *= number;
 
       return this.result;
