@@ -2,7 +2,6 @@
 root = true
 
 [*]
-quote_type = single
 indent_style = space
 indent_size = 2
 charset = utf-8

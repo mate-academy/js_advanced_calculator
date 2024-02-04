@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Another calculator. Now the task is more difficult.
@@ -65,7 +65,9 @@ function makeCalculator() {
     },
 
     divide(a) {
-      this.result /= a;
+      if (a !== 0) {
+        this.result /= a;
+      }
     },
   };
 }
