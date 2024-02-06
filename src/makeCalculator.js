@@ -64,11 +64,9 @@ function makeCalculator() {
     },
 
     divide(result, value) {
-      if (!value) {
-        return result;
-      }
-
-      return result / value;
+      if (value) {
+        return result / value;
+      };
     },
   };
 
