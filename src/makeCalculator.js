@@ -71,13 +71,11 @@ function makeCalculator() {
     },
 
     divide(a) {
-      if (this.result === 0) {
-        return 0;
+      if (a !== 0) {
+        this.result /= a;
+
+        return this;
       }
-
-      this.result /= a;
-
-      return this;
     },
   };
 }
