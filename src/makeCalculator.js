@@ -40,8 +40,8 @@ function makeCalculator() {
   return {
     result: 0,
 
-    operate(operation, number = 0) {
-      this.result = operation(this.result, number);
+    operate(operation, number) {
+      operation.call(this, number);
 
       return this;
     },
