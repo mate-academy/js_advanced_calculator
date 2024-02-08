@@ -60,6 +60,10 @@ function makeCalculator() {
     },
 
     divide(figure) {
+      if (figure === 0) {
+        return 'Error';
+      };
+
       calculator.result /= figure;
     },
 
