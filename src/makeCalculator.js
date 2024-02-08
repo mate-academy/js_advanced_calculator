@@ -42,37 +42,31 @@ function makeCalculator() {
     result: 0,
 
     operate(value, number) {
-      return value(number);
+      value(number);
+
+      return this;
     },
 
     add(figure) {
       calculator.result += figure;
-
-      return calculator;
     },
 
     subtract(figure) {
       calculator.result -= figure;
-
-      return calculator;
     },
 
     multiply(figure) {
       calculator.result *= figure;
-
-      return calculator;
     },
 
     divide(figure) {
       calculator.result /= figure;
-
-      return calculator;
     },
 
     reset() {
       calculator.result = 0;
 
-      return calculator;
+      return this;
     },
   };
 
