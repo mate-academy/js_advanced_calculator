@@ -40,53 +40,39 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add(figure) {
-      this.result += figure;
 
-      return this;
+    operate(value, number) {
+      return value(number);
+    },
+
+    add(figure) {
+      calculator.result += figure;
+
+      return calculator;
     },
 
     subtract(figure) {
-      this.result -= figure;
+      calculator.result -= figure;
 
-      return this;
+      return calculator;
     },
 
     multiply(figure) {
-      this.result *= figure;
+      calculator.result *= figure;
 
-      return this;
+      return calculator;
     },
 
     divide(figure) {
-      this.result /= figure;
+      calculator.result /= figure;
 
-      return this;
+      return calculator;
     },
 
     reset() {
-      this.result = 0;
+      calculator.result = 0;
 
-      return this;
-    },
-
-    operate(value, number) {
-      switch (value) {
-        case this.add:
-          return this.add(number);
-
-        case this.subtract:
-          return this.subtract(number);
-
-        case this.multiply:
-          return this.multiply(number);
-
-        case this.divide:
-          return this.divide(number);
-
-        case this.reset:
-          return this.reset();
-      }
+      return calculator;
     },
   };
 
