@@ -54,19 +54,21 @@ function makeCalculator() {
     },
 
     divide(a, b) {
-      return a / b;
+      if (b !== 0) {
+        return a / b;
+      }
     },
 
     reset() {
       this.result = 0;
 
-      return calculator;
+      return this;
     },
 
     operate(action, x) {
       this.result = action(this.result, x);
 
-      return calculator;
+      return this;
     },
   };
 
