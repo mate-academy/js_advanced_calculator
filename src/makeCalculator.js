@@ -49,7 +49,9 @@ function makeCalculator() {
       this.result *= num; ;
     },
     divide(num) {
-      this.result /= num;
+      if (num !== 0) {
+        this.result /= num;
+      }
     },
     reset() {
       this.result = 0;
