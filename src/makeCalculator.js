@@ -33,7 +33,6 @@
  *
  * calculator.result === -28
  *
- *
  * @return {object}
  */
 function makeCalculator() {
