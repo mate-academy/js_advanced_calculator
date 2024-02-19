@@ -40,29 +40,29 @@ function makeCalculator() {
   return {
     result: 0,
     operate(callback, value = null) {
-      callback(this, value);
+      callback.call(this, value);
 
       return this;
     },
-    add(thisParam, value) {
-      thisParam.result += value;
-
-      return thisParam;
-    },
-    subtract(thisParam, value) {
-      thisParam.result -= value;
-
-      return thisParam;
-    },
-    multiply(thisParam, value) {
-      thisParam.result *= value;
+    add(value) {
+      this.result += value;
 
       return this;
     },
-    divide(thisParam, value) {
-      thisParam.result /= value;
+    subtract(value) {
+      this.result -= value;
 
-      return thisParam;
+      return this;
+    },
+    multiply(value) {
+      this.result *= value;
+
+      return this;
+    },
+    divide(value) {
+      this.result /= value;
+
+      return this;
     },
     reset() {
       this.result = 0;
