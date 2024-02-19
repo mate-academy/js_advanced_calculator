@@ -44,25 +44,25 @@ function makeCalculator() {
 
       return this;
     },
-    add(cbThis, value) {
-      cbThis.result += value;
+    add(thisParam, value) {
+      thisParam.result += value;
 
-      return cbThis;
+      return thisParam;
     },
-    subtract(cbThis, value) {
-      cbThis.result -= value;
+    subtract(thisParam, value) {
+      thisParam.result -= value;
 
-      return cbThis;
+      return thisParam;
     },
-    multiply(cbThis, value) {
-      cbThis.result *= value;
+    multiply(thisParam, value) {
+      thisParam.result *= value;
 
       return this;
     },
-    divide(cbThis, value) {
-      cbThis.result /= value;
+    divide(thisParam, value) {
+      thisParam.result /= value;
 
-      return cbThis;
+      return thisParam;
     },
     reset() {
       this.result = 0;
