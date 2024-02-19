@@ -54,6 +54,11 @@ function makeCalculator() {
       return this;
     },
     divide: function(a) {
+      if (a === 0) {
+        this.result = 0;
+
+        return this;
+      }
       this.result /= a;
 
       return this;
