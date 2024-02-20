@@ -39,22 +39,22 @@
 function makeCalculator() {
   return {
     result: 0,
-    add: function(num) {
+    add(num) {
       this.result += num;
 
       return this;
     },
-    subtract: function(num) {
+    subtract(num) {
       this.result -= num;
 
       return this;
     },
-    multiply: function(num) {
+    multiply(num) {
       this.result *= num;
 
       return this;
     },
-    divide: function(num) {
+    divide(num) {
       if (num !== 0) {
         this.result /= num;
       } else {
@@ -63,12 +63,12 @@ function makeCalculator() {
 
       return this;
     },
-    reset: function() {
+    reset() {
       this.result = 0;
 
       return this;
     },
-    operate: function(callback, num) {
+    operate(callback, num) {
       callback.call(this, num);
 
       return this;
