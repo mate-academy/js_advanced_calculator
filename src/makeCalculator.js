@@ -52,6 +52,10 @@ function makeCalculator() {
   }
 
   function divide(value) {
+    if (value === 0) {
+      console.error("Division by zero is not allowed");
+      return;
+    }
     result /= value;
   }
 
