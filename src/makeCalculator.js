@@ -40,22 +40,22 @@ function makeCalculator() {
   // write code here
   return {
     result: 0,
-    add: function(num) {
+    add(num) {
       this.result += num;
 
       return this;
     },
-    subtract: function(num) {
+    subtract(num) {
       this.result -= num;
 
       return this;
     },
-    multiply: function(num) {
+    multiply(num) {
       this.result *= num;
 
       return this;
     },
-    divide: function(num) {
+    divide(num) {
       if (num === 0) {
         throw new Error('TypeError: Division by zero.');
       }
@@ -64,12 +64,12 @@ function makeCalculator() {
 
       return this;
     },
-    reset: function(num) {
+    reset() {
       this.result = 0;
 
       return this;
     },
-    operate: function(callback, num) {
+    operate(callback, num) {
       return callback.call(this, num);
     },
   };
