@@ -38,23 +38,23 @@
  */
 function makeCalculator() {
   const calculator = {
-    add(a, b) {
-      this.result = a + b;
+    add(a) {
+      this.result += a;
 
       return this.result;
     },
-    subtract(a, b) {
-      this.result = a - b;
+    subtract(a) {
+      this.result -= a;
 
       return this.result;
     },
-    multiply(a, b) {
-      this.result = a * b;
+    multiply(a) {
+      this.result *= a;
 
       return this.result;
     },
-    divide(a, b) {
-      this.result = a / b;
+    divide(a) {
+      this.result /= a;
 
       return this.result;
     },
@@ -64,7 +64,7 @@ function makeCalculator() {
       return this;
     },
     operate(callback, num) {
-      this.result = callback.call(this, this.result, num);
+      this.result = callback.call(this, num);
 
       return this;
     },
