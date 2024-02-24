@@ -37,7 +37,49 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
-}
+  const memory = {
+    result: 0,
+
+    add(value) {
+      memory.result += value;
+
+      return memory;
+    },
+
+    subtract(value) {
+      memory.result -= value;
+
+      return memory;
+    },
+
+    multiply(value) {
+      memory.result *= value;
+
+      return memory;
+    },
+
+    divide(value) {
+      if (value !== 0 || value !== null) {
+        memory.result /= value;
+
+        return memory;
+      };
+
+      return 'Can`t be divided by 0';
+    },
+
+    reset() {
+      memory.result = 0;
+
+      return this;
+    },
+
+    operate(operation, number) {
+      return operation(number);
+    },
+  };
+
+  return memory;
+};
 
 module.exports = makeCalculator;
