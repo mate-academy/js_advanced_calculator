@@ -56,6 +56,10 @@ function makeCalculator() {
       return this;
     },
     divide(num) {
+      if (num === 0) {
+        return this;
+      }
+
       this.result /= num;
 
       return this;
