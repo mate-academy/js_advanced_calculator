@@ -38,6 +38,53 @@
  */
 function makeCalculator() {
   // write code here
+  const sum = {
+    result: 0,
+    reset() {
+      this.result = 0;
+      return this;
+    },
+    operate(key, value) {
+      switch(key) {
+        case this.add: {
+          this.result += value;
+          return this;
+        }
+
+        case this.subtract: {
+          this.result -= value;
+          return this;
+        }
+
+        case this.multiply: {
+          this.result *= value;
+          return this;
+        }
+
+        case this.divide: {
+          this.result /= value;
+          return this;
+        }
+
+        default:
+          console.log('Unexpected command');
+      }
+
+    },
+    add() {
+      return this.result;
+    },
+    subtract() {
+      return this.result;
+    },
+    multiply() {
+      return this.result;
+    },
+    divide() {
+      return this.result;
+    },
+  };
+  return sum;
 }
 
 module.exports = makeCalculator;
