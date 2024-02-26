@@ -13,3 +13,5 @@ function makeCalculator() {
 
   return calculator;
 }
+
+module.exports = makeCalculator;
