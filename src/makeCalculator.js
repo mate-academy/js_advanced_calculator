@@ -34,10 +34,51 @@
  * calculator.result === -28
  *
  *
- * @return {object}
+ * return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+      result: 0,
+
+      reset() {
+          this.result = 0;
+          return this;
+      },
+
+      add(num) {
+          this.result += num;
+          return this.result;
+      },
+
+      subtract(num) {
+          this.result -= num;
+          return this.result;
+      },
+
+      divide(num) {
+          if (num !== 0) {
+              this.result /= num;
+              return this.result;
+          } else {
+              return "Division by zero is not allowed.";
+          }
+      },
+
+      multiply(num) {
+          this.result *= num;
+          return this.result;
+      },
+
+      operate(callback, num) {
+          callback.call(this, num);
+          return this;
+      },
+
+      getResult() {
+          console.log(this.result);
+          return this.result;
+      }
+  };
 }
 
 module.exports = makeCalculator;
