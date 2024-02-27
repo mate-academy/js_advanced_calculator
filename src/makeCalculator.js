@@ -68,8 +68,4 @@ function makeCalculator() {
   }
 }
 
-const calculator = makeCalculator()
-calculator.operate(calculator.add, 10)
-console.log(calculator.result)
-
 module.exports = makeCalculator;
