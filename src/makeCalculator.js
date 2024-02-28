@@ -58,7 +58,11 @@ function makeCalculator() {
     },
 
     divide (value, currentResult) {
-      return currentResult / value;
+      if (value === 0) {
+        return currentResult / 1;
+      } else {
+        return currentResult / value;
+      }
     },
 
     reset () {
@@ -69,3 +73,4 @@ function makeCalculator() {
 }
 
 module.exports = makeCalculator;
+
