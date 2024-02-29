@@ -67,6 +67,10 @@ function makeCalculator() {
     },
 
     divide(obj, value) {
+      if (value === 0) {
+        return;
+      }
+
       obj.result /= value;
     },
   };
