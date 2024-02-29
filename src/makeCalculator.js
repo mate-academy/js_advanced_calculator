@@ -43,17 +43,17 @@ function makeCalculator() {
       func(number, this);
       return this;
     },
-    add(add) {
-      return this.result + add;
+    add(add, func) {
+      func.result += add;
     },
-    subtract(subtract) {
-      return this.result - subtract;
+    subtract(subtract, func) {
+      func.result -= subtract;
     },
-    divide(divide) {
-      return this.result / divide;
+    divide(divide, func) {
+      func.result /= divide;
     },
-    multiply(multiply) {
-      return this.result * multiply;
+    multiply(multiply, func) {
+      func.result *= multiply;
     },
     reset() {
       this.result = 0;
