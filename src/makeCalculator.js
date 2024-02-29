@@ -41,6 +41,7 @@ function makeCalculator() {
     result: 0,
     operate(func, number) {
       func(number, this);
+
       return this;
     },
     add(add, func) {
@@ -57,7 +58,8 @@ function makeCalculator() {
     },
     reset() {
       this.result = 0;
-      return this.result;
+
+      return this;
     },
   }
 }
