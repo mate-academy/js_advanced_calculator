@@ -51,7 +51,9 @@ function makeCalculator() {
       func.result -= subtract;
     },
     divide(divide, func) {
-      func.result /= divide;
+      if (divide !== 0) {
+        func.result /= divide;
+      }
     },
     multiply(multiply, func) {
       func.result *= multiply;
