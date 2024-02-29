@@ -42,7 +42,7 @@ function makeCalculator() {
 
     // Main methods
     operate(callback, value) {
-      callback(this, value);
+      callback.call(this, value);
 
       return this;
     },
@@ -54,24 +54,24 @@ function makeCalculator() {
     },
 
     // Operations
-    add(obj, value) {
-      obj.result += value;
+    add(value) {
+      this.result += value;
     },
 
-    subtract(obj, value) {
-      obj.result -= value;
+    subtract(value) {
+      this.result -= value;
     },
 
-    multiply(obj, value) {
-      obj.result *= value;
+    multiply(value) {
+      this.result *= value;
     },
 
-    divide(obj, value) {
+    divide(value) {
       if (value === 0) {
         return;
       }
 
-      obj.result /= value;
+      this.result /= value;
     },
   };
 }
