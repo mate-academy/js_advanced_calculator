@@ -46,9 +46,7 @@ function makeCalculator() {
       return this;
     },
     subtract(num) {
-      if (num !== 0) {
-        this.result -= num;
-      }
+      this.result -= num;
 
       return this;
     },
@@ -58,7 +56,9 @@ function makeCalculator() {
       return this;
     },
     divide(num) {
-      this.result /= num;
+      if (num !== 0) {
+        this.result /= num;
+      }
 
       return this;
     },
