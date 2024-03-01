@@ -46,7 +46,9 @@ function makeCalculator() {
       return this;
     },
     subtract(num) {
-      this.result -= num;
+      if (num !== 0) {
+        this.result -= num;
+      }
 
       return this;
     },
