@@ -1,5 +1,4 @@
 'use strict';
-/* global require, describe, test, expect */
 
 const makeCalculator = require('./makeCalculator');
 
@@ -103,9 +102,7 @@ describe('sum', () => {
   test(`'operate' should support a chain call`, () => {
     const calculator = makeCalculator();
 
-    calculator
-      .operate(calculator.add, 10)
-      .operate(calculator.subtract, 3);
+    calculator.operate(calculator.add, 10).operate(calculator.subtract, 3);
 
     expect(calculator.result).toBe(7);
   });
@@ -143,9 +140,7 @@ describe('sum', () => {
 
     calculator.operate(calculator.add, 3);
 
-    calculator
-      .reset()
-      .operate(calculator.subtract, 9);
+    calculator.reset().operate(calculator.subtract, 9);
 
     expect(calculator.result).toBe(-9);
   });
