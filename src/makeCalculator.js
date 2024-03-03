@@ -71,7 +71,9 @@ function makeCalculator() {
     },
 
     divide: (num) => {
-      calculator.result /= num;
+      if (num > 0) {
+        calculator.result /= num;
+      }
 
       return calculator;
     },
