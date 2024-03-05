@@ -65,9 +65,11 @@ function makeCalculator() {
       return this;
     },
     divide(a) {
-      calculator.result /= a;
+      if (a > 0) {
+        calculator.result /= a;
 
-      return this;
+        return this;
+      }
     },
   };
 
