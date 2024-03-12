@@ -60,9 +60,11 @@ function makeCalculator() {
       return this;
     },
     divide(num) {
-      this.result /= num;
+      if (num !== 0) {
+        this.result /= num;
 
-      return this;
+        return this;
+      }
     },
     operate(callback, num) {
       callback.call(this, num);
