@@ -51,6 +51,12 @@ function makeCalculator() {
       calculator.result -= value;
     },
     divide(value) {
+      if (value === 0) {
+        window.alert('Cannot divide by 0');
+
+        return;
+      }
+
       calculator.result /= value;
     },
     multiply(value) {
