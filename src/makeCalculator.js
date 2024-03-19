@@ -20,6 +20,9 @@ function makeCalculator() {
     },
 
     divide(result, number2) {
+      if (number2 !== 0) {
+      }
+
       return result / number2;
     },
 
