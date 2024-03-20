@@ -45,32 +45,24 @@ function makeCalculator() {
     result: 0,
 
     add(value) {
-      let result = this.result;
+      this.result += value;
 
-      result += value;
-
-      return result;
+      return this.result;
     },
     subtract(value) {
-      let result = this.result;
+      this.result -= value;
 
-      result -= value;
-
-      return result;
+      return this.result;
     },
     multiply(value) {
-      let result = this.result;
+      this.result *= value;
 
-      result *= value;
-
-      return result;
+      return this.result;
     },
     divide(value) {
-      let result = this.result;
+      this.result /= value;
 
-      result /= value;
-
-      return result;
+      return this.result;
     },
     reset() {
       this.result = 0;
