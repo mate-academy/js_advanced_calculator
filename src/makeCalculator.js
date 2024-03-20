@@ -14,20 +14,29 @@ function makeCalculator() {
     },
 
     operate(operation, number) {
-      this.result = operation(this.result, number);
+      this.result = operation.call(this, number);
 
       return this;
     },
 
-    add: (result, value) => result + value,
-    subtract: (result, value) => result - value,
-    multiply: (result, value) => result * value,
-    divide: (result, value) => {
+    add(value) {
+      return this.result + value;
+    },
+
+    subtract(value) {
+      return this.result - value;
+    },
+
+    multiply(value) {
+      return this.result * value;
+    },
+
+    divide(value) {
       if (value === 0) {
         throw new Error('You can not divide by 0!!!');
       }
 
-      return result / value;
+      return this.result / value;
     },
   };
 }
