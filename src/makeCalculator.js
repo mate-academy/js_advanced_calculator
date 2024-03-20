@@ -19,10 +19,16 @@ function makeCalculator() {
       return this;
     },
 
-    add: (a, b) => a + b,
-    subtract: (a, b) => a - b,
-    multiply: (a, b) => a * b,
-    divide: (a, b) => a / b,
+    add: (result, value) => result + value,
+    subtract: (result, value) => result - value,
+    multiply: (result, value) => result * value,
+    divide: (result, value) => {
+      if (value === 0) {
+        throw new Error('You can not divide by 0!!!');
+      }
+
+      return result / value;
+    },
   };
 }
 
