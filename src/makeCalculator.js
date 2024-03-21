@@ -65,7 +65,9 @@ function makeCalculator() {
     },
 
     divide: (value, object) => {
-      object.result /= value;
+      if (value !== 0) {
+        object.result /= value;
+      }
     },
   };
 
