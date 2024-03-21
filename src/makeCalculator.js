@@ -8,51 +8,39 @@ function makeCalculator() {
     result: 0,
 
     add(num) {
-      const number = this;
+      this.result += num;
 
-      number.result += num;
-
-      return number;
+      return this;
     },
 
     subtract(num) {
-      const number = this;
+      this.result -= num;
 
-      number.result -= num;
-
-      return number;
+      return this;
     },
 
     multiply(num) {
-      const number = this;
+      this.result *= num;
 
-      number.result *= num;
-
-      return number;
+      return this;
     },
 
     divide(num) {
-      const number = this;
+      this.result /= num;
 
-      number.result /= num;
-
-      return number;
+      return this;
     },
 
     reset() {
-      const number = this;
+      this.result = 0;
 
-      number.result = 0;
-
-      return number;
+      return this;
     },
 
     operate(callback, num) {
-      const number = this;
+      callback.call(this, num);
 
-      callback.call(number, num);
-
-      return number;
+      return this;
     },
   };
 }
