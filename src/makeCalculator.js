@@ -7,25 +7,25 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add: function (x) {
+    add(x) {
       this.result += x;
 
       return this;
     },
 
-    subtract: function (x) {
+    subtract(x) {
       this.result -= x;
 
       return this;
     },
 
-    multiply: function (x) {
+    multiply(x) {
       this.result *= x;
 
       return this;
     },
 
-    divide: function (x) {
+    divide(x) {
       if (x !== 0) {
         this.result /= x;
       } else {
@@ -35,13 +35,13 @@ function makeCalculator() {
       return this;
     },
 
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function (callback, number) {
+    operate(callback, number) {
       callback.call(this, number);
 
       return this;
