@@ -7,20 +7,30 @@ function makeCalculator() {
   const obj = {
     result: 0,
 
-    add: (value) => {
-      return (obj.result += value);
+    add(value) {
+      obj.result += value;
+
+      return this;
     },
 
-    subtract: (value) => {
-      return (obj.result -= value);
+    subtract(value) {
+      obj.result -= value;
+
+      return this;
     },
 
-    multiply: (value) => {
-      return (obj.result *= value);
+    multiply(value) {
+      obj.result *= value;
+
+      return this;
     },
 
-    divide: (value) => {
-      return (obj.result /= value);
+    divide(value) {
+      if (value !== 0) {
+        obj.result /= value;
+
+        return this;
+      }
     },
 
     reset() {
