@@ -8,26 +8,26 @@ function makeCalculator() {
     result: 0,
 
     add(value) {
-      obj.result += value;
+      this.result += value;
 
       return this;
     },
 
     subtract(value) {
-      obj.result -= value;
+      this.result -= value;
 
       return this;
     },
 
     multiply(value) {
-      obj.result *= value;
+      this.result *= value;
 
       return this;
     },
 
     divide(value) {
       if (value !== 0) {
-        obj.result /= value;
+        this.result /= value;
 
         return this;
       }
