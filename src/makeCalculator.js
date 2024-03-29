@@ -6,32 +6,34 @@
 function makeCalculator() {
   return {
     result: 0,
-    add: function (number) {
+    add(number) {
       this.result += number;
 
       return this;
     },
-    subtract: function (number) {
+    subtract(number) {
       this.result -= number;
 
       return this;
     },
-    multiply: function (number) {
+    multiply(number) {
       this.result *= number;
 
       return this;
     },
-    divide: function (number) {
-      this.result /= number;
+    divide(number) {
+      if (number !== 0) {
+        this.result /= number;
+      }
 
       return this;
     },
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
     },
-    operate: function (callback, number) {
+    operate(callback, number) {
       callback.call(this, number);
 
       return this;
