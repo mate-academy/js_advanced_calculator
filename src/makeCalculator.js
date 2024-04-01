@@ -25,9 +25,11 @@ function makeCalculator() {
 
     reset() {
       this.num = 0;
+
+      return this;
     },
 
-    result() {
+    get result() {
       return this.num;
     },
 
@@ -36,13 +38,9 @@ function makeCalculator() {
 
       func();
 
-      return this.num;
+      return this;
     },
   };
 }
 
 module.exports = makeCalculator;
-
-// const calculator = makeCalculator();
-
-// console.log(calculator.operate(calculator.add, 10));
