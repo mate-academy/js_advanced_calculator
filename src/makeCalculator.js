@@ -49,7 +49,7 @@ function makeCalculator() {
     add: (a, b) => a + b,
     subtract: (a, b) => a - b,
     multiply: (a, b) => a * b,
-    divide: (a, b) => (b > 0 ? a / b : 'Cann`t be devided by 0'),
+    divide: (a, b) => (b !== 0 ? a / b : 0),
 
     reset() {
       this.result = 0;
