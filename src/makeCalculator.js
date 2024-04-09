@@ -4,7 +4,12 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+    operate() {
+      return this;
+    }
+  }
 }
 
 module.exports = makeCalculator;
