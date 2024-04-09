@@ -9,27 +9,23 @@ function makeCalculator() {
     result: 0,
     add(operands) {
       return (calculator.result += operands);
-      // return result;
     },
     subtract(operands) {
       return (calculator.result -= operands);
-      // return result;
     },
     multiply(operands) {
       return (calculator.result *= operands);
-      // return result;
     },
     divide(operands) {
       return (calculator.result /= operands);
-      // return result;
     },
     operate(operator, operands) {
-      calculator.result = operator(operands);
+      this.result = operator(operands);
 
       return this;
     },
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
