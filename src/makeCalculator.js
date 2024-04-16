@@ -8,7 +8,7 @@ function makeCalculator() {
     result: 0,
 
     add(num) {
-      calculator.result += num;
+      this.result += num;
     },
 
     subtract(num) {
@@ -20,7 +20,7 @@ function makeCalculator() {
     },
 
     divide(num) {
-      calculator.result /= num;
+      calculator.result /= num === 0 ? 1 : num;
     },
 
     reset() {
@@ -30,7 +30,7 @@ function makeCalculator() {
     },
 
     operate(callBack, num) {
-      callBack(num);
+      callBack.call(this, num);
 
       return this;
     },
