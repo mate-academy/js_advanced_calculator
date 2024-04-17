@@ -1,6 +1,13 @@
 # Make Calculator
 
+
+**Read [the guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md) before start**
+
+## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
+
 Another calculator. Now the task is more difficult.
+
+## Task description:
 
 Create a `makeCalculator` function that returns an object that
 has the following fields:
@@ -34,7 +41,3 @@ calculator
 
 console.log(calculator.result); // -28
 ```
-
-**Read [the guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md) before start**
-
-## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
