@@ -4,39 +4,39 @@
  * @return {object}
  */
 function makeCalculator() {
-  return {
+  const calculate = {
     result: 0,
-    add(a) {
-      this.result += a;
 
-      return this;
+    add(result, number) {
+      return result + number;
     },
-    subtract(a) {
-      this.result -= a;
 
-      return this;
+    subtract(result, number) {
+      return result - number;
     },
-    multiply(a) {
-      this.result *= a;
 
-      return this;
+    multiply(result, number) {
+      return result * number;
     },
-    divide(a) {
-      this.result /= a;
 
-      return this;
+    divide(result, number) {
+      return result / number;
     },
+
     reset() {
       this.result = 0;
 
       return this;
     },
-    operate(operation, a) {
-      operation.call(this, a);
+
+    operate(callback, number) {
+      this.result = callback(this.result, number);
 
       return this;
     },
   };
+
+  return calculate;
 }
 
 module.exports = makeCalculator;
