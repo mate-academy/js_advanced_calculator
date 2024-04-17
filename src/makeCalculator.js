@@ -30,13 +30,12 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      if (calculate.hasOwnProperty(callback) === false) {
-        throw new Error('Invalid operation');
+      if (typeof callback === 'function') {
+
+        callback.call(this, number);
+
+        return this;
       }
-
-      callback.call(this, number);
-
-      return this;
     },
   };
 
