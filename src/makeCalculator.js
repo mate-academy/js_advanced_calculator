@@ -20,6 +20,10 @@ function makeCalculator() {
     },
 
     divide(number) {
+      if (number === 0) {
+        console.log('Cannot divide by zero');
+      }
+
       this.result /= number;
     },
 
