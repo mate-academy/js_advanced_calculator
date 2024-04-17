@@ -30,9 +30,9 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      const isCalculatorMethod = Object.keys(this).some((method) => method === callback);
+      const isCalculatorMethod = Object.keys(this).some((method) => this[method] === callback);
 
-      if (isCalculatorMethod) {
+      if (isCalculatorMethod && typeof callback === 'function') {
         callback.call(this, number);
 
         return this;
