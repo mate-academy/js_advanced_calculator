@@ -30,7 +30,7 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      callback(number);
+      callback.call(this, number);
 
       return this;
     },
