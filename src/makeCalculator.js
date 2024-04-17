@@ -30,13 +30,15 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      const isCalculatorMethod = Object.keys(this).some((method) => this[method] === callback);
+      const isCalculatorMethod = [this.add, this.subtract, this.multiply, this.divide].includes(callback);
 
       if (isCalculatorMethod && typeof callback === 'function') {
         callback.call(this, number);
 
         return this;
       }
+
+      return this;
     },
   };
 
