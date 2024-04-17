@@ -30,6 +30,10 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
+      if (calculate.hasOwnProperty(callback) === false) {
+        throw new Error('Invalid operation');
+      }
+
       callback.call(this, number);
 
       return this;
