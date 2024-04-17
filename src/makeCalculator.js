@@ -8,19 +8,19 @@ function makeCalculator() {
     result: 0,
 
     add(result, number) {
-      return result + number;
+      result += number;
     },
 
     subtract(result, number) {
-      return result - number;
+      result -= number;
     },
 
     multiply(result, number) {
-      return result * number;
+      result *= number;
     },
 
     divide(result, number) {
-      return result / number;
+      result /= number;
     },
 
     reset() {
@@ -30,7 +30,7 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      this.result = callback(this.result, number);
+      callback(this.result, number);
 
       return this;
     },
