@@ -6,8 +6,8 @@
 function makeCalculator() {
   return {
     result: 0,
-    operate: function (s, x) {
-      this.result = s(this.result, x);
+    operate: function (sv, x) {
+      this.result = sv(this.result, x);
 
       return this;
     },
