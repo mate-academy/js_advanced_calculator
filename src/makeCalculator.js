@@ -9,23 +9,18 @@ function makeCalculator() {
   const calculator = {
     add: (num) => {
       result += num;
-
-      return calculator;
     },
     subtract: (num) => {
       result -= num;
-
-      return calculator;
     },
     multiply: (num) => {
       result *= num;
-
-      return calculator;
     },
     divide: (num) => {
+      if (num === 0) {
+        throw new Error('Division by zero is not allowed');
+      }
       result /= num;
-
-      return calculator;
     },
     reset: () => {
       result = 0;
