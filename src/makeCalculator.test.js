@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 /* global require, describe, test, expect */
 
-const makeCalculator = require('./makeCalculator');
+const makeCalculator = require("./makeCalculator");
 
-describe('sum', () => {
+describe("sum", () => {
   test(`'makeCalculator' function should be declared`, () => {
     expect(makeCalculator).toBeInstanceOf(Function);
   });
@@ -12,7 +12,7 @@ describe('sum', () => {
     const calculator = makeCalculator();
 
     expect(calculator).not.toBe(null);
-    expect(typeof calculator).toBe('object');
+    expect(typeof calculator).toBe("object");
   });
 
   test(`'calculator.result' property should be initialized with 0`, () => {
@@ -103,9 +103,7 @@ describe('sum', () => {
   test(`'operate' should support a chain call`, () => {
     const calculator = makeCalculator();
 
-    calculator
-      .operate(calculator.add, 10)
-      .operate(calculator.subtract, 3);
+    calculator.operate(calculator.add, 10).operate(calculator.subtract, 3);
 
     expect(calculator.result).toBe(7);
   });
@@ -143,9 +141,7 @@ describe('sum', () => {
 
     calculator.operate(calculator.add, 3);
 
-    calculator
-      .reset()
-      .operate(calculator.subtract, 9);
+    calculator.reset().operate(calculator.subtract, 9);
 
     expect(calculator.result).toBe(-9);
   });
