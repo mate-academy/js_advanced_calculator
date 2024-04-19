@@ -78,6 +78,7 @@ describe('sum', () => {
     const calculator = makeCalculator();
 
     calculator.operate(calculator.add, 3);
+    
     calculator.operate(calculator.multiply, 7);
 
     expect(calculator.result).toBe(21);
