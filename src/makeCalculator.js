@@ -4,7 +4,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calculate = {
+  const calculator = {
     result: 0,
 
     add(number) {
@@ -21,8 +21,7 @@ function makeCalculator() {
 
     divide(number) {
       if (number === 0) {
-        console.log('Cannot divide by zero');
-        return;
+        throw new Error('Cannot divide by zero');
       }
 
       this.result /= number;
@@ -43,7 +42,7 @@ function makeCalculator() {
     },
   };
 
-  return calculate;
+  return calculator;
 }
 
 module.exports = makeCalculator;
