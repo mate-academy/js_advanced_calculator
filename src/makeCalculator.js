@@ -18,7 +18,11 @@ function makeCalculator() {
     },
 
     divide(number) {
-      return this.result / number;
+      if (number !== 0) {
+        return this.result / number;
+      }
+
+      return this;
     },
 
     reset() {
