@@ -31,7 +31,9 @@ function makeCalculator() {
       return this;
     },
     divide(value) {
-      result /= value;
+      if (value > 0) {
+        result /= value;
+      }
 
       return this;
     },
