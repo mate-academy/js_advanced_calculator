@@ -27,6 +27,10 @@ function makeCalculator() {
       return this;
     },
     divide(a) {
+      if (a === 0) {
+        return this;
+      }
+
       this.result /= a;
 
       return this;
