@@ -17,6 +17,10 @@ function makeCalculator() {
       return this.result;
     },
     divide(num) {
+      if (num === 0) {
+        return 'Division by zero';
+      }
+
       this.result /= num;
 
       return this.result;
