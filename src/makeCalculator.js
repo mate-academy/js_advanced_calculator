@@ -18,7 +18,7 @@ function makeCalculator() {
     },
     divide(num) {
       if (num === 0) {
-        return 'Division by zero';
+        throw new Error('Division by zero');
       }
 
       this.result /= num;
