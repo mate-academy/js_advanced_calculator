@@ -4,24 +4,11 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calculator = {
+  return {
     result: 0,
-    add(a) {
-      calculator.result += a;
-    },
-    subtract(a) {
-      calculator.result -= a;
-    },
-    multiply(a) {
-      calculator.result *= a;
-    },
-    divide(a) {
-      if (a !== 0) {
-        calculator.result /= a;
-      }
-    },
+
     operate(callback, a) {
-      callback(a);
+      callback.call(this, a);
 
       return this;
     },
@@ -31,9 +18,26 @@ function makeCalculator() {
 
       return this;
     },
-  };
 
-  return calculator;
+    add(a) {
+      this.result += a;
+    },
+
+    subtract(a) {
+      this.result -= a;
+    },
+
+    multiply(a) {
+      this.result *= a;
+    },
+
+    divide(a) {
+      if (a === 0) {
+        throw new Error('Not possible for this action');
+      }
+      this.result /= a;
+    },
+  };
 }
 
 module.exports = makeCalculator;
