@@ -16,7 +16,9 @@ function makeCalculator() {
       calculator.result *= a;
     },
     divide(a) {
-      calculator.result /= a;
+      if (a !== 0) {
+        calculator.result /= a;
+      }
     },
     operate(callback, a) {
       callback(a);
