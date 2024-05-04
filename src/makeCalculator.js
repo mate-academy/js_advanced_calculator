@@ -27,6 +27,9 @@ function makeCalculator() {
     },
 
     divide(a) {
+      if (a === 0) {
+        throw new error('Can not divide by 0')
+      }
       this.result /= a;
 
       return this;
