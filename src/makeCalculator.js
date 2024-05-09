@@ -7,8 +7,8 @@ function makeCalculator() {
   return {
     result: 0,
 
-    operate(callback, a) {
-      this.result = callback(this.result, a);
+    operate(callback, value) {
+      this.result = callback(this.result, value);
 
       return this;
     },
