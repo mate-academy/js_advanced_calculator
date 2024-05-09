@@ -8,37 +8,37 @@ function makeCalculator() {
     result: 0,
 
     add: function (num) {
-      calculator.result += num;
+      this.result += num;
 
       return this;
     },
 
     subtract: function (num) {
-      calculator.result -= num;
+      this.result -= num;
 
       return this;
     },
 
     multiply: function (num) {
-      calculator.result *= num;
+      this.result *= num;
 
       return this;
     },
 
     divide: function (num) {
-      calculator.result /= num;
+      this.result /= num;
 
       return this;
     },
 
     reset: function () {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
 
     operate: function (callback, value) {
-      callback(value);
+      callback.call(this, value);
 
       return this;
     },
