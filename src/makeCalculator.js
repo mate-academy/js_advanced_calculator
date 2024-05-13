@@ -24,7 +24,11 @@ function makeCalculator() {
     divide(number) {
       finalResult.result /= number;
 
-      return finalResult.result;
+      if (number === 0) {
+        return undefined;
+      } else {
+        return finalResult.result;
+      }
     },
     reset() {
       finalResult.result = 0;
