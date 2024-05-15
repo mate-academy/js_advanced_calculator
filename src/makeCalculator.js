@@ -26,7 +26,7 @@ function makeCalculator() {
     },
 
     divide(value) {
-      this.result /= value;
+      this.result = value !== 0 ? this.result / value : this.result;
 
       return this.result;
     },
