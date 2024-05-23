@@ -2,22 +2,25 @@
 2.  [CODE STYLE] - use arithmetic operators with assignment operator `=` if you want to add something to existing value
 
 BAD EXAMPLE:
+
 ```
 let a = 1;
 
 a = a + 2;
 ```
 
-GOOD EXAMPLE: 
+GOOD EXAMPLE:
+
 ```
 let a = 1;
 
 a += 2;
 ```
+
 3. [CODE KNOWLEDGE] - if you creating a method in the object, you don't need to use function keyword, use shortcut instead.
 
+BAD EXAMPLE:
 
-BAD EXAMPLE: 
 ```
  methodName: function() {
  // your code
@@ -25,6 +28,7 @@ BAD EXAMPLE:
 ```
 
 GOOD EXAMPLE:
+
 ```
  methodName() {
  // your code
