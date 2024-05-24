@@ -20,7 +20,9 @@ function makeCalculator() {
     },
 
     divide(num) {
-      if (num !== 0) {
+      if (num === 0) {
+        Error('Cannot divide by zero');
+      } else {
         this.result /= num;
       }
     },
@@ -32,7 +34,11 @@ function makeCalculator() {
     },
 
     operate(callback, num) {
-      callback.call(this, num);
+      if (typeof callback === 'function') {
+        callback.call(this, num);
+      } else {
+        Error('The callback is not a function');
+      }
 
       return this;
     },
