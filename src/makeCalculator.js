@@ -11,28 +11,28 @@ function makeCalculator() {
 
       return this;
     },
-    add(a) {
-      this.result += a;
+    add(input) {
+      this.result += input;
 
       return this;
     },
-    multiply(a) {
-      this.result *= a;
+    multiply(input) {
+      this.result *= input;
 
       return this;
     },
-    subtract(a) {
-      this.result -= a;
+    subtract(input) {
+      this.result -= input;
 
       return this;
     },
-    divide(a) {
-      this.result /= a;
+    divide(input) {
+      this.result /= input;
 
       return this;
     },
-    operate(callback, a) {
-      callback.call(this, a);
+    operate(callback, input) {
+      callback.call(this, input);
 
       return this;
     },
