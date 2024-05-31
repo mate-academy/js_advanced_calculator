@@ -21,7 +21,11 @@ function makeCalculator() {
       result *= num;
     },
     divide(num) {
-      result /= num;
+      if (num !== 0) {
+        result /= num;
+      } else {
+        result = NaN;
+      }
     },
     reset() {
       result = 0;
