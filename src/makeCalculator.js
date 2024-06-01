@@ -7,22 +7,22 @@ function makeCalculator() {
   let result = 0;
 
   return {
-    add: function (num) {
+    add(num) {
       result += num;
 
       return this;
     },
-    subtract: function (num) {
+    subtract(num) {
       result -= num;
 
       return this;
     },
-    multiply: function (num) {
+    multiply(num) {
       result *= num;
 
       return this;
     },
-    divide: function (num) {
+    divide(num) {
       if (num !== 0) {
         result /= num;
 
@@ -31,12 +31,12 @@ function makeCalculator() {
         throw new Error('Cannot divide by zero!');
       }
     },
-    reset: function (num) {
+    reset(num) {
       result = 0;
 
       return this;
     },
-    operate: function (operation, num) {
+    operate(operation, num) {
       return operation.call(this, num);
     },
     get result() {
