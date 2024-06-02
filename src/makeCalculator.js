@@ -12,21 +12,21 @@ function makeCalculator() {
       return this;
     },
     operate(callback, number) {
-      callback(number, this);
+      callback.call(this, number);
 
       return this;
     },
-    add(number, calculator) {
-      calculator.result += number;
+    add(number) {
+      this.result += number;
     },
-    subtract(number, calculator) {
-      calculator.result -= number;
+    subtract(number) {
+      this.result -= number;
     },
-    multiply(number, calculator) {
-      calculator.result *= number;
+    multiply(number) {
+      this.result *= number;
     },
-    divide(number, calculator) {
-      calculator.result /= number;
+    divide(number) {
+      this.result /= number;
     },
   };
 }
