@@ -23,13 +23,12 @@ function makeCalculator() {
       return this;
     },
     divide(num) {
-      if (num !== 0) {
-        result /= num;
-
-        return this;
-      } else {
+      if (num === 0) {
         throw new Error('Cannot divide by zero!');
       }
+      result /= num;
+
+      return this;
     },
     reset(num) {
       result = 0;
