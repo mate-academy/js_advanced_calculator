@@ -4,28 +4,38 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
-  return {
-    result: 0,
+  let result = 0;
 
+  return {
     add(num) {
-      this.result += num;
+      result += num;
+
+      return this;
     },
 
     subtract(num) {
-      this.result -= num;
+      result -= num;
+
+      return this;
     },
 
     multiply(num) {
-      this.result *= num;
+      result *= num;
+
+      return this;
     },
 
     divide(num) {
-      this.result /= num;
+      if (num === 0) {
+        throw new Error('Cannot divide by zero!');
+      }
+      result /= num;
+
+      return this;
     },
 
     reset() {
-      this.result = 0;
+      result = 0;
 
       return this;
     },
@@ -36,6 +46,10 @@ function makeCalculator() {
       }
 
       return this;
+    },
+
+    get result() {
+      return result;
     },
   };
 }
