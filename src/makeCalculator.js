@@ -6,24 +6,24 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    add(a) {
-      this.result += a;
+    add(operand) {
+      this.result += operand;
 
       return this;
     },
-    subtract(a) {
-      this.result -= a;
+    subtract(operand) {
+      this.result -= operand;
 
       return this;
     },
-    multiply(a) {
-      this.result *= a;
+    multiply(operand) {
+      this.result *= operand;
 
       return this;
     },
-    divide(a) {
-      if (a !== 0) {
-        this.result /= a;
+    divide(operand) {
+      if (operand !== 0) {
+        this.result /= operand;
       }
 
       return this;
