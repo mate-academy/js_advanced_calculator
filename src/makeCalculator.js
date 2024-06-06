@@ -19,24 +19,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(a, b) {
-      return a + b;
+    add(number) {
+      this.result += number;
     },
 
-    subtract(a, b) {
-      return a - b;
+    subtract(number) {
+      this.result -= number;
     },
 
-    multiply(a, b) {
-      return a * b;
+    multiply(number) {
+      this.result *= number;
     },
 
-    divide(a, b) {
-      if (b <= 0) {
-        return 'ERROR';
-      }
-
-      return a / b;
+    divide(number) {
+      this.result /= number;
     },
   };
 }
