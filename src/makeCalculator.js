@@ -32,7 +32,11 @@ function makeCalculator() {
     },
 
     divide(number) {
-      this.result /= number;
+      if (number !== 0) {
+        this.result /= number;
+      } else {
+        this.result = NaN;
+      }
     },
   };
 }
