@@ -13,7 +13,7 @@ function makeCalculator() {
       return this;
     },
 
-    substract(num) {
+    subtract(num) {
       result -= num;
 
       return this;
@@ -28,8 +28,6 @@ function makeCalculator() {
     divide(num) {
       if (num !== 0) {
         result /= num;
-      } else {
-        throw new Error('Division by zero is not allowed');
       }
 
       return this;
