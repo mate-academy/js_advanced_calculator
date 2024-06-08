@@ -28,6 +28,8 @@ function makeCalculator() {
     divide(num) {
       if (num !== 0) {
         result /= num;
+      } else {
+        throw new Error('Division by zero is not allowed');
       }
 
       return this;
