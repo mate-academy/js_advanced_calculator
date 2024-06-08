@@ -31,9 +31,11 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      callback(number);
+      if (typeof callback === 'function') {
+        callback(number);
 
-      return this;
+        return this;
+      }
     },
   };
 }
