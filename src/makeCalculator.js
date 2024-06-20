@@ -3,8 +3,8 @@
 /**
  * @return {object}
  */
-function makeCalculator(operate) {
-  const obj = {
+function makeCalculator() {
+  return {
     result: 0,
 
     reset() {
@@ -39,8 +39,6 @@ function makeCalculator(operate) {
       return currentResult / number;
     },
   };
-
-  return obj;
 }
 
 module.exports = makeCalculator;
