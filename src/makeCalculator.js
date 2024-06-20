@@ -7,31 +7,31 @@ function makeCalculator(operate) {
   const obj = {
     result: 0,
 
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function (callback, number) {
+    operate(callback, number) {
       this.result = callback(this.result, number);
 
       return this;
     },
 
-    add: function (currentResult, number) {
+    add(currentResult, number) {
       return currentResult + number;
     },
 
-    subtract: function (currentResult, number) {
+    subtract(currentResult, number) {
       return currentResult - number;
     },
 
-    multiply: function (currentResult, number) {
+    multiply(currentResult, number) {
       return currentResult * number;
     },
 
-    divide: function (currentResult, number) {
+    divide(currentResult, number) {
       if (number === 0) {
         return 'cannot be divided by zero';
       }
