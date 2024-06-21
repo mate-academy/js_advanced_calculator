@@ -23,6 +23,10 @@ function makeCalculator() {
       return this;
     },
     divide(number) {
+      if (number === 0) {
+        // eslint-disable-next-line no-console
+        console.log('Error');
+      }
       this.result /= number;
 
       return this;
