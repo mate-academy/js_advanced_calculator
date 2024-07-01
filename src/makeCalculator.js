@@ -38,8 +38,8 @@
 function makeCalculator() {
   const calculator = {
     total: 0,
-    operate: function(callback, value) {
-      callback(value);
+    operate: function(callback, callbackValue) {
+      callback(callbackValue);
 
       return this;
     },
@@ -69,7 +69,6 @@ function makeCalculator() {
   };
 
   return calculator;
-
 }
 
 module.exports = makeCalculator;
