@@ -22,9 +22,7 @@ function makeCalculator() {
       return this;
     },
     divide(operand) {
-      if (operand !== 0) {
-        this.result /= operand;
-      }
+      this.result /= operand;
 
       return this;
     },
