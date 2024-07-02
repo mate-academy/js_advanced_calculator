@@ -6,23 +6,27 @@
 function makeCalculator() {
   return {
     result: 0,
-    add(operand) {
-      this.result += operand;
+    add(value) {
+      this.result += value;
 
       return this;
     },
-    subtract(operand) {
-      this.result -= operand;
+    subtract(value) {
+      this.result -= value;
 
       return this;
     },
-    multiply(operand) {
-      this.result *= operand;
+    multiply(value) {
+      this.result *= value;
 
       return this;
     },
-    divide(operand) {
-      this.result /= operand;
+    divide(value) {
+      if (value === 0) {
+        throw new Error('Message error');
+      } else {
+        this.result /= value;
+      }
 
       return this;
     },
