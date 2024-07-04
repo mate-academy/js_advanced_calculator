@@ -24,9 +24,7 @@ function makeCalculator() {
       return this;
     },
     divide(value) {
-      if (value === 0) {
-        return 'error';
-      } else {
+      if (value !== 0) {
         this.result /= value;
       }
 
