@@ -15,18 +15,26 @@ function makeCalculator() {
 
     add(a) {
       this.result += a;
+
+      return this;
     },
 
     subtract(a) {
       this.result -= a;
+
+      return this;
     },
 
     multiply(a) {
       this.result *= a;
+
+      return this;
     },
 
     divide(a) {
       this.result /= a;
+
+      return this;
     },
 
     reset() {
