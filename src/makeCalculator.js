@@ -8,12 +8,12 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, operand) {
-      this.result = callback(operand, this.result);
+      this.result = callback(this.result, operand);
 
       return this;
     },
 
-    add(a, sum) {
+    add(sum, a) {
       let result = sum;
 
       result += a;
@@ -21,7 +21,7 @@ function makeCalculator() {
       return result;
     },
 
-    subtract(a, sum) {
+    subtract(sum, a) {
       let result = sum;
 
       result -= a;
@@ -29,7 +29,7 @@ function makeCalculator() {
       return result;
     },
 
-    multiply(a, sum) {
+    multiply(sum, a) {
       let result = sum;
 
       result *= a;
@@ -37,7 +37,7 @@ function makeCalculator() {
       return result;
     },
 
-    divide(a, sum) {
+    divide(sum, a) {
       let result = sum;
 
       result /= a;
