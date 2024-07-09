@@ -32,7 +32,9 @@ function makeCalculator() {
     },
 
     divide(a) {
-      this.result /= a;
+      if (a !== 0) {
+        this.result /= a;
+      }
 
       return this;
     },
