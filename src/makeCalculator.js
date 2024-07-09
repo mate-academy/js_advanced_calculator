@@ -8,41 +8,25 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, operand) {
-      this.result = callback(this.result, operand);
+      callback.call(this, operand);
 
       return this;
     },
 
-    add(sum, a) {
-      let result = sum;
-
-      result += a;
-
-      return result;
+    add(a) {
+      this.result += a;
     },
 
-    subtract(sum, a) {
-      let result = sum;
-
-      result -= a;
-
-      return result;
+    subtract(a) {
+      this.result -= a;
     },
 
-    multiply(sum, a) {
-      let result = sum;
-
-      result *= a;
-
-      return result;
+    multiply(a) {
+      this.result *= a;
     },
 
-    divide(sum, a) {
-      let result = sum;
-
-      result /= a;
-
-      return result;
+    divide(a) {
+      this.result /= a;
     },
 
     reset() {
