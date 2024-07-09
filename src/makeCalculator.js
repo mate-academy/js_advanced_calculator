@@ -13,20 +13,36 @@ function makeCalculator() {
       return this;
     },
 
-    add(operand, result) {
-      return result + operand;
+    add(a, sum) {
+      let result = sum;
+
+      result += a;
+
+      return result;
     },
 
-    subtract(operand, result) {
-      return result - operand;
+    subtract(a, sum) {
+      let result = sum;
+
+      result -= a;
+
+      return result;
     },
 
-    multiply(operand, result) {
-      return result * operand;
+    multiply(a, sum) {
+      let result = sum;
+
+      result *= a;
+
+      return result;
     },
 
-    divide(operand, result) {
-      return result / operand;
+    divide(a, sum) {
+      let result = sum;
+
+      result /= a;
+
+      return result;
     },
 
     reset() {
