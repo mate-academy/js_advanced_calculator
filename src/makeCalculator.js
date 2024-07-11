@@ -7,28 +7,14 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add: function (valueResult) {
-      return function (value) {
-        return valueResult + value;
-      };
-    },
+    add: (currentResult) => (value) => currentResult + value,
 
-    subtract: function (valueResult) {
-      return function (value) {
-        return valueResult - value;
-      };
-    },
+    subtract: (currentResult) => (value) => currentResult - value,
 
-    multiply: function (valueResult) {
-      return function (value) {
-        return valueResult * value;
-      };
-    },
+    multiply: (currentResult) => (value) => currentResult * value,
 
-    divide: function (valueResult) {
-      return function (value) {
-        return valueResult / value;
-      };
+    divide: (valueResult) => (value) => {
+      return value === 0 ? 'Error' : valueResult / value;
     },
 
     operate: function (callback, value) {
