@@ -16,6 +16,10 @@ function makeCalculator() {
       this.result *= a;
     },
     divide(a) {
+      if (a === 0) {
+        return 'error';
+      }
+      
       this.result /= a;
     },
     reset() {
