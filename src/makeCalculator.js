@@ -27,7 +27,7 @@ function makeCalculator() {
 
     divide: function (valueResult) {
       return function (value) {
-        if (value > 0) {
+        if (value !== 0) {
           return valueResult / value;
         } else {
           return 'Error';
