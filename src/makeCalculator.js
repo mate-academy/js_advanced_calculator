@@ -6,37 +6,14 @@
 function makeCalculator() {
   return {
     result: 0,
+    add: (valueResult) => (value) => valueResult + value,
+    subtract: (valueResult) => (value) => valueResult - value,
+    multiply: (valueResult) => (value) => valueResult * value,
+    divide: (valueResult) => (value) =>
+      value === 0 ? 'Error' : valueResult / value,
 
-    add: function (valueResult) {
-      return function (value) {
-        return valueResult + value;
-      };
-    },
-
-    subtract: function (valueResult) {
-      return function (value) {
-        return valueResult - value;
-      };
-    },
-
-    multiply: function (valueResult) {
-      return function (value) {
-        return valueResult * value;
-      };
-    },
-
-    divide: function (valueResult) {
-      return function (value) {
-        if (value !== 0) {
-          return valueResult / value;
-        } else {
-          return 'Error';
-        }
-      };
-    },
-
-    operate: function (callback, value) {
-      this.result = callback(this.result)(value);
+    operate: function (callback, number) {
+      this.result = callback(this.result)(number);
 
       return this;
     },
