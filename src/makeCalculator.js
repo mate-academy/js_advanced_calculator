@@ -7,10 +7,6 @@ function makeCalculator() {
   const obj = {
     result: 0,
 
-    addOne: () => {
-      obj.result++;
-    },
-
     reset: () => {
       obj.result = 0;
 
