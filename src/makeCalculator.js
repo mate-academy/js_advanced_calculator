@@ -37,8 +37,9 @@ function makeCalculator() {
   };
 }
 
-// One more variant
 /*
+ ---= Variant 2 =--
+
 function makeCalculator() {
   return {
     result: 0,
@@ -64,6 +65,38 @@ function makeCalculator() {
       obj.result /= value;
 
       return obj;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
+}
+*/
+
+/*
+ ---= Variant 3 =---
+
+function makeCalculator() {
+  return {
+    result: 0,
+    operate(callback, value) {
+      this.result = callback(this, value);
+
+      return this;
+    },
+    add(obj, value) {
+      return obj.result + value;
+    },
+    subtract(obj, value) {
+      return obj.result - value;
+    },
+    multiply(obj, value) {
+      return obj.result * value;
+    },
+    divide(obj, value) {
+      return obj.result / value;
     },
     reset() {
       this.result = 0;
