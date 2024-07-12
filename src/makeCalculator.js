@@ -107,4 +107,36 @@ function makeCalculator() {
 }
 */
 
+/*
+ ---= Variant 4 =---
+
+function makeCalculator() {
+  return {
+    result: 0,
+    operate(callback, value) {
+      this.result = callback.call(this, value);
+
+      return this;
+    },
+    add(value) {
+      return this.result + value;
+    },
+    subtract(value) {
+      return this.result - value;
+    },
+    multiply(value) {
+      return this.result * value;
+    },
+    divide(value) {
+      return this.result / value;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
+}
+*/
+
 module.exports = makeCalculator;
