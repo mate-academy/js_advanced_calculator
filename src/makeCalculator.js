@@ -6,37 +6,37 @@
 function makeCalculator() {
   let result = 0;
 
-  function operate(callback, number) {
-    result = callback(result, number);
+  const operate = function (callback, number) {
+    callback(number);
 
     return this;
-  }
+  };
 
-  function reset() {
+  const reset = function () {
     result = 0;
 
     return this;
-  }
+  };
 
-  function add(a, b) {
-    return a + b;
-  }
+  const add = function (number) {
+    result += number;
+  };
 
-  function subtract(a, b) {
-    return a - b;
-  }
+  const subtract = function (number) {
+    result -= number;
+  };
 
-  function multiply(a, b) {
-    return a * b;
-  }
+  const multiply = function (number) {
+    result *= number;
+  };
 
-  function divide(a, b) {
-    if (b !== 0) {
-      return a / b;
+  const divide = function (number) {
+    if (number !== 0) {
+      result /= number;
     } else {
       throw new Error('Division by zero');
     }
-  }
+  };
 
   return {
     get result() {
