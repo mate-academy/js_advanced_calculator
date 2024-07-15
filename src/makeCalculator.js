@@ -9,7 +9,7 @@ function makeCalculator() {
     result: 0,
 
     operate(operation, value) {
-      this.result = operation(value, this.result);
+      operation.call(this, value);
 
       return this;
     },
@@ -20,20 +20,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(value, result) {
-      return result + value;
+    add(value) {
+      this.result += value;
     },
 
-    subtract(value, result) {
-      return result - value;
+    subtract(value) {
+      this.result -= value;
     },
 
-    divide(value, result) {
-      return result / value;
+    divide(value) {
+      this.result /= value;
     },
 
-    multiply(value, result) {
-      return result * value;
+    multiply(value) {
+      this.result *= value;
     },
   };
 }
