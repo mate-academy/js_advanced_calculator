@@ -20,6 +20,13 @@ function makeCalculator() {
     },
 
     divide(x) {
+      if (x === 0) {
+        throw new Error(
+          'Theoretically, it could be infinity, ' +
+            'but mostly they say that you cannot divide by zero',
+        );
+      }
+
       this.result /= x;
     },
 
