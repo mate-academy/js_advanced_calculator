@@ -29,7 +29,11 @@ function makeCalculator() {
     },
 
     divide(number) {
-      this.result /= number;
+      if (number === 0) {
+        return "DON'T DIVIDE BY ZERO!";
+      } else {
+        this.result /= number;
+      }
 
       return this;
     },
