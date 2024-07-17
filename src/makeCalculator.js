@@ -6,20 +6,20 @@
 function makeCalculator() {
   return {
     result: 0,
-    add(currentValue, value) {
-      return currentValue + value;
+    add(value) {
+      this.result += value;
     },
 
-    subtract(currentValue, value) {
-      return currentValue - value;
+    subtract(value) {
+      this.result -= value;
     },
 
-    multiply(currentValue, value) {
-      return currentValue * value;
+    multiply(value) {
+      this.result *= value;
     },
 
-    divide(currentValue, value) {
-      return currentValue / value;
+    divide(value) {
+      this.result /= value;
     },
 
     reset() {
@@ -29,7 +29,7 @@ function makeCalculator() {
     },
 
     operate(callback, value) {
-      this.result = callback(this.result, value);
+      callback(value);
 
       return this;
     },
@@ -37,18 +37,3 @@ function makeCalculator() {
 }
 
 module.exports = makeCalculator;
-
-// const calculator = makeCalculator();
-// calculator.operate(calculator.add, 21);
-// console.log(calculator); // 21
-// calculator.reset();
-// console.log(calculator.result); // 0
-
-// calculator
-//   .operate(calculator.add, 10)
-//   .reset()
-//   .operate(calculator.subtract, 20)
-//   .operate(calculator.divide, 5)
-//   .operate(calculator.multiply, 7);
-
-// console.log(calculator.result); // -28
