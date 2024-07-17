@@ -6,6 +6,13 @@
 function makeCalculator() {
   return {
     result: 0,
+
+    operate(callback, value) {
+      callback.call(this, value);
+
+      return this;
+    },
+
     add(value) {
       this.result += value;
     },
@@ -19,17 +26,14 @@ function makeCalculator() {
     },
 
     divide(value) {
+      if (value === 0) {
+        throw new Error('Dividing by 0 is not allowed');
+      }
       this.result /= value;
     },
 
     reset() {
       this.result = 0;
-
-      return this;
-    },
-
-    operate(callback, value) {
-      callback(value);
 
       return this;
     },
