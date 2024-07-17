@@ -12,14 +12,22 @@ function makeCalculator() {
       return this;
     },
     operate(action, number) {
-      this.result = action(this.result, number);
+      action.call(this, number);
 
       return this;
     },
-    add: (a, b) => a + b,
-    subtract: (a, b) => a - b,
-    multiply: (a, b) => a * b,
-    divide: (a, b) => a / b,
+    add(num) {
+      this.result += num;
+    },
+    subtract(num) {
+      this.result -= num;
+    },
+    multiply(num) {
+      this.result *= num;
+    },
+    divide(num) {
+      this.result /= num;
+    },
   };
 }
 
