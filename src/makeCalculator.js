@@ -26,6 +26,10 @@ function makeCalculator() {
     },
 
     divide(num) {
+      if (num === 0) {
+        return "Can't divide by zero";
+      }
+
       this.result /= num;
     },
 
