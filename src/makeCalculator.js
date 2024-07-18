@@ -7,7 +7,7 @@
 // `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`
 
 function makeCalculator() {
-  return {
+  const calculator = {
     result: 0,
     add(val) {
       this.result += val;
@@ -32,6 +32,8 @@ function makeCalculator() {
       return this;
     },
   };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
