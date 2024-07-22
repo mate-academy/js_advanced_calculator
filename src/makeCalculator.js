@@ -6,27 +6,44 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
+
     operate(action, number) {
-      this.result = action(this.result, number);
+      action.call(this, number);
 
       return this;
     },
+
     reset() {
       this.result = 0;
 
       return this;
     },
-    add(currentResult, number) {
-      return currentResult + number;
+
+    add(number) {
+      this.result += number;
+
+      return this;
     },
-    subtract(currentResult, number) {
-      return currentResult - number;
+
+    subtract(number) {
+      this.result -= number;
+
+      return this;
     },
-    multiply(currentResult, number) {
-      return currentResult * number;
+
+    multiply(number) {
+      this.result *= number;
+
+      return this;
     },
-    divide(currentResult, number) {
-      return currentResult / number;
+
+    divide(number) {
+      if (number === 0) {
+        throw new Error('Division by zero');
+      }
+      this.result /= number;
+
+      return this;
     },
   };
 
