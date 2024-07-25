@@ -4,48 +4,46 @@
  * @return {object}
  */
 function makeCalculator() {
-
   return {
     result: 0,
 
-    add(number) {
-      this.result += number;
+    add(calculator, number) {
+      calculator.result += number;
 
-      return this;
+      return calculator;
     },
-  
-    subtract(number) {
-      this.result -= number;
 
-      return this;
-    },
-  
-    multiply(number) {
-      this.result *= number;
+    subtract(calculator, number) {
+      calculator.result -= number;
 
-      return this;
+      return calculator;
     },
-  
-    divide(number) {
-      if (this.result !== 0) {
-        this.result /= number;
+
+    multiply(calculator, number) {
+      calculator.result *= number;
+
+      return calculator;
+    },
+
+    divide(calculator, number) {
+      if (number !== 0) {
+        calculator.result /= number;
       }
 
-      return this;
+      return calculator;
     },
-  
+
     reset() {
       this.result = 0;
-
       return this;
     },
-  
-    operate(callback, number) {
-      callback.call(this, number);
 
+    operate(callback, number) {
+      callback(this, number);
       return this;
     }
-  }
+  };
 }
+
 
 module.exports = makeCalculator;
