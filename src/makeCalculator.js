@@ -9,10 +9,17 @@ function makeCalculator() {
     add: (number) => (abilities.result += number),
     subtract: (number) => (abilities.result -= number),
     multiply: (number) => (abilities.result *= number),
-    divide: (number) => (abilities.result /= number),
+    divide: (number) => {
+      if (number === 0) {
+        throw new Error('Divion by 0');
+      }
+      abilities.result /= number;
 
-    operate: operate,
-    reset: reset,
+      return abilities.number;
+    },
+
+    operate,
+    reset,
   };
 
   function operate(callback, number) {
