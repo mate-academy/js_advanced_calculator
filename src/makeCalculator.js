@@ -24,6 +24,9 @@ function makeCalculator() {
       this.result -= number;
     },
     divide(number) {
+      if (number === 0) {
+        throw new Error('Cannot divide by zero');
+      }
       this.result /= number;
     },
     multiply(number) {
