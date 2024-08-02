@@ -17,7 +17,11 @@ function makeCalculator() {
       return this;
     },
 
-    reset: () => (calc.result = 0),
+    reset: () => {
+      calc.result = 0;
+
+      return this;
+    },
   };
 
   return calc;
