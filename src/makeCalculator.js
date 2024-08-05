@@ -7,26 +7,26 @@
 function makeCalculator() {
   return {
     result: 0,
-    add: function (value) {
+    add(value) {
       this.result += value;
     },
-    subtract: function (value) {
+    subtract(value) {
       this.result -= value;
     },
-    multiply: function (value) {
+    multiply(value) {
       this.result *= value;
     },
-    divide: function (value) {
+    divide(value) {
       if (value !== 0) {
         this.result /= value;
       }
     },
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
     },
-    operate: function (callback, value) {
+    operate(callback, value) {
       callback.call(this, value);
 
       return this;
