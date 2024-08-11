@@ -7,7 +7,7 @@ function makeCalculator() {
   const obj = {
     result: 0,
 
-    operate(operation, num) {
+    operate(operation = obj.result, num) {
       operation(num);
 
       return obj;
