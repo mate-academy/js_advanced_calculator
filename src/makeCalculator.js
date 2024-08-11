@@ -15,26 +15,18 @@ function makeCalculator() {
 
     add(x) {
       obj.result += x;
-
-      return obj;
     },
 
     subtract(x) {
       obj.result -= x;
-
-      return obj;
     },
 
     divide(x) {
       obj.result /= x;
-
-      return obj;
     },
 
     multiply(x) {
       obj.result *= x;
-
-      return obj;
     },
 
     reset() {
