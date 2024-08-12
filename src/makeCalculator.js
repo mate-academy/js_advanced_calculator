@@ -16,7 +16,11 @@ function makeCalculator() {
       return a * b;
     },
     divide(a, b) {
-      return a / b;
+      if (b === 0) {
+        return a;
+      } else {
+        return a / b;
+      }
     },
     operate(callback, number) {
       this.result = callback(this.result, number);
@@ -28,6 +32,33 @@ function makeCalculator() {
 
       return this;
     },
+
+    addToResult(number) {
+      this.result += number;
+
+      return this;
+    },
+
+    subtractFromResult(number) {
+      this.result -= number;
+
+      return this;
+    },
+
+    multiplyResultBy(number) {
+      this.result *= number;
+
+      return this;
+    },
+
+    divideResultBy(number) {
+      if (number !== 0) {
+        this.result /= number;
+
+        return this;
+      }
+    },
   };
 }
+
 module.exports = makeCalculator;
