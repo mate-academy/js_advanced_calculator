@@ -19,7 +19,7 @@ function makeCalculator() {
     divide(value) {
       result /= value;
     },
-    reset(value) {
+    reset() {
       result = 0;
 
       return this;
