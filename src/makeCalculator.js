@@ -17,6 +17,9 @@ function makeCalculator() {
       calculator.result *= num;
     },
     divide(num) {
+      if (num === 0) {
+        console.error('Division by zero is not allowed');
+      }
       calculator.result /= num;
     },
 
