@@ -3,7 +3,7 @@
 /**
  * @return {object}
  */
-function makeCalculator(operation, value) {
+function makeCalculator() {
   // write code here
 
   const calculator = {
@@ -13,7 +13,7 @@ function makeCalculator(operation, value) {
       return this;
     },
 
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
@@ -21,19 +21,19 @@ function makeCalculator(operation, value) {
 
     result: 0,
 
-    add: function (number) {
+    add(number) {
       this.result += number;
     },
 
-    subtract: function (number) {
+    subtract(number) {
       this.result -= number;
     },
 
-    divide: function (number) {
+    divide(number) {
       this.result /= number;
     },
 
-    multiply: function (number) {
+    multiply(number) {
       this.result *= number;
     },
   };
