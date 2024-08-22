@@ -23,12 +23,20 @@ function makeCalculator() {
       this.result -= number;
     },
     divide(number) {
-      this.result /= number;
+      if (number !== 0) {
+        this.result /= number;
+      } else {
+        throw new Error('Number is zero! try again..');
+      }
     },
     operate(callback, number) {
-      callback.call(this, number);
+      if (typeof callback === 'function') {
+        callback.call(this, number);
 
-      return this;
+        return this;
+      } else {
+        return this + '<= Here is the last res of operation before error type';
+      }
     },
   };
 }
