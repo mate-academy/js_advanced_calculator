@@ -33,7 +33,7 @@ function makeCalculator() {
     },
 
     divide(number) {
-      this.result /= number;
+      this.result /= number === 0 ? this.result : number;
 
       return this;
     },
