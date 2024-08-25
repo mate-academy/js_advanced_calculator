@@ -25,14 +25,16 @@ function makeCalculator() {
       }
     },
 
-    reset() {
-      this.result = 0;
+    operate(callback, value) {
+      if (typeof callback === 'function') {
+        callback.call(this, value);
+      }
 
       return this;
     },
 
-    operate(callback, value) {
-      callback.call(this, value);
+    reset() {
+      this.result = 0;
 
       return this;
     },
