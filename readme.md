@@ -23,9 +23,7 @@ How the calculator will work:
 Example:
 
 ```js
-const calculator = makeCalculator();
 
-calculator.operate(calculator.add, 21)
 
 console.log(calculator.result); // 21
 
