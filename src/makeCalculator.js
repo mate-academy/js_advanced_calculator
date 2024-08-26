@@ -17,7 +17,7 @@ function makeCalculator() {
     },
     divide(value) {
       if (value === 0) {
-        return;
+        throw new Error('the value must not equal to 0');
       }
       this.result /= value;
     },
@@ -27,6 +27,9 @@ function makeCalculator() {
       return this;
     },
     operate(callback, value) {
+      if (typeof callback !== 'function') {
+        throw new TypeError('callback must be a function');
+      }
       callback.call(this, value);
 
       return this;
