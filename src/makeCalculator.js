@@ -22,10 +22,12 @@ function makeCalculator() {
     divide(value) {
       if (value !== 0) {
         result /= value;
+      } else {
+        return 'Cannot divide by zero';
       }
     },
 
-    reset(value) {
+    reset() {
       result = 0;
 
       return this;
