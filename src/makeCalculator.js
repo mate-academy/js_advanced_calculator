@@ -6,7 +6,7 @@
 function makeCalculator() {
   let result = 0;
 
-  const infoResult = {
+  const calculator = {
     add(number) {
       result += number;
     },
@@ -20,6 +20,10 @@ function makeCalculator() {
     },
 
     divide(number) {
+      if (number === 0) {
+        throw new Error('Error!!!');
+      }
+
       result /= number;
     },
 
@@ -40,7 +44,7 @@ function makeCalculator() {
     },
   };
 
-  return infoResult;
+  return calculator;
 }
 
 module.exports = makeCalculator;
