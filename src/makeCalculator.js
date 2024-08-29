@@ -3,26 +3,52 @@
 /**
  * @return {object}
  */
+
 function makeCalculator() {
-  const calculator = {
-    result: 0,
-    add: (num) => (calculator.result += num),
-    subtract: (num) => (calculator.result -= num),
-    multiply: (num) => (calculator.result *= num),
-    divide: (num) => (calculator.result /= num),
-    reset: () => {
-      calculator.result = 0;
+  let result = 0;
 
-      return calculator;
+  return {
+    get result() {
+      return result;
     },
-    operate: (callback, num) => {
-      callback(num);
 
-      return calculator;
+    add(number) {
+      result += number;
+
+      return this;
+    },
+
+    subtract(number) {
+      result -= number;
+
+      return this;
+    },
+
+    multiply(number) {
+      result *= number;
+
+      return this;
+    },
+
+    divide(number) {
+      if (number === 0) {
+        return 'Division by zero is not allowed.';
+      }
+      result /= number;
+
+      return this;
+    },
+
+    reset() {
+      result = 0;
+
+      return this;
+    },
+
+    operate(callback, number) {
+      return callback.call(this, number);
     },
   };
-
-  return calculator;
 }
 
 module.exports = makeCalculator;
