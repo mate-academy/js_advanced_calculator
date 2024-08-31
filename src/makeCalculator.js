@@ -4,7 +4,6 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
   const calculator = {
     result: 0,
 
@@ -27,7 +26,9 @@ function makeCalculator() {
     },
 
     divide(value) {
-      this.result /= value;
+      if (value !== 0) {
+        this.result /= value;
+      }
 
       return this;
     },
@@ -39,7 +40,9 @@ function makeCalculator() {
     },
 
     operate(operation, value) {
-      return operation.call(this, value);
+      operation.call(this, value);
+
+      return this;
     },
   };
 
