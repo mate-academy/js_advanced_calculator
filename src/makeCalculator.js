@@ -30,27 +30,7 @@ function makeCalculator() {
     },
 
     operate(operation, number) {
-      switch (operation) {
-        case this.add: {
-          this.add(number);
-          break;
-        }
-
-        case this.subtract: {
-          this.subtract(number);
-          break;
-        }
-
-        case this.multiply: {
-          this.multiply(number);
-          break;
-        }
-
-        case this.divide: {
-          this.divide(number);
-          break;
-        }
-      }
+      operation.call(this, number);
 
       return this;
     },
