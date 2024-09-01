@@ -26,13 +26,13 @@ function makeCalculator() {
     operate(callback, num) {
       callback(num);
 
-      return calc;
+      return this;
     },
 
     reset() {
       this.result = 0;
 
-      return calc;
+      return this;
     },
   };
 
