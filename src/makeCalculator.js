@@ -20,13 +20,15 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      this.result = callback(number);
+      callback.call(this, number);
 
       return this;
     },
 
     reset() {
       this.result = 0;
+
+      return this;
     },
   };
 }
