@@ -1,41 +1,41 @@
 'use strict';
 
 function makeCalculator() {
-  const resultingObject = {
+  const calculator = {
     result: 0,
     add(a) {
-      resultingObject.result += a;
+      this.result += a;
 
-      return resultingObject.result;
+      return this.result;
     },
     subtract(a) {
-      resultingObject.result -= a;
+      this.result -= a;
 
-      return resultingObject.result;
+      return this.result;
     },
     multiply(a) {
-      resultingObject.result *= a;
+      this.result *= a;
 
-      return resultingObject.result;
+      return this.result;
     },
     divide(a) {
-      resultingObject.result /= a;
+      this.result /= a;
 
-      return resultingObject.result;
+      return this.result;
     },
     reset() {
-      resultingObject.result = 0;
+      this.result = 0;
 
       return this;
     },
     operate(callback, x) {
-      resultingObject.result = callback(x);
+      this.result = callback.call(this, x);
 
       return this;
     },
   };
 
-  return resultingObject;
+  return calculator;
 }
 
 module.exports = makeCalculator;
