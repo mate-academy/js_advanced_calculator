@@ -5,7 +5,6 @@
  */
 function makeCalculator() {
   return {
-  return {
     result: 0,
 
     operate(callback, number) {
