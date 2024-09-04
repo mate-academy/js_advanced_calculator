@@ -5,10 +5,11 @@
  */
 function makeCalculator() {
   return {
+  return {
     result: 0,
 
-    operate(callbackOperation, number) {
-      callbackOperation(number, this);
+    operate(callback, number) {
+      callback.call(this, number);
 
       return this;
     },
@@ -19,20 +20,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(num, obj) {
-      obj.result += num;
+    add(num) {
+      this.result += num;
     },
 
-    subtract(num, obj) {
-      obj.result -= num;
+    subtract(num) {
+      this.result -= num;
     },
 
-    multiply(num, obj) {
-      obj.result *= num;
+    multiply(num) {
+      this.result *= num;
     },
 
-    divide(num, obg) {
-      obg.result /= num;
+    divide(num) {
+      this.result /= num;
     },
   };
 }
