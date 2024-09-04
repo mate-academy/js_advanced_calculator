@@ -4,32 +4,24 @@ function makeCalculator() {
   const calculator = {
     result: 0,
     add(a) {
-      this.result += a;
-
-      return this.result;
+      calculator.result += a;
     },
     subtract(a) {
-      this.result -= a;
-
-      return this.result;
+      calculator.result -= a;
     },
     multiply(a) {
-      this.result *= a;
-
-      return this.result;
+      calculator.result *= a;
     },
     divide(a) {
-      this.result /= a;
-
-      return this.result;
+      calculator.result /= a;
     },
     reset() {
-      this.result = 0;
+      calculator.result = 0;
 
       return this;
     },
     operate(callback, x) {
-      this.result = callback.call(this, x);
+      callback(x);
 
       return this;
     },
