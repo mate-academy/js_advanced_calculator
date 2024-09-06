@@ -6,7 +6,7 @@
 function makeCalculator() {
   let result = 0;
 
-  const calculator = {
+  return {
     operate(callback, num) {
       result = callback(num);
 
@@ -44,8 +44,6 @@ function makeCalculator() {
       return result;
     },
   };
-
-  return calculator;
 }
 
 module.exports = makeCalculator;
