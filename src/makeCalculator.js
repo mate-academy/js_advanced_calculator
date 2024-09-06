@@ -6,41 +6,40 @@
 function makeCalculator() {
   let result = 0;
 
-  const operate = (callback, num) => {
-    result = callback(result, num);
-
-    return calculator;
-  };
-
-  const add = (prevResult, num) => {
-    return prevResult + num;
-  };
-
-  const subtract = (prevResult, num) => {
-    return prevResult - num;
-  };
-
-  const multiply = (prevResult, num) => {
-    return prevResult * num;
-  };
-
-  const divide = (prevResult, num) => {
-    return prevResult / num;
-  };
-
-  const reset = () => {
-    result = 0;
-
-    return calculator;
-  };
-
   const calculator = {
-    operate,
-    add,
-    subtract,
-    multiply,
-    divide,
-    reset,
+    operate(callback, num) {
+      result = callback(num);
+
+      return this;
+    },
+    add(num) {
+      result += num;
+
+      return result;
+    },
+    subtract(num) {
+      result -= num;
+
+      return result;
+    },
+    multiply(num) {
+      result *= num;
+
+      return result;
+    },
+    divide(num) {
+      if (num === 0) {
+        throw new Error('Division by 0 is not allowed.');
+      }
+      result /= num;
+
+      return result;
+    },
+    reset() {
+      result = 0;
+
+      return this;
+    },
     get result() {
       return result;
     },
