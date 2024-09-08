@@ -8,20 +8,20 @@ function makeCalculator() {
   const calc = {
     result: 0,
 
-    add(objResult, num) {
-      return objResult + num;
+    add(num) {
+      this.result += num;
     },
 
-    subtract(objResult, num) {
-      return objResult - num;
+    subtract(num) {
+      this.result -= num;
     },
 
-    multiply(objResult, num) {
-      return objResult * num;
+    multiply(num) {
+      this.result *= num;
     },
 
-    divide(objResult, num) {
-      return objResult / num;
+    divide(num) {
+      this.result /= num;
     },
 
     reset() {
@@ -31,7 +31,7 @@ function makeCalculator() {
     },
 
     operate(func, num) {
-      this.result = func(this.result, num);
+      func.call(this, num);
 
       return this;
     },
