@@ -21,6 +21,10 @@ function makeCalculator() {
     },
 
     divide(num) {
+      if (num === 0) {
+        throw new Error('Division be zero!');
+      }
+
       this.result /= num;
     },
 
