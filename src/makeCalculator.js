@@ -33,6 +33,10 @@ function makeCalculator() {
     },
 
     divide(a) {
+      if (a === 0) {
+        return new Error('Not allowed');
+      }
+
       this.result /= a;
     },
   };
