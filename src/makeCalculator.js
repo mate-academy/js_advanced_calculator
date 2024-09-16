@@ -4,8 +4,10 @@
  * @return {object}
  */
 function makeCalculator() {
+  const DEFAULT_VALUE = 0;
+
   const library = {
-    result: 0,
+    result: DEFAULT_VALUE,
     add: function (num) {
       this.result += num;
     },
@@ -19,7 +21,7 @@ function makeCalculator() {
       this.result /= num;
     },
     reset: function () {
-      this.result = 0;
+      this.result = DEFAULT_VALUE;
 
       return this;
     },
