@@ -20,7 +20,7 @@ function makeCalculator() {
     },
 
     divide(value) {
-      if (value > 0) {
+      if (value !== 0) {
         this.result /= value;
       }
     },
