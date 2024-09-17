@@ -7,19 +7,19 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add: function (a, b) {
+    add(a, b) {
       return a + b;
     },
 
-    subtract: function (a, b) {
+    subtract(a, b) {
       return a - b;
     },
 
-    multiply: function (a, b) {
+    multiply(a, b) {
       return a * b;
     },
 
-    divide: function (a, b) {
+    divide(a, b) {
       if (b !== 0) {
         return a / b;
       } else {
@@ -27,13 +27,13 @@ function makeCalculator() {
       }
     },
 
-    operate: function (operation, value) {
+    operate(operation, value) {
       this.result = operation(this.result, value);
 
       return this;
     },
 
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
