@@ -12,20 +12,24 @@ function makeCalculator() {
 
       return this;
     },
-    add(y, x) {
-      return y + x;
+    add(value) {
+      this.result += value;
     },
-    subtract(y, x) {
-      return y - x;
+    subtract(value) {
+      this.result -= value;
     },
-    multiply(y, x) {
-      return y * x;
+    multiply(value) {
+      this.result *= value;
     },
-    divide(y, x) {
-      return y / x;
+    divide(value) {
+      if (value) {
+        this.result /= value;
+      }
+
+      return 'Enter correct value';
     },
     operate(callback, param) {
-      this.result = callback(this.result, param);
+      callback.call(this, param);
 
       return this;
     },
