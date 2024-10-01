@@ -18,8 +18,6 @@ function makeCalculator() {
     divide(num) {
       if (num !== 0) {
         this.result /= num;
-      } else {
-        return 'Cannot divide by zero!';
       }
     },
     reset() {
@@ -28,7 +26,9 @@ function makeCalculator() {
       return this;
     },
     operate(callback, num) {
-      callback.call(this, num);
+      if (typeof callback === 'function') {
+        callback.call(this, num);
+      }
 
       return this;
     },
