@@ -6,7 +6,7 @@
 function makeCalculator(operation, x) {
   let result = 0;
 
-  const obj = {
+  const calculator = {
     add: (a) => {
       result += a;
     },
@@ -22,10 +22,9 @@ function makeCalculator(operation, x) {
       } else {
       }
     },
-    reset: () => result = 0,
+    reset: () => (calculator.result = 0),
     operate: operation,
   };
-
 
   // obj.operate = (operation, a) => {
   //   result = result.operation(a);
@@ -39,18 +38,18 @@ function makeCalculator(operation, x) {
   //   result -= a;
   // };
 
-  obj.divide = (a) => {
-    if (a !== 0) {
-      result = result / a;
-    } else {
-    }
-  };
+  // obj.divide = (a) => {
+  //   if (a !== 0) {
+  //     result = result / a;
+  //   } else {
+  //   }
+  // };
 
-  obj.multiply = (a) => {
-    result = result * a;
-  };
+  // obj.multiply = (a) => {
+  //   result = result * a;
+  // };
 
-  return obj;
+  return calculator;
 }
 
 module.exports = makeCalculator;
