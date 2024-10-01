@@ -18,6 +18,8 @@ function makeCalculator() {
     divide(num) {
       if (num !== 0) {
         this.result /= num;
+      } else {
+        this.result = null;
       }
     },
     reset() {
