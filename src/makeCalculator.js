@@ -6,9 +6,11 @@
 function makeCalculator(operation, x) {
   let result = 0;
 
+  // a = x;
+
   const calculator = {
     add: (a) => {
-      result += a;
+      result += x;
     },
     subtract: (a) => {
       result -= a;
@@ -23,7 +25,7 @@ function makeCalculator(operation, x) {
       }
     },
     reset: () => (calculator.result = 0),
-    operate: operation,
+    operate: (a) => operation(a),
   };
 
   // obj.operate = (operation, a) => {
