@@ -9,11 +9,11 @@ function makeCalculator(operation, x) {
   // a = x;
 
   const calculator = {
-    add: (a) => {
-      if(calculator.result === 0) {
-        calculator.result = a;
+    add: () => {
+      if (calculator.result === 0) {
+        calculator.result = x;
       } else {
-      res += x;
+        res += x;
       }
     },
     subtract: (a) => {
