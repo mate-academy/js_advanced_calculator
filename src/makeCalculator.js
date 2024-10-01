@@ -13,7 +13,7 @@ function makeCalculator(operation, x) {
       if (calculator.result === 0) {
         calculator.result = x;
       } else {
-        res += x;
+        calculator.result += x;
       }
     },
     subtract: (a) => {
