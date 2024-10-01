@@ -23,8 +23,8 @@ function makeCalculator(operation, x) {
     return result * b;
   };
 
-  makeCalculator.reset = (res = 0) => {
-    return res;
+  makeCalculator.reset = () => {
+    return 0;
   };
 
   // makeCalculator.operate = (res) => {
