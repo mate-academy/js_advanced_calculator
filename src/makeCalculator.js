@@ -10,7 +10,11 @@ function makeCalculator(operation, x) {
 
   const calculator = {
     add: (a) => {
+      if(calculator.result === 0) {
+        calculator.result = a;
+      } else {
       res += x;
+      }
     },
     subtract: (a) => {
       res -= a;
@@ -25,7 +29,7 @@ function makeCalculator(operation, x) {
       }
     },
     reset: () => (calculator.result = 0),
-    operate: (oper, a) => calculator.result += oper.result(a),
+    operate: (oper, a) => (calculator.result += oper.result(a)),
     result: 0,
   };
 
