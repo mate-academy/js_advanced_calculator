@@ -4,28 +4,29 @@
  * @return {object}
  */
 function makeCalculator(operation, x) {
-  let result = 0;
+   let res = 0;
 
   // a = x;
 
   const calculator = {
     add: (a) => {
-      result += x;
+      res += x;
     },
     subtract: (a) => {
-      result -= a;
+      res -= a;
     },
     multiply: (a) => {
-      result = result * a;
+      res = res * a;
     },
     divide: (a) => {
       if (a !== 0) {
-        result = result / a;
+        res = res / a;
       } else {
       }
     },
     reset: () => (calculator.result = 0),
-    operate: (a) => operation(a),
+    operate: (oper, a) => oper.result(a),
+    result: 0,
   };
 
   // obj.operate = (operation, a) => {
