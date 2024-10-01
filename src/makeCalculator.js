@@ -4,7 +4,7 @@
  * @return {object}
  */
 function makeCalculator(operation, x) {
-   let res = 0;
+  let res = 0;
 
   // a = x;
 
@@ -25,32 +25,9 @@ function makeCalculator(operation, x) {
       }
     },
     reset: () => (calculator.result = 0),
-    operate: (oper, a) => oper.result(a),
+    operate: (oper, a) => calculator.result += oper.result(a),
     result: 0,
   };
-
-  // obj.operate = (operation, a) => {
-  //   result = result.operation(a);
-  // };
-
-  // obj.add = (a) => {
-  //   result += a;
-  // };
-
-  // obj.subtract = (a) => {
-  //   result -= a;
-  // };
-
-  // obj.divide = (a) => {
-  //   if (a !== 0) {
-  //     result = result / a;
-  //   } else {
-  //   }
-  // };
-
-  // obj.multiply = (a) => {
-  //   result = result * a;
-  // };
 
   return calculator;
 }
