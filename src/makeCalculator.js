@@ -4,70 +4,53 @@
  * @return {object}
  */
 function makeCalculator(operation, x) {
-  const a = x;
-  const result = 0;
+  let result = 0;
 
-  makeCalculator.add = (b) => {
-    return result + b;
+  const obj = {
+    add: (a) => {
+      result += a;
+    },
+    subtract: (a) => {
+      result -= a;
+    },
+    multiply: (a) => {
+      result = result * a;
+    },
+    divide: (a) => {
+      if (a !== 0) {
+        result = result / a;
+      } else {
+      }
+    },
+    reset: () => result = 0,
+    operate: operation,
   };
 
-  makeCalculator.subtract = (b) => {
-    return result - b;
-  };
 
-  makeCalculator.divide = (b) => {
-    return result / b;
-  };
-
-  makeCalculator.multiply = (b) => {
-    return result * b;
-  };
-
-  makeCalculator.reset = () => {
-    return 0;
-  };
-
-  // makeCalculator.operate = (res) => {
-  //   return console.log(res);
+  // obj.operate = (operation, a) => {
+  //   result = result.operation(a);
   // };
 
-  return operation(a);
+  // obj.add = (a) => {
+  //   result += a;
+  // };
 
-  // function reset() {
-  //   return (result = 0);
-  // }
+  // obj.subtract = (a) => {
+  //   result -= a;
+  // };
 
-  // function add(x) {
-  //   let b = 0;
+  obj.divide = (a) => {
+    if (a !== 0) {
+      result = result / a;
+    } else {
+    }
+  };
 
-  //   b += x;
+  obj.multiply = (a) => {
+    result = result * a;
+  };
 
-  //   return b;
-  // }
-
-  // function subtract(x) {
-  //   let b = 0;
-
-  //   b -= x;
-
-  //   return b;
-  // }
-
-  // function multiply(x) {
-  //   let b = 0;
-
-  //   b *= x;
-
-  //   return b;
-  // }
-
-  // function divide(x) {
-  //   let b = 0;
-
-  //   b /= x;
-
-  //   return b;
-  // }
+  return obj;
 }
 
 module.exports = makeCalculator;
