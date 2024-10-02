@@ -24,8 +24,8 @@ function makeCalculator(operation, x) {
       } else {
       }
     },
-    reset: () => (calculator.result = 0),
-    operate: (oper, a) => (calculator.result += oper(this.result)),
+    reset: () => (this.result = 0),
+    operate: (oper, num) => (this.result += this.result.oper(num)),
     result: 0,
   };
 
