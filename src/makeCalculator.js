@@ -4,32 +4,28 @@
  * @return {object}
  */
 function makeCalculator(operation, x) {
-  let res = 0;
+  // const res = 0;
 
   // a = x;
 
   const calculator = {
-    add: () => {
-      if (calculator.result === 0) {
-        calculator.result = x;
-      } else {
-        calculator.result += x;
-      }
+    add: (num) => {
+      this.result += num;
     },
-    subtract: (a) => {
-      res -= a;
+    subtract: (num) => {
+      this.result -= num;
     },
-    multiply: (a) => {
-      res = res * a;
+    multiply: (num) => {
+      this.result *= num;
     },
-    divide: (a) => {
-      if (a !== 0) {
-        res = res / a;
+    divide: (num) => {
+      if (num !== 0) {
+        this.result /= num;
       } else {
       }
     },
     reset: () => (calculator.result = 0),
-    operate: (oper, a) => (calculator.result += oper.result(a)),
+    operate: (oper, a) => (calculator.result += oper(this.result)),
     result: 0,
   };
 
