@@ -21,7 +21,9 @@ function makeCalculator(operation, x) {
       } else {
       }
     },
-    reset(result = 0){this.result = 0},
+    reset(num = 0) {
+      this.result = 0;
+    },
     operate(callback, num) {
       callback.call(this, num);
 
