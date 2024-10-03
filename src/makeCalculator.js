@@ -23,6 +23,8 @@ function makeCalculator(operation, x) {
     },
     reset() {
       this.result = 0;
+
+      return this;
     },
     operate(callback, num) {
       callback.call(this, num);
