@@ -3,7 +3,7 @@
 /**
  * @return {object}
  */
-function makeCalculator(operation, x) {
+function makeCalculator() {
   const calculator = {
     result: 0,
     add(num) {
@@ -29,9 +29,9 @@ function makeCalculator(operation, x) {
     },
     operate(callback, num) {
       if (typeof callback === 'function') {
-      callback.call(this, num);
+        callback.call(this, num);
 
-      return this;
+        return this;
       } else {
         return false;
       }
@@ -40,6 +40,5 @@ function makeCalculator(operation, x) {
 
   return calculator;
 }
-
 
 module.exports = makeCalculator;
