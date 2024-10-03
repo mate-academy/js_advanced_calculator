@@ -7,7 +7,7 @@ function makeCalculator(operation, x) {
   const calculator = {
     result: 0,
     add(num) {
-      this.result += num
+      this.result += num;
     },
     subtract(num) {
       this.result -= num;
@@ -21,9 +21,10 @@ function makeCalculator(operation, x) {
       } else {
       }
     },
-    reset: (this.result = 0),
+    reset(result = 0){this.result = 0},
     operate(callback, num) {
       callback.call(this, num);
+
       return this;
     },
   };
