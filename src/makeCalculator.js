@@ -22,7 +22,7 @@ function makeCalculator(operation, x) {
       }
     },
     reset() {
-      return (this.result = 0);
+      (this.result = 0);
     },
     operate(callback, num) {
       callback.call(this, num);
