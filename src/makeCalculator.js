@@ -4,11 +4,8 @@
  * @return {object}
  */
 function makeCalculator(operation, x) {
-  // const res = 0;
-
-  // a = x;
-
   const calculator = {
+    result: 0,
     add: (num) => {
       this.result += num;
     },
@@ -26,7 +23,6 @@ function makeCalculator(operation, x) {
     },
     reset: () => (this.result = 0),
     operate: (oper, num) => (this.result += oper(num)),
-    result: 0,
   };
 
   return calculator;
