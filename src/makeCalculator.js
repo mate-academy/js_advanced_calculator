@@ -30,11 +30,12 @@ function makeCalculator() {
     },
 
     divide(value) {
-      if (value !== 0) {
+      if (value === 0) {
+      } else {
         result /= value;
-
-        return this;
       }
+
+      return this;
     },
 
     reset() {
