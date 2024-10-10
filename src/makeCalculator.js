@@ -18,9 +18,13 @@ function makeCalculator() {
     },
     multiply(num) {
       this.result *= num;
+
+      return this;
     },
     divide(num) {
       this.result /= num;
+
+      return this;
     },
     reset() {
       this.result = 0;
