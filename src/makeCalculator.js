@@ -5,33 +5,29 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, number) {
-      this.result = callback(this.result, number);
+      callback.call(this, number);
 
       return this;
     },
 
-    add(operand, number) {
-      const result = operand + number;
-
-      return result;
+    add(number) {
+      this.result += number;
     },
 
-    subtract(operand, number) {
-      const result = operand - number;
-
-      return result;
+    subtract(number) {
+      this.result -= number;
     },
 
-    multiply(operand, number) {
-      const result = operand * number;
-
-      return result;
+    multiply(number) {
+      this.result *= number;
     },
 
-    divide(operand, number) {
-      const result = operand / number;
+    divide(number) {
+      if (number === 0) {
+        throw new Error('Cant divide by 0');
+      }
 
-      return result;
+      this.result /= number;
     },
 
     reset() {
@@ -52,7 +48,7 @@ calculator
   .operate(calculator.add, 10)
   .reset()
   .operate(calculator.subtract, 20)
-  .operate(calculator.divide, 5)
+  .operate(calculator.divide, 2)
   .operate(calculator.multiply, 7);
 
 module.exports = makeCalculator;
