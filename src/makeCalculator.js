@@ -26,7 +26,7 @@ function makeCalculator() {
     },
 
     divide(num) {
-      if (num > 0) {
+      if (num !== 0) {
         this.result /= num;
       }
 
