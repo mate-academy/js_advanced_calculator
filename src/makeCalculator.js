@@ -18,21 +18,27 @@ function makeCalculator() {
 
       return this;
     },
+
     multiply(num) {
       this.result *= num;
 
       return this;
     },
+
     divide(num) {
-      this.result /= num;
+      if (num > 0) {
+        this.result /= num;
+      }
 
       return this;
     },
+
     reset() {
       this.result = 0;
 
       return this;
     },
+
     operate(callback, num) {
       callback.call(this, num);
 
