@@ -8,35 +8,34 @@ function makeCalculator() {
     result: 0,
 
     add(x) {
-      return this.result + x;
+      this.result += x; // Updates the result property
     },
 
     subtract(x) {
-      return this.result - x;
+      this.result -= x; // Updates the result property
     },
 
     multiply(x) {
-      return this.result * x;
+      this.result *= x; // Updates the result property
     },
 
     divide(x) {
       if (x === 0) {
         throw new Error('Division by zero is not allowed.');
       }
-
-      return this.result / x;
+      this.result /= x; // Updates the result property
     },
 
     operate(callback, value) {
-      this.result = callback.call(this, value);
+      callback.call(this, value);
 
-      return this;
+      return this; // Enables chaining
     },
 
     reset() {
-      this.result = 0;
+      this.result = 0; // Resets the result to 0
 
-      return this;
+      return this; // Enables chaining
     },
   };
 
