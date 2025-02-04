@@ -4,29 +4,41 @@
  * @return {object}
  */
 function makeCalculator() {
-  const calcResult = 0;
+  let result = 0; // Use let here instead of const to allow reassignment
 
   return {
-    result: calcResult,
+    get result() {
+      return result;
+    },
 
     add(number) {
-      this.result += number;
+      result += number;
+
+      return this;
     },
 
     subtract(number) {
-      this.result -= number;
+      result -= number;
+
+      return this;
     },
 
     multiply(number) {
-      this.result *= number;
+      result *= number;
+
+      return this;
     },
 
     divide(number) {
-      this.result /= number;
+      if (number !== 0) {
+        result /= number;
+      }
+
+      return this;
     },
 
     reset() {
-      this.result = 0;
+      result = 0;
 
       return this;
     },
