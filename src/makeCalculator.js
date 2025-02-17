@@ -5,7 +5,7 @@
  */
 
 function makeCalculator() {
-  const object = {
+  return {
     result: 0,
 
     add(a, b) {
@@ -24,8 +24,8 @@ function makeCalculator() {
       return a / b;
     },
 
-    operate(method, number) {
-      this.result = method(this.result, number);
+    operate(objectMethod, number) {
+      this.result = objectMethod(this.result, number);
 
       return this;
     },
@@ -36,8 +36,6 @@ function makeCalculator() {
       return this;
     },
   };
-
-  return object;
 }
 
 module.exports = makeCalculator;
