@@ -1,15 +1,20 @@
 # Advanced Calculator
 
-### Description
+## 🎮 About the Project
+A JavaScript function `makeCalculator` that returns an object with the following methods: `add`, `subtract`, `multiply`, `divide`, `reset`, and `operate`. The object allows performing basic arithmetic operations, resetting the current value, and chaining operations for advanced calculations.
 
-- Added a `makeCalculator` function that returns an object that has the following fields: `add`, `subtract`, `multiply`, `divide`, `reset`, `operate`
-  
-### Stack
+## 🚀 Tech Stack
+- **JavaScript** (Function implementation and logic)
 
-- JS
+## 🛠️ Tools & Dependencies
+- **ESLint** – Ensuring code quality
+- **Prettier** – Code formatting for readability
+- **Jest** – Unit testing framework
 
-### Tools
+## 📌 Features
+✅ Basic arithmetic operations: add, subtract, multiply, divide  
+✅ Reset the calculator state  
+✅ Chainable operations for complex calculations
 
-- ESlint
-- Prettier
-- Jest
+## 📜 License
+This project is forked from 💻 [Mate Academy](https://github.com/mate-academy/js_advanced_calculator)
