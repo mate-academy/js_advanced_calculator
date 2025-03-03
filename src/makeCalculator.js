@@ -7,29 +7,34 @@ function makeCalculator() {
   // write code here
   return {
     result: 0,
-    add: function(value) {
-       this.result += value;
+    add(value) {
+      this.result += value;
     },
-    subtract: function(value) {
+    subtract(value) {
       this.result -= value;
     },
-    multiply: function(value) {
-     this.result *= value;
+    multiply(value) {
+      this.result *= value;
     },
-    divide: function(value) {
-     this.result /= value;
+    divide(value) {
+      this.result /= value;
     },
-    reset: function() {
-     this.result = 0;
-     return this;
+    reset() {
+      this.result = 0;
+
+      return this;
     },
-    operate: function(callback, num) {
-    /* eslint no-console: ["error", { allow: ["warn", "log"] }] */
-    console.log(this.result, callback, num)
-     this.callback(num);
-     return this;
-    }
-  }
+    operate(callback, num) {
+      /* eslint no-console: ["error", { allow: ["warn", "log"] }] */
+      console.log(this.result, callback, num);
+
+      const func = callback.bind(this);
+
+      func(num);
+
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
