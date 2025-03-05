@@ -10,22 +10,22 @@ function makeCalculator() {
     get result() {
       return internalResult;
     },
-    operate(func, numbers) {
-      func(numbers);
+    operate(func, number) {
+      internalResult = func(internalResult, number);
 
       return this;
     },
-    add(numbers) {
-      internalResult += numbers;
+    add(current, number) {
+      return current + number;
     },
-    subtract(numbers) {
-      internalResult -= numbers;
+    subtract(current, number) {
+      return current - number;
     },
-    divide(numbers) {
-      internalResult /= numbers;
+    divide(current, number) {
+      return current / number;
     },
-    multiply(numbers) {
-      internalResult *= numbers;
+    multiply(current, number) {
+      return current * number;
     },
     reset() {
       internalResult = 0;
