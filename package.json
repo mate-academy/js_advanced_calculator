@@ -16,16 +16,15 @@
   "author": "Mate academy",
   "license": "GPL-3.0",
   "devDependencies": {
-    "@mate-academy/eslint-config": "latest",
+    "@mate-academy/eslint-config": "^0.0.29",
     "@mate-academy/scripts": "^1.8.6",
     "eslint": "^8.57.0",
     "eslint-plugin-jest": "^28.6.0",
     "eslint-plugin-node": "^11.1.0",
     "jest": "^29.7.0",
-    "prettier": "^3.3.2"
+    "prettier": "^3.5.3"
   },
   "mateAcademy": {
     "projectType": "javascript"
-  },
-  "dependencies": {}
+  }
 }
