@@ -6,7 +6,7 @@
 function makeCalculator() {
   return {
     result: 0,
-    
+
     add(number) {
       this.result += number;
     },
@@ -32,7 +32,7 @@ function makeCalculator() {
       operation.call(this, number);
       return this;
     },
-  }
+  };
 }
 
 module.exports = makeCalculator;
