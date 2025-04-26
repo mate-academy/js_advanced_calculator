@@ -34,10 +34,4 @@ console.log(calculator.result); // 0
 
 calculator
   .operate(calculator.add, 10)
-  .reset()
-  .operate(calculator.subtract, 20)
-  .operate(calculator.divide, 5)
-  .operate(calculator.multiply, 7)
-
-console.log(calculator.result); // -28
-```
+  .reset() 
