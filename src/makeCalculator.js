@@ -13,7 +13,7 @@ function makeCalculator() {
 
       const param = a;
 
-      callback(param);
+      callback.call(calculator, param);
 
       return calculator;
     },
