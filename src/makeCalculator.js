@@ -7,6 +7,10 @@ function makeCalculator() {
   const calculator = {
     result: 0,
     operate: function (callback, a) {
+      if (typeof callback !== 'function') {
+        throw new Error();
+      }
+
       const param = a;
 
       callback(param);
