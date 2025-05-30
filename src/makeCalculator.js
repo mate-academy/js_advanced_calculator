@@ -14,7 +14,9 @@ function makeCalculator() {
     },
 
     operate(operation, num) {
-      operation.call(this, num);
+      if (typeof operation === 'function') {
+        operation.call(this, num);
+      }
 
       return this;
     },
@@ -33,7 +35,7 @@ function makeCalculator() {
 
     divide(num) {
       if (num === 0) {
-        return NaN;
+        this.result = NaN;
       } else {
         this.result /= num;
       }
