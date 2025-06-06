@@ -8,7 +8,9 @@ function makeCalculator() {
     result: 0,
 
     operate(operation, value) {
-      operation(value);
+      if (typeof operation === 'function') {
+        operation(value);
+      }
 
       return this;
     },
