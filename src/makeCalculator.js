@@ -19,7 +19,11 @@ function makeCalculator() {
     divide: function (a) {
       return this.result / a;
     },
-    operate: function (operation, number) {
+    operate(operation, number) {
+      if (typeof operation !== 'function') {
+        throw new TypeError('Operation must be a function');
+      }
+
       this.result = operation.call(this, number);
 
       return this;
