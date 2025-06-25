@@ -4,8 +4,6 @@
  * @return {object}
  */
 function makeCalculator() {
-  const result = 0;
-
   function add(a, b) {
     return a + b;
   }
@@ -22,7 +20,7 @@ function makeCalculator() {
     return a / b;
   }
 
-  function reset(a) {
+  function reset() {
     this.result = 0;
 
     return this;
@@ -41,8 +39,9 @@ function makeCalculator() {
     multiply,
     divide,
     reset,
-    result,
   };
+
+  rezultCalculate.result = 0;
 
   return rezultCalculate;
 }
