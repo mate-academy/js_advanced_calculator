@@ -9,6 +9,10 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, number) {
+      if (typeof callback !== 'function') {
+        throw new Error('Callback must be a function');
+      }
+
       callback.call(this, number);
 
       return this;
