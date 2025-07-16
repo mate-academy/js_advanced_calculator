@@ -9,9 +9,11 @@ function makeCalculator() {
     result: 0,
 
     operate(callback, x) {
-      returnObj.result = callback(x);
+      if (typeof callback === 'function') {
+        returnObj.result = callback(x);
 
-      return returnObj;
+        return returnObj;
+      }
     },
 
     add(x) {
