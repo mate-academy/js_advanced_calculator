@@ -20,40 +20,22 @@ function makeCalculator() {
       return this;
     },
 
-    add(result, value) {
-      return result + value;
+    add(rside, lside) {
+      return rside + lside;
     },
 
-    subtract(result, value) {
-      return result - value;
+    subtract(rside, lside) {
+      return rside - lside;
     },
 
-    multiply(result, value) {
-      return result * value;
+    multiply(rside, lside) {
+      return rside * lside;
     },
 
-    divide(result, value) {
-      return result / value;
+    divide(rside, lside) {
+      return rside / lside;
     },
   };
 }
-
-// const calculator = makeCalculator();
-
-// calculator.operate(calculator.add, 21);
-
-// console.log(calculator.result); // 21
-
-// calculator.reset();
-// console.log(calculator.result); // 0
-
-// calculator
-//   .operate(calculator.add, 10)
-//   .reset()
-//   .operate(calculator.subtract, 20)
-//   .operate(calculator.divide, 5)
-//   .operate(calculator.multiply, 7);
-
-// console.log(calculator.result); // -28
 
 module.exports = makeCalculator;
