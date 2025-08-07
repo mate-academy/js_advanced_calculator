@@ -8,7 +8,7 @@ function makeCalculator() {
 
   const calculator = {
     operate(callback, number) {
-      result = callback(number);
+      callback(number);
 
       return this;
     },
@@ -19,16 +19,16 @@ function makeCalculator() {
     },
 
     add(number) {
-      return result + number;
+      result += number;
     },
     subtract(number) {
-      return result - number;
+      result -= number;
     },
     divide(number) {
-      return result / number;
+      result /= number;
     },
     multiply(number) {
-      return result * number;
+      result *= number;
     },
     get result() {
       return result;
