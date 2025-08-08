@@ -8,23 +8,23 @@ function makeCalculator() {
     result: 0,
 
     add(x) {
-      return this.result + x;
+      this.result += x;
     },
 
     subtract(x) {
-      return this.result - x;
+      this.result -= x;
     },
 
     multiply(x) {
-      return this.result * x;
+      this.result *= x;
     },
 
     divide(x) {
-      return this.result / x;
+      this.result /= x;
     },
 
     operate(callback, value) {
-      this.result = callback.call(this, value);
+      callback.call(this, value);
 
       return this;
     },
