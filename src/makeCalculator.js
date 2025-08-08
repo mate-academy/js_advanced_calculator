@@ -3,62 +3,62 @@
 /**
  * @return {object}
  */
-// function makeCalculator() {
-//   return {
-//     result: 0,
-//     add(value) {
-//       this.result += value;
-//     },
-//     subtract(value) {
-//       this.result -= value;
-//     },
-//     multiply(value) {
-//       this.result *= value;
-//     },
-//     divide(value) {
-//       this.result /= value;
-//     },
-//     reset() {
-//       this.result = 0;
-
-//       return this;
-//     },
-//     operate(callback, value) {
-//       callback.call(this, value);
-
-//       return this;
-//     },
-//   };
-// }
-
 function makeCalculator() {
-  const calculator = {
+  return {
     result: 0,
     add(value) {
-      calculator.result += value;
+      this.result += value;
     },
     subtract(value) {
-      calculator.result -= value;
+      this.result -= value;
     },
     multiply(value) {
-      calculator.result *= value;
+      this.result *= value;
     },
     divide(value) {
-      calculator.result /= value;
+      this.result /= value;
     },
     reset() {
-      calculator.result = 0;
+      this.result = 0;
 
       return this;
     },
-    operate(callback, number) {
-      callback(number);
+    operate(callback, value) {
+      callback.call(this, value);
 
       return this;
     },
   };
-
-  return calculator;
 }
+
+// function makeCalculator() {
+//   const calculator = {
+//     result: 0,
+//     add(value) {
+//       calculator.result += value;
+//     },
+//     subtract(value) {
+//       calculator.result -= value;
+//     },
+//     multiply(value) {
+//       calculator.result *= value;
+//     },
+//     divide(value) {
+//       calculator.result /= value;
+//     },
+//     reset() {
+//       calculator.result = 0;
+
+//       return calculator;
+//     },
+//     operate(callback, number) {
+//       callback(number);
+
+//       return calculator;
+//     },
+//   };
+
+//   return calculator;
+// }
 
 module.exports = makeCalculator;
