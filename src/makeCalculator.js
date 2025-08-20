@@ -38,6 +38,9 @@ function makeCalculator() {
     },
 
     operate(method, nums) {
+      if (typeof method !== 'function') {
+        throw new TypeError('Callback must be a function');
+      }
       method.call(this, nums);
 
       return this;
