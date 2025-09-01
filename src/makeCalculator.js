@@ -4,17 +4,37 @@
  * @return {object}
  */
 function makeCalculator() {
-  const obj = {
+  const calculator = {
     result: 0,
-    add: (curr, num) => curr + num,
-    divide: (curr, num) => curr / num,
-    subtract: (curr, num) => curr - num,
-    multiply: (curr, num) => curr * num,
-    operate(task, numb) {
-      this.result = task(this.result, numb);
+    add(value) {
+      this.result += value;
 
       return this;
     },
+
+    subtract(value) {
+      this.result -= value;
+
+      return this;
+    },
+
+    multiply(value) {
+      this.result *= value;
+
+      return this;
+    },
+
+    divide(value) {
+      this.result /= value;
+
+      return this;
+    },
+    operate(task, value) {
+      task.call(this, value);
+
+      return this;
+    },
+
     reset() {
       this.result = 0;
 
@@ -22,7 +42,7 @@ function makeCalculator() {
     },
   };
 
-  return obj;
+  return calculator;
 }
 
 module.exports = makeCalculator;
