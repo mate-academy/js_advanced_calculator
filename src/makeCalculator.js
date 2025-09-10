@@ -4,7 +4,39 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  const result = {
+    result: 0,
+
+    operate(operation, number) {
+      operation.call(this, number);
+
+      return this;
+    },
+
+    add(number) {
+      this.result += number;
+    },
+
+    subtract(number) {
+      this.result -= number;
+    },
+
+    multiply(number) {
+      this.result *= number;
+    },
+
+    divide(number) {
+      this.result /= number;
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+  };
+
+  return result;
 }
 
 module.exports = makeCalculator;
