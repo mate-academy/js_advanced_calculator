@@ -4,11 +4,13 @@
  * @return {object}
  */
 function makeCalculator() {
-  const result = {
+  const calculator = {
     result: 0,
 
     operate(operation, number) {
-      operation.call(this, number);
+      if (typeof operation === 'function') {
+        operation.call(this, number);
+      }
 
       return this;
     },
@@ -26,6 +28,10 @@ function makeCalculator() {
     },
 
     divide(number) {
+      if (number === 0) {
+        return 'ERROR';
+      }
+
       this.result /= number;
     },
 
@@ -36,7 +42,7 @@ function makeCalculator() {
     },
   };
 
-  return result;
+  return calculator;
 }
 
 module.exports = makeCalculator;
