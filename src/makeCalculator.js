@@ -40,9 +40,9 @@ function makeCalculator() {
     operate(callback, number) {
       if (typeof callback === 'function') {
         callback.call(this, number);
-
-        return this;
       }
+
+      return this;
     },
   };
 }
