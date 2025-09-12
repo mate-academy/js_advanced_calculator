@@ -1,7 +1,7 @@
 # Make Calculator
 
 
-**Read [the guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md) before start**
+**Read [the guideline](https://github.com/matheus-s-araujo/js_task-guideline/blob/master/README.md) before start**
 
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
