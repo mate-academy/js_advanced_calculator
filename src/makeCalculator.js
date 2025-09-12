@@ -7,21 +7,29 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(current, value) {
-      return current + value;
+    add(value) {
+      this.result += value;
+
+      return this.result;
     },
-    subtract(current, value) {
-      return current - value;
+    subtract(value) {
+      this.result -= value;
+
+      return this.result;
     },
-    multiply(current, value) {
-      return current * value;
+    multiply(value) {
+      this.result *= value;
+
+      return this.result;
     },
-    divide(current, value) {
-      return current / value;
+    divide(value) {
+      this.result /= value;
+
+      return this.result;
     },
 
     operate(callback, value) {
-      this.result = callback(this.result, value);
+      this.result = callback.call(this, value);
 
       return this; // permite encadeamento
     },
