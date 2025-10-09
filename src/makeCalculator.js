@@ -4,7 +4,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  return {
+  const calculator = {
     result: 0,
 
     reset() {
@@ -13,30 +13,43 @@ function makeCalculator() {
       return this;
     },
 
-    add(a, b) {
-      return a + b;
+    add(n) {
+      this.result += n;
+
+      return this;
     },
 
-    subtract(a, b) {
-      return a - b;
+    subtract(n) {
+      this.result -= n;
+
+      return this;
     },
-    multiply(a, b) {
-      return a * b;
+    multiply(n) {
+      this.result *= n;
+
+      return this;
     },
 
-    divide(a, b) {
-      if (b === 0) {
-        throw new Error('Division by zero.');
+    divide(n) {
+      if (n === 0) {
+        throw new Error('TypeError: Division by zero.');
       }
+      this.result /= n;
 
-      return a / b;
+      return this;
     },
     operate(callback, n) {
-      this.result = callback(this.result, n);
+      if (typeof callback !== 'function') {
+        throw new Error('Callback must be a function');
+      }
+
+      callback.call(this, n);
 
       return this;
     },
   };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
