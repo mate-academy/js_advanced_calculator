@@ -25,13 +25,16 @@ function makeCalculator() {
 
     reset() {
       this.result = 0;
-      return this; // pozwala na chainowanie
+      return this;
     },
 
     operate(callback, value) {
       callback.call(this, value);
-      return this; // pozwala na chainowanie
+      return this;
     }
   };
 }
+
+module.exports = makeCalculator;
+
 
