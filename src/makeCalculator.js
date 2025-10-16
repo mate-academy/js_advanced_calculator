@@ -8,25 +8,25 @@ function makeCalculator() {
     result: 0,
 
     operate(operation, number) {
-      this.result = operation(this.result, number);
+      operation.call(this, number);
 
       return this;
     },
 
-    add(a, b) {
-      return a + b;
+    add(number) {
+      this.result += number;
     },
 
-    subtract(a, b) {
-      return a - b;
+    subtract(number) {
+      this.result -= number;
     },
 
-    multiply(a, b) {
-      return a * b;
+    multiply(number) {
+      this.result *= number;
     },
 
-    divide(a, b) {
-      return a / b;
+    divide(number) {
+      this.result /= number;
     },
 
     reset() {
