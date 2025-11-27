@@ -4,7 +4,34 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    add(a, b) {
+      return a + b;
+    },
+    subtract(a, b) {
+      return a - b;
+    },
+    multiply(a, b) {
+      return a * b;
+    },
+    divide(a, b) {
+      return a / b;
+    },
+
+    operate(callback, number) {
+      this.result = callback(this.result, number);
+
+      return this; // enable chaining
+    },
+
+    reset() {
+      this.result = 0;
+
+      return this; // enable chaining
+    },
+  };
 }
 
 module.exports = makeCalculator;
