@@ -4,26 +4,26 @@
  * @return {object}
  */
 function makeCalculator() {
-  const methods = {
+  const calculator = {
     result: 0,
     add: (a, b) => a + b,
     subtract: (a, b) => a - b,
     multiply: (a, b) => a * b,
     divide: (a, b) => a / b,
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function (callback, value) {
+    operate(callback, value) {
       this.result = callback(this.result, value);
 
       return this;
     },
   };
 
-  return methods;
+  return calculator;
 }
 
 module.exports = makeCalculator;
