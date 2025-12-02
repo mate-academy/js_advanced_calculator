@@ -6,20 +6,23 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    operate: (callback, number) => {
-      calculator.result = callback(calculator.result, number);
 
-      return calculator;
-    },
-    reset: () => {
-      calculator.result = 0;
+    operate(callback, number) {
+      this.result = callback(this.result, number);
 
-      return calculator;
+      return this;
     },
-    add: (number) => calculator.operate((a, b) => a + b, number),
-    subtract: (number) => calculator.operate((a, b) => a - b, number),
-    multiply: (number) => calculator.operate((a, b) => a * b, number),
-    divide: (number) => calculator.operate((a, b) => a / b, number),
+
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    add: (a, b) => a + b,
+    subtract: (a, b) => a - b,
+    multiply: (a, b) => a * b,
+    divide: (a, b) => a / b,
   };
 
   return calculator;
