@@ -6,20 +6,20 @@
 function makeCalculator() {
   let result = 0;
 
-  const obj = {
+  const calculator = {
     get result() {
       return result;
     },
-    add: (currentResult, number) => {
+    add(currentResult, number) {
       return currentResult + number;
     },
-    subtract: (currentResult, number) => {
+    subtract(currentResult, number) {
       return currentResult - number;
     },
-    multiply: (currentResult, number) => {
+    multiply(currentResult, number) {
       return currentResult * number;
     },
-    divide: (currentResult, number) => {
+    divide(currentResult, number) {
       return currentResult / number;
     },
     operate(cb, number) {
@@ -27,16 +27,16 @@ function makeCalculator() {
 
       result = newVal;
 
-      return obj;
+      return calculator;
     },
-    reset: () => {
+    reset() {
       result = 0;
 
-      return obj;
+      return calculator;
     },
   };
 
-  return obj;
+  return calculator;
 }
 
 module.exports = makeCalculator;
