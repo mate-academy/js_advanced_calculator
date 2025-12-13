@@ -3,36 +3,49 @@
 /**
  * @return {object}
  */
+'use strict';
+
+/**
+ * @return {object}
+ */
 function makeCalculator() {
   const calc = {
     result: 0,
 
-    add: function (num) {
+    add(num) {
       this.result += num;
+
+      return this;
     },
 
-    subtract: function (num) {
+    subtract(num) {
       this.result -= num;
+
+      return this;
     },
 
-    multiply: function (num) {
+    multiply(num) {
       this.result *= num;
+
+      return this;
     },
 
-    divide: function (num) {
+    divide(num) {
       if (num === 0) {
-        return 'Error: Division by zero';
+        return this;
       }
       this.result /= num;
+
+      return this;
     },
 
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
     },
 
-    operate: function (operation, value) {
+    operate(operation, value) {
       operation.call(this, value);
 
       return this;
