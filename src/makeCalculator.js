@@ -5,7 +5,7 @@
  */
 function makeCalculator() {
   // write code here
-  const obj = {
+  const calculator = {
     result: 0,
     add(a, b) {
       return a + b;
@@ -31,7 +31,7 @@ function makeCalculator() {
     },
   };
 
-  return obj;
+  return calculator;
 }
 
 module.exports = makeCalculator;
