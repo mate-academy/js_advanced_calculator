@@ -6,21 +6,23 @@
 function makeCalculator() {
   const calculator = {
     result: 0,
-    operate: function (callback, num) {
+    operate(callback, num) {
       if (Number.isFinite(num)) {
-        calculator.result = callback(calculator.result, num);
+        this.result = callback(this.result, num);
 
-        return calculator;
+        return this;
+      } else {
+        return this;
       }
     },
     add: (a, b) => a + b,
     subtract: (a, b) => a - b,
     multiply: (a, b) => a * b,
     divide: (a, b) => a / b,
-    reset: function () {
-      calculator.result = 0;
+    reset() {
+      this.result = 0;
 
-      return calculator;
+      return this;
     },
   };
 
