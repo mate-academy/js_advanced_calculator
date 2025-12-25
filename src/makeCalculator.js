@@ -1,7 +1,7 @@
 'use strict';
 
 function makeCalculator() {
-  return {
+  const calculator = {
     result: 0,
 
     operate(callback, number) {
@@ -32,6 +32,8 @@ function makeCalculator() {
       return this;
     },
   };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
