@@ -4,7 +4,44 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
+  return {
+    result: 0,
+
+    add: function (a, b) {
+      return a + b;
+    },
+
+    subtract: function (a, b) {
+      return a - b;
+    },
+
+    multiply: function (a, b) {
+      return a * b;
+    },
+
+    divide: function (a, b) {
+      return a / b;
+    },
+
+    operate: function (callback, number) {
+      this.result = callback(this.result, number);
+
+      return this;
+    },
+
+    reset: function () {
+      this.result = 0;
+
+      return this;
+    },
+  };
 }
 
-module.exports = makeCalculator;
+const calculator = makeCalculator();
+
+calculator
+  .operate(calculator.add)
+  .reset()
+  .operate(calculator.subtract)
+  .operate(calculator.divide)
+  .operate(calculator.multiply);
