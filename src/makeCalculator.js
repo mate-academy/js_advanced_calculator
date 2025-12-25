@@ -10,20 +10,20 @@ function makeCalculator() {
       return this;
     },
 
-    add(number) {
-      return this.operate((a, b) => a + b, number);
+    add(a, b) {
+      return a + b;
     },
 
-    subtract(number) {
-      return this.operate((a, b) => a - b, number);
+    subtract(a, b) {
+      return a - b;
     },
 
-    multiply(number) {
-      return this.operate((a, b) => a * b, number);
+    multiply(a, b) {
+      return a * b;
     },
 
-    divide(number) {
-      return this.operate((a, b) => a / b, number);
+    divide(a, b) {
+      return a / b;
     },
 
     reset() {
@@ -34,4 +34,4 @@ function makeCalculator() {
   };
 }
 
-makeCalculator();
+module.exports = makeCalculator;
