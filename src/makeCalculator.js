@@ -26,7 +26,7 @@ function makeCalculator() {
     },
 
     divide(a, b) {
-      return a / b;
+      return b === 0 ? a : a / b;
     },
 
     reset() {
