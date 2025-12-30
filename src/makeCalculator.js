@@ -8,19 +8,23 @@ function makeCalculator() {
     result: 0,
 
     add(number) {
-      return this.result += number;
+      this.result += number;
     },
 
     subtract(number) {
-      return this.result -= number;
+      this.result -= number;
     },
 
     multiply(number) {
-      return this.result *= number;
+      this.result *= number;
     },
 
     divide(number) {
-      return this.result /= number;
+      if (number === 0) {
+        throw new Error('Division by zero');
+      }
+
+      this.result /= number;
     },
 
     reset() {
@@ -30,10 +34,10 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
-      this.result = callback.call(this, number);
+      callback.call(this, number);
 
       return this;
-    }
+    },
   };
 }
 
