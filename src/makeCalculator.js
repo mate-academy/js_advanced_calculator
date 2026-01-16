@@ -4,27 +4,35 @@
  * @return {object}
  */
 function makeCalculator() {
-  return {
+  const calculator = {
     result: 0,
 
     add(value) {
-      return this.result + value;
+      this.result += value;
+
+      return this.result;
     },
 
     subtract(value) {
-      return this.result - value;
+      this.result -= value;
+
+      return this.result;
     },
 
     multiply(value) {
-      return this.result * value;
+      this.result *= value;
+
+      return this.result;
     },
 
     divide(value) {
-      return this.result / value;
+      this.result /= value;
+
+      return this.result;
     },
 
     operate(operation, value) {
-      this.result = operation.call(this, value);
+      operation.call(this, value);
 
       return this; // permite encadeamento
     },
@@ -35,6 +43,8 @@ function makeCalculator() {
       return this; // permite encadeamento
     },
   };
+
+  return calculator;
 }
 
 // function makeCalculator() {
