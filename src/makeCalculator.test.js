@@ -145,3 +145,4 @@ describe('sum', () => {
     expect(calculator.result).toBe(-9);
   });
 });
+
