@@ -4,7 +4,7 @@
  * @return {object}
  */
 function makeCalculator() {
-  // TEST
+  // TEST // TEST
 }
 
 module.exports = makeCalculator;
