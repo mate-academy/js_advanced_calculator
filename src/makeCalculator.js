@@ -7,30 +7,29 @@ function makeCalculator() {
   return {
     result: 0,
 
-add(num){
- this.result += num;
-},
-subtract(num){
- this.result -= num;
-},
-divide(num){
- this.result /= num;
-},
-multiply(num){
-this.result *= num;
-},
-reset(){
- this.result = 0;
- return this;
-},
+    add(num) {
+      this.result += num;
+    },
+    subtract(num) {
+      this.result -= num;
+    },
+    divide(num) {
+      this.result /= num;
+    },
+    multiply(num) {
+      this.result *= num;
+    },
+    reset() {
+      this.result = 0;
 
-operate(callback, number){
-  this.result += callback(number);
-  return this;
-},
+      return this;
+    },
 
-  }
+    operate(callback, number) {
+      this.result = callback(this.result, number);
+      return this;
+    },
+  };
 }
 
 module.exports = makeCalculator;
-
