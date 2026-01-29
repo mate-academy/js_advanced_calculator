@@ -1,6 +1,7 @@
 'use strict';
 
-/**
+/** done
+ * 
  * @return {object}
  */
 function makeCalculator() {
