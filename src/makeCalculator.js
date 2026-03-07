@@ -40,31 +40,31 @@ function makeCalculator() {
     para operate o método.
     •	Os métodos operate `and` reset podem ser chamados em cadeia.
    */
-  let vlOperation = 0;
+  let currentValue = 0;
 
-  const calc = {
+  const calculator = {
     add: (a, b) => a + b,
     subtract: (a, b) => a - b,
     multiply: (a, b) => a * b,
     divide: (a, b) => a / b,
 
-    reset: function () {
-      vlOperation = 0;
+    reset() {
+      currentValue = 0;
 
       return this;
     },
 
     get result() {
-      return vlOperation;
+      return currentValue;
     },
-    operate: function (operation, value) {
-      vlOperation = operation(vlOperation, value);
+    operate(operation, value) {
+      currentValue = operation(currentValue, value);
 
       return this;
     },
   };
 
-  return calc;
+  return calculator;
 }
 
 module.exports = makeCalculator;
