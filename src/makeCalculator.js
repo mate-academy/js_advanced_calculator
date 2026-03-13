@@ -6,37 +6,37 @@ function makeCalculator() {
 
     add(value) {
       this.result += value;
-      // eslint-disable-next-line padding-line-between-statements
+
       return this;
     },
 
     subtract(value) {
       this.result -= value;
-      // eslint-disable-next-line padding-line-between-statements
+
       return this;
     },
 
     multiply(value) {
       this.result *= value;
-      // eslint-disable-next-line padding-line-between-statements
+
       return this;
     },
 
     divide(value) {
       this.result /= value;
-      // eslint-disable-next-line padding-line-between-statements
+
       return this;
     },
 
     reset() {
       this.result = 0;
-      // eslint-disable-next-line padding-line-between-statements
+
       return this;
     },
 
     operate(operation, value) {
       operation.call(this, value);
-      // eslint-disable-next-line padding-line-between-statements
+
       return this;
     },
   };
