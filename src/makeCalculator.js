@@ -7,20 +7,20 @@ function makeCalculator() {
   const calculator = {
     result: 0,
 
-    add(result, x) {
-      return result + x;
+    add(x) {
+      this.result += x;
     },
 
-    subtract(result, x) {
-      return result - x;
+    subtract(x) {
+      this.result -= x;
     },
 
-    multiply(result, x) {
-      return result * x;
+    multiply(x) {
+      this.result *= x;
     },
 
-    divide(result, x) {
-      return result / x;
+    divide(x) {
+      this.result /= x;
     },
 
     reset() {
@@ -30,7 +30,7 @@ function makeCalculator() {
     },
 
     operate(operation, x) {
-      this.result = operation(this.result, x);
+      operation.call(this, x);
 
       return this;
     },
