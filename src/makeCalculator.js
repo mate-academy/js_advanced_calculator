@@ -32,7 +32,7 @@ function makeCalculator() {
     },
 
     divide(value) {
-      if (this.result !== 0 || value !== 0) {
+      if (value !== 0) {
         this.result /= value;
       }
     },
