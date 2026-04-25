@@ -44,7 +44,7 @@ function makeCalculator() {
       if (typeof callback === 'function') {
         return callback.call(this, num);
       }
-        throw new Error('First argument should be a function');
+      throw new Error('First argument should be a function');
     },
   };
 }
