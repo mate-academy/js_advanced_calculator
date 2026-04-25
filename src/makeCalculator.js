@@ -20,9 +20,6 @@ function makeCalculator() {
     },
 
     divide(x) {
-      if (x === 0) {
-        throw new Error('Cannot divide on zero');
-      }
       this.result /= x;
 
       return this;
@@ -44,7 +41,6 @@ function makeCalculator() {
       if (typeof callback === 'function') {
         return callback.call(this, num);
       }
-      throw new Error('First argument should be a function');
     },
   };
 }
