@@ -28,6 +28,8 @@ function makeCalculator() {
 
     operate(callback, value) {
       this.result = callback(this.result, value);
+
+      return this;
     },
   };
 }
