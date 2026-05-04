@@ -8,9 +8,9 @@ function makeCalculator() {
   let result = 0;
 
   const add = (current, number) => current + number;
-  const sub = (current, number) => current - number;
-  const mul = (current, number) => current * number;
-  const div = (current, number) => current / number;
+  const subtract = (current, number) => current - number;
+  const multiply = (current, number) => current * number;
+  const divide = (current, number) => current / number;
 
   const operate = (callback, number) => {
     result = callback(result, number);
@@ -29,9 +29,9 @@ function makeCalculator() {
   const calculator = {
     result: 0,
     add,
-    sub,
-    mul,
-    div,
+    subtract,
+    multiply,
+    divide,
     operate,
     reset,
   };
