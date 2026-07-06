@@ -4,8 +4,6 @@
  * @return {object}
  */
 function makeCalculator() {
-  // write code here
-
   let result = 0;
 
   const add = (a, b) => a + b;
