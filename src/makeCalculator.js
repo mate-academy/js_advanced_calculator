@@ -7,16 +7,16 @@ function makeCalculator() {
   const calculator = {
     result: 0,
     add(x) {
-      calculator.result = x + calculator.result;
+      calculator.result += x;
     },
     subtract(x) {
-      calculator.result = calculator.result - x;
+      calculator.result -= x;
     },
     multiply(x) {
-      calculator.result = calculator.result * x;
+      calculator.result *= x;
     },
     divide(x) {
-      calculator.result = calculator.result / x;
+      calculator.result /= x;
     },
     reset() {
       calculator.result = 0;
