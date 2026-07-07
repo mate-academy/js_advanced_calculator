@@ -12,7 +12,15 @@ function makeCalculator() {
   const divide = (a, b) => a / b;
 
   const operate = function (callback, num) {
-    result = callback(result, num);
+    if (callback === add) {
+      result += num;
+    } else if (callback === subtract) {
+      result -= num;
+    } else if (callback === multiply) {
+      result *= num;
+    } else if (callback === divide) {
+      result /= num;
+    }
 
     return this;
   };
@@ -35,5 +43,4 @@ function makeCalculator() {
     reset,
   };
 }
-
 module.exports = makeCalculator;
