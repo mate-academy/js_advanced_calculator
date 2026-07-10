@@ -5,6 +5,34 @@
  */
 function makeCalculator() {
   // write code here
+  const calculator = {
+    add(number) {
+      this.result += number;
+    },
+    subtract(number) {
+      this.result -= number;
+    },
+    multiply(number) {
+      this.result *= number;
+    },
+    divide(number) {
+      this.result /= number;
+    },
+    operate(operation, number) {
+      operation.call(this, number);
+
+      return this;
+    },
+    reset() {
+      this.result = 0;
+
+      return this;
+    },
+
+    result: 0,
+  };
+
+  return calculator;
 }
 
 module.exports = makeCalculator;
