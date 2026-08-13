@@ -7,24 +7,24 @@ function makeCalculator() {
   // write code here
   return {
     result: 0,
-    add: function (a, b) {
+    add(a, b) {
       return a + b;
     },
-    subtract: function (a, b) {
+    subtract(a, b) {
       return a - b;
     },
-    multiply: function (a, b) {
+    multiply(a, b) {
       return a * b;
     },
-    divide: function (a, b) {
+    divide(a, b) {
       return a / b;
     },
-    reset: function () {
+    reset() {
       this.result = 0;
 
       return this;
     },
-    operate: function (callback, value) {
+    operate(callback, value) {
       this.result = callback(this.result, value);
 
       return this;
