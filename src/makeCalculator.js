@@ -7,26 +7,40 @@ function makeCalculator() {
   return {
     result: 0,
 
-    add(x) {
-      this.result += x;
+    add: (num, x) => {
+      let current = num;
 
-      return this;
+      current += x;
+
+      return current;
     },
 
-    subtract(x) {
-      this.result -= x;
+    subtract: (num, x) => {
+      let current = num;
 
-      return this;
+      current -= x;
+
+      return current;
     },
 
-    multiply(x) {
-      this.result *= x;
+    multiply: (num, x) => {
+      let current = num;
 
-      return this;
+      current *= x;
+
+      return current;
     },
 
-    divide(x) {
-      this.result /= x;
+    divide: (num, x) => {
+      let current = num;
+
+      current /= x;
+
+      return current;
+    },
+
+    operate(callback, number) {
+      this.result = callback(this.result, number);
 
       return this;
     },
