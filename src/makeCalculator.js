@@ -24,6 +24,10 @@ function makeCalculator() {
     },
 
     operate(callback, number) {
+      if (typeof callback !== 'function') {
+        return this;
+      }
+
       callback.call(this, number);
 
       return this;
